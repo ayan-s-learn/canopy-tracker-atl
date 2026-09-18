@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 Working agreements for AI-assisted development on this repo. Read `context.md` for background, `canopy-ledger.md` for the problem definition, `permits-and-pixels.md` for the implementation spec.
 
@@ -8,7 +8,7 @@ Working agreements for AI-assisted development on this repo. Read `context.md` f
 
 ## What this project is — STABLE
 
-We detect tree-canopy loss at the parcel scale across metro Atlanta by segmenting successive USDA NAIP aerial imagery cycles, then reconcile detected loss against the City of Atlanta tree-removal permit record to surface clearing that has no permit behind it.
+We detect tree-canopy loss at the parcel scale across metro Atlanta by segmenting successive USDA NAIP aerial imagery cycles, then reconcile detected loss against the City of Atlanta tree-removal permit record to surface clearing that has no permit behind it. This data will then be visualized on a public website for the project.
 
 The city currently measures canopy change in ~6-acre grid cells with a 1-acre threshold, every ~5 years, published ~3 years late, with no permit reconciliation. We work at parcel scale, 0.1-acre threshold, on a 2-year cycle.
 
@@ -16,7 +16,7 @@ The city currently measures canopy change in ~6-acre grid cells with a 1-acre th
 
 > Metro Atlanta has no method that identifies tree-canopy loss at the parcel scale, attributes it to a property and a date, and reconciles it against the tree-removal permit record.
 
-This is a yearlong undergraduate research project. Deliverables are a working pipeline, a validated loss layer, and a briefing to at least one agency.
+This is a yearlong undergraduate research project and the final outcome will be a website with a map that displays where illegal clearing is occuring. Deliverables are a working pipeline, a validated loss layer, and a briefing to at least one agency.
 
 ---
 
@@ -114,16 +114,6 @@ tests/
 
 ---
 
-## Conventions
-
-- **CRS.** TODO — pick one projected CRS for all analysis and state it here. Likely EPSG:26916 (UTM 16N, NAD83) to match NAIP's native projection for Georgia. Do all area math in the projected CRS, never in degrees.
-- **Tiling.** 512 × 512 at 60 cm = 307.2 m per side ≈ 23.3 acres per tile. ~3,732 non-overlapping tiles per epoch for the City of Atlanta.
-- **Never commit imagery or model weights.** `data/` and `*.pth` are gitignored. TODO — decide where large artifacts live (university storage? Drive? DVC?).
-- **Random seeds.** Set and record them. A result that cannot be reproduced cannot be defended.
-- **Every reported metric names its split.** "IoU 0.83" is meaningless; "IoU 0.83, NPU-blocked holdout, n=412 tiles" is a result.
-
----
-
 ## Working with Claude on this repo
 
 - **Cite or flag.** When adding a factual claim to any document, either cite a source we have verified or mark it `[unverified]`. `context.md` §6 lists what is known to be unverified and which public numbers are wrong — check it before repeating a figure.
@@ -131,31 +121,6 @@ tests/
 - **Prefer editing the existing docs over creating new ones.** The four-document structure is intentional.
 - **When code and spec disagree, the spec is a hypothesis and the code is the evidence.** Update the spec.
 - TODO — add: preferred Python style, whether we use type hints, test expectations, notebook hygiene rules.
-
----
-
-## Current status
-
-TODO — keep this section current; it is the first thing anyone (human or AI) should read to know where things stand.
-
-```
-Phase:            Pre-implementation (scoping complete 2026-09-18)
-Epochs chosen:    NAIP 2023 (Sep) vs NAIP 2025 (Jul-Oct)
-Geography:        City of Atlanta; DeKalb as stretch
-Permit data:      Tier 1 CSV not yet downloaded; ORA request not yet filed
-Blocking:         Nothing
-Next gate:        Both epochs in hand with per-quad dates verified
-```
-
-### Week-one checklist
-
-- [ ] Download the ARC/City building-permits CSV
-- [ ] File the Open Records Act request (draft in `permits-and-pixels.md` §1, Tier 4)
-- [ ] Stand up the daily arborist sign-postings scrape
-- [ ] Pull NAIP 2023 for the Atlanta bbox and print every quad's acquisition date
-- [ ] Locate NAIP 2025 Georgia on a USDA channel and confirm its GSD
-- [ ] Email Tony Giarrusso about the 2023 canopy raster
-- [ ] Twenty minutes in Accela by hand; record the tree record-type prefixes
 
 ---
 
