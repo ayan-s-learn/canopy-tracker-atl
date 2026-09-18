@@ -16,7 +16,7 @@ The city currently measures canopy change in ~6-acre grid cells with a 1-acre th
 
 > Metro Atlanta has no method that identifies tree-canopy loss at the parcel scale, attributes it to a property and a date, and reconciles it against the tree-removal permit record.
 
-This is a yearlong undergraduate research project and the final outcome will be a website with a map that displays where illegal clearing is occuring. Deliverables are a working pipeline, a validated loss layer, and a briefing to at least one agency.
+This is a yearlong 10th grade research project and the final outcome will be a website with a map that displays where illegal clearing is occuring. Deliverables are a working pipeline, a validated loss layer, and a briefing to at least one agency.
 
 ---
 
