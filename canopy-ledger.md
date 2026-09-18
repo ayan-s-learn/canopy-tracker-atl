@@ -43,28 +43,6 @@ The consequence is that canopy loss is measured in retrospect and in aggregate. 
 
 Can a semantic-segmentation model applied to successive NAIP aerial imagery cycles detect canopy-loss patches at the parcel scale across the City of Atlanta and DeKalb County, at precision high enough to support code enforcement, and does reconciling those patches against the tree-permit record reveal a measurable volume of unpermitted clearing?
 
-### As an ML task
-
-```
-INPUT   NAIP 4-band tiles at t1 (Sep 2023) and t2 (Jul-Oct 2025), 60 cm
-        Parcel polygons (Fulton, DeKalb)
-        Tree-removal / land-disturbance permit records with dates
-
-STAGE 1 f: tile -> binary canopy mask, per epoch
-        semantic segmentation, evaluated by IoU on held-out NPUs
-
-STAGE 2 g: (mask_t1, mask_t2) -> loss polygons >= 0.1 acre
-        differencing + morphological cleanup + minimum mapping unit
-        evaluated by precision/recall against hand-digitized polygons
-
-STAGE 3 h: loss polygon -> parcel ID, area, estimated DBH-inches, cause class
-        spatial join + rule layer + permit match
-        evaluated by agreement with manual adjudication on a sample
-
-OUTPUT  A ranked list of parcels with canopy loss and no matching permit,
-        each carrying an area, a date window, and an estimated recompense value.
-```
-
 ### Scope boundaries
 
 **In scope.** City of Atlanta plus unincorporated DeKalb; two NAIP epochs; loss patches ≥ 0.1 acre; canopy defined as woody vegetation over ~3 m tall.
@@ -72,19 +50,6 @@ OUTPUT  A ranked list of parcels with canopy loss and no matching permit,
 **Out of scope.** Canopy *gain* and net change (gain is harder and contaminated by the "false growth" problem); individual tree counting; species; exact DBH per tree; tree health.
 
 **Deferred.** Real-time or annual monitoring — NAIP's two-year cycle cannot support it.
-
-### Success criteria
-
-| Stage | Metric | Target | Rationale |
-|---|---|---|---|
-| Canopy mask | IoU, spatially blocked holdout | ≥ 0.80 | Published NAIP canopy work lands at Dice ~0.82; higher-resolution work reaches 0.88 |
-| Loss polygons | Precision | ≥ 0.90 | A false accusation is far costlier than a miss |
-| Loss polygons | Recall | ≥ 0.70 | Matches what Pedley & Morgenroth accepted (0.81) after tuning for precision |
-| Area estimate | MAE per parcel | < 15% | Tight enough that a recompense estimate is arguable |
-| Reconciliation | Adjudicated sample | ≥ 50 parcels reviewed by hand | Establishes a rate, not an anecdote |
-| Project | Real-world uptake | ≥ 1 agency briefed | Distinguishes a class project from a tool |
-
-**A negative result is still a result.** If reconciliation finds that nearly all detected loss has a permit behind it, that is a publishable finding: it would mean Atlanta's canopy problem is legal clearing under a permissive ordinance rather than illegal clearing under weak enforcement, which shifts the policy recommendation entirely.
 
 ---
 
@@ -113,7 +78,7 @@ Six inputs. Four confirmed free, one is the pivot, one is a nice-to-have.
 
 ### Architecture options
 
-#### A. Post-classification comparison — **recommended**
+#### A. Post-classification comparison — **THIS IS WHAT WE ARE DOING, defined more in permits-and-pixels.md**
 
 Segment canopy independently in each epoch, then subtract.
 
@@ -128,74 +93,6 @@ Feed both epochs into one network with shared encoders, predict change directly.
 - **Why.** Learns to ignore nuisance differences (illumination, phenology, misregistration) rather than inheriting them.
 - **Cost.** Needs *change* labels, not canopy labels. Nobody has published change labels for Atlanta, so every training example is hand-digitized. Heavy annotation burden at the point in the year with least momentum.
 - **Verdict.** Second-semester comparison against the differencing baseline, not the primary pipeline.
-
-#### C. Height-differenced detection — partial
-
-Compare canopy height surfaces rather than spectral masks.
-
-- **Why.** Height is the most direct evidence a tree is gone, and it sidesteps "false growth" — scrub and pine regrowth reads as canopy to a spectral classifier but not as 10 m of height. The 2018 city study found 169 grid cells of exactly this illusory gain, roughly 500 acres.
-- **Cost.** Real LiDAR exists for 2018–19 only. For 2023 and 2025 you would difference two runs of a model that predicts height from the same NAIP spectra you already used — not independent evidence.
-- **Verdict.** Use height as an extra input channel and as a filter on the gain side, not as the detector.
-
-### The benchmark
-
-The closest published analogue is Pedley & Morgenroth's canopy-loss work in Christchurch, New Zealand: DeepLabv3+ with ResNet-101 on 7.5 cm aerial RGB plus LiDAR, reaching **F1 0.934, IoU 0.883**, with **precision 0.941 deliberately favoured over recall 0.811**, and MAE 2.81 m² at property scale. They found 14.5% of 2016 canopy gone by 2021, 74.9% of it on residential land. Note they explicitly detect loss only, not gain.
-
-Be honest about the gap: they had 7.5 cm imagery and two LiDAR epochs at 6 and 20 points/m². You will have 60 cm imagery — eight times coarser — and one usable LiDAR epoch that predates your study window. **Their numbers are a ceiling, not a forecast.**
-
----
-
-## 4. Implications
-
-A canopy-loss detector is not a neutral map. It is an enforcement instrument pointed at private property.
-
-### Legal — admissible, but that is not the same as sufficient
-
-The constitutional question is settled favourably. In *California v. Ciraolo* (1986) the Supreme Court held that warrantless naked-eye observation of a fenced backyard from navigable airspace is not a search, reasoning that what any member of the public flying overhead could see carries no reasonable expectation of privacy. *Dow Chemical v. United States*, the same year, extended similar reasoning to aerial photography of an industrial site. NAIP is federal imagery already in the public domain, which is safer ground still.
-
-The practical question differs. **A model output is an investigative lead, not evidence.** Enforcement needs a site visit, a dated record, and an inspector willing to testify. Frame the deliverable as triage — "these 40 parcels merit a look, in this order" — and you are solid. Frame it as a violation list and you have overpromised in a way a city attorney will notice.
-
-### Equity — the tool finds loss wherever it looks hardest
-
-The most serious risk and the one most likely to be raised by a reviewer. Canopy loss in Atlanta concentrates east, west and southwest of downtown — areas overlapping substantially with historically redlined, lower-income, majority-Black neighborhoods that also carry the city's highest heat burden. A $140-per-inch recompense bill lands very differently on a developer assembling parcels than on an elderly homeowner who took down a storm-damaged oak.
-
-Two mitigations, both belonging in the writeup:
-
-1. **Filter by scale and actor.** The 2023 study found half of all permitted removals happened on just 2% of sites, each clearing 100+ trees. A tool tuned to find those sites targets the actual driver and largely skips single-tree residential removal.
-2. **Report performance disaggregated by neighborhood income and canopy density.** A model trained mostly on leafy north-side tiles will quietly perform worse on sparse south-side canopy, and nobody notices unless you measure it.
-
-### Operational — detection creates work the city may not absorb
-
-Several hundred candidate parcels a cycle handed to a handful of inspectors is a backlog, not a capability. Rank rather than list: order by estimated recompense value so the top of the list pays for the inspection time.
-
-There is a false-positive asymmetry to design around. A missed violation costs some trees. A false accusation costs a resident an appeal, costs the agency credibility, and in a local-news cycle can kill the program. That asymmetry is why precision targets 0.90 and recall only 0.70.
-
-### Ecological — area is a poor proxy for what was lost
-
-The model measures canopy area. The ordinance prices diameter inches. The ecosystem cares about mature interior forest. An acre of 80-year-old hardwood and an acre of volunteer pine read nearly the same from above and are not equivalent in stormwater interception, cooling, or habitat. Giarrusso's point: regrowth on a stalled development site is not a genuine gain, and "once it's cleared, you don't get it back."
-
-Responses: weight loss by canopy height so tall closed canopy counts for more than scrub, and **explicitly decline to report net change**, since gain and loss are not commensurable here. Reporting a net figure is how "false growth" enters the public record.
-
-### Political — a credible number changes the argument, a shaky one ends it
-
-Miami is the cautionary case. The city cited an AI-derived canopy assessment claiming a net gain; researchers and advocates showed the tool counted shrubs and invasives as trees, and the LiDAR-validated academic assessment became the accepted number. The lesson is not that the technique is unsound — it is that a canopy claim without independent validation will be attacked on exactly that ground, and the attack will succeed.
-
-The upside is symmetric. DeKalb County is rewriting its tree protection ordinance now. A defensible parcel-scale loss map delivered into an active policy process is worth considerably more than the same map delivered into a vacuum.
-
-### Limits — what this does not fix
-
-Detection does not plant trees. Even perfect enforcement of the current ordinance does not reach the city's 50% goal, because much of the loss is legal: permitted removal under permissive zoning, which the 2025 ordinance debate left largely intact when preservation standards were deferred to a future zoning rewrite.
-
-If reconciliation finds most loss is permitted, the honest conclusion is that **Atlanta's canopy problem is a policy-design problem wearing an enforcement costume** — and saying that clearly, with your own numbers behind it, is a stronger outcome than a slightly better IoU.
-
----
-
-## 5. Open decisions
-
-- **Geography.** City of Atlanta alone is cleaner (one ordinance, one permit system). Adding unincorporated DeKalb doubles data-access work but buys a live policy audience. *Recommendation: build on Atlanta, pitch DeKalb.*
-- **Permit records.** File the Open Records Act request in week one regardless of geography. If it returns nothing usable by December, the project narrows to loss mapping without reconciliation — viable, less interesting. Know early.
-- **Epoch pair.** 2023 against 2025, confirmed leaf-on per quad. Never 2021.
-- **First contact.** Giarrusso's group at Georgia Tech — one conversation settles whether the canopy raster is available and what the city has said it wants between studies.
 
 ---
 
