@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Working agreements for AI-assisted development on this repo. Read `context.md` for background, `canopy-ledger.md` for the problem definition, `permits-and-pixels.md` for the implementation spec.
+Working agreements for AI-assisted development on this repo. Read `canopy-ledger.md` for the problem definition and verified facts (§1.1), `permits-and-pixels.md` for the implementation spec. (`context.md` was removed on 2026-09-18.)
 
 > **Maintenance note.** Sections marked `TODO` are placeholders — fill them once the corresponding thing exists. Sections marked **STABLE** should not drift; if one becomes wrong, that is a real change to the project and deserves discussion, not a quiet edit. Suggestions for what to add over time are at the bottom.
 
@@ -16,7 +16,7 @@ The city currently measures canopy change in ~6-acre grid cells with a 1-acre th
 
 > Metro Atlanta has no method that identifies tree-canopy loss at the parcel scale, attributes it to a property and a date, and reconciles it against the tree-removal permit record.
 
-This is a yearlong 10th grade research project and the final outcome will be a website with a map that displays where illegal clearing is occuring. Deliverables are a working pipeline, a validated loss layer, and a briefing to at least one agency.
+This is a yearlong 10th grade research project and the final outcome will be a website with a map of detected canopy loss and its permit status (matched / ambiguous / unmatched) — framed as triage per non-negotiable 8, not as a map of violations. Whether it shows parcel-level results or only aggregates is still undecided (see "Worth considering" below). Deliverables are a working pipeline, a validated loss layer, and a briefing to at least one agency.
 
 ---
 
@@ -43,7 +43,7 @@ These are conclusions from scoping, not preferences. Changing one means revisiti
 | **NAIP** | National Agriculture Imagery Program — USDA public-domain aerial imagery, 4-band RGB+NIR, 60 cm in Georgia, flown every 2 years |
 | **NPU** | Neighborhood Planning Unit — Atlanta's citizen advisory districts; our unit for spatial cross-validation |
 | **DBH** | Diameter at breast height — how the ordinance measures trees. Permit required at ≥ 6 in on private property |
-| **Recompense** | The fee owed for removing a protected tree: $140 per diameter-inch under the ordinance effective 1 Jan 2026 |
+| **Recompense** | The fee owed for removing a protected tree: $140 per diameter-inch under the ordinance effective 1 Jan 2026. Unpermitted clearing: fines of $500 (first tree) / $1,000 (each after) plus replacement, or up to $200,000 per acre when the tree count can't be determined |
 | **MMU** | Minimum mapping unit — our 0.1-acre floor, which is 1,124 pixels at 60 cm |
 | **CHM** | Canopy height model. We use NAIP-CHM, a 0.6 m CONUS product derived from 2022–23 NAIP |
 | **DOQQ** | Digital Ortho Quarter Quad — NAIP's tile unit |
@@ -107,7 +107,7 @@ src/
   change/       # co-registration, differencing, filtering
   attribute/    # parcel join, cause classification, permit match
   eval/         # blocked CV, metrics, disaggregated reporting
-docs/           # canopy-ledger.md, permits-and-pixels.md, context.md
+docs/           # canopy-ledger.md, permits-and-pixels.md
 outputs/        # loss polygons, figures, tables
 tests/
 ```
@@ -116,8 +116,8 @@ tests/
 
 ## Working with Claude on this repo
 
-- **Cite or flag.** When adding a factual claim to any document, either cite a source we have verified or mark it `[unverified]`. `context.md` §6 lists what is known to be unverified and which public numbers are wrong — check it before repeating a figure.
-- **Do not invent accuracy numbers or dataset properties.** If a benchmark or a dataset field is not in `context.md`, say so rather than estimating.
+- **Cite or flag.** When adding a factual claim to any document, either cite a source we have verified or mark it `[unverified]`. `canopy-ledger.md` §1.1 is the claims register: verified figures with sources, plus numbers known to be wrong — check it before repeating a figure.
+- **Do not invent accuracy numbers or dataset properties.** If a benchmark or a dataset field is not in `canopy-ledger.md` §1.1 or cited in the spec, say so rather than estimating.
 - **Prefer editing the existing docs over creating new ones.** The four-document structure is intentional.
 - **When code and spec disagree, the spec is a hypothesis and the code is the evidence.** Update the spec.
 - TODO — add: preferred Python style, whether we use type hints, test expectations, notebook hygiene rules.

@@ -79,7 +79,7 @@ Reconcile detected clearing against the Tier 1 building-permit CSV alone. The cl
 | Caveat | Consequence |
 |---|---|
 | Public land is excluded | City tree data covers private property; Parks tracks public trees separately. Clip parks and city-owned parcels, or request Parks records separately. |
-| Dead/dying trees get free permits | "Permitted" ≠ "no canopy lost." A legitimate hazard removal is still real loss — your loss total and violation list are different numbers, reported separately. |
+| Dead/dying trees get their own permits (DDH) | "Permitted" ≠ "no canopy lost." A legitimate hazard removal is still real loss — your loss total and violation list are different numbers, reported separately. Scale: 47,102 trees were permitted as dead, dying or hazardous in 2018–2023, vs 55,634 for construction and 5,471 known unpermitted (GT 2023 report, citing the City's database). Whether DDH permits are free is `[unverified]`. |
 | Emergency removals are retroactive | Storm-damage cutting is allowed before the permit, with the permit due within five working days. Date-matching windows must be generous both directions. |
 | A permit is not a removal | Permits get issued and never acted on. The join tells you a removal was *authorized*; the imagery establishes it *happened*. |
 | Arborist reviews may be embedded in building records | Reporting suggests that since Aug 2020 arborist review rides inside building permit records. **Treat as a hypothesis, test against Accela in week two** — it changes which record types you scrape. |
@@ -299,6 +299,8 @@ Because in Miami, someone was, and they succeeded. In order of how much a skepti
 Your model measures canopy **area**. The ordinance prices **diameter inches**. There is no reliable way to recover DBH from overhead imagery — crown-to-stem allometry varies widely by species, age and growing conditions, and Atlanta's canopy is mixed hardwood and pine.
 
 **Do not publish a dollar figure per parcel as though it were a bill.** What you can defensibly publish is a range: canopy area lost, converted to an estimated recompense band using a stated stems-per-acre assumption and a stated mean DBH, with assumptions printed alongside. Frame it as an order-of-magnitude indication of what is at stake, and let the city's arborists produce the actual assessment from a site visit. That framing is more honest and more useful, because it positions your output as triage rather than a competing authority.
+
+**One exception worth knowing (verified 2026-09-23).** The ordinance itself falls back to area when trees can't be counted: unpermitted clearing is fined **up to $200,000 per acre** when the number of trees cut cannot be determined (Capital B, Jun 13, 2025; previously $60,000 per acre per the City Auditor's 2020 audit). So for whole-site clearings, canopy area maps onto the ordinance's own penalty rule. It is still a *maximum* the city assesses after inspection, not a figure to attach to a parcel — the per-parcel rule above stands. A secondary source says the city assumes 1,000 DBH inches per acre in these cases `[unverified]`.
 
 ## Failure modes
 
