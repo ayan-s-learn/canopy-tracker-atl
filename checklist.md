@@ -8,11 +8,11 @@ Updated **2026-10-14, America/Los_Angeles**. Integration owner: **Codex research
 
 **Recommended scope:** City of Atlanta first, including its parts in both counties; stratified pilot before citywide processing. Prefer 2023→2025 only after actual imagery checks; 2019→2023 is a fallback to investigate. Compare inexpensive methods before choosing U-Net. Measure endpoint-visible canopy loss, then many-to-many parcel overlap and coverage-aware three-way permit reconciliation. Public aggregates are the recommended initial presentation; publication granularity remains a decision.
 
-**Active assignment:** P00 initial planning and review only. No substantial pipeline implementation has begun. The next campaign starts with T01–T04; later tasks become ready only after their input/authority gates. All future execution items are unclaimed. No native `/goal`, watcher or automatic restart has been installed or tested.
+**Assignment status:** P00 initial planning and review is **complete**. No substantial pipeline implementation has begun. The next campaign starts with T01–T04; later tasks become ready only after their input/authority gates. All future execution items are unclaimed. No native `/goal`, watcher or automatic restart has been installed or tested.
 
 **What exists:** the working agreement/archive, [research direction](docs/research-direction.md), [bounded task contracts](docs/task-contracts.md), and [planning evidence](docs/research/2026-10-14-planning/findings.md). Live metadata checks and direct reading of the GT reports support the plan. **What does not exist:** an acquired geospatial dataset, validated reference labels, trained detector, measured accuracy, usable permit snapshot, operational pipeline, durable raster/model store or public release.
 
-**Jobs / recovery:** no training, inference, collectors or background jobs running. Planning probes/report downloads finished. Compact evidence is tracked here; raw GT PDFs are disposable and recoverable by URL/hash. No large-artifact durability has been demonstrated; T04 owns that gate. Recover this plan from this branch and its Git checkpoint, then reconcile actual branch/jobs/artifacts before claiming work.
+**Jobs / recovery:** no training, inference, collectors or background jobs running. Planning probes/report downloads finished. Full plan/evidence checkpoint **`f1863c7` was pushed and verified on the remote campaign branch**; this completion-state update follows it in branch history. Raw GT PDFs are disposable and recoverable by URL/hash. No large-artifact durability has been demonstrated; T04 owns that gate. Recover from the latest campaign branch, then reconcile actual branch/jobs/artifacts before claiming work.
 
 **Human blockers:** none for the ready first wave; no active HA requests. Likely later needs are independent annotation, unavailable exports/storage access, publication/communications authorization and briefing delivery. Agents must prepare those packages first; see T05/T09/T18/T22/T23. No unpaid/paid capacity or external response is presumed.
 
@@ -41,7 +41,7 @@ Each ID links its scope, outputs, acceptance checks, write ownership, resource c
 
 | ID | Execution item / accountable role | Prerequisites | Status / claimant | Evidence |
 |---|---|---|---|---|
-| P00 | Initial plan / integration owner | Current agreement + archive | active — research lead, final review | [Findings](docs/research/2026-10-14-planning/findings.md), [review](docs/research/2026-10-14-planning/review.md) |
+| P00 | Initial plan / integration owner | Current agreement + archive | complete — research lead | [Findings](docs/research/2026-10-14-planning/findings.md), [accepted review/checks](docs/research/2026-10-14-planning/review.md); `f1863c7` |
 | [T01](docs/task-contracts.md#t01--verify-candidate-imagery-intervals) | Imagery access, dates and samples / imagery | P00 | ready — unclaimed | — |
 | [T02](docs/task-contracts.md#t02--establish-geography-parcels-and-comparison-layers) | Boundary, parcels, GT layers / geography | P00 | ready — unclaimed | — |
 | [T03](docs/task-contracts.md#t03--audit-permit-sources-and-temporal-meaning) | Permit feasibility and rules / records | P00 | ready — unclaimed | — |
@@ -121,7 +121,7 @@ provision paid services or an autonomous scheduler. Preserve checks/checkpoint.
 
 ## Completion and next resume
 
-P00 checks: archive preserved; primary GT reports examined; bounded catalog observations recorded; scientific review obtained; coherent direction and bounded task graph written. Final independent plan review, link/dependency checks, diff review and pushed checkpoint are pending. [Detailed check/review record](docs/research/2026-10-14-planning/review.md).
+P00 checks **passed**: archive preserved; primary GT reports examined; bounded catalog observations recorded; independent evidence and final plan reviews accepted; 51 local links/anchors and 28 task contracts checked; dependency graph acyclic; script syntax, quantitative arithmetic and diff checked; full plan/evidence checkpoint pushed and remotely verified. [Detailed check/review record](docs/research/2026-10-14-planning/review.md).
 
 At the next execution start: inspect remote branch and working tree, read this file/HA queue, reconcile claims/jobs/artifacts, claim one ready ID, and follow its contract. Do not start all tasks merely because the list exists. Initial planning completion does not complete the research project.
 

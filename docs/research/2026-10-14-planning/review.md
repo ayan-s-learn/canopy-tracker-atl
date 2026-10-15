@@ -40,6 +40,6 @@ The reviewer also corrected the G3 task range and expansion-task reference. Foll
 - Local Markdown paths/anchors: 51 checked successfully; all 28 execution contracts appear once in the register and contain the six required contract fields.
 - Task dependency graph: reviewed independently; automated traversal of all 28 completion dependencies found no cycle, including the conditional-model disposition and T14's real-event dependency.
 - Document diff and script syntax checked; source probe counts/date ranges and GT arithmetic reproduced. No production artifacts or raw PDFs staged; only public unsigned metadata is retained.
-- Remote branch reconciliation, meaningful commit and verified pushed checkpoint: pending.
+- Remote branch reconciled at `817a84a` before committing. Full plan/evidence committed as `f1863c77409c1b5a85f708cb66f397fd8fc1b004`, pushed to `chore/autonomous-harness`, and verified with `git ls-remote`. The completion-state update follows that checkpoint; retrieve the latest campaign branch on resume.
 
 No production code/model accuracy tests are claimed. Checks are appropriate to a planning deliverable and its bounded metadata evidence script. No live data source is rerun merely to produce a green check.
