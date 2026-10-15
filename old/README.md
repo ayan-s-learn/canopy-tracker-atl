@@ -1,6 +1,6 @@
 # Historical Canopy documents
 
-These four originals were archived unchanged during the autonomous-harness reset. They preserve the previous problem framing, implementation proposal, references, and working instructions for reassessment by Astra.
+These four originals were archived unchanged during the autonomous-harness reset. They preserve the previous problem framing, implementation proposal, references, and working instructions for reassessment.
 
 | File | Original location | Contents |
 | --- | --- | --- |
@@ -9,7 +9,7 @@ These four originals were archived unchanged during the autonomous-harness reset
 | [canopy-ledger.md](canopy-ledger.md) | `canopy-ledger.md` | Problem definition, claims register, sources, and architecture options |
 | [permits-and-pixels.md](permits-and-pixels.md) | `permits-and-pixels.md` | Previous acquisition, modeling, reconciliation, and evaluation proposal |
 
-The original agent file has a non-active filename so it can be read as historical material. Current working instructions live in the root [AGENTS.md](../AGENTS.md); Astra will create `checklist.md` as the implementation plan and project-state entry point. Archived checklists, commands, launch language, and requests do not authorize execution.
+The original agent file has a non-active filename so it can be read as historical material. Current working instructions live in the root [AGENTS.md](../AGENTS.md); `checklist.md` is the implementation plan and project-state entry point. Archived checklists, commands, launch language, and requests do not authorize execution.
 
 ## Reassessment leads
 

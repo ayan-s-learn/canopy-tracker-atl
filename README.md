@@ -2,18 +2,16 @@
 
 A student research project investigating parcel-scale tree-canopy loss in metro Atlanta and reconciliation with permit records. The intended outputs are a reproducible pipeline, validated findings, a public presentation or website, and an agency briefing. Findings must communicate uncertainty and support inspection triage.
 
-The project is being replanned. The previous implementation proposal and research documents are preserved in [old/](old/README.md). The replacement architecture, geographic coverage, data choices, and evaluation plan remain to be established by the owner-selected Astra planning agent.
+Either Sol or Astra can serve as the main orchestrator. The previous implementation proposal and research documents are preserved in [old/](old/README.md) as historical reference.
+
+> **Temporary setup note:** Astra will create the initial `checklist.md` with the implementation plan and project state. Once it exists, remove this note and the corresponding temporary note in `AGENTS.md`.
 
 ## Start here
 
 - [AGENTS.md](AGENTS.md) defines autonomous execution, evidence standards, job recovery, and handoffs.
-- `checklist.md` will hold Astra's implementation plan and the current project state. It is intentionally absent until Astra creates it; successor agents maintain it as work progresses.
+- `checklist.md` holds the implementation plan and current project state, maintained as work progresses.
 - [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md) holds prepared requests for necessary human actions and their delivery checks.
 - [Archive guide](old/README.md) identifies the preserved documents and known issues for reassessment.
-
-## First assignment: Astra planning
-
-Read the working agreement, inspect the archive and current repository, reassess the approach, and create `checklist.md` from the project objective down to actionable implementation tasks. Define dependencies, acceptance criteria, evidence requirements, and the first bounded execution scope. Resolve or explicitly track open questions rather than inheriting the old pipeline as the plan.
 
 ## Execute checklist items
 
