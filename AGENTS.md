@@ -8,19 +8,9 @@ The owner has authorized replacing the previous implementation plan. `old/` is h
 
 Follow current owner instructions, this working agreement, and the active scope recorded in `checklist.md`. Surface conflicts rather than silently changing the objective or weakening acceptance criteria. Distinguish project commitments from testable implementation choices.
 
-## First assignment: planning with Astra
+The main orchestrator may be either Sol or Astra. It owns task selection, delegation, integration, and project-state updates; continue the same plan and evidence across model handoffs.
 
-The owner-selected Astra agent owns the initial high-level reassessment and creation of `checklist.md`. This harness change leaves that file for Astra; it does not launch data collection, model training, scheduled services, or publication.
-
-The initial planning assignment is to:
-
-1. Inspect the archived evidence, source references, assumptions, contradictions, and actual repository artifacts. Reconsider the implementation independently.
-2. Define the research questions, intended deliverables, geographic and temporal coverage, exclusions, and success criteria. Separate established facts, assumptions, and unresolved questions.
-3. Propose and justify the architecture, data acquisition, labeling, evaluation, permit reconciliation, and presentation approach. Investigate real feasibility questions with bounded checks when necessary; avoid speculative infrastructure.
-4. Create `checklist.md` with milestones, dependencies, actionable tasks with stable IDs, acceptance checks, and evidence links. Make execution items suitable for individual bounded `/goal` runs and identify which can proceed in parallel. Identify human work, resource decisions, and the first bounded execution scope.
-5. Leave a concise current-state summary and an exact next action so successor agents can execute the plan without reconstructing the conversation.
-
-Complete this planning step before substantial implementation. Existing authority covers preparing and recording the plan; seek an owner decision only for unresolved scope or actions beyond that authority. Creating a checklist does not itself authorize spending, external communications, or public deployment.
+> **Temporary setup note:** Astra will create the initial `checklist.md` with the implementation plan and project state. Once it exists, remove this note and the corresponding temporary note in `README.md`.
 
 ## Start or resume
 
@@ -30,13 +20,11 @@ Before choosing work:
 2. Reconcile running jobs, saved outputs, delivered human inputs, and interrupted tasks. Validate existing artifacts before repeating work or launching a replacement job.
 3. Choose the next useful task within the active scope. State its question, expected artifact, acceptance checks, resource bounds, and stopping condition before substantial execution.
 
-If `checklist.md` is absent, the initial planning assignment remains pending. An agent assigned to implementation should report that dependency and leave useful bounded findings for Astra rather than inventing a competing implementation roadmap. Explicit owner-directed repository or harness maintenance can proceed independently.
-
 Trust provisioned tools enough to begin useful work. Diagnose actual failures and newly needed capabilities; avoid repeated environment inventories, toy preflights, hidden-control searches, or deliberate restart experiments.
 
 ## Checklist and work organization
 
-`checklist.md` is the single project-state entry point. Astra creates it and successor agents keep it current. Do not create a competing root state file or duplicate its narrative across documents.
+`checklist.md` is the single project-state entry point. The orchestrator and successor agents keep it current. Do not create a competing root state file or duplicate its narrative across documents.
 
 Keep its operational summary compact:
 
@@ -84,7 +72,7 @@ Honor owner stop instructions and platform limits. Use supported runtime capabil
 - Define evaluation units, geographically separated development/evaluation data, metrics, uncertainty, and acceptance criteria before inspecting protected evaluation results. Keep pseudo-labels distinct from independent validation. Record variants and avoid repeatedly treating inspected evaluation data as unseen.
 - Evaluate canopy classification, detected change, parcel attribution, and permit reconciliation separately as applicable. Measure performance across relevant neighborhood conditions and income bands; record limitations in coverage and sample size.
 - Prioritize precision and honest uncertainty. Permit reconciliation must retain matched, ambiguous, and unmatched outcomes. Missing records do not establish an unlawful removal. Public output is inspection triage; do not label parcels in violation or attach a dollar amount as an assessed bill.
-- The intended research scope is canopy loss. Any proposal to add gain or net-change reporting must explicitly revisit scope and validation. Astra must reassess epoch suitability, per-tile dates, registration, domain shift, and jurisdiction-specific permit coverage instead of assuming the archive solved them.
+- The intended research scope is canopy loss. Any proposal to add gain or net-change reporting must explicitly revisit scope and validation. Reassess epoch suitability, per-tile dates, registration, domain shift, and jurisdiction-specific permit coverage instead of assuming the archive solved them.
 - Run checks appropriate to the change. At consequential design decisions and before promoting material findings, obtain independent review when supported. Give reviewers raw evidence and a concrete question; require reproduction of central quantitative findings. Record unresolved objections and let them limit claims. Review depth should follow the risk of changing the conclusion.
 - Mark a task complete only after its acceptance checks pass and its necessary artifacts are recoverable. Preserve negative and inconclusive findings. Missing evidence, an attractive map, or agreement among agents cannot substitute for validation.
 
