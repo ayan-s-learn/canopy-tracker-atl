@@ -1,6 +1,6 @@
 # Canopy Tracker ATL — plan and current state
 
-Updated **2026-10-14, America/Los_Angeles**. Integration owner: **Codex research lead (this chat)**. Campaign branch: **`chore/autonomous-harness`**. Current revision work: **`chore/decentralized-planning`**, based on `c0f4a78`. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
+Updated **2026-10-14, America/Los_Angeles**. Integration owner: **Codex research lead (this chat)**. Campaign branch: **`chore/autonomous-harness`**. Last revision: **`chore/decentralized-planning`**, reviewed and merged at `02d27eb`. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
 
 ## Objective and current evidence
 
@@ -8,7 +8,7 @@ Build a reproducible, independently evaluated canopy-loss investigation with par
 
 Current direction remains **City of Atlanta first**, including its parts in both counties, with a varied pilot before regional findings. Prefer 2023→2025 if usable; investigate 2019→2023 or another justified fallback. Compare practical methods before committing to U-Net. Measure endpoint-visible loss, then many-to-many parcel overlap and coverage-aware three-way permit reconciliation. These methods/intervals are revisable hypotheses; [research direction](docs/research-direction.md) preserves the scientific standards and tradeoffs.
 
-**P00 is complete:** archive/GT review, live catalog inquiry, initial plan and independent review. Evidence is in [planning findings](docs/research/2026-10-14-planning/findings.md) and [original review](docs/research/2026-10-14-planning/review.md); checkpoint `c0f4a78` preserves that version. **P01 is active:** revise planning for local agent autonomy, with shared integration and detail only for ready work, as clarified by the owner. See [D02 and review record](docs/decisions/decentralized-planning.md). No substantial pipeline implementation has begun.
+**P00 is complete:** archive/GT review, live catalog inquiry, initial plan and independent review. Evidence is in [planning findings](docs/research/2026-10-14-planning/findings.md) and [original review](docs/research/2026-10-14-planning/review.md); checkpoint `c0f4a78` preserves that version. **P01 is complete:** local agent autonomy, shared integration and detail only for ready work, as clarified by the owner; independently reviewed and merged/pushed by the Sol agent. See [D02 and review record](docs/decisions/decentralized-planning.md). No substantial pipeline implementation has begun.
 
 **Known:** GT already maps fine-resolution canopy, uses ML/manual corrections and compares some permits; our proposed contribution is validated smaller-event analysis and a reproducible evidence trail. The saved rectangle query returned 25 October 7–8, 2023 NAIP items and no 2025 items; actual recent pixels remain unacquired. Permit access/completeness is unproven. These are scoped observations, not full-city readiness.
 
@@ -106,6 +106,6 @@ smallest action; do not call an unproven recovery path durable.
 
 ## Checkpoint and next resume
 
-P00's scientific/evidence review remains accepted. P01's decentralization diff passed Sol review with no blocking findings and passed document consistency checks; the authorized merge into `chore/autonomous-harness` is pending. [D02](docs/decisions/decentralized-planning.md) records changes/review and the temporary Git-owner handoff for merge. No implementation tasks have been launched during this revision.
+P00's scientific/evidence review remains accepted. P01 passed Sol review with no blocking findings and document checks; the Sol agent merged reviewed commit `71a1040` into `chore/autonomous-harness` at **`02d27eb`**, pushed it and verified the remote SHA. Git ownership returned to the research lead; this completion-state update follows the merge. [D02](docs/decisions/decentralized-planning.md) records the review/integration evidence. No implementation tasks have been launched during this revision.
 
 On resume: fetch/reconcile the campaign branch, read state/HA queue, reconcile claims/jobs/artifacts, then select useful ready work. Accept supported successor tasks when the roadmap changes; do not replay completed inquiries or require all historical IDs to be executed. Full project completion still needs validated findings with honest reconciliation limits, the authorized public deliverable, an actual agency briefing and reproducible maintenance handoff. A prototype, negative feasibility result or superseded task does not fulfill those deliverables.
