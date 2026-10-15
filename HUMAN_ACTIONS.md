@@ -26,7 +26,7 @@ For delivered data, check integrity, schema, expected/delivered/missing coverage
 
 If acceptance fails, keep the action active under the same ID and request the smallest precise correction. Move it to Fulfilled only after verification. Preserve cancelled/superseded actions with their reason and replacement ID; cancellation is not fulfillment.
 
-If all useful work is blocked, checkpoint and name the blocking IDs and exact resume action in `checklist.md`. Do not treat a human blocker as project completion. A new delivery or job event is a reason to reconcile the saved state; unchanged blockers require no repeated polling.
+If all useful work is blocked, follow the working agreement's [checkpoint and notification rules](AGENTS.md#human-actions).
 
 ## Action template
 
