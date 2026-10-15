@@ -58,4 +58,10 @@ The Sol agent independently reviewed the concrete diff across all seven changed 
 
 Checks passed: 36 active-document relative links/anchors; all 28 stable future/ready IDs retained once; four ready briefs; balanced code fences; no whitespace errors. The original archive and planning source evidence are unchanged relative to `04adfc5`. Future scenario checks above were also reviewed. No software tests or live-data rechecks were needed for this documentation-only revision.
 
-The reviewed subbranch is ready to commit/publish and merge into the campaign branch. Merge and remote checkpoint verification remain pending; the Sol reviewer will temporarily own shared-checkout Git during that operation. No other agent may mutate Git concurrently. The research lead resumes integration ownership after the handoff.
+Reviewed commit `5a8486fad7f268383246811bbcac7bc0146f276a` was published on `chore/decentralized-planning`. The Sol reviewer took exclusive shared-checkout Git ownership, verified the campaign base had not changed, and merged with a merge commit:
+
+- Campaign merge: **`cf65326b98ba4ac1f1ba6ecdf9b925a11886d2d5`** on `chore/autonomous-harness`.
+- Parents: original campaign `04adfc5e9f8a7e5fea83438556d9f875c3eafa8f` and reviewed subbranch `5a8486fad7f268383246811bbcac7bc0146f276a`.
+- Sol pushed the campaign branch and verified `git ls-remote` returned the identical merge SHA. Working tree was clean and the merged diff passed the whitespace check. The subbranch was retained; `main` was untouched.
+
+Git ownership then returned to the research lead for this completion-state record. P01 is accepted and integrated; the latest campaign branch includes this subsequent state update. No implementation work or automated execution service was started.
