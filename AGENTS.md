@@ -10,8 +10,6 @@ Follow current owner instructions, this working agreement, and the active scope 
 
 The main orchestrator may be either Sol or Astra. It owns task selection, delegation, integration, and project-state updates; continue the same plan and evidence across model handoffs.
 
-> **Temporary setup note:** Astra will create the initial `checklist.md` with the implementation plan and project state. Once it exists, remove this note and the corresponding temporary note in `README.md`.
-
 ## Start or resume
 
 Before choosing work:
