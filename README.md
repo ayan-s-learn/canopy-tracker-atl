@@ -4,12 +4,10 @@ A student research project investigating parcel-scale tree-canopy loss in metro 
 
 Either Sol or Astra can serve as the main orchestrator. The previous implementation proposal and research documents are preserved in [old/](old/README.md) as historical reference.
 
-> **Temporary setup note:** Astra will create the initial `checklist.md` with the implementation plan and project state. Once it exists, remove this note and the corresponding temporary note in `AGENTS.md`.
-
 ## Start here
 
 - [AGENTS.md](AGENTS.md) defines autonomous execution, evidence standards, job recovery, and handoffs.
-- `checklist.md` holds the implementation plan and current project state, maintained as work progresses.
+- [checklist.md](checklist.md) holds the implementation plan and current project state, maintained as work progresses.
 - [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md) holds prepared requests for necessary human actions and their delivery checks.
 - [Archive guide](old/README.md) identifies the preserved documents and known issues for reassessment.
 
