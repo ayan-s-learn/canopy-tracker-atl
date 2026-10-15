@@ -4,7 +4,7 @@ Use this queue when a necessary part of the authorized plan requires the owner o
 
 ## Active actions
 
-None. This harness reset creates no active request. The owner-selected Astra agent's first assignment is described in [AGENTS.md](AGENTS.md#first-assignment-planning-with-astra).
+None.
 
 ## How to use the queue
 
