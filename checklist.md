@@ -1,6 +1,6 @@
 # Canopy Tracker ATL — plan and current state
 
-Updated **2026-10-14, America/Los_Angeles**. Integration owner: **Codex research lead (this chat)**. Campaign branch: **`chore/autonomous-harness`**. Last revision: **`chore/decentralized-planning`**, reviewed and merged at `02d27eb`. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
+Updated **2026-10-15 UTC**. Integration owner: **Codex research lead (this chat)**. Campaign branch: **`chore/autonomous-harness`**. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
 
 ## Objective and current evidence
 
@@ -20,15 +20,11 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 Workstream owners select useful work, choose methods, split/revise local tasks and coordinate directly with affected peers within existing scope and authority. The integrator keeps shared interfaces, state, resource conflicts, evidence promotion and campaign merges coherent. It is not a permission queue for every method or batch.
 
-Before substantive work, confirm a visible claim/write reservation and record the bounded objective, actual inputs, output/checks, resources and recovery. An established workstream reservation permits the owner to allocate its own subtasks. Keep linked evidence current; the integrator incorporates concise updates or delegates non-overlapping checklist sections. Resolve duplicate claims and shared-write conflicts before proceeding. Independent checkouts may own their Git operations; a shared checkout has one Git writer.
-
-**Ready briefs are detailed; future work is a roadmap.** [Task briefs and sketches](docs/task-contracts.md) retain stable IDs for continuity, not a fixed sequence. Expand a sketch when it becomes useful, then state real start inputs and acceptance evidence. A compatible fixture or validated intermediate may support an early start; it cannot substitute for real-world acceptance. Pin intermediate revision/hash and producer/consumer checks even if its branch is not merged yet. Combined promotion still needs integration checks.
-
-Revise with a short reason and impact on consumers. Preserve IDs, artifacts, unresolved checks/blockers and predecessor/successor links. `Superseded`, `not selected`, `blocked` and `waiting_for_job` are not complete. Do not silently weaken evidence standards, erase negative results, rewrite a user's active native goal or retune on protected evaluation. See [decision rights](AGENTS.md#local-decisions-and-plan-changes).
+**Ready briefs are detailed; future work is a roadmap.** [Task briefs and sketches](docs/task-contracts.md) retain stable IDs for continuity, not a fixed sequence. Expand a sketch when useful and distinguish starting inputs from acceptance evidence. Follow the working agreement's [decision rights](AGENTS.md#local-decisions-and-plan-changes) and [claim, resource, intermediate-output and integration rules](AGENTS.md#checklist-item-goals-and-parallel-work).
 
 ## Ready work and ownership
 
-The following four inquiries remain independently claimable. Each links its starting evidence, expected artifact, checks and suggested write paths. **No workstream is claimed yet; no execution result exists for these items.** Owners choose justified finite launch budgets from actual capacity/provider limits; there is no project-wide two-hour default or fixed concurrency/GPU count. Coordinate the aggregate allocation and existing cost authority before simultaneous jobs.
+The following four inquiries remain independently claimable. Each brief specifies inputs, outputs, checks and suggested write paths. Set finite launch budgets from actual capacity/provider limits and coordinate shared resources before simultaneous jobs.
 
 | ID | Useful next inquiry | Status / claimant | Starting evidence / next action |
 |---|---|---|---|
@@ -37,7 +33,7 @@ The following four inquiries remain independently claimable. Each links its star
 | [T03](docs/task-contracts.md#t03--audit-permit-sources-and-temporal-meaning) | Permit feasibility, coverage and semantics | ready — unclaimed | Recorded errors/official guidance; inspect accessible source metadata and diverse records |
 | [T04](docs/task-contracts.md#t04--establish-a-minimal-reproducible-environment-and-durable-artifact-path) | Reproducible operation and durable storage | ready — unclaimed | Provisioned environment/permitted fixture; prove environment and storage capabilities separately |
 
-A ready brief is not a scheduled job. Record the actual owner, branch/checkout, write reservation, launch bounds, evidence link and status here (or in a reserved section) when claimed. Use an existing linked record rather than duplicating logs. Check remote changes and running artifacts before resuming.
+A ready brief is not a scheduled job. When claiming one, record its owner, branch/checkout, write reservation, status and linked launch/evidence record here or in a reserved section.
 
 ## Future workstreams — revisable, unclaimed
 
@@ -71,41 +67,34 @@ Protected geography must be reserved before training/tuning contaminates it. Fre
 
 ## First launch prompts
 
-Use the following with the matching ready brief after claiming visible ownership and setting actual run bounds. Native `/goal` is optional; ordinary bounded prompts work too. Branch names and module paths are chosen/coordinated at launch.
+Each prompt uses the matching [ready brief](docs/task-contracts.md). Read AGENTS.md, this checklist and HUMAN_ACTIONS.md; confirm visible ownership and finite launch bounds before execution. Native `/goal` is optional; ordinary bounded prompts work too.
 
 ```text
-/goal Complete T01's imagery-feasibility inquiry. Read AGENTS.md, checklist.md,
-HUMAN_ACTIONS.md and the T01 brief. Confirm your visible claim/write reservation,
-choose a justified bounded method, reuse existing evidence, and coordinate
-intermediates with the geography/runtime owners. Preserve checks and recovery;
-record any local revision or honest blocker without weakening the objective.
+/goal Complete T01 under its ready brief and AGENTS.md. Reuse saved source
+evidence, test actual paired pixels, and share checked intermediates with the
+geography/runtime owners. Record suitability, access limits and the next action.
 ```
 
 ```text
-/goal Complete T02's geography/parcel inquiry under its ready brief. Read the
-working agreement and current state, claim disjoint ownership, set finite
-bounds, and share validated boundary/schema evidence as soon as useful.
-Preserve source/vintage limits and record revisions, checks and recovery.
+/goal Complete T02 under its ready brief and AGENTS.md. Retrieve and validate
+the jurisdiction boundary, share it with T01, and assess parcel/GT sources.
+Record source, vintage and rights limitations.
 ```
 
 ```text
-/goal Complete T03's permit-source inquiry under its ready brief. Read the
-working agreement and current state, confirm your claim, and choose bounded
-source checks. Keep source coverage distinct from record absence; coordinate
-schemas/request gaps directly with affected owners. No unauthorized contact.
-Preserve evidence, limitations and the exact next action.
+/goal Complete T03 under its ready brief and AGENTS.md. Test permit access,
+coverage and semantics; distinguish missing sources from absent records.
+Share schemas and request gaps with affected owners. No unauthorized contact.
 ```
 
 ```text
-/goal Complete T04's reproducibility/storage inquiry under its ready brief.
-Read the working agreement and current state, reserve shared/root writes, and
-choose finite fixture/setup limits. Publish checked environment/storage
-intermediates separately. If a capability is missing, prepare the concrete
-smallest action; do not call an unproven recovery path durable.
+/goal Complete T04 under its ready brief and AGENTS.md. Demonstrate a small
+reproducible geospatial operation and artifact recovery. Publish environment
+and storage checks separately; prepare a concrete action for missing capability.
 ```
 
 ## Checkpoint and next resume
 
-P00's scientific/evidence review remains accepted. P01 passed Sol review with no blocking findings and document checks; the Sol agent merged reviewed commit `71a1040` into `chore/autonomous-harness` at **`02d27eb`**, pushed it and verified the remote SHA. Git ownership returned to the research lead; this completion-state update follows the merge. [D02](docs/decisions/decentralized-planning.md) records the review/integration evidence. No implementation tasks have been launched during this revision.
+Planning checkpoint: `01d8ceb`, including the Sol-reviewed P01 merge; [D02](docs/decisions/decentralized-planning.md) retains review and integration evidence. The setup-clarity pass consolidates repeated operating instructions and launch text; research tasks remain unlaunched. Sol review accepted the cleanup; link/anchor, task-ID, fence and whitespace checks passed.
 
-On resume: fetch/reconcile the campaign branch, read state/HA queue, reconcile claims/jobs/artifacts, then select useful ready work. Accept supported successor tasks when the roadmap changes; do not replay completed inquiries or require all historical IDs to be executed. Full project completion still needs validated findings with honest reconciliation limits, the authorized public deliverable, an actual agency briefing and reproducible maintenance handoff. A prototype, negative feasibility result or superseded task does not fulfill those deliverables.
+On resume, follow [Start or resume](AGENTS.md#start-or-resume), then claim useful ready work. Full project completion still requires validated findings with honest reconciliation limits, the authorized public deliverable, an actual agency briefing and a reproducible maintenance handoff.
