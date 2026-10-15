@@ -1,0 +1,5600 @@
+{
+  "purpose": "bounded planning metadata screen",
+  "bbox_is_not_city_boundary": true,
+  "max_response_bytes": 4194304,
+  "results": [
+    {
+      "name": "pc_naip_collection",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip",
+      "checked_at_utc": "2026-10-15T04:03:14.784541+00:00",
+      "status": 200,
+      "final_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip",
+      "content_type": "application/json; charset=utf-8",
+      "bytes_read": 4670,
+      "sha256": "e3893a3da0f6168339579b278048d137bb7deda56af2e6d363288cf058b7b4af",
+      "truncated": false,
+      "metadata": {
+        "id": "naip",
+        "type": "Collection",
+        "links": [
+          {
+            "rel": "items",
+            "type": "application/geo+json",
+            "href": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip/items"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://planetarycomputer.microsoft.com/api/stac/v1/"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://planetarycomputer.microsoft.com/api/stac/v1/"
+          },
+          {
+            "rel": "self",
+            "type": "application/json",
+            "href": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+          },
+          {
+            "rel": "license",
+            "href": "https://www.fsa.usda.gov/help/policies-and-links/",
+            "title": "Public Domain"
+          },
+          {
+            "rel": "describedby",
+            "href": "https://planetarycomputer.microsoft.com/dataset/naip",
+            "type": "text/html",
+            "title": "Human readable dataset overview and reference"
+          },
+          {
+            "rel": "http://www.opengis.net/def/rel/ogc/1.0/queryables",
+            "type": "application/schema+json",
+            "title": "Queryables",
+            "href": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip/queryables"
+          },
+          {
+            "rel": "describedby",
+            "href": "https://planetarycomputer.microsoft.com/dataset/naip",
+            "title": "Human readable dataset overview and reference",
+            "type": "text/html"
+          }
+        ],
+        "title": "NAIP: National Agriculture Imagery Program",
+        "assets": {
+          "thumbnail": {
+            "href": "https://ai4edatasetspublicassets.blob.core.windows.net/assets/pc_thumbnails/naip.png",
+            "type": "image/png",
+            "roles": [
+              "thumbnail"
+            ],
+            "title": "NAIP thumbnail"
+          },
+          "geoparquet-items": {
+            "href": "abfs://items/naip.parquet",
+            "type": "application/x-parquet",
+            "roles": [
+              "stac-items"
+            ],
+            "title": "GeoParquet STAC items",
+            "description": "Snapshot of the collection's STAC items exported to GeoParquet format.",
+            "msft:partition_info": {
+              "is_partitioned": true,
+              "partition_frequency": "AS"
+            },
+            "table:storage_options": {
+              "account_name": "pcstacitems"
+            }
+          }
+        },
+        "extent": {
+          "spatial": {
+            "bbox": [
+              [
+                -124.784,
+                24.744,
+                -66.951,
+                49.346
+              ],
+              [
+                -156.003,
+                19.059,
+                -154.809,
+                20.127
+              ],
+              [
+                -67.316,
+                17.871,
+                -65.596,
+                18.565
+              ],
+              [
+                -64.94,
+                17.622,
+                -64.56,
+                17.814
+              ]
+            ]
+          },
+          "temporal": {
+            "interval": [
+              [
+                "2010-01-01T00:00:00Z",
+                "2023-12-31T00:00:00Z"
+              ]
+            ]
+          }
+        },
+        "license": "proprietary",
+        "keywords": [
+          "NAIP",
+          "Aerial",
+          "Imagery",
+          "USDA",
+          "AFPO",
+          "Agriculture",
+          "United States"
+        ],
+        "providers": [
+          {
+            "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+            "name": "USDA Farm Service Agency",
+            "roles": [
+              "producer",
+              "licensor"
+            ]
+          },
+          {
+            "url": "https://www.esri.com/",
+            "name": "Esri",
+            "roles": [
+              "processor"
+            ]
+          },
+          {
+            "url": "https://planetarycomputer.microsoft.com",
+            "name": "Microsoft",
+            "roles": [
+              "host",
+              "processor"
+            ]
+          }
+        ],
+        "summaries": {
+          "gsd": [
+            0.3,
+            0.6,
+            1
+          ],
+          "eo:bands": [
+            {
+              "name": "Red",
+              "common_name": "red",
+              "description": "visible red"
+            },
+            {
+              "name": "Green",
+              "common_name": "green",
+              "description": "visible green"
+            },
+            {
+              "name": "Blue",
+              "common_name": "blue",
+              "description": "visible blue"
+            },
+            {
+              "name": "NIR",
+              "common_name": "nir",
+              "description": "near-infrared"
+            }
+          ]
+        },
+        "description": "The [National Agriculture Imagery Program](https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/) (NAIP) \nprovides U.S.-wide, high-resolution aerial imagery, with four spectral bands (R, G, B, IR). \nNAIP is administered by the [Aerial Field Photography Office](https://www.fsa.usda.gov/programs-and-services/aerial-photography/) (AFPO) \nwithin the [US Department of Agriculture](https://www.usda.gov/) (USDA). \nData are captured at least once every three years for each state. \nThis dataset represents NAIP data from 2010-present, in [cloud-optimized GeoTIFF](https://www.cogeo.org/) format.\nYou can visualize the coverage of current and past collections [here](https://naip-usdaonline.hub.arcgis.com/). \n",
+        "item_assets": {
+          "image": {
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "title": "RGBIR COG tile",
+            "eo:bands": [
+              {
+                "name": "Red",
+                "common_name": "red"
+              },
+              {
+                "name": "Green",
+                "common_name": "green"
+              },
+              {
+                "name": "Blue",
+                "common_name": "blue"
+              },
+              {
+                "name": "NIR",
+                "common_name": "nir",
+                "description": "near-infrared"
+              }
+            ]
+          },
+          "metadata": {
+            "type": "text/plain",
+            "roles": [
+              "metadata"
+            ],
+            "title": "FGDC Metdata"
+          },
+          "thumbnail": {
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ],
+            "title": "Thumbnail"
+          }
+        },
+        "msft:region": "westeurope",
+        "stac_version": "1.0.0",
+        "msft:container": "naip",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+          "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+        ],
+        "storage:schemes": {
+          "azure": {
+            "type": "ms-azure",
+            "region": "westeurope",
+            "account": "naipeuwest",
+            "platform": "https://{account}.blob.core.windows.net",
+            "container": "naip"
+          }
+        },
+        "msft:storage_account": "naipeuwest",
+        "msft:short_description": "NAIP provides US-wide, high-resolution aerial imagery.  This dataset includes NAIP images from 2010 to the present."
+      }
+    },
+    {
+      "name": "pc_atl_bbox_2019",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-84.552%2C33.647%2C-84.289%2C33.887&datetime=2019-01-01T00%3A00%3A00Z%2F2019-12-31T23%3A59%3A59Z&limit=100",
+      "checked_at_utc": "2026-10-15T04:03:15.407370+00:00",
+      "status": 200,
+      "final_url": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-84.552%2C33.647%2C-84.289%2C33.887&datetime=2019-01-01T00%3A00%3A00Z%2F2019-12-31T23%3A59%3A59Z&limit=100",
+      "content_type": "application/geo+json; charset=utf-8",
+      "bytes_read": 73175,
+      "sha256": "99472c3d37433d6389064d26da2e2ba87614df6ef62e2b3963c18b1638dcd475",
+      "truncated": false,
+      "returned_items": 25,
+      "has_next_page": false,
+      "items": [
+        {
+          "id": "ga_m_3308420_ne_16_060_20191004_20200102",
+          "bbox": [
+            -84.566488,
+            33.684385,
+            -84.495978,
+            33.753123
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-10-04T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              725580.0,
+              3729972.0,
+              731940.0,
+              3737448.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725580.0,
+              0.0,
+              -0.6,
+              3737448.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308420_ne_16_060_20191004.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308420_ne_16_060_20191004.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308420_ne_16_060_20191004.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308420_ne_16_060_20191004_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308420_ne_16_060_20191004_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308412_se_16_060_20191004_20200102",
+          "bbox": [
+            -84.566471,
+            33.74692,
+            -84.495972,
+            33.815604
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-10-04T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              725418.0,
+              3736908.0,
+              731772.0,
+              3744378.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10590
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725418.0,
+              0.0,
+              -0.6,
+              3744378.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308412_se_16_060_20191004.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308412_se_16_060_20191004.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308412_se_16_060_20191004.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308412_se_16_060_20191004_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308412_se_16_060_20191004_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308412_ne_16_060_20191004_20200102",
+          "bbox": [
+            -84.566516,
+            33.809401,
+            -84.495964,
+            33.878086
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-10-04T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              725250.0,
+              3743838.0,
+              731604.0,
+              3751308.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10590
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725250.0,
+              0.0,
+              -0.6,
+              3751308.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308412_ne_16_060_20191004.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308412_ne_16_060_20191004.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308412_ne_16_060_20191004.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308412_ne_16_060_20191004_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308412_ne_16_060_20191004_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308404_se_16_060_20191004_20200102",
+          "bbox": [
+            -84.566495,
+            33.871881,
+            -84.495951,
+            33.94062
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-10-04T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              725088.0,
+              3750768.0,
+              731436.0,
+              3758244.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10580
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725088.0,
+              0.0,
+              -0.6,
+              3758244.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308404_se_16_060_20191004.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308404_se_16_060_20191004.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308404_se_16_060_20191004.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308404_se_16_060_20191004_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308404_se_16_060_20191004_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_sw_16_060_20190912_20200102",
+          "bbox": [
+            -84.504036,
+            33.621867,
+            -84.433405,
+            33.690637
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-12T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              731538.0,
+              3723180.0,
+              737910.0,
+              3730656.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              731538.0,
+              0.0,
+              -0.6,
+              3730656.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308421_sw_16_060_20190912.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308421_sw_16_060_20190912.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308421_sw_16_060_20190912.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_sw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_sw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_nw_16_060_20190912_20200102",
+          "bbox": [
+            -84.504042,
+            33.684347,
+            -84.433421,
+            33.753118
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-12T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              731370.0,
+              3730110.0,
+              737736.0,
+              3737586.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10610
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              731370.0,
+              0.0,
+              -0.6,
+              3737586.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308421_nw_16_060_20190912.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308421_nw_16_060_20190912.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308421_nw_16_060_20190912.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_nw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_nw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308420_se_16_060_20190912_20200102",
+          "bbox": [
+            -84.566501,
+            33.621904,
+            -84.495982,
+            33.690587
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-12T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              725742.0,
+              3723042.0,
+              732108.0,
+              3730512.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10610
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725742.0,
+              0.0,
+              -0.6,
+              3730512.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308420_se_16_060_20190912.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308420_se_16_060_20190912.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308420_se_16_060_20190912.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308420_se_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308420_se_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_sw_16_060_20190912_20200102",
+          "bbox": [
+            -84.504044,
+            33.746882,
+            -84.433434,
+            33.815652
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-12T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              731202.0,
+              3737046.0,
+              737562.0,
+              3744522.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              731202.0,
+              0.0,
+              -0.6,
+              3744522.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308413_sw_16_060_20190912.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308413_sw_16_060_20190912.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308413_sw_16_060_20190912.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_sw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_sw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_nw_16_060_20190912_20200102",
+          "bbox": [
+            -84.504044,
+            33.80936,
+            -84.433379,
+            33.878132
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-12T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              731034.0,
+              3743976.0,
+              737394.0,
+              3751452.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              731034.0,
+              0.0,
+              -0.6,
+              3751452.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308413_nw_16_060_20190912.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308413_nw_16_060_20190912.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308413_nw_16_060_20190912.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_nw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_nw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308405_sw_16_060_20190912_20200102",
+          "bbox": [
+            -84.504042,
+            33.871839,
+            -84.433385,
+            33.940665
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-12T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              730866.0,
+              3750906.0,
+              737220.0,
+              3758388.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10590
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              730866.0,
+              0.0,
+              -0.6,
+              3758388.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308405_sw_16_060_20190912.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308405_sw_16_060_20190912.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308405_sw_16_060_20190912.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308405_sw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308405_sw_16_060_20190912_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_sw_16_060_20190910_20200102",
+          "bbox": [
+            -84.379107,
+            33.621807,
+            -84.30832,
+            33.690695
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              743130.0,
+              3723468.0,
+              749508.0,
+              3730950.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              743130.0,
+              0.0,
+              -0.6,
+              3730950.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308422_sw_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308422_sw_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308422_sw_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_sw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_sw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_se_16_060_20190910_20200102",
+          "bbox": [
+            -84.316645,
+            33.621784,
+            -84.24581,
+            33.690757
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              748926.0,
+              3723618.0,
+              755304.0,
+              3731106.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748926.0,
+              0.0,
+              -0.6,
+              3731106.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308422_se_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308422_se_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308422_se_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_nw_16_060_20190910_20200102",
+          "bbox": [
+            -84.379153,
+            33.684284,
+            -84.308309,
+            33.753228
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              742950.0,
+              3730398.0,
+              749328.0,
+              3737886.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              742950.0,
+              0.0,
+              -0.6,
+              3737886.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308422_nw_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308422_nw_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308422_nw_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_nw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_nw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_ne_16_060_20190910_20200102",
+          "bbox": [
+            -84.316645,
+            33.684259,
+            -84.245756,
+            33.753235
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              748746.0,
+              3730548.0,
+              755124.0,
+              3738036.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748746.0,
+              0.0,
+              -0.6,
+              3738036.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308422_ne_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308422_ne_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308422_ne_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_ne_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_ne_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_se_16_060_20190910_20200102",
+          "bbox": [
+            -84.44157,
+            33.621853,
+            -84.370894,
+            33.690654
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              737334.0,
+              3723324.0,
+              743706.0,
+              3730800.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              737334.0,
+              0.0,
+              -0.6,
+              3730800.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308421_se_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308421_se_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308421_se_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_ne_16_060_20190910_20200102",
+          "bbox": [
+            -84.441596,
+            33.684332,
+            -84.370864,
+            33.753189
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              737160.0,
+              3730254.0,
+              743532.0,
+              3737736.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              737160.0,
+              0.0,
+              -0.6,
+              3737736.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308421_ne_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308421_ne_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308421_ne_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_ne_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_ne_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_sw_16_060_20190910_20200102",
+          "bbox": [
+            -84.379128,
+            33.746816,
+            -84.308296,
+            33.815706
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              742776.0,
+              3737334.0,
+              749148.0,
+              3744816.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              742776.0,
+              0.0,
+              -0.6,
+              3744816.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308414_sw_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308414_sw_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308414_sw_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_sw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_sw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_se_16_060_20190910_20200102",
+          "bbox": [
+            -84.316705,
+            33.74679,
+            -84.245762,
+            33.815713
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              748560.0,
+              3737484.0,
+              754938.0,
+              3744966.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748560.0,
+              0.0,
+              -0.6,
+              3744966.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308414_se_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308414_se_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308414_se_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_nw_16_060_20190910_20200102",
+          "bbox": [
+            -84.379168,
+            33.809294,
+            -84.308345,
+            33.878184
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              742596.0,
+              3744264.0,
+              748962.0,
+              3751746.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10610
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              742596.0,
+              0.0,
+              -0.6,
+              3751746.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308414_nw_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308414_nw_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308414_nw_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_nw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_nw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_ne_16_060_20190910_20200102",
+          "bbox": [
+            -84.316698,
+            33.809266,
+            -84.245764,
+            33.878243
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              748380.0,
+              3744414.0,
+              754752.0,
+              3751902.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748380.0,
+              0.0,
+              -0.6,
+              3751902.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308414_ne_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308414_ne_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308414_ne_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_ne_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_ne_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_se_16_060_20190910_20200102",
+          "bbox": [
+            -84.441554,
+            33.746811,
+            -84.370897,
+            33.815667
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              736992.0,
+              3737184.0,
+              743352.0,
+              3744666.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              736992.0,
+              0.0,
+              -0.6,
+              3744666.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308413_se_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308413_se_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308413_se_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_ne_16_060_20190910_20200102",
+          "bbox": [
+            -84.441572,
+            33.809343,
+            -84.370862,
+            33.878146
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              736818.0,
+              3744120.0,
+              743178.0,
+              3751596.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              736818.0,
+              0.0,
+              -0.6,
+              3751596.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308413_ne_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308413_ne_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308413_ne_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_ne_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_ne_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308406_sw_16_060_20190910_20200102",
+          "bbox": [
+            -84.379139,
+            33.87177,
+            -84.308325,
+            33.940715
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              742422.0,
+              3751194.0,
+              748782.0,
+              3758682.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              742422.0,
+              0.0,
+              -0.6,
+              3758682.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308406_sw_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308406_sw_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308406_sw_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308406_sw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308406_sw_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308406_se_16_060_20190910_20200102",
+          "bbox": [
+            -84.316689,
+            33.871741,
+            -84.245764,
+            33.940719
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              748200.0,
+              3751344.0,
+              754566.0,
+              3758832.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10610
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748200.0,
+              0.0,
+              -0.6,
+              3758832.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308406_se_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308406_se_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308406_se_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308406_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308406_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308405_se_16_060_20190910_20200102",
+          "bbox": [
+            -84.441589,
+            33.871821,
+            -84.370887,
+            33.940679
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2019-09-10T00:00:00Z",
+            "naip:year": "2019",
+            "proj:bbox": [
+              736644.0,
+              3751050.0,
+              742998.0,
+              3758532.0
+            ],
+            "proj:epsg": 26916,
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10590
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              736644.0,
+              0.0,
+              -0.6,
+              3758532.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308405_se_16_060_20190910.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "metadata": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_fgdc_2019/33084/m_3308405_se_16_060_20190910.txt",
+              "type": "text/plain",
+              "roles": [
+                "metadata"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2019/ga_60cm_2019/33084/m_3308405_se_16_060_20190910.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308405_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308405_se_16_060_20190910_20200102&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pc_atl_bbox_2021",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-84.552%2C33.647%2C-84.289%2C33.887&datetime=2021-01-01T00%3A00%3A00Z%2F2021-12-31T23%3A59%3A59Z&limit=100",
+      "checked_at_utc": "2026-10-15T04:03:15.898790+00:00",
+      "status": 200,
+      "final_url": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-84.552%2C33.647%2C-84.289%2C33.887&datetime=2021-01-01T00%3A00%3A00Z%2F2021-12-31T23%3A59%3A59Z&limit=100",
+      "content_type": "application/geo+json; charset=utf-8",
+      "bytes_read": 51819,
+      "sha256": "1a1d7491595ccd75401b8a394df5288eb84cc7be2c7f21407126cdb3d5faf014",
+      "truncated": false,
+      "returned_items": 18,
+      "has_next_page": false,
+      "items": [
+        {
+          "id": "ga_m_3308420_se_16_060_20211115",
+          "bbox": [
+            -84.566501,
+            33.621904,
+            -84.495982,
+            33.690587
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-15T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              725742.0,
+              3723042.0,
+              732108.0,
+              3730512.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10610
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725742.0,
+              0.0,
+              -0.6,
+              3730512.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308420_se_16_060_20211115.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308420_se_16_060_20211115.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308420_se_16_060_20211115&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308420_se_16_060_20211115&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308420_ne_16_060_20211115",
+          "bbox": [
+            -84.566488,
+            33.684385,
+            -84.495978,
+            33.753123
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-15T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              725580.0,
+              3729972.0,
+              731940.0,
+              3737448.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725580.0,
+              0.0,
+              -0.6,
+              3737448.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308420_ne_16_060_20211115.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308420_ne_16_060_20211115.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308420_ne_16_060_20211115&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308420_ne_16_060_20211115&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308412_se_16_060_20211115",
+          "bbox": [
+            -84.566471,
+            33.74692,
+            -84.495972,
+            33.815604
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-15T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              725418.0,
+              3736908.0,
+              731772.0,
+              3744378.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10590
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725418.0,
+              0.0,
+              -0.6,
+              3744378.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308412_se_16_060_20211115.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308412_se_16_060_20211115.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308412_se_16_060_20211115&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308412_se_16_060_20211115&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308412_ne_16_060_20211115",
+          "bbox": [
+            -84.566516,
+            33.809401,
+            -84.495964,
+            33.878086
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-15T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              725250.0,
+              3743838.0,
+              731604.0,
+              3751308.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10590
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              725250.0,
+              0.0,
+              -0.6,
+              3751308.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308412_ne_16_060_20211115.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308412_ne_16_060_20211115.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308412_ne_16_060_20211115&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308412_ne_16_060_20211115&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_sw_16_060_20211114",
+          "bbox": [
+            -84.379107,
+            33.621807,
+            -84.30832,
+            33.690695
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              743130.0,
+              3723468.0,
+              749508.0,
+              3730950.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              743130.0,
+              0.0,
+              -0.6,
+              3730950.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308422_sw_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308422_sw_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_sw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_sw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_se_16_060_20211114",
+          "bbox": [
+            -84.316645,
+            33.621784,
+            -84.24581,
+            33.690757
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              748926.0,
+              3723618.0,
+              755304.0,
+              3731106.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748926.0,
+              0.0,
+              -0.6,
+              3731106.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308422_se_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308422_se_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_se_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_se_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_nw_16_060_20211114",
+          "bbox": [
+            -84.379153,
+            33.684284,
+            -84.308309,
+            33.753228
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              742950.0,
+              3730398.0,
+              749328.0,
+              3737886.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              742950.0,
+              0.0,
+              -0.6,
+              3737886.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308422_nw_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308422_nw_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_nw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_nw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_ne_16_060_20211114",
+          "bbox": [
+            -84.316645,
+            33.684259,
+            -84.245756,
+            33.753235
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              748746.0,
+              3730548.0,
+              755124.0,
+              3738036.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748746.0,
+              0.0,
+              -0.6,
+              3738036.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308422_ne_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308422_ne_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_ne_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_ne_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_sw_16_060_20211114",
+          "bbox": [
+            -84.504036,
+            33.621867,
+            -84.433405,
+            33.690637
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              731538.0,
+              3723180.0,
+              737910.0,
+              3730656.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              731538.0,
+              0.0,
+              -0.6,
+              3730656.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308421_sw_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308421_sw_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_sw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_sw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_se_16_060_20211114",
+          "bbox": [
+            -84.44157,
+            33.621853,
+            -84.370894,
+            33.690654
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              737334.0,
+              3723324.0,
+              743706.0,
+              3730800.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              737334.0,
+              0.0,
+              -0.6,
+              3730800.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308421_se_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308421_se_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_se_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_se_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_nw_16_060_20211114",
+          "bbox": [
+            -84.504042,
+            33.684347,
+            -84.433421,
+            33.753118
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              731370.0,
+              3730110.0,
+              737736.0,
+              3737586.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10610
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              731370.0,
+              0.0,
+              -0.6,
+              3737586.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308421_nw_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308421_nw_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_nw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_nw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_ne_16_060_20211114",
+          "bbox": [
+            -84.441596,
+            33.684332,
+            -84.370864,
+            33.753189
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              737160.0,
+              3730254.0,
+              743532.0,
+              3737736.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              737160.0,
+              0.0,
+              -0.6,
+              3737736.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308421_ne_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308421_ne_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_ne_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_ne_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_sw_16_060_20211114",
+          "bbox": [
+            -84.379128,
+            33.746816,
+            -84.308296,
+            33.815706
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              742776.0,
+              3737334.0,
+              749148.0,
+              3744816.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              742776.0,
+              0.0,
+              -0.6,
+              3744816.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308414_sw_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308414_sw_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_sw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_sw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_se_16_060_20211114",
+          "bbox": [
+            -84.316705,
+            33.74679,
+            -84.245762,
+            33.815713
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              748560.0,
+              3737484.0,
+              754938.0,
+              3744966.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10630
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748560.0,
+              0.0,
+              -0.6,
+              3744966.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308414_se_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308414_se_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_se_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_se_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_nw_16_060_20211114",
+          "bbox": [
+            -84.379168,
+            33.809294,
+            -84.308345,
+            33.878184
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              742596.0,
+              3744264.0,
+              748962.0,
+              3751746.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10610
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              742596.0,
+              0.0,
+              -0.6,
+              3751746.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308414_nw_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308414_nw_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_nw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_nw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_ne_16_060_20211114",
+          "bbox": [
+            -84.316698,
+            33.809266,
+            -84.245764,
+            33.878243
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              748380.0,
+              3744414.0,
+              754752.0,
+              3751902.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10620
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              748380.0,
+              0.0,
+              -0.6,
+              3751902.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308414_ne_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308414_ne_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_ne_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_ne_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_sw_16_060_20211114",
+          "bbox": [
+            -84.504044,
+            33.746882,
+            -84.433434,
+            33.815652
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              731202.0,
+              3737046.0,
+              737562.0,
+              3744522.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              731202.0,
+              0.0,
+              -0.6,
+              3744522.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308413_sw_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308413_sw_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_sw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_sw_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_se_16_060_20211114",
+          "bbox": [
+            -84.441554,
+            33.746811,
+            -84.370897,
+            33.815667
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2021-11-14T16:00:00Z",
+            "naip:year": "2021",
+            "proj:bbox": [
+              736992.0,
+              3737184.0,
+              743352.0,
+              3744666.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10600
+            ],
+            "proj:transform": [
+              0.6,
+              0.0,
+              736992.0,
+              0.0,
+              -0.6,
+              3744666.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308413_se_16_060_20211114.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2021/ga_060cm_2021/33084/m_3308413_se_16_060_20211114.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_se_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_se_16_060_20211114&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pc_atl_bbox_2023",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-84.552%2C33.647%2C-84.289%2C33.887&datetime=2023-01-01T00%3A00%3A00Z%2F2023-12-31T23%3A59%3A59Z&limit=100",
+      "checked_at_utc": "2026-10-15T04:03:16.572303+00:00",
+      "status": 200,
+      "final_url": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-84.552%2C33.647%2C-84.289%2C33.887&datetime=2023-01-01T00%3A00%3A00Z%2F2023-12-31T23%3A59%3A59Z&limit=100",
+      "content_type": "application/geo+json; charset=utf-8",
+      "bytes_read": 74650,
+      "sha256": "665952156b45323120eddcc1d40ca3a86433cbca7ab13ff15d1b00c20ba9a5bb",
+      "truncated": false,
+      "returned_items": 25,
+      "has_next_page": false,
+      "items": [
+        {
+          "id": "ga_m_3308422_sw_16_060_20231008_20240103",
+          "bbox": [
+            -84.379107,
+            33.621807,
+            -84.30832,
+            33.690695
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              743130.0,
+              3723468.0,
+              749508.0,
+              3730950.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10630
+            ],
+            "proj:centroid": {
+              "lat": 33.65625,
+              "lon": -84.34373
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              743130.0,
+              0.0,
+              -0.6,
+              3730950.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308422_sw_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308422_sw_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_sw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_sw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_se_16_060_20231008_20240103",
+          "bbox": [
+            -84.316645,
+            33.621784,
+            -84.24581,
+            33.690757
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              748926.0,
+              3723618.0,
+              755304.0,
+              3731106.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:centroid": {
+              "lat": 33.65627,
+              "lon": -84.28124
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              748926.0,
+              0.0,
+              -0.6,
+              3731106.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308422_se_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308422_se_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_nw_16_060_20231008_20240103",
+          "bbox": [
+            -84.379153,
+            33.684284,
+            -84.308309,
+            33.753228
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              742950.0,
+              3730398.0,
+              749328.0,
+              3737886.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:centroid": {
+              "lat": 33.71876,
+              "lon": -84.34374
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              742950.0,
+              0.0,
+              -0.6,
+              3737886.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308422_nw_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308422_nw_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_nw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_nw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308422_ne_16_060_20231008_20240103",
+          "bbox": [
+            -84.316645,
+            33.684259,
+            -84.245756,
+            33.753235
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              748746.0,
+              3730548.0,
+              755124.0,
+              3738036.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10630
+            ],
+            "proj:centroid": {
+              "lat": 33.71875,
+              "lon": -84.28121
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              748746.0,
+              0.0,
+              -0.6,
+              3738036.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308422_ne_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308422_ne_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308422_ne_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308422_ne_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_sw_16_060_20231008_20240103",
+          "bbox": [
+            -84.504036,
+            33.621867,
+            -84.433405,
+            33.690637
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              731538.0,
+              3723180.0,
+              737910.0,
+              3730656.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10620
+            ],
+            "proj:centroid": {
+              "lat": 33.65626,
+              "lon": -84.46873
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              731538.0,
+              0.0,
+              -0.6,
+              3730656.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308421_sw_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308421_sw_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_sw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_sw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_se_16_060_20231008_20240103",
+          "bbox": [
+            -84.44157,
+            33.621853,
+            -84.370894,
+            33.690654
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              737334.0,
+              3723324.0,
+              743706.0,
+              3730800.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10620
+            ],
+            "proj:centroid": {
+              "lat": 33.65626,
+              "lon": -84.40625
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              737334.0,
+              0.0,
+              -0.6,
+              3730800.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308421_se_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308421_se_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_nw_16_060_20231008_20240103",
+          "bbox": [
+            -84.504042,
+            33.684347,
+            -84.433421,
+            33.753118
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              731370.0,
+              3730110.0,
+              737736.0,
+              3737586.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10610
+            ],
+            "proj:centroid": {
+              "lat": 33.71874,
+              "lon": -84.46874
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              731370.0,
+              0.0,
+              -0.6,
+              3737586.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308421_nw_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308421_nw_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_nw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_nw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308421_ne_16_060_20231008_20240103",
+          "bbox": [
+            -84.441596,
+            33.684332,
+            -84.370864,
+            33.753189
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              737160.0,
+              3730254.0,
+              743532.0,
+              3737736.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10620
+            ],
+            "proj:centroid": {
+              "lat": 33.71876,
+              "lon": -84.40624
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              737160.0,
+              0.0,
+              -0.6,
+              3737736.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308421_ne_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308421_ne_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308421_ne_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308421_ne_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308420_se_16_060_20231008_20240103",
+          "bbox": [
+            -84.566501,
+            33.621904,
+            -84.495982,
+            33.690587
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              725742.0,
+              3723042.0,
+              732108.0,
+              3730512.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10610
+            ],
+            "proj:centroid": {
+              "lat": 33.65625,
+              "lon": -84.53125
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              725742.0,
+              0.0,
+              -0.6,
+              3730512.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308420_se_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308420_se_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308420_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308420_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308420_ne_16_060_20231008_20240103",
+          "bbox": [
+            -84.566488,
+            33.684385,
+            -84.495978,
+            33.753123
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              725580.0,
+              3729972.0,
+              731940.0,
+              3737448.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:centroid": {
+              "lat": 33.71876,
+              "lon": -84.53125
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              725580.0,
+              0.0,
+              -0.6,
+              3737448.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308420_ne_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308420_ne_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308420_ne_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308420_ne_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_sw_16_060_20231008_20240103",
+          "bbox": [
+            -84.379128,
+            33.746816,
+            -84.308296,
+            33.815706
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              742776.0,
+              3737334.0,
+              749148.0,
+              3744816.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10620
+            ],
+            "proj:centroid": {
+              "lat": 33.78126,
+              "lon": -84.34373
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              742776.0,
+              0.0,
+              -0.6,
+              3744816.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308414_sw_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308414_sw_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_sw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_sw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_se_16_060_20231008_20240103",
+          "bbox": [
+            -84.316705,
+            33.74679,
+            -84.245762,
+            33.815713
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              748560.0,
+              3737484.0,
+              754938.0,
+              3744966.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10630
+            ],
+            "proj:centroid": {
+              "lat": 33.78125,
+              "lon": -84.28125
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              748560.0,
+              0.0,
+              -0.6,
+              3744966.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308414_se_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308414_se_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_ne_16_060_20231008_20240103",
+          "bbox": [
+            -84.316698,
+            33.809266,
+            -84.245764,
+            33.878243
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              748380.0,
+              3744414.0,
+              754752.0,
+              3751902.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10620
+            ],
+            "proj:centroid": {
+              "lat": 33.84376,
+              "lon": -84.28124
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              748380.0,
+              0.0,
+              -0.6,
+              3751902.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308414_ne_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308414_ne_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_ne_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_ne_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_sw_16_060_20231008_20240103",
+          "bbox": [
+            -84.504044,
+            33.746882,
+            -84.433434,
+            33.815652
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              731202.0,
+              3737046.0,
+              737562.0,
+              3744522.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:centroid": {
+              "lat": 33.78127,
+              "lon": -84.46875
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              731202.0,
+              0.0,
+              -0.6,
+              3744522.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308413_sw_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308413_sw_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_sw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_sw_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_se_16_060_20231008_20240103",
+          "bbox": [
+            -84.441554,
+            33.746811,
+            -84.370897,
+            33.815667
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              736992.0,
+              3737184.0,
+              743352.0,
+              3744666.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10600
+            ],
+            "proj:centroid": {
+              "lat": 33.78124,
+              "lon": -84.40624
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              736992.0,
+              0.0,
+              -0.6,
+              3744666.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308413_se_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308413_se_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308412_se_16_060_20231008_20240103",
+          "bbox": [
+            -84.566471,
+            33.74692,
+            -84.495972,
+            33.815604
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              725418.0,
+              3736908.0,
+              731772.0,
+              3744378.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10590
+            ],
+            "proj:centroid": {
+              "lat": 33.78127,
+              "lon": -84.53124
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              725418.0,
+              0.0,
+              -0.6,
+              3744378.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308412_se_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308412_se_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308412_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308412_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308406_se_16_060_20231008_20240103",
+          "bbox": [
+            -84.316689,
+            33.871741,
+            -84.245764,
+            33.940719
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-08T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              748200.0,
+              3751344.0,
+              754566.0,
+              3758832.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10610
+            ],
+            "proj:centroid": {
+              "lat": 33.90623,
+              "lon": -84.28124
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              748200.0,
+              0.0,
+              -0.6,
+              3758832.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308406_se_16_060_20231008_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308406_se_16_060_20231008_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308406_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308406_se_16_060_20231008_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308414_nw_16_060_20231007_20240103",
+          "bbox": [
+            -84.379168,
+            33.809294,
+            -84.308345,
+            33.878184
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-07T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              742596.0,
+              3744264.0,
+              748962.0,
+              3751746.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10610
+            ],
+            "proj:centroid": {
+              "lat": 33.84374,
+              "lon": -84.34377
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              742596.0,
+              0.0,
+              -0.6,
+              3751746.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308414_nw_16_060_20231007_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308414_nw_16_060_20231007_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308414_nw_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308414_nw_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_nw_16_060_20231007_20240103",
+          "bbox": [
+            -84.504044,
+            33.80936,
+            -84.433379,
+            33.878132
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-07T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              731034.0,
+              3743976.0,
+              737394.0,
+              3751452.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:centroid": {
+              "lat": 33.84375,
+              "lon": -84.46873
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              731034.0,
+              0.0,
+              -0.6,
+              3751452.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308413_nw_16_060_20231007_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308413_nw_16_060_20231007_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_nw_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_nw_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308413_ne_16_060_20231007_20240103",
+          "bbox": [
+            -84.441572,
+            33.809343,
+            -84.370862,
+            33.878146
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-07T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              736818.0,
+              3744120.0,
+              743178.0,
+              3751596.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10600
+            ],
+            "proj:centroid": {
+              "lat": 33.84375,
+              "lon": -84.40623
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              736818.0,
+              0.0,
+              -0.6,
+              3751596.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308413_ne_16_060_20231007_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308413_ne_16_060_20231007_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308413_ne_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308413_ne_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308412_ne_16_060_20231007_20240103",
+          "bbox": [
+            -84.566516,
+            33.809401,
+            -84.495964,
+            33.878086
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-07T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              725250.0,
+              3743838.0,
+              731604.0,
+              3751308.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12450,
+              10590
+            ],
+            "proj:centroid": {
+              "lat": 33.84375,
+              "lon": -84.53125
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              725250.0,
+              0.0,
+              -0.6,
+              3751308.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308412_ne_16_060_20231007_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308412_ne_16_060_20231007_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308412_ne_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308412_ne_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308406_sw_16_060_20231007_20240103",
+          "bbox": [
+            -84.379139,
+            33.87177,
+            -84.308325,
+            33.940715
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-07T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              742422.0,
+              3751194.0,
+              748782.0,
+              3758682.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12480,
+              10600
+            ],
+            "proj:centroid": {
+              "lat": 33.90625,
+              "lon": -84.34375
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              742422.0,
+              0.0,
+              -0.6,
+              3758682.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308406_sw_16_060_20231007_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308406_sw_16_060_20231007_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308406_sw_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308406_sw_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308405_sw_16_060_20231007_20240103",
+          "bbox": [
+            -84.504042,
+            33.871839,
+            -84.433385,
+            33.940665
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-07T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              730866.0,
+              3750906.0,
+              737220.0,
+              3758388.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10590
+            ],
+            "proj:centroid": {
+              "lat": 33.90626,
+              "lon": -84.46873
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              730866.0,
+              0.0,
+              -0.6,
+              3758388.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308405_sw_16_060_20231007_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308405_sw_16_060_20231007_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308405_sw_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308405_sw_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308405_se_16_060_20231007_20240103",
+          "bbox": [
+            -84.441589,
+            33.871821,
+            -84.370887,
+            33.940679
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-07T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              736644.0,
+              3751050.0,
+              742998.0,
+              3758532.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12470,
+              10590
+            ],
+            "proj:centroid": {
+              "lat": 33.90625,
+              "lon": -84.40625
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              736644.0,
+              0.0,
+              -0.6,
+              3758532.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308405_se_16_060_20231007_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308405_se_16_060_20231007_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308405_se_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308405_se_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ga_m_3308404_se_16_060_20231007_20240103",
+          "bbox": [
+            -84.566495,
+            33.871881,
+            -84.495951,
+            33.94062
+          ],
+          "properties": {
+            "gsd": 0.6,
+            "datetime": "2023-10-07T16:00:00Z",
+            "naip:year": "2023",
+            "proj:bbox": [
+              725088.0,
+              3750768.0,
+              731436.0,
+              3758244.0
+            ],
+            "proj:epsg": 26916,
+            "providers": [
+              {
+                "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+                "name": "USDA Farm Service Agency",
+                "roles": [
+                  "producer",
+                  "licensor"
+                ]
+              }
+            ],
+            "naip:state": "ga",
+            "proj:shape": [
+              12460,
+              10580
+            ],
+            "proj:centroid": {
+              "lat": 33.90625,
+              "lon": -84.53124
+            },
+            "proj:transform": [
+              0.6,
+              0.0,
+              725088.0,
+              0.0,
+              -0.6,
+              3758244.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "assets": {
+            "image": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308404_se_16_060_20231007_20240103.tif",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "roles": [
+                "data"
+              ]
+            },
+            "thumbnail": {
+              "href": "https://naipeuwest.blob.core.windows.net/naip/v002/ga/2023/ga_060cm_2023/33084/m_3308404_se_16_060_20231007_20240103.200.jpg",
+              "type": "image/jpeg",
+              "roles": [
+                "thumbnail"
+              ]
+            },
+            "tilejson": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=naip&item=ga_m_3308404_se_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "application/json",
+              "roles": [
+                "tiles"
+              ]
+            },
+            "rendered_preview": {
+              "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=naip&item=ga_m_3308404_se_16_060_20231007_20240103&assets=image&asset_bidx=image%7C1,2,3&format=png",
+              "type": "image/png",
+              "roles": [
+                "overview"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pc_atl_bbox_2025",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-84.552%2C33.647%2C-84.289%2C33.887&datetime=2025-01-01T00%3A00%3A00Z%2F2025-12-31T23%3A59%3A59Z&limit=100",
+      "checked_at_utc": "2026-10-15T04:03:17.435193+00:00",
+      "status": 200,
+      "final_url": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-84.552%2C33.647%2C-84.289%2C33.887&datetime=2025-01-01T00%3A00%3A00Z%2F2025-12-31T23%3A59%3A59Z&limit=100",
+      "content_type": "application/geo+json; charset=utf-8",
+      "bytes_read": 309,
+      "sha256": "a44d433dcfa6dfa116077622cc59a9d1483795924b5cf5c94172beb1d82ace70",
+      "truncated": false,
+      "returned_items": 0,
+      "has_next_page": false,
+      "items": []
+    },
+    {
+      "name": "usda_direct_download_landing",
+      "url": "https://datagateway.nrcs.usda.gov/GDGHome_DirectDownLoad.aspx",
+      "checked_at_utc": "2026-10-15T04:03:17.664818+00:00",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "atlanta_accela_landing",
+      "url": "https://aca-prod.accela.com/ATLANTA_GA/Default.aspx",
+      "checked_at_utc": "2026-10-15T04:03:18.807616+00:00",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "arc_building_permit_metadata",
+      "url": "https://opendata.atlantaregional.com/api/v3/datasets/655f985f43cc40b4bf2ab7bc73d2169b_0",
+      "checked_at_utc": "2026-10-15T04:03:19.022853+00:00",
+      "status": 404,
+      "error": "HTTP Error 404: Not Found"
+    }
+  ]
+}
