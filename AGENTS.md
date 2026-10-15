@@ -1,154 +1,130 @@
-# AGENTS.md
+# Autonomous working agreement
 
-Working agreements for AI-assisted development on this repo. Read `canopy-ledger.md` for the problem definition and verified facts (§1.1), `permits-and-pixels.md` for the implementation spec. (`context.md` was removed on 2026-09-18.)
+## Purpose and authority
 
-> **Maintenance note.** Sections marked `TODO` are placeholders — fill them once the corresponding thing exists. Sections marked **STABLE** should not drift; if one becomes wrong, that is a real change to the project and deserves discussion, not a quiet edit. Suggestions for what to add over time are at the bottom.
+Build a defensible, reproducible investigation of parcel-scale tree-canopy loss in metro Atlanta and its relationship to permit records. The owner wants agents to make sustained useful progress in a cloud environment, preserve their work across sessions, and minimize necessary human effort.
 
----
+The owner has authorized replacing the previous implementation plan. `old/` is historical evidence: its agent instructions, architecture, thresholds, schedules, model assignments, and claims of readiness are not current instructions. Preserve the originals and record reassessments in current records. Verify relevant source claims before promoting them into the new plan.
 
-## What this project is — STABLE
+Follow current owner instructions, this working agreement, and the active scope recorded in `checklist.md`. Surface conflicts rather than silently changing the objective or weakening acceptance criteria. Distinguish project commitments from testable implementation choices.
 
-We detect tree-canopy loss at the parcel scale across metro Atlanta by segmenting successive USDA NAIP aerial imagery cycles, then reconcile detected loss against the City of Atlanta tree-removal permit record to surface clearing that has no permit behind it. This data will then be visualized on a public website for the project.
+## First assignment: planning with Astra
 
-The city currently measures canopy change in ~6-acre grid cells with a 1-acre threshold, every ~5 years, published ~3 years late, with no permit reconciliation. We work at parcel scale, 0.1-acre threshold, on a 2-year cycle.
+The owner-selected Astra agent owns the initial high-level reassessment and creation of `checklist.md`. This harness change leaves that file for Astra; it does not launch data collection, model training, scheduled services, or publication.
 
-**One-sentence problem statement:**
+The initial planning assignment is to:
 
-> Metro Atlanta has no method that identifies tree-canopy loss at the parcel scale, attributes it to a property and a date, and reconciles it against the tree-removal permit record.
+1. Inspect the archived evidence, source references, assumptions, contradictions, and actual repository artifacts. Reconsider the implementation independently.
+2. Define the research questions, intended deliverables, geographic and temporal coverage, exclusions, and success criteria. Separate established facts, assumptions, and unresolved questions.
+3. Propose and justify the architecture, data acquisition, labeling, evaluation, permit reconciliation, and presentation approach. Investigate real feasibility questions with bounded checks when necessary; avoid speculative infrastructure.
+4. Create `checklist.md` with milestones, dependencies, actionable tasks with stable IDs, acceptance checks, and evidence links. Make execution items suitable for individual bounded `/goal` runs and identify which can proceed in parallel. Identify human work, resource decisions, and the first bounded execution scope.
+5. Leave a concise current-state summary and an exact next action so successor agents can execute the plan without reconstructing the conversation.
 
-This is a yearlong 10th grade research project and the final outcome will be a website with a map of detected canopy loss and its permit status (matched / ambiguous / unmatched) — framed as triage per non-negotiable 8, not as a map of violations. Whether it shows parcel-level results or only aggregates is still undecided (see "Worth considering" below). Deliverables are a working pipeline, a validated loss layer, and a briefing to at least one agency.
+Complete this planning step before substantial implementation. Existing authority covers preparing and recording the plan; seek an owner decision only for unresolved scope or actions beyond that authority. Creating a checklist does not itself authorize spending, external communications, or public deployment.
 
----
+## Start or resume
 
-## Non-negotiables — STABLE
+Before choosing work:
 
-These are conclusions from scoping, not preferences. Changing one means revisiting `canopy-ledger.md`.
+1. Read `checklist.md` when present and [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). Inspect the current branch, working tree, relevant remote changes, and linked artifacts. Preserve user edits.
+2. Reconcile running jobs, saved outputs, delivered human inputs, and interrupted tasks. Validate existing artifacts before repeating work or launching a replacement job.
+3. Choose the next useful task within the active scope. State its question, expected artifact, acceptance checks, resource bounds, and stopping condition before substantial execution.
 
-1. **Never use the 2021 NAIP epoch.** Georgia's 2021 flight ran 7 Oct 2021 – 13 Jan 2022 and is largely leaf-off. Differencing against it manufactures enormous phantom loss. The valid pair is 2023 (Sep) against 2025 (Jul–Oct).
-2. **Always check per-quad acquisition dates before using a tile.** The statewide flight window does not apply uniformly. Late-October and later quads catch hardwood senescence.
-3. **Precision over recall.** Targets are precision ≥ 0.90, recall ≥ 0.70. A false accusation against a property owner costs far more than a missed violation. Never tune the other way without a written reason.
-4. **Spatially blocked evaluation only.** Group folds by NPU. Random tile splits put near-identical neighbouring tiles in train and test and inflate results by several points. Any metric produced from a random split is invalid and should not appear in a deliverable.
-5. **Three buckets, never two.** Permit reconciliation emits matched / ambiguous / unmatched. Collapsing ambiguous into unmatched destroys agency trust permanently.
-6. **Never publish a per-parcel dollar figure as if it were a bill.** The model measures canopy *area*; the ordinance prices *diameter inches*. Report a range with the stems-per-acre and mean-DBH assumptions printed alongside.
-7. **Do not report net canopy change.** Gain and loss are not commensurable here — scrub and volunteer pine regrowth reads as canopy but is not equivalent. The city's own 2018 study found ~500 acres of this "false growth." We detect loss only.
-8. **The output is triage, not evidence.** Language in every artifact: "these parcels merit inspection, in this order." Never "these parcels are in violation."
-9. **Report performance disaggregated by neighborhood canopy density and income band.** A model trained mostly on dense north-side canopy will underperform on sparse south-side canopy. If we do not measure this, a reviewer will.
+If `checklist.md` is absent, the initial planning assignment remains pending. An agent assigned to implementation should report that dependency and leave useful bounded findings for Astra rather than inventing a competing implementation roadmap. Explicit owner-directed repository or harness maintenance can proceed independently.
 
----
+Trust provisioned tools enough to begin useful work. Diagnose actual failures and newly needed capabilities; avoid repeated environment inventories, toy preflights, hidden-control searches, or deliberate restart experiments.
 
-## Domain glossary
+## Checklist and work organization
 
-| Term | Meaning |
-|---|---|
-| **NAIP** | National Agriculture Imagery Program — USDA public-domain aerial imagery, 4-band RGB+NIR, 60 cm in Georgia, flown every 2 years |
-| **NPU** | Neighborhood Planning Unit — Atlanta's citizen advisory districts; our unit for spatial cross-validation |
-| **DBH** | Diameter at breast height — how the ordinance measures trees. Permit required at ≥ 6 in on private property |
-| **Recompense** | The fee owed for removing a protected tree: $140 per diameter-inch under the ordinance effective 1 Jan 2026. Unpermitted clearing: fines of $500 (first tree) / $1,000 (each after) plus replacement, or up to $200,000 per acre when the tree count can't be determined |
-| **MMU** | Minimum mapping unit — our 0.1-acre floor, which is 1,124 pixels at 60 cm |
-| **CHM** | Canopy height model. We use NAIP-CHM, a 0.6 m CONUS product derived from 2022–23 NAIP |
-| **DOQQ** | Digital Ortho Quarter Quad — NAIP's tile unit |
-| **GSD** | Ground sample distance — pixel size on the ground |
-| **Accela** | The permitting system the city runs. Atlanta's public tenant: `aca-prod.accela.com/ATLANTA_GA` |
-| **ORA** | Georgia Open Records Act, O.C.G.A. § 50-18-71 |
-| **False growth** | Scrub/pine regrowth on cleared land that a spectral classifier reads as canopy gain |
+`checklist.md` is the single project-state entry point. Astra creates it and successor agents keep it current. Do not create a competing root state file or duplicate its narrative across documents.
 
----
+Keep its operational summary compact:
 
-## Data sources and where they actually live — STABLE
+- Current objective, active scope, responsible agent, branch, and last update.
+- Active workstreams, dependencies, completed milestones, and links to supporting artifacts.
+- Running jobs and their saved run records; blockers and human-action IDs.
+- Important decisions, unresolved review findings, checks passed or pending, and exact next actions.
 
-| Input | Source | Gotcha |
-|---|---|---|
-| NAIP 2023 | Planetary Computer STAC, collection `naip` | Fine |
-| **NAIP 2025** | **USDA NAIP GeoHub / EarthExplorer / NRCS Geospatial Data Gateway** | **Not in any cloud catalog.** PC ends 2023-12-31, GEE ends 2023-11-17, AWS ends 2023. Bulk download required |
-| NAIP-CHM | Earth Engine asset + COGs, CC-BY 4.0 | Includes buildings — gate with NDVI |
-| Georgia LiDAR | USGS 3DEP, 2018–19 | Leaf-off, 7+ years old |
-| Parcels | Fulton and DeKalb county GIS | Boundary vintage vs imagery date |
-| Building permits | ARC / City DCP GIS hub, 11.6 MB CSV, 2019–2024 | Ends 2024; building permits, not arborist records |
-| Tree permits | Accela public grid (no login) + ORA request | See `permits-and-pixels.md` §1 |
-| Sign postings | City arborist sign-postings page | Live only, no archive — scrape daily |
-| GT canopy raster | Request from GT CSPAV | Validation only, never training truth |
+Give each actionable item a stable ID, scope, prerequisites, expected artifact, acceptance checks, owner/status, branch or checkout, write ownership, resource bounds, and next action. Link long specifications rather than expanding every item into a full run log. Make tasks small enough to have an observable completion boundary and large enough to produce useful progress.
 
-If Georgia's 2025 NAIP arrives at 30 cm, **resample to 60 cm before differencing** or the two masks disagree for purely geometric reasons.
+Organize work around dependencies and deliverables. Choose depth, breadth, and concurrency according to evidence, uncertainty, cost, and available resources. DFS and a single active research mechanism are not required. A blocked workstream should only block tasks that depend on it.
 
----
+Keep shared implementation in normal source modules. Record bounded experiments separately with descriptive identifiers, linking the hypothesis, inputs, code revision, configuration, results, and decision. A run is an execution of that code and configuration. Sessions, model changes, and quota resets do not create new investigations or justify repeating completed work. Numbered attempt folders are not required.
 
-## Pipeline stages
+Put detailed experiments, reviews, manifests, and logs in appropriate files and link them from the checklist. Create structure as the work needs it; avoid empty frameworks and duplicated pipelines.
 
-```
-P0  Acquire + verify per-quad dates
-P1  Pseudo-labels: NAIP-CHM height > 3 m AND NDVI > 0.20
-P2  Train U-Net (4-band) on 2023 only; fine-tune on hand-corrected tiles
-P3  Co-register epochs with AROSICS, per quad, before inference
-P4  Difference -> morphological opening -> MMU 1,124 px -> compactness < 60
-P5  Spatial join to parcels -> classify cause -> permit match
-P6  Blocked evaluation + hand-digitized validation + field checks
-```
+## Checklist-item goals and parallel work
 
-**The model is trained once, on 2023, and run frozen on both epochs.** This is deliberate: differencing two outputs of one model cancels systematic bias. Do not introduce a separately-trained 2025 model.
+The intended execution pattern is one bounded `/goal` run per actionable checklist item, with multiple ready items allowed in parallel. Use supported native goal controls when available; an ordinary task prompt follows the same contract when they are unavailable. This agreement does not configure a goal runtime or guarantee automatic continuation.
 
-Radiometric augmentation (per-channel brightness, contrast, gamma) is the primary regularizer, not a nicety. NAIP radiometry varies visibly between adjacent flight lines within a single year.
+At launch, identify the item ID, objective, expected output, prerequisites, acceptance checks, resource/authority limits, owner, and stop conditions. Claim the item through the shared integration owner before starting substantive work; do not duplicate an already-owned item. Complete an item's checks and leave its evidence and checkpoint before reporting success. Do not silently broaden the goal to unrelated items or take over another owner's work.
 
----
+Parallel runs may cover different workstreams or independent tasks within one workstream. Before launching them, confirm prerequisites are satisfied, input and output contracts are compatible, and combined compute, storage, model usage, and cost fit existing authority. Tasks may consume a clearly identified validated intermediate artifact; do not assume a dependency is ready merely because its producer has started.
 
-## Repo layout
+Use explicit file ownership in a coordinated shared checkout. Use isolated branches/checkouts when edits overlap or independent chats own their Git operations. Appoint one shared integration owner for `checklist.md`, `HUMAN_ACTIONS.md`, and cross-task integration; task agents provide compact updates or edit reserved non-overlapping sections under that owner's coordination. Independent branches must reconcile ownership and request IDs before starting work. Integration includes appropriate cross-task checks before downstream milestones are marked complete.
 
-```
-TODO — fill in once the structure settles. Suggested:
+A goal can finish its run when the item passes its acceptance checks, or stop at an honest recoverable blocker when all useful work for that item is gated. Record blockers against that item; unrelated ready items may continue. A healthy job still required by the item is `waiting_for_job`, not an acceptance pass or human blocker. Save its run record and use supported completion/failure events or the recorded later resume action.
 
-data/           # gitignored; raw and interim rasters
-  raw/
-  interim/
-  processed/
-notebooks/      # exploration only; nothing load-bearing
-src/
-  acquire/      # STAC + USDA bulk download, tile indexing
-  labels/       # pseudo-label generation, annotation helpers
-  models/       # architecture, training loop, inference
-  change/       # co-registration, differencing, filtering
-  attribute/    # parcel join, cause classification, permit match
-  eval/         # blocked CV, metrics, disaggregated reporting
-docs/           # canopy-ledger.md, permits-and-pixels.md
-outputs/        # loss polygons, figures, tables
-tests/
-```
+Distinguish an individual run's end from item completion and overall project completion. Preserve the item's objective and next action across budget stops, interruptions, and handoffs. Do not silently rewrite a user's native goal or claim that an edit to the checklist pauses or wakes it. Surface a blocked item in chat, leave exact supported resume steps, and follow the actual runtime's lifecycle controls.
 
----
+## Autonomous execution and boundaries
 
-## Working with Claude on this repo
+Within an owner-authorized campaign scope, proceed with routine research, public-data collection, implementation, tests, repairs, and evidence-based task selection. Carry work through its acceptance checks and handoff without asking for approval at every task. Keep other useful independent work moving while a separate decision is pending.
 
-- **Cite or flag.** When adding a factual claim to any document, either cite a source we have verified or mark it `[unverified]`. `canopy-ledger.md` §1.1 is the claims register: verified figures with sources, plus numbers known to be wrong — check it before repeating a figure.
-- **Do not invent accuracy numbers or dataset properties.** If a benchmark or a dataset field is not in `canopy-ledger.md` §1.1 or cited in the spec, say so rather than estimating.
-- **Prefer editing the existing docs over creating new ones.** The four-document structure is intentional.
-- **When code and spec disagree, the spec is a hypothesis and the code is the evidence.** Update the spec.
-- TODO — add: preferred Python style, whether we use type hints, test expectations, notebook hygiene rules.
+Before substantial work, consider the next decision, minimum sufficient evidence, runtime, data volume, recovery, and resource cost. Once a bounded plan is justified, execute patiently through its decision boundary. An anticipated long runtime, new turn, or continuation prompt does not justify abandoning a healthy job. New evidence, actual failure, owner instructions, and real resource constraints can justify a recorded change.
 
----
+Use the existing authorized environment and model allowance. Obtain explicit authorization before additional spending, paid hosting or data, separately billed APIs, external communications (including records requests), or public deployment. Prepare a concrete, reviewable package before requesting the necessary action. Public release granularity and handling of address-linked records must be decided before publication.
 
-## Suggested additions as the project develops
+Honor owner stop instructions and platform limits. Use supported runtime capabilities; do not promise unattended survival, completion notifications, usage accounting, or automatic restart that have not been established. Model selection follows current owner instructions and exposed controls; no fixed platform-wide model roster is imposed here.
 
-Things worth adding to this file later, roughly in the order they will become relevant.
+## Evidence and acceptance
 
-**Soon**
-- **Commands.** The handful of commands someone actually runs: environment setup, download, train, infer, evaluate. This is usually the highest-value section of a CLAUDE.md and it does not exist yet because the code does not.
-- **Environment.** Python version, whether conda or uv or venv, how to get GDAL working (it is always the painful one), GPU expectations.
-- **The chosen CRS**, once decided, stated once and referenced everywhere.
-- **Where large files live** and how a new team member gets them.
+- Cite verified sources or mark factual claims unverified. Distinguish observed results, reported claims, modeling assumptions, and inferences. A source being listed or publicly accessible does not establish dataset coverage or successful acquisition.
+- Preserve input provenance, acquisition dates, geographic coverage, resolution, coordinate reference systems, schema, versions, and licenses as relevant. Record missing and excluded data with reasons.
+- Define evaluation units, geographically separated development/evaluation data, metrics, uncertainty, and acceptance criteria before inspecting protected evaluation results. Keep pseudo-labels distinct from independent validation. Record variants and avoid repeatedly treating inspected evaluation data as unseen.
+- Evaluate canopy classification, detected change, parcel attribution, and permit reconciliation separately as applicable. Measure performance across relevant neighborhood conditions and income bands; record limitations in coverage and sample size.
+- Prioritize precision and honest uncertainty. Permit reconciliation must retain matched, ambiguous, and unmatched outcomes. Missing records do not establish an unlawful removal. Public output is inspection triage; do not label parcels in violation or attach a dollar amount as an assessed bill.
+- The intended research scope is canopy loss. Any proposal to add gain or net-change reporting must explicitly revisit scope and validation. Astra must reassess epoch suitability, per-tile dates, registration, domain shift, and jurisdiction-specific permit coverage instead of assuming the archive solved them.
+- Run checks appropriate to the change. At consequential design decisions and before promoting material findings, obtain independent review when supported. Give reviewers raw evidence and a concrete question; require reproduction of central quantitative findings. Record unresolved objections and let them limit claims. Review depth should follow the risk of changing the conclusion.
+- Mark a task complete only after its acceptance checks pass and its necessary artifacts are recoverable. Preserve negative and inconclusive findings. Missing evidence, an attractive map, or agreement among agents cannot substitute for validation.
 
-**Once there is code**
-- **Module map.** One line per module saying what it owns, so an AI editing `src/change/` knows not to reach into `src/models/`.
-- **Test strategy.** What is actually tested — probably geometry math, tile indexing, and the permit-matching date logic, since those are where silent bugs hide.
-- **Known-good reference outputs.** A small fixture area with a hand-checked expected result, so refactors can be verified.
+## Cloud jobs, recovery, and waiting
 
-**Once there are results**
-- **Current metrics table**, with split names, updated as models improve. Prevents anyone quoting a stale number in a presentation.
-- **Decisions log.** Short dated entries: what was decided, why, what was rejected. Invaluable when a reviewer asks "why 0.1 acre?" in April.
-- **Failure inventory.** The specific things that went wrong and the fix, beyond the generic table in the spec.
+Apply these requirements to the actual download, preprocessing, training, inference, or collection job being used. These rules do not establish that a runner already implements them.
 
-**For the writeup**
-- **Figure and table inventory** — which script generates which figure, so regenerating the deck is one command.
-- **Claims register.** Every factual claim in the final paper mapped to its source or to the analysis that produced it. Start this early; reconstructing it in week 29 is miserable.
-- **Stakeholder contact log.** Who was contacted, when, what they said. Both for the writeup and so two group members do not email the same person twice.
+Before a long job, save a compact run record and link it from `checklist.md`:
 
-**Worth considering**
-- A `SECURITY.md` or a note on handling permit data: it contains addresses tied to named property owners. Decide early whether the public repo publishes parcel-level results or only aggregates, and write that decision down here.
-- A short note on **what to do if the ORA request fails**, so nobody has to re-reason it under time pressure. The fallback is Tier 5 in `permits-and-pixels.md`.
+- Purpose, run ID, owner, fixed input scope, code revision, exact command/configuration, completion and stop conditions.
+- Host, working directory, task or process identity with start time, single-writer ownership, expected resources, runtime, bounded retries/timeouts, and existing cost authority.
+- Output, manifest, log, and checkpoint locations; exact validation, resume, and stop commands; durable retrieval path for a new session.
+- What survives a disconnect, model stop, process crash, reboot, and environment deletion. Mark unknowns explicitly. Record whether the job may continue unattended, its finite scope or runtime/cost limits, and its stop mechanism.
+
+Validate each bounded work unit, finalize its output safely, then advance the manifest/checkpoint. Resume by validating saved units and processing only missing or failed work. Distinguish expected, complete, pending, failed, and genuinely empty units. For training, retain recoverable model/optimizer state and enough configuration to describe restart limits accurately.
+
+The job writes its own compact progress, errors, retry/backoff state, and final exit status. Save completed units and checkpoints to an authorized durable location throughout execution, recording the last confirmed copy and any unsynced tail. A local path, checksum, terminal session, or `nohup` alone does not establish recoverability after environment loss. Keep large raw data and model artifacts out of Git; track manifests and retrieval instructions.
+
+On handoff or continuation, reconcile actual task identity, progress, retry state, and artifacts before changing anything. Preserve healthy jobs and existing data. Stop or repair only for an owner instruction, completion boundary, substantive new evidence, demonstrated failure, or a real operational constraint. Avoid duplicate jobs and preserve partial results when changing plans.
+
+Prefer completion/failure events and supported waits. Do useful independent tasks while a job runs. Avoid recurring model-status polling and idle busywork. A deterministic scheduled data collector can be justified by the research plan; record its schedule, ownership, retention, resource limits, and stop instructions separately from model continuation.
+
+Record task states accurately: `active`, `waiting_for_job`, `blocked`, or `complete`, with the reason and next action. A campaign is fully blocked only when all useful authorized next work is gated. A healthy running job is ongoing work. If no completion notification exists, record that limitation and the exact later status/resume action.
+
+## Human actions
+
+Use [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md) for necessary access, login/export steps, annotation or fieldwork, approvals, and concrete unresolved resource decisions. Do reliable authorized agent work yourself regardless of elapsed time. Prepare the package, reuse existing inputs and requests, minimize the human action, and validate delivery before closing it.
+
+When every useful next task is gated, save a recoverable checkpoint, record the blocking action IDs and exact resume steps in the checklist, report the blocker once, and stop substantive work. An unchanged request does not justify polling or repeated notifications. A blocked campaign remains unfinished. New delivery or a job event requires reconciliation and validation before resumption.
+
+## Git, handoffs, and stopping
+
+Use a working branch and inspect relevant remote changes before resuming. Routine in-scope commits and pushes to the campaign's working branch are authorized. Keep `main` as the reviewed baseline. Merging or pushing to `main`, force-pushing, rewriting published history, and deleting remote branches require explicit owner authorization.
+
+One integration owner handles staging, commits, and pushes in a shared checkout. When delegation is authorized and useful, give agents bounded assignments, explicit file ownership, expected evidence, and stop conditions; avoid duplicated investigations. Concurrent writers need coordinated ownership or isolated checkouts. Follow current model instructions and supported concurrency limits without probing for hidden capacity.
+
+Commit at meaningful milestones and before planned stops. Stage explicit paths, inspect the diff, and exclude secrets, unrelated edits, large inputs, and temporary logs. Clearly label incomplete checkpoints and pending checks. Verify the remote contains a pushed checkpoint; report publishing failures with the local commit and recovery action.
+
+Maintain recoverable state throughout execution rather than relying on a final saving turn. Use reliable budget signals when exposed; otherwise keep assignments bounded and checkpoint frequently without inventing remaining allowance percentages.
+
+At a stop boundary, stop launching new work, preserve partial results, update the checklist and human-action queue, and publish an honest checkpoint. A declared independent job may continue within its recorded authority and resource limits when the host supports it; an explicit instruction to stop that job overrides continuation. Stop only owned processes that should end and retain exact recovery steps. Do not describe a budget stop as successful completion.
+
+Handoffs identify the branch and checkpoint, completed and unfinished work, checks and review status, artifact recovery locations, process ownership, blockers, and exact next actions. On resume, reconcile from those records and actual artifacts. This agreement installs no goal runtime, watcher, scheduled agent, or automatic restart service.
