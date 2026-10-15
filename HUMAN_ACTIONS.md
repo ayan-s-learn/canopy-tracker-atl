@@ -13,7 +13,7 @@ Before adding an action:
 1. Check existing inputs, caches, active/fulfilled actions, and the checklist. Combine overlapping needs and avoid duplicate requests.
 2. State the next task or decision it unlocks and why an agent cannot finish that part within existing authority. Request the smallest sufficient scope while preserving the planned sample and evaluation integrity.
 3. Complete authorized preparation: runnable code or export instructions, annotation materials, fieldwork forms, a draft message, or a concrete resource comparison. Verify a small sample where feasible and publish the needed materials before notifying the owner. Sending a prepared message still requires authorization.
-4. Specify literal steps, exact code revision, required access, expected output, hands-on time, unattended runtime, cost, and the execution host. State whether the owner's computer must stay on and what survives disconnection.
+4. Specify the steps, prepared revision, required access, expected output and material effort/cost. Include unattended runtime, execution host, computer-awake requirements and disconnect behavior when the action actually involves execution; an approval-only request need not invent these fields.
 5. Provide an accessible delivery path, safe stop/resume or correction steps, and agent acceptance checks. A path on the owner's device is not cloud delivery. Keep credentials out of chat, Git, archives, and logs.
 
 Use stable IDs (`HA-0001`, `HA-0002`, ...); coordinate allocation across active project branches. Keep each action's owner, branch, dependencies, and linked checklist tasks clear. Preserve the ID and history when correcting or closing a request.
