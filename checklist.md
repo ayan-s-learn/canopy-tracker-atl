@@ -1,6 +1,6 @@
 # Canopy Tracker ATL — plan and current state
 
-Updated **2026-10-15, America/Los_Angeles**. Integration owner: **Codex research lead (this chat)**. Campaign branch: **`chore/autonomous-harness`**. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
+Updated **2026-10-15, America/Los_Angeles**. Integration owner: **Codex campaign lead**, coordinating through [PR #2](https://github.com/ayan-s-learn/canopy-tracker-atl/pull/2). Campaign branch: **`chore/autonomous-harness`**. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
 
 ## Objective and current evidence
 
@@ -65,4 +65,4 @@ Read AGENTS.md and current state, claim an item, and use its [ready brief](docs/
 
 ## Next action
 
-Complete the setup review and open the campaign PR, then claim T01–T04. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.
+Setup reviews are complete and [PR #2](https://github.com/ayan-s-learn/canopy-tracker-atl/pull/2) is open. Next, claim T01–T04. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.
