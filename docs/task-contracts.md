@@ -6,7 +6,7 @@
 
 ## Rules shared by every item
 
-Use the working agreement's [launch and parallel-work rules](../AGENTS.md#checklist-item-goals-and-parallel-work), [revision rules](../AGENTS.md#local-decisions-and-plan-changes), and [job-recovery requirements](operations.md#cloud-jobs-recovery-and-waiting). Keep each launch brief and its evidence in one linked task/experiment record, such as `docs/tasks/ID.md`. Suggested paths are conventions, not requirements.
+Use the working agreement's [launch and parallel-work rules](../AGENTS.md#checklist-item-goals-and-parallel-work), [revision rules](../AGENTS.md#local-decisions-and-plan-changes), and [job-recovery requirements](operations.md#cloud-jobs-recovery-and-waiting). Reuse the task research record for launch details and evidence; no separate task log is required. The [current layout defaults](project-reviews.md#initial-layout--t01t04-astra-2026-10-15) are conventions for owners to adapt, not requirements.
 
 The checklist owns live status and claims; the briefs below describe the work. Starting inputs can be validated intermediates or labeled fixtures; acceptance still requires evidence for the claimed scope. Negative findings may complete an inquiry without passing a scientific readiness gate.
 
@@ -33,7 +33,7 @@ The checklist owns live status and claims; the briefs below describe the work. S
 ## T03 — Audit permit sources and temporal meaning
 
 - **Objective / starting inputs:** determine what record searches can and cannot support. Start from P00's source/error evidence; imagery dates can remain candidate intervals during discovery.
-- **Suggested owner / write reservation:** records agent; `docs/research/permits/`, `manifests/permits/discovery/` and its task record, or agreed equivalents.
+- **Suggested owner / write reservation:** records agent; `docs/research/permits/`, `manifests/permits/` and its task record, or agreed equivalents.
 - **Useful output:** jurisdiction × authority × record type × date coverage matrix; tested access/field semantics; redacted examples; effective-date rules and missing-source questions.
 - **Method freedom:** diagnose actual access failures, discover the published export endpoint, and sample diverse records where accessible, including arborist reviews inside building records, DDH, status/amendment relationships and public/private responsibilities. Choose the sample and access route that resolve uncertainty; no broad scrape is required. Draft missing-export questions as soon as gaps are clear rather than waiting for every other stream.
 - **Acceptance evidence:** distinguish landing-page access from actual records and completeness; preserve source errors and limits. Building records without tree-review evidence are context, not tree authorization. Verify relevant historical semantics from official sources. A bounded negative inquiry is valid evidence with a concrete next access action; it does not establish record absence or unlawful removal.
@@ -43,7 +43,7 @@ The checklist owns live status and claims; the briefs below describe the work. S
 ## T04 — Establish a minimal reproducible environment and durable artifact path
 
 - **Objective / starting inputs:** show how a successor can reproduce a real small geospatial operation and recover its artifacts. Use provisioned capabilities and a permitted sample, including a validated T01/T02 intermediate if available; no full-task dependency.
-- **Suggested owner / write reservation:** runtime agent; environment/lock/ignore files and `docs/operations/` plus its record. Reserve root edits or isolate the checkout.
+- **Suggested owner / write reservation:** runtime agent; environment/lock/ignore files, existing `docs/operations.md`, and checks appropriate to the chosen tooling. Reserve root edits or isolate the checkout.
 - **Useful output:** demonstrated environment/fixture reproduction, authorized storage round trip, recovery/retention/permission limits and a concrete storage action if the missing capability requires a human.
 - **Method freedom:** choose the smallest maintainable environment and existing storage path that work. Containerization or a runner is justified by actual jobs, not by this task title. Runtime and storage may be separate subtasks with independently consumable outputs.
 - **Acceptance evidence:** open/process a real permitted raster/vector fixture from a fresh directory using recorded versions; verify output tolerance; copy/retrieve/hash-check a real artifact from the authorized durable path. Document disconnect/crash/reboot/deletion survival honestly. A local file/checksum alone does not establish durability. Do not deliberately restart the host to test it.
