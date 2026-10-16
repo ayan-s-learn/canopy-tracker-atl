@@ -16,13 +16,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 **Human actions:** none ready or blocking the first inquiries. Agents prepare concrete packages when access/storage, independent annotation, publication/communications or briefing delivery actually need a human. Do not create requests for routine local planning changes.
 
-## How work is chosen and revised
-
-Workstream owners select useful work, choose methods, split/revise local tasks and coordinate directly with affected peers within existing scope and authority. The integrator keeps shared interfaces, state, resource conflicts, evidence promotion and campaign merges coherent. It is not a permission queue for every method or batch.
-
-**Ready briefs are detailed; future work is a roadmap.** [Task briefs and sketches](docs/task-contracts.md) retain stable IDs for continuity, not a fixed sequence. Expand a sketch when useful and distinguish starting inputs from acceptance evidence. Follow the working agreement's [decision rights](AGENTS.md#local-decisions-and-plan-changes) and [claim, resource, intermediate-output and integration rules](AGENTS.md#checklist-item-goals-and-parallel-work).
-
-**Next Astra project review:** [AR01 — feasibility findings and next work](docs/project-reviews.md#ar01--feasibility-findings-and-next-work), planned after T01–T04 complete (earlier for a material blocker or change in direction). The integration owner prepares it; Astra defines the next round and AR02 trigger. No review has been held. See the [glossary](docs/glossary.md) for terms and IDs.
+**Next Astra project review:** [AR01 — feasibility findings and next work](docs/project-reviews.md#ar01--feasibility-findings-and-next-work), planned after T01–T04 complete (earlier for a material blocker or change in direction). The integration owner prepares it; Astra defines the next round and AR02 trigger. No review has been held. See the [glossary](docs/glossary.md) for domain terminology.
 
 ## Ready work and ownership
 
@@ -39,22 +33,22 @@ A ready brief is not a scheduled job. When claiming one, record its owner, branc
 
 ## Future workstreams — revisable, unclaimed
 
-All IDs below are **roadmap**, not launched items with fixed dependencies or resource allocations. Owners may activate an independently useful slice or replace the breakdown with recorded successors. The sketches describe evidence needed for acceptance; proposed task grouping is not itself an acceptance condition.
+These workstreams outline future questions. Astra reviews help turn the next useful work into ready briefs. [Earlier task sketches](docs/task-contracts.md#earlier-task-sketches) remain available as history.
 
-| Workstream | Current questions / likely IDs | What can proceed independently | Evidence needed for accepted claims |
-|---|---|---|---|
-| Study agreement | [T06](docs/task-contracts.md#t06--integrate-and-freeze-the-first-study-contract-g1) | Reconcile boundary, interval and interfaces as source evidence arrives | Versioned scope, usable inputs, recovery and honest coverage |
-| Reference and evaluation | [T07](docs/task-contracts.md#t07--preregister-reference-sampling-and-acceptance-design), T09–T10, T18–T20 | Protocol/tool drafts alongside acquisition; independent component reference/evaluation | Protected exclusions before contamination; reviewed sampling/targets before test; actual references and independent reproduction |
-| Preparation and detection | [T08](docs/task-contracts.md#t08--build-and-assess-paired-pilot-preparation), T11–T13, T17 | Technical image QC/controls from usable samples; exploratory code before human labels | Suitable imagery, accepted development comparisons and frozen versions for protected evaluation |
-| Parcels and permits | [T05](docs/task-contracts.md#t05--prepare-any-necessary-historical-records-request), T14–T16, T17L | Request drafts from known gaps; normalized batches and geometry/match fixtures | Real record/event integration, coverage-aware matching and complete regional accounting for regional claims |
-| Public explanation | [T21](docs/task-contracts.md#t21--build-a-local-map-and-evidence-card-prototype), T22, T24 | Mock/development prototype and release structure before final research | Version-compatible supported findings, rights/handling decision and explicit deployment authorization |
-| Agency use | [T23](docs/task-contracts.md#t23--prepare-research-report-and-agency-briefing), T25 | Methods/report drafts and concrete feedback questions early | Authorized communications; actual final briefing delivery, no invented endorsement |
-| Reproduction and maintenance | [T26](docs/task-contracts.md#t26--demonstrate-rerun-and-establish-maintenance-handoff) | Artifact recovery and component reruns throughout development | Demonstrated accepted-pipeline rerun, retention/custody and correction responsibilities |
-| Future direction | [T27](docs/task-contracts.md#t27--decide-the-next-interval-or-jurisdiction-deferred) | Investigate a new source/opportunity when it matters | Scope-aware go/no-go, appropriate jurisdiction/epoch validation and authority |
+| Workstream | Useful preparation | Evidence needed for accepted results |
+|---|---|---|
+| Study agreement | Reconcile boundary, imagery interval and interfaces as sources become available | Versioned scope, usable inputs, honest coverage and recovery |
+| Reference and evaluation | Draft protocols/tools; prepare independent component references | Protected exclusions, reviewed sampling and targets, actual references and independent reproduction |
+| Preparation and detection | Inspect paired images; compare practical methods on development data | Suitable imagery, controlled comparisons and frozen versions for protected evaluation |
+| Parcels and permits | Draft requests for known gaps; normalize available records and test geometry/matching | Coverage-aware relations, explicit ambiguity and complete regional accounting for regional claims |
+| Public explanation | Prototype the review workflow with synthetic/development data | Supported findings, rights/handling decision and authorized publication |
+| Agency use | Draft methods, briefing and feedback questions | Authorized communication and actual delivery of supported findings |
+| Reproduction and maintenance | Test artifact retrieval and component reruns throughout development | Demonstrated pipeline rerun, retention/custody and correction responsibilities |
+| Future direction | Assess a new interval or jurisdiction when evidence warrants | Appropriate sources, validation and authority for expansion |
 
 ## Readiness and unresolved decisions
 
-These gates describe **what may be claimed or promoted**, not a requirement to finish one global phase before starting the next. A valid partial component may advance while another is blocked; label the limitation.
+See [research direction](docs/research-direction.md#evidence-gates-and-recoverability) for the scientific gate definitions.
 
 | Gate | Required evidence | Current state |
 |---|---|---|
@@ -63,40 +57,12 @@ These gates describe **what may be claimed or promoted**, not a requirement to f
 | G3 — findings validated | Appropriate independent references, uncertainty/coverage, protected evaluation and independent numerical reproduction | Unpassed; no project accuracy measurements |
 | G4 — delivered and maintainable | Supported reviewable bundle, authorized public result, delivered agency briefing and tested rerun | Unpassed; no release or briefing |
 
-Unresolved: recent-image suitability/access; valid-area denominator; parcel history; effective-dated permit coverage; reference effort; local detection scale/registration limits; useful review yield/subgroup precision; durable storage; public detail and future custodian. Local findings can change methods and task boundaries. A changed shared scientific assumption needs affected-owner coordination and independent review; changed public/spending/communication scope retains the working agreement's authorization requirement.
+Unresolved: recent-image suitability/access; valid-area denominator; parcel history; effective-dated permit coverage; reference effort; local detection scale/registration limits; useful review yield/subgroup precision; durable storage; public detail, project license and future custodian.
 
-Protected geography must be reserved before training/tuning contaminates it. Freeze each relevant method/prediction frame before its model-dependent protected sample; image reference does not inherently require permit linkage. Holdout generalization is distinct from a whole-domain map survey. Incomplete permit coverage remains explicit ambiguity, never evidence of illegality. These standards survive roadmap revisions.
+## Launch ready work
 
-## First launch prompts
+Read AGENTS.md and current state, claim an item, and use its [ready brief](docs/task-contracts.md). A bounded prompt is sufficient: `/goal Complete T01 under its ready brief and AGENTS.md`; substitute T02, T03 or T04 as appropriate.
 
-Each prompt uses the matching [ready brief](docs/task-contracts.md). Read AGENTS.md, this checklist and HUMAN_ACTIONS.md; confirm visible ownership and finite launch bounds before execution. Native `/goal` is optional; ordinary bounded prompts work too.
+## Next action
 
-```text
-/goal Complete T01 under its ready brief and AGENTS.md. Reuse saved source
-evidence, test actual paired pixels, and share checked intermediates with the
-geography/runtime owners. Record suitability, access limits and the next action.
-```
-
-```text
-/goal Complete T02 under its ready brief and AGENTS.md. Retrieve and validate
-the jurisdiction boundary, share it with T01, and assess parcel/GT sources.
-Record source, vintage and rights limitations.
-```
-
-```text
-/goal Complete T03 under its ready brief and AGENTS.md. Test permit access,
-coverage and semantics; distinguish missing sources from absent records.
-Share schemas and request gaps with affected owners. No unauthorized contact.
-```
-
-```text
-/goal Complete T04 under its ready brief and AGENTS.md. Demonstrate a small
-reproducible geospatial operation and artifact recovery. Publish environment
-and storage checks separately; prepare a concrete action for missing capability.
-```
-
-## Checkpoint and next resume
-
-Prior setup revision: `9246df4` (Sol-reviewed clarity cleanup); [D02](docs/decisions/decentralized-planning.md) retains the earlier planning review. The current framework adds Astra project reviews, a plain-language glossary and a linked operations guide. Document checks passed; Sol review requested a glossary correction on permit coverage, now applied. Research tasks remain unlaunched; this framework review is not AR01.
-
-On resume, follow [Start or resume](AGENTS.md#start-or-resume), then claim useful ready work. Full project completion still requires validated findings with honest reconciliation limits, the authorized public deliverable, an actual agency briefing and a reproducible maintenance handoff.
+Complete the setup review and open the campaign PR, then claim T01–T04. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.

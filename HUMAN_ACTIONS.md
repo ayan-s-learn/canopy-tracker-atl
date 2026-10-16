@@ -32,30 +32,17 @@ If all useful work is blocked, follow the working agreement's [checkpoint and no
 
 This template is not an active request. Replace every bracketed field before marking an action ready. Omit fields that do not apply and explain material unknowns.
 
-### HA-NNNN — [Plain-language action]
+### HA-NNNN — [Action]
 
-- **Status / priority:** [ready; what this blocks].
-- **Requested / updated:** [date and timezone].
-- **Owner / branch / checklist task:** [responsible agent, branch, linked task].
-- **Decision unlocked / why human action is needed:** [specific next decision and obstacle].
-- **Minimum sufficient scope:** [fixed inputs or actions, existing materials reused, exclusions, missing-item handling].
-- **Prepared materials / revision:** [published code, instructions, draft, sample packet, or resource options; exact revision and checks performed].
-- **Hands-on / unattended time:** [estimates and basis].
-- **Execution host / computer requirement:** [where work runs, awake/online requirement, disconnect behavior].
-- **Cost / size / prerequisites:** [known amount or uncertainty, disk/transfer needs, accounts/access; approval limits if relevant].
-
-**Steps**
-
-1. [Exact starting app, website, screen, or directory and direct link.]
-2. [Exact action or prepared command; define inputs and preserve existing work.]
-3. [Expected progress, success message, and output or decision.]
-4. [Exact accessible delivery steps and confirmation to send.]
-
-**Stop / resume / failure:** [safe actions, saved partial work, log location, non-secret error or uncertainty to report].
-
-**Acceptance / next action:** [files, coverage, schema, integrity or decision checks; tested retrieval/restore where relevant; exact next authorized task; evaluation restrictions].
-
-**Progress / delivery / verification:** [dated updates, accessible artifact locations or approved scope, checks and limitations; leave empty until known].
+- **Status / priority / dates:** [status, what this blocks, requested/updated].
+- **Owner / branch / task:** [responsible agent and linked task].
+- **Need and scope:** [decision unlocked, why a human is needed, minimum sufficient scope and exclusions].
+- **Prepared package:** [accessible link, exact revision and preparation checks].
+- **Steps and delivery:** [exact actions, expected result and accessible delivery path].
+- **Effort and constraints, where relevant:** [hands-on/runtime estimates, cost, access, data size, execution host and disconnect behavior].
+- **Stop / correction / resume:** [safe recovery and failure-reporting instructions].
+- **Acceptance / next action:** [agent checks, evaluation restrictions and next authorized work].
+- **History:** [dated delivery, verification, corrections and approved scope; preserve artifact links and limitations].
 
 ## Fulfilled actions
 
