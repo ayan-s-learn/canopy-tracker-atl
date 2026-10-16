@@ -99,6 +99,6 @@ and storage checks separately; prepare a concrete action for missing capability.
 
 Prior setup revision: `9246df4` (Sol-reviewed clarity cleanup); [D02](docs/decisions/decentralized-planning.md) retains the earlier planning review. The current framework adds Astra project reviews, a plain-language glossary and a linked operations guide. Document checks passed; Sol review requested a glossary correction on permit coverage, now applied. Research tasks remain unlaunched; this framework review is not AR01.
 
-Pending setup review: `chore/domain-glossary-and-identity` reduces the glossary to domain terms and adds an agent Git-identity check. The requested simplicity and future-risk Sol reviews, then the combined PR, are deferred at the owner's request.
+Pending setup review: `chore/domain-glossary-and-identity` reduces the glossary to domain terms. The requested simplicity and future-risk Sol reviews, then the combined PR, are deferred at the owner's request.
 
 On resume, follow [Start or resume](AGENTS.md#start-or-resume), then claim useful ready work. Full project completion still requires validated findings with honest reconciliation limits, the authorized public deliverable, an actual agency briefing and a reproducible maintenance handoff.
