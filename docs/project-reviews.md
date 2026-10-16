@@ -17,8 +17,6 @@ An Astra planning review does not itself pass a research gate. Preserve protecte
 
 Use stable IDs (`AR01`, `AR02`, …). For each completed review, retain: date/model and contributors; triggering milestone and evidence revisions; findings and unresolved objections; decisions and reasons; next ready task IDs with linked briefs and owners or `unclaimed`; carried blockers and human actions; next review ID/trigger; integration revision. Add dated amendments rather than silently rewriting previous decisions. Pending entries must not imply a meeting occurred.
 
-Earlier planning is background, not retrospectively an Astra project review: [P00 findings and review](research/2026-10-14-planning/review.md), [P01 decentralization decision](decisions/decentralized-planning.md). Framework established at the owner's request on **2026-10-15, America/Los_Angeles**.
-
 ### AR01 — Feasibility findings and next work
 
 - **Status:** planned; no review held. Preparation/integration owner: current checklist integration owner. Review lead: Astra.
