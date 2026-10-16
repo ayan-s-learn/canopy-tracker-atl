@@ -66,7 +66,7 @@ flowchart LR
 
 Default implementation: Python package with a small CLI, locked dependencies and configuration files; Rasterio/GDAL, NumPy, Shapely/GeoPandas as needed, scikit-learn baseline, optional PyTorch only after a justified model task. Prefer a portable environment proven on a real crop over immediately building a container platform. Notebook exploration must export reusable code/configs. No Earth Engine, Colab or proprietary license dependency is assumed.
 
-Candidate formats are COGs for rasters, GeoParquet for canonical geometry/tables, GeoPackage for human review, JSON manifests and CSV summaries. Start with filesystem operations and optionally DuckDB; add a service or runner only for an observed need. Suggested module boundaries: `src/canopy/{acquire,prepare,detect,attribute,permits,evaluate,release}`. These are conventions for owners to adapt with consumers, not permanent directory ownership or a requirement to scaffold empty modules.
+Candidate formats are COGs for rasters, GeoParquet for canonical geometry/tables, GeoPackage for human review, JSON manifests and CSV summaries. Start with filesystem operations and optionally DuckDB; add a service or runner only for an observed need.
 
 Candidate analysis grid: NAD83 / UTM zone 16N (EPSG:26916), meters, matching sampled NAIP metadata. Owners coordinate grid origin/resolution, transformations and area checks, then pin the chosen grid for each evaluated study version. Evaluate at a common effective resolution no finer than credible inputs, initially 0.6 m if both support it. Continuous-band resampling and categorical/mask resampling need distinct methods. Transform once where possible; never calculate areas in web-map coordinates. Export display geometry separately.
 

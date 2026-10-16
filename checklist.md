@@ -14,7 +14,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 **Human actions:** none ready or blocking the first inquiries. Agents prepare concrete packages when access/storage, independent annotation, publication/communications or briefing delivery actually need a human. Do not create requests for routine local planning changes.
 
-**Next Astra project review:** [AR01 — feasibility findings and next work](docs/project-reviews.md#ar01--feasibility-findings-and-next-work), planned after T01–T04 complete (earlier for a material blocker or change in direction). The integration owner prepares it; Astra defines the next round and AR02 trigger. No review has been held. See the [glossary](docs/glossary.md) for domain terminology.
+**Next Astra project review:** [AR01 — feasibility findings and next work](docs/project-reviews.md#ar01--feasibility-findings-and-next-work), planned after T01–T04 complete (earlier for a material blocker or change in direction). The integration owner prepares it; Astra defines the next round and AR02 trigger. The [initial layout](docs/project-reviews.md#initial-layout--t01t04-astra-2026-10-15) covers T01–T04 only; feasibility remains unreviewed. See the [glossary](docs/glossary.md) for domain terminology.
 
 ## Ready work and ownership
 
