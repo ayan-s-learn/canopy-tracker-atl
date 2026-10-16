@@ -4,6 +4,8 @@ Decision record D01, 2026-10-14 (America/Los_Angeles). Status: initial scientifi
 
 The objective, authority boundaries and evidence standards are commitments. The preferred interval, methods, thresholds, stack and sequencing below are revisable hypotheses/defaults until adopted for a specific study or evaluation. Workstream owners can change local methods with a recorded reason; coordinate shared interfaces and obtain independent review for consequential scientific changes. Freeze the version actually being evaluated, not the entire future project. The task IDs name likely work, not a mandatory serial route.
 
+See the [glossary](glossary.md) for technical terms. [Astra project reviews](project-reviews.md) revisit the direction as evidence arrives.
+
 ## Question and useful output
 
 Can repeatable analysis of public aerial imagery identify **gross tree-canopy loss events** at a useful local scale, associate them with intersecting parcels and relevant administrative records, and produce an inspection queue whose reliability and gaps are measurable?
@@ -107,7 +109,7 @@ These are scoped readiness/claim checks, not global phase barriers. Owners may d
 3. **G3: validated research (T18–T20).** Protected evaluation, independent reproduction, uncertainty and disclosure of unsupported strata. Failure limits claims rather than automatically creating a new model experiment.
 4. **G4: public and agency delivery (T21–T26).** Reviewable release, approved handling/granularity and deployment, briefing delivery evidence, documented rerun and maintenance ownership. A deployed prototype is not a validated study; a prepared deck is not a delivered briefing.
 
-Before substantive jobs, use the run-record requirements in `AGENTS.md`: finite input manifest, owner/process identity, exact commands/config, resource ceiling, checkpoint/retry rules, durable retrieval, stop/resume, and survival limits. Use transactional per-unit writes, checksums, expected/complete/pending/failed/empty manifests and bounded retries. Quarantine corrupted units; never count HTTP success or a file's existence as completed data.
+Before substantive jobs, use the [operations guide](operations.md#cloud-jobs-recovery-and-waiting): finite input manifest, owner/process identity, exact commands/config, resource ceiling, checkpoint/retry rules, durable retrieval, stop/resume, and survival limits. Use transactional per-unit writes, checksums, expected/complete/pending/failed/empty manifests and bounded retries. Quarantine corrupted units; never count HTTP success or a file's existence as completed data.
 
 T04 establishes the authorized durable location and verifies copying/retrieving a real small artifact. Git stores code, compact records and allowed small fixtures, not raw rasters, model weights, personal records or secrets. Unknown environment-deletion survival is a blocker for irreplaceable long work, not for this bounded planning exercise. Signed URLs expire and must not be committed. Measure throughput and temporary-space multipliers before citywide runs; stop launching new units at limits while preserving validated work. Do not invent a detached scheduler or assume `/goal` automatically survives disconnection.
 
