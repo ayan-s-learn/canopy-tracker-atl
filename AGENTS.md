@@ -48,6 +48,12 @@ Keep shared implementation in normal source modules. Record bounded experiments 
 
 Put detailed experiments, reviews, manifests, and logs in appropriate files and link them from the checklist. Create structure as the work needs it; avoid empty frameworks and duplicated pipelines.
 
+## Astra project reviews
+
+Astra leads milestone-based project reviews to assess evidence and define the next round of work. The first review follows T01–T04; each review sets the next explicit trigger. Use the [review process and cumulative record](docs/project-reviews.md), with only the next review and its status in the checklist. The integration owner prepares the evidence and incorporates the outcome; workstream owners contribute findings and proposed next tasks.
+
+Reviews steer shared direction and detail the next ready work. Local methods, subtasks and useful independent preparation remain autonomous under the decision rights above. A blocked inquiry or evidence that changes the direction can trigger an earlier review; do not manufacture completion or stall unrelated work to reach a milestone. Reviews do not substitute for independent scientific validation or owner authorization.
+
 ## Checklist-item goals and parallel work
 
 Use a bounded `/goal` for a coherent actionable item when supported, with multiple ready items allowed in parallel. The item may be split or revised as evidence arrives using the change rules above; a run is not an immutable project plan. An ordinary task prompt follows the same contract when native controls are unavailable. This agreement does not configure a goal runtime or guarantee automatic continuation.
@@ -85,24 +91,7 @@ Honor owner stop instructions and platform limits. Use supported runtime capabil
 
 ## Cloud jobs, recovery, and waiting
 
-Apply these requirements to the actual download, preprocessing, training, inference, or collection job being used. These rules do not establish that a runner already implements them.
-
-Before a long job, save a compact run record and link it from `checklist.md`:
-
-- Purpose, run ID, owner, fixed input scope, code revision, exact command/configuration, completion and stop conditions.
-- Host, working directory, task or process identity with start time, single-writer ownership, expected resources, runtime, bounded retries/timeouts, and existing cost authority.
-- Output, manifest, log, and checkpoint locations; exact validation, resume, and stop commands; durable retrieval path for a new session.
-- What survives a disconnect, model stop, process crash, reboot, and environment deletion. Mark unknowns explicitly. Record whether the job may continue unattended, its finite scope or runtime/cost limits, and its stop mechanism.
-
-Validate each bounded work unit, finalize its output safely, then advance the manifest/checkpoint. Resume by validating saved units and processing only missing or failed work. Distinguish expected, complete, pending, failed, and genuinely empty units. For training, retain recoverable model/optimizer state and enough configuration to describe restart limits accurately.
-
-The job writes its own compact progress, errors, retry/backoff state, and final exit status. Save completed units and checkpoints to an authorized durable location throughout execution, recording the last confirmed copy and any unsynced tail. A local path, checksum, terminal session, or `nohup` alone does not establish recoverability after environment loss. Keep large raw data and model artifacts out of Git; track manifests and retrieval instructions.
-
-On handoff or continuation, reconcile actual task identity, progress, retry state, and artifacts before changing anything. Preserve healthy jobs and existing data. Stop or repair only for an owner instruction, completion boundary, substantive new evidence, demonstrated failure, or a real operational constraint. Avoid duplicate jobs and preserve partial results when changing plans.
-
-Prefer completion/failure events and supported waits. Do useful independent tasks while a job runs. Avoid recurring model-status polling and idle busywork. A deterministic scheduled data collector can be justified by the research plan; record its schedule, ownership, retention, resource limits, and stop instructions separately from model continuation.
-
-Record task states accurately: `active`, `waiting_for_job`, `blocked`, or `complete`, with the reason and next action. A campaign is fully blocked only when all useful authorized next work is gated. A healthy running job is ongoing work. If no completion notification exists, record that limitation and the exact later status/resume action.
+Read and follow the [operations guide](docs/operations.md#cloud-jobs-recovery-and-waiting) before launching or resuming jobs. Save recoverable run records, validate artifacts before restarting, preserve healthy authorized jobs, and report survival limits honestly. A local path alone is not durable storage. Keep job status and the next action in the checklist.
 
 ## Human actions
 
@@ -116,10 +105,4 @@ Use a working branch and inspect relevant remote changes before resuming. Routin
 
 One integration owner handles staging, commits, and pushes in a shared checkout. When delegation is authorized and useful, give agents bounded assignments, explicit file ownership, expected evidence, and stop conditions; avoid duplicated investigations. Concurrent writers need coordinated ownership or isolated checkouts. Follow current model instructions and supported concurrency limits without probing for hidden capacity.
 
-Commit at meaningful milestones and before planned stops. Stage explicit paths, inspect the diff, and exclude secrets, unrelated edits, large inputs, and temporary logs. Clearly label incomplete checkpoints and pending checks. Verify the remote contains a pushed checkpoint; report publishing failures with the local commit and recovery action.
-
-Maintain recoverable state throughout execution rather than relying on a final saving turn. Use reliable budget signals when exposed; otherwise keep assignments bounded and checkpoint frequently without inventing remaining allowance percentages.
-
-At a stop boundary, stop launching new work, preserve partial results, update the checklist and human-action queue, and publish an honest checkpoint. A declared independent job may continue within its recorded authority and resource limits when the host supports it; an explicit instruction to stop that job overrides continuation. Stop only owned processes that should end and retain exact recovery steps. Do not describe a budget stop as successful completion.
-
-Handoffs identify the branch and checkpoint, completed and unfinished work, checks and review status, artifact recovery locations, process ownership, blockers, and exact next actions. On resume, reconcile from those records and actual artifacts. This agreement installs no goal runtime, watcher, scheduled agent, or automatic restart service.
+Follow the [publication, handoff and stopping procedures](docs/operations.md#git-publication-handoffs-and-stopping). Preserve recoverable evidence throughout execution, publish meaningful milestones, verify pushed revisions, and leave an honest next action. An interruption or budget stop is not successful completion.
