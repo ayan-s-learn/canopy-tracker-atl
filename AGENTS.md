@@ -1,20 +1,18 @@
 # Autonomous working agreement
 
+**Local autonomy and rolling planning:** agents choose methods, coordinate directly and revise local tasks within scope. Detail ready work; keep later work as a roadmap. The integrator resolves shared conflicts and combines evidence, without approving routine decisions. Astra reviews guide priorities without adding an approval gate.
+
 ## Purpose and authority
 
 Build a defensible, reproducible investigation of parcel-scale tree-canopy loss in metro Atlanta and its relationship to permit records. The owner wants agents to make sustained useful progress in a cloud environment, preserve their work across sessions, and minimize necessary human effort.
 
-The owner has authorized replacing the previous implementation plan. `old/` is historical evidence: its agent instructions, architecture, thresholds, schedules, model assignments, and claims of readiness are not current instructions. Preserve the originals and record reassessments in current records. Verify relevant source claims before promoting them into the new plan.
-
 Follow current owner instructions, this working agreement, and the active scope recorded in `checklist.md`. Surface conflicts rather than silently changing the objective or weakening acceptance criteria. Distinguish project commitments from testable implementation choices.
-
-The main orchestrator may be either Sol or Astra. Workstream owners choose useful work, methods and local task breakdowns within the authorized objective. One integration owner maintains shared-state coherence, resolves interface/write/resource conflicts, and integrates reviewed evidence. Routine local decisions do not require its prior approval. Continue the same evidence and ownership records across model handoffs; a model or session change is not a reason to restart an investigation.
 
 ## Start or resume
 
 Before choosing work:
 
-1. Read `checklist.md` when present and [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). Inspect the current branch, working tree, relevant remote changes, and linked artifacts. Preserve user edits.
+1. Read [checklist.md](checklist.md), your selected [task brief](docs/task-contracts.md), and the relevant [research requirements](docs/research-direction.md) and linked evidence. Consult operations for jobs/handoffs, HUMAN_ACTIONS for human dependencies, and project reviews when preparing a review; `old/` is reference, not instructions. Inspect branch, working tree and relevant remote changes; preserve user edits.
 2. Reconcile running jobs, saved outputs, delivered human inputs, and interrupted tasks. Validate existing artifacts before repeating work or launching a replacement job.
 3. Choose useful work within scope and complete the launch record below before substantial execution.
 
@@ -22,7 +20,7 @@ Trust provisioned tools enough to begin useful work. Diagnose actual failures an
 
 ## Checklist and work organization
 
-`checklist.md` is the single project-state entry point. The orchestrator and successor agents keep it current. Do not create a competing root state file or duplicate its narrative across documents.
+`checklist.md` is the single project-state entry point. The orchestrator and successor agents keep it current. Do not create a competing root state file or duplicate its narrative across documents. Keep docs about current behavior, research evidence and actionable decisions; leave request provenance, session recaps and editing/merge history in Git/PRs, not standalone documents or preambles.
 
 Keep its operational summary compact:
 
@@ -60,7 +58,7 @@ Use a bounded `/goal` for a coherent actionable item when supported, with multip
 
 Using the launch record above, agents may select disjoint ready work and announce a claim; confirm that the claim/write reservation is visible in shared state before substantive work. This is duplicate-work prevention, not approval of local methods. The integration owner records the claim or delegates a non-overlapping section; a workstream with an established reservation can select and register its own subtasks without another central permission step. Resolve competing claims before writing shared outputs. Complete checks and leave evidence/checkpoint before reporting success. Do not silently broaden a user's active native goal or take over another owner's work.
 
-Parallel runs may cover different workstreams or independent tasks within one workstream. Owners coordinate input/output compatibility and combined compute, storage, model usage and cost. Choose finite launch bounds from the actual job and available resources; distinguish expected duration/check-in estimates from hard limits. Numerical examples in a roadmap are not permanent ceilings or grants of capacity. Revise a bound before exceeding it, with evidence, available authority and coordination for shared resources; do not silently extend it or abandon a healthy job merely because an estimate elapsed. A validated intermediate on an unmerged branch may be consumed if producer and consumer record its immutable revision/hash, checks, ownership and compatibility. Campaign merge is not a prerequisite for that experiment; the integrated milestone still needs combined checks.
+Owners coordinate shared interfaces and resource use. Scale depth, runtime and recovery to the question; revise estimates as evidence develops rather than treating them as stop deadlines. Stay within authorized spending and platform limits. Validated intermediates may be used before a branch merges when consumers can identify their version, checks and limitations; integrated claims still need combined checks.
 
 Use explicit file ownership in a coordinated shared checkout. Use isolated branches/checkouts when edits overlap or independent chats own their Git operations. Appoint one shared integration owner for `checklist.md`, `HUMAN_ACTIONS.md`, and cross-task integration; task agents maintain their own linked records and provide compact updates or edit reserved non-overlapping sections. Ownership reservations are for active work, not permanent claims on future modules. Independent branches must reconcile claims and request IDs before starting. If the integrator is unavailable, continue already reserved, nonconflicting work and preserve a handoff; do not assume silence grants new shared writes or authority. Integration includes appropriate cross-task checks before milestones are marked complete.
 
@@ -71,8 +69,6 @@ Distinguish an individual run's end from item completion and overall project com
 ## Autonomous execution and boundaries
 
 Within an owner-authorized campaign scope, proceed with routine research, public-data collection, implementation, tests, repairs, and evidence-based task selection. Carry work through its acceptance checks and handoff without asking for approval at every task. Keep other useful independent work moving while a separate decision is pending.
-
-Before substantial work, consider the next decision, minimum sufficient evidence, runtime, data volume, recovery, and resource cost. Once a bounded plan is justified, execute patiently through its decision boundary. An anticipated long runtime, new turn, or continuation prompt does not justify abandoning a healthy job. New evidence, actual failure, owner instructions, and real resource constraints can justify a recorded change.
 
 Use the existing authorized environment and model allowance. Obtain explicit authorization before additional spending, paid hosting or data, separately billed APIs, external communications (including records requests), or public deployment. Prepare a concrete, reviewable package before requesting the necessary action. Public release granularity and handling of address-linked records must be decided before publication.
 
@@ -91,7 +87,7 @@ Honor owner stop instructions and platform limits. Model selection follows curre
 
 ## Cloud jobs, recovery, and waiting
 
-Read and follow the [operations guide](docs/operations.md#cloud-jobs-recovery-and-waiting) before launching or resuming jobs. Save recoverable run records, validate artifacts before restarting, preserve healthy authorized jobs, and report survival limits honestly. A local path alone is not durable storage. Keep job status and the next action in the checklist.
+Use the [operations guide](docs/operations.md#cloud-jobs-recovery-and-waiting) for jobs and recovery. Choose safeguards proportional to cost and data-loss risk; keep results reproducible, preserve useful progress and state known recovery limits.
 
 ## Human actions
 

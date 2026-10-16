@@ -4,8 +4,6 @@ Planning date: 2026-10-14, America/Los_Angeles. Network observations occurred on
 
 ## What was actually examined
 
-Read current `AGENTS.md`, `README.md`, `HUMAN_ACTIONS.md`, and every file in `old/` at branch base `817a84a`. The branch contained documents only: no implementation, acquired imagery, annotations, evaluation results, installed project environment, or durable artifact configuration. The old files remain unchanged.
-
 Eight bounded HTTP probes, two report downloads, primary-source reading, and independent scientific review informed this plan. No training, bulk geospatial acquisition, permit collection, external communication, or deployment occurred. URLs and retrieval success are evidence about access at this time, not promises of future availability.
 
 ## E1 — Imagery catalog probe
@@ -35,7 +33,7 @@ All four STAC searches had no next-page link. Counts refer to intersecting catal
 
 The environment status reported current observations but network policy state `unknown`; `/etc/codex/network-policy.json` described restricted HTTP destinations. Initial shell network access failed until the supported network permission was enabled. Subsequent Git and STAC calls succeeded; remaining 403 responses were recorded without claiming whether provider or policy caused them. No proxy bypass was attempted.
 
-## E2 — Georgia Tech comparison, requested by the owner
+## E2 — Georgia Tech comparison
 
 Primary sources: [2023 final report](https://geospatial.gatech.edu/AtlantaUTC/AtlantaCanopyReport2023GT.pdf), [2018 final report](https://geospatial.gatech.edu/AtlantaUTC/2018FinalReport.pdf), and [study portal](https://geospatial.gatech.edu/AtlantaUTC/). Both PDFs were downloaded and their relevant methods, accuracy, change-review, and permit sections read directly. [Download hashes](gt-report-manifest.json) identify the versions. Raw PDFs are temporary at `/tmp/canopy-planning/` and not committed; retrieve from those URLs and compare SHA-256 to recover them. Extract with `pdftotext -layout INPUT.pdf OUTPUT.txt`. Page references below use the printed report pages.
 
@@ -84,4 +82,4 @@ The plan makes no claim about current fines, DBH thresholds, illegal removals, o
 
 ## Independent review
 
-The orchestrator requested an independent Sol scientific review under the working agreement. Reviewer read current instructions and all archive files; no edits or implementation. Findings incorporated: protect geography from pseudo-training leakage, distinguish source-model overlap, evaluate both dates and nonloss, test registration rather than mandate a package, use physical event MMU before parcel splitting, separate matching from authorization, and reject inherited readiness/accuracy guarantees. A follow-up review checks the raw STAC JSON and downloaded GT reports. Final plan review and unresolved objections are recorded in [review.md](review.md).
+Findings incorporated: protect geography from pseudo-training leakage, distinguish source-model overlap, evaluate both dates and nonloss, test registration rather than mandate a package, use physical event MMU before parcel splitting, separate matching from authorization, and reject inherited readiness/accuracy guarantees. Independent evidence review is recorded in [review.md](review.md).

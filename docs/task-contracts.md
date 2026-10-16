@@ -1,6 +1,6 @@
 # Ready task briefs
 
-[checklist.md](../checklist.md) is the state entry point. [AGENTS.md](../AGENTS.md) defines decision rights and authority; [research direction](research-direction.md) defines the scientific commitments and current hypotheses. **T01–T04 are ready briefs.** Later work is outlined in the [workstream roadmap](../checklist.md#future-workstreams--revisable-unclaimed) and detailed as evidence arrives.
+[checklist.md](../checklist.md) is the state entry point; [P00 source findings](research/2026-10-14-planning/findings.md) supply the starting evidence below. [AGENTS.md](../AGENTS.md) defines decision rights and authority; [research direction](research-direction.md) defines the scientific commitments and current hypotheses. **T01–T04 are ready briefs.** Later work is outlined in the [workstream roadmap](../checklist.md#future-workstreams--revisable-unclaimed) and detailed as evidence arrives.
 
 [Astra project reviews](project-reviews.md) use each round's evidence to detail the next ready work; AR01 follows T01–T04. Local subtasks and independent preparation can proceed between reviews. The [glossary](glossary.md) defines domain terminology.
 
@@ -49,7 +49,3 @@ The checklist owns live status and claims; the briefs below describe the work. S
 - **Acceptance evidence:** open/process a real permitted raster/vector fixture from a fresh directory using recorded versions; verify output tolerance; copy/retrieve/hash-check a real artifact from the authorized durable path. Document disconnect/crash/reboot/deletion survival honestly. A local file/checksum alone does not establish durability. Do not deliberately restart the host to test it.
 - **Launch boundary:** estimate and declare finite setup/download/fixture limits from available capacity. No paid provisioning, scheduler or GPU merely for setup. A blocked storage subtask need not block environment work or other recoverable inquiry, but the entire T04 outcome remains incomplete until both checks pass.
 - **Handoff / next action:** use an available permitted fixture, demonstrate the actual operation, then publish the environment and storage capabilities separately with their checks and exact retrieval/resume instructions.
-
-## Earlier task sketches
-
-At the owner's request, T05–T27 (including T17L) are retired as active task definitions in favor of the workstream roadmap. Their [IDs and descriptions remain in history](https://github.com/ayan-s-learn/canopy-tracker-atl/blob/f3349d7fa50ff2f884950f96d10339fa1fef63e9/docs/task-contracts.md#future-work--expand-when-useful). This is not completion: scientific and delivery requirements remain in the [research direction](research-direction.md). When new briefs are needed, record their relationship to the old sketches; do not silently reuse an old ID for unrelated work.
