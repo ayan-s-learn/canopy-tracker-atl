@@ -8,8 +8,6 @@ Build a reproducible, independently evaluated canopy-loss investigation with par
 
 Current direction remains **City of Atlanta first**, including its parts in both counties, with a varied pilot before regional findings. Prefer 2023→2025 if usable; investigate 2019→2023 or another justified fallback. Compare practical methods before committing to U-Net. Measure endpoint-visible loss, then many-to-many parcel overlap and coverage-aware three-way permit reconciliation. These methods/intervals are revisable hypotheses; [research direction](docs/research-direction.md) preserves the scientific standards and tradeoffs.
 
-**P00 is complete:** archive/GT review, live catalog inquiry, initial plan and independent review. Evidence is in [planning findings](docs/research/2026-10-14-planning/findings.md) and [original review](docs/research/2026-10-14-planning/review.md); checkpoint `c0f4a78` preserves that version. **P01 is complete:** local agent autonomy, shared integration and detail only for ready work, as clarified by the owner; independently reviewed and merged/pushed by the Sol agent. See [D02 and review record](docs/decisions/decentralized-planning.md). No substantial pipeline implementation has begun.
-
 **Known:** GT already maps fine-resolution canopy, uses ML/manual corrections and compares some permits; our proposed contribution is validated smaller-event analysis and a reproducible evidence trail. The saved rectangle query returned 25 October 7–8, 2023 NAIP items and no 2025 items; actual recent pixels remain unacquired. Permit access/completeness is unproven. These are scoped observations, not full-city readiness.
 
 **Absent:** acquired research dataset, independent reference labels, measured detector accuracy, usable permit snapshot, operational pipeline, proven durable raster/model storage and public release. **Jobs:** none running; earlier metadata/report probes finished. Compact evidence is tracked; GT PDFs are recoverable by source URL/hash. No automated goal runtime, watcher or restart service has been established.
@@ -33,7 +31,7 @@ A ready brief is not a scheduled job. When claiming one, record its owner, branc
 
 ## Future workstreams — revisable, unclaimed
 
-These workstreams outline future questions. Astra reviews help turn the next useful work into ready briefs. [Earlier task sketches](docs/task-contracts.md#earlier-task-sketches) remain available as history.
+These workstreams outline future questions. Astra reviews help turn the next useful work into ready briefs.
 
 | Workstream | Useful preparation | Evidence needed for accepted results |
 |---|---|---|
@@ -65,4 +63,4 @@ Read AGENTS.md and current state, claim an item, and use its [ready brief](docs/
 
 ## Next action
 
-Setup reviews are complete and [PR #2](https://github.com/ayan-s-learn/canopy-tracker-atl/pull/2) is open. Next, claim T01–T04. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.
+Claim T01–T04. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.

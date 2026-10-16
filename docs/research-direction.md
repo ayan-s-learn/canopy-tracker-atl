@@ -1,6 +1,6 @@
 # Research and technical direction
 
-Decision record D01, 2026-10-14 (America/Los_Angeles). Status: initial scientific direction, amended by [D02: local autonomy and rolling planning](decisions/decentralized-planning.md). [Evidence and archive reassessment](research/2026-10-14-planning/findings.md). [Execution/state entry point](../checklist.md).
+[Source findings](research/2026-10-14-planning/findings.md). [Current state](../checklist.md).
 
 The objective, authority boundaries and evidence standards are commitments. The preferred interval, methods, thresholds, stack and sequencing below are revisable hypotheses/defaults until adopted for a specific study or evaluation. Workstream owners can change local methods with a recorded reason; coordinate shared interfaces and obtain independent review for consequential scientific changes. Freeze the version actually being evaluated, not the entire future project. The workstream roadmap remains revisable.
 
