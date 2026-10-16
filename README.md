@@ -6,7 +6,7 @@ Workstream agents choose local methods and revise their task breakdowns; one int
 
 ## Start here
 
-- [Glossary](docs/glossary.md) explains project terms, abbreviations, and task IDs in plain language.
+- [Domain glossary](docs/glossary.md) defines geospatial and research terminology.
 - [AGENTS.md](AGENTS.md) defines decision rights, evidence standards, and required operating procedures.
 - [checklist.md](checklist.md) holds the implementation plan and current project state, maintained as work progresses.
 - [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md) holds prepared requests for necessary human actions and their delivery checks.
@@ -17,8 +17,6 @@ Workstream agents choose local methods and revise their task breakdowns; one int
 
 ## Execute checklist items
 
-Choose a [ready item](checklist.md#ready-work-and-ownership) and use its [launch prompt](checklist.md#first-launch-prompts). Ready work has detailed briefs; later work remains a revisable roadmap. Follow the [ownership, integration, and waiting rules](AGENTS.md#checklist-item-goals-and-parallel-work). An ordinary bounded prompt works when native `/goal` is unavailable.
+Choose a [ready item](checklist.md#ready-work-and-ownership) and use its [launch instructions](checklist.md#launch-ready-work). Ready work has detailed briefs; later work remains a revisable roadmap. Follow the [ownership, integration, and waiting rules](AGENTS.md#checklist-item-goals-and-parallel-work). An ordinary bounded prompt works when native `/goal` is unavailable.
 
 After T01–T04, Astra reviews the findings and helps define the next ready work. Each project review sets the next milestone for review; agents retain local autonomy between reviews.
-
-This repository provides the operating agreement. Cloud jobs, durable storage, scheduled collection, and automatic continuation require actual setup and verification when the approved work needs them.

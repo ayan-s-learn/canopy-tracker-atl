@@ -16,7 +16,7 @@ Before choosing work:
 
 1. Read `checklist.md` when present and [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). Inspect the current branch, working tree, relevant remote changes, and linked artifacts. Preserve user edits.
 2. Reconcile running jobs, saved outputs, delivered human inputs, and interrupted tasks. Validate existing artifacts before repeating work or launching a replacement job.
-3. Choose the next useful task within the active scope. State its question, expected artifact, acceptance checks, resource bounds, and stopping condition before substantial execution.
+3. Choose useful work within scope and complete the launch record below before substantial execution.
 
 Trust provisioned tools enough to begin useful work. Diagnose actual failures and newly needed capabilities; avoid repeated environment inventories, toy preflights, hidden-control searches, or deliberate restart experiments.
 
@@ -31,7 +31,7 @@ Keep its operational summary compact:
 - Running jobs and their saved run records; blockers and human-action IDs.
 - Important decisions, unresolved review findings, checks passed or pending, and exact next actions.
 
-Detail work when it is ready to run. Give each launched item a stable ID, objective, actual starting inputs, expected artifact, acceptance checks, owner/status, branch or checkout, write ownership, resource bounds, and next action. Later work is a revisable roadmap: retain its purpose, major uncertainties and evidence needed for promotion without inventing its methods, sample counts or runtime limits now. Link long specifications rather than expanding every item into a full run log.
+Detail work when it is ready to run. Record once per launched item: stable ID, objective, actual inputs, expected artifact, acceptance checks, owner/status, branch or checkout, write ownership, resource/authority limits, stopping conditions and next action. Later work is a revisable roadmap: retain its purpose, major uncertainties and evidence needed for promotion without inventing its methods, sample counts or runtime limits now. Link long specifications rather than expanding every item into a full run log.
 
 Organize work around evidence and deliverables. Distinguish an input needed to start useful work from evidence required to accept an output or make a claim. A task ID or milestone is not a blanket start barrier: a validated intermediate, pinned interface or clearly labeled fixture may support independent preparation. Record what remains unvalidated. Choose depth, breadth and concurrency according to evidence, uncertainty, cost and actual capacity. A blocked workstream should only block work that needs its missing input.
 
@@ -56,9 +56,9 @@ Reviews steer shared direction and detail the next ready work. Local methods, su
 
 ## Checklist-item goals and parallel work
 
-Use a bounded `/goal` for a coherent actionable item when supported, with multiple ready items allowed in parallel. The item may be split or revised as evidence arrives using the change rules above; a run is not an immutable project plan. An ordinary task prompt follows the same contract when native controls are unavailable. This agreement does not configure a goal runtime or guarantee automatic continuation.
+Use a bounded `/goal` for a coherent actionable item when supported, with multiple ready items allowed in parallel. The item may be split or revised as evidence arrives using the change rules above; a run is not an immutable project plan. An ordinary task prompt follows the same contract when native controls are unavailable.
 
-At launch, identify the item ID, objective, expected output, starting inputs, acceptance checks, resource/authority limits, owner and stop conditions. Agents may select disjoint ready work and announce a claim; confirm that the claim/write reservation is visible in shared state before substantive work. This is duplicate-work prevention, not approval of local methods. The integration owner records the claim or delegates a non-overlapping section; a workstream with an established reservation can select and register its own subtasks without another central permission step. Resolve competing claims before writing shared outputs. Complete checks and leave evidence/checkpoint before reporting success. Do not silently broaden a user's active native goal or take over another owner's work.
+Using the launch record above, agents may select disjoint ready work and announce a claim; confirm that the claim/write reservation is visible in shared state before substantive work. This is duplicate-work prevention, not approval of local methods. The integration owner records the claim or delegates a non-overlapping section; a workstream with an established reservation can select and register its own subtasks without another central permission step. Resolve competing claims before writing shared outputs. Complete checks and leave evidence/checkpoint before reporting success. Do not silently broaden a user's active native goal or take over another owner's work.
 
 Parallel runs may cover different workstreams or independent tasks within one workstream. Owners coordinate input/output compatibility and combined compute, storage, model usage and cost. Choose finite launch bounds from the actual job and available resources; distinguish expected duration/check-in estimates from hard limits. Numerical examples in a roadmap are not permanent ceilings or grants of capacity. Revise a bound before exceeding it, with evidence, available authority and coordination for shared resources; do not silently extend it or abandon a healthy job merely because an estimate elapsed. A validated intermediate on an unmerged branch may be consumed if producer and consumer record its immutable revision/hash, checks, ownership and compatibility. Campaign merge is not a prerequisite for that experiment; the integrated milestone still needs combined checks.
 
@@ -76,7 +76,7 @@ Before substantial work, consider the next decision, minimum sufficient evidence
 
 Use the existing authorized environment and model allowance. Obtain explicit authorization before additional spending, paid hosting or data, separately billed APIs, external communications (including records requests), or public deployment. Prepare a concrete, reviewable package before requesting the necessary action. Public release granularity and handling of address-linked records must be decided before publication.
 
-Honor owner stop instructions and platform limits. Use supported runtime capabilities; do not promise unattended survival, completion notifications, usage accounting, or automatic restart that have not been established. Model selection follows current owner instructions and exposed controls; no fixed platform-wide model roster is imposed here.
+Honor owner stop instructions and platform limits. Model selection follows current owner instructions and exposed controls.
 
 ## Evidence and acceptance
 
