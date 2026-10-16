@@ -24,6 +24,10 @@ Prefer completion/failure events and supported waits. Do useful independent task
 Record task states accurately: `active`, `waiting_for_job`, `blocked`, or `complete`, with the reason and next action. A campaign is fully blocked only when all useful authorized next work is gated. A healthy running job is ongoing work. If no completion notification exists, record that limitation and the exact later status/resume action.
 
 
+## Git identity
+
+Before the first commit in a fresh checkout or session, verify `git var GIT_AUTHOR_IDENT` and `git var GIT_COMMITTER_IDENT`. For this repository, both names must be **Ayan Sandybayev**. Set `git config --local user.name "Ayan Sandybayev"` if needed; retain the verified account email. Check name overrides if the effective identity still differs. Do not rely on provisioned global defaults or rewrite published history to repair earlier attribution.
+
 ## Git publication, handoffs, and stopping
 
 Commit at meaningful milestones and before planned stops. Stage explicit paths, inspect the diff, and exclude secrets, unrelated edits, large inputs, and temporary logs. Clearly label incomplete checkpoints and pending checks. Verify the remote contains a pushed checkpoint; report publishing failures with the local commit and recovery action.
