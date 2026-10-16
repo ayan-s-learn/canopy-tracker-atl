@@ -52,7 +52,7 @@ Put detailed experiments, reviews, manifests, and logs in appropriate files and 
 
 Astra leads milestone-based project reviews to assess evidence and define the next round of work. The first review follows T01–T04; each review sets the next explicit trigger. Use the [review process and cumulative record](docs/project-reviews.md), with only the next review and its status in the checklist. The integration owner prepares the evidence and incorporates the outcome; workstream owners contribute findings and proposed next tasks.
 
-Reviews steer shared direction and detail the next ready work. Local methods, subtasks and useful independent preparation remain autonomous under the decision rights above. A blocked inquiry or evidence that changes the direction can trigger an earlier review; do not manufacture completion or stall unrelated work to reach a milestone. Reviews do not substitute for independent scientific validation or owner authorization.
+Reviews guide priorities and detail the next ready work; they add no approval gate. Local methods, subtasks and useful independent preparation remain autonomous under the decision rights above. A blocked inquiry or evidence that changes the direction can trigger an earlier review; do not manufacture completion or stall unrelated work to reach a milestone. Reviews do not substitute for independent scientific validation or owner authorization.
 
 ## Checklist-item goals and parallel work
 
