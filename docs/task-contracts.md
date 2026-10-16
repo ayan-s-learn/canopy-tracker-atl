@@ -2,9 +2,11 @@
 
 [checklist.md](../checklist.md) is the state entry point. [AGENTS.md](../AGENTS.md) defines decision rights and authority; [research direction](research-direction.md) defines the scientific commitments and current hypotheses. **T01–T04 are ready briefs. T05 onward are revisable roadmap sketches.**
 
+[Astra project reviews](project-reviews.md) use each round's evidence to detail the next ready work; AR01 follows T01–T04. Local subtasks and independent preparation can proceed between reviews. The [glossary](glossary.md) explains terms and IDs.
+
 ## Rules shared by every item
 
-Use the working agreement's [launch and parallel-work rules](../AGENTS.md#checklist-item-goals-and-parallel-work), [revision rules](../AGENTS.md#local-decisions-and-plan-changes), and [job-recovery requirements](../AGENTS.md#cloud-jobs-recovery-and-waiting). Keep each launch brief and its evidence in one linked task/experiment record, such as `docs/tasks/ID.md`. Suggested paths are conventions, not requirements.
+Use the working agreement's [launch and parallel-work rules](../AGENTS.md#checklist-item-goals-and-parallel-work), [revision rules](../AGENTS.md#local-decisions-and-plan-changes), and [job-recovery requirements](operations.md#cloud-jobs-recovery-and-waiting). Keep each launch brief and its evidence in one linked task/experiment record, such as `docs/tasks/ID.md`. Suggested paths are conventions, not requirements.
 
 The checklist owns live status and claims; the briefs below describe the work. Starting inputs can be validated intermediates or labeled fixtures; acceptance still requires evidence for the claimed scope. Negative findings may complete an inquiry without passing a scientific readiness gate.
 

@@ -1,6 +1,6 @@
 # Canopy Tracker ATL — plan and current state
 
-Updated **2026-10-15 UTC**. Integration owner: **Codex research lead (this chat)**. Campaign branch: **`chore/autonomous-harness`**. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
+Updated **2026-10-15, America/Los_Angeles**. Integration owner: **Codex research lead (this chat)**. Campaign branch: **`chore/autonomous-harness`**. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
 
 ## Objective and current evidence
 
@@ -21,6 +21,8 @@ Current direction remains **City of Atlanta first**, including its parts in both
 Workstream owners select useful work, choose methods, split/revise local tasks and coordinate directly with affected peers within existing scope and authority. The integrator keeps shared interfaces, state, resource conflicts, evidence promotion and campaign merges coherent. It is not a permission queue for every method or batch.
 
 **Ready briefs are detailed; future work is a roadmap.** [Task briefs and sketches](docs/task-contracts.md) retain stable IDs for continuity, not a fixed sequence. Expand a sketch when useful and distinguish starting inputs from acceptance evidence. Follow the working agreement's [decision rights](AGENTS.md#local-decisions-and-plan-changes) and [claim, resource, intermediate-output and integration rules](AGENTS.md#checklist-item-goals-and-parallel-work).
+
+**Next Astra project review:** [AR01 — feasibility findings and next work](docs/project-reviews.md#ar01--feasibility-findings-and-next-work), planned after T01–T04 complete (earlier for a material blocker or change in direction). The integration owner prepares it; Astra defines the next round and AR02 trigger. No review has been held. See the [glossary](docs/glossary.md) for terms and IDs.
 
 ## Ready work and ownership
 
@@ -95,6 +97,6 @@ and storage checks separately; prepare a concrete action for missing capability.
 
 ## Checkpoint and next resume
 
-Planning checkpoint: `01d8ceb`, including the Sol-reviewed P01 merge; [D02](docs/decisions/decentralized-planning.md) retains review and integration evidence. The setup-clarity pass consolidates repeated operating instructions and launch text; research tasks remain unlaunched. Sol review accepted the cleanup; link/anchor, task-ID, fence and whitespace checks passed.
+Prior setup revision: `9246df4` (Sol-reviewed clarity cleanup); [D02](docs/decisions/decentralized-planning.md) retains the earlier planning review. The current framework adds Astra project reviews, a plain-language glossary and a linked operations guide. Document checks passed; Sol review requested a glossary correction on permit coverage, now applied. Research tasks remain unlaunched; this framework review is not AR01.
 
 On resume, follow [Start or resume](AGENTS.md#start-or-resume), then claim useful ready work. Full project completion still requires validated findings with honest reconciliation limits, the authorized public deliverable, an actual agency briefing and a reproducible maintenance handoff.
