@@ -1,7 +1,22 @@
-# canopy-tracker-atl
-**10th grade PBL for ML environmental applications at GSMST**
+# Canopy Tracker ATL
 
-**Repository of canopy tracker for metro Atlanta**
+A student research project investigating parcel-scale tree-canopy loss in metro Atlanta and reconciliation with permit records. The intended outputs are a reproducible pipeline, validated findings, a public presentation or website, and an agency briefing. Findings must communicate uncertainty and support inspection triage.
 
-A U-net model that takes NAIP aerial photography over metro Atlanta to detect and create polygons of tree loss.
-Then, it is cross-referenced with tree clearing permits to flag where trees were cleared with no matching permit — a ranked list for inspection, not a finding of violation.
+Workstream agents choose local methods and revise their task breakdowns; one integration owner keeps shared interfaces, evidence and repository state coherent.
+
+## Start here
+
+- [Domain glossary](docs/glossary.md) defines geospatial and research terminology.
+- [AGENTS.md](AGENTS.md) defines decision rights, evidence standards, and required operating procedures.
+- [checklist.md](checklist.md) holds the implementation plan and current project state, maintained as work progresses.
+- [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md) holds prepared requests for necessary human actions and their delivery checks.
+- [Research direction](docs/research-direction.md) explains scientific choices, uncertainties, and validation.
+- [Astra project reviews](docs/project-reviews.md) records milestone reviews and how each defines the next round of work.
+- [Operations guide](docs/operations.md) covers job recovery, publication, handoffs, and stopping.
+- [Archive guide](old/README.md) identifies the preserved documents and known issues for reassessment.
+
+## Execute checklist items
+
+Choose a [ready item](checklist.md#ready-work-and-ownership) and use its [launch instructions](checklist.md#launch-ready-work). Ready work has detailed briefs; later work remains a revisable roadmap. Follow the [ownership, integration, and waiting rules](AGENTS.md#checklist-item-goals-and-parallel-work). An ordinary bounded prompt works when native `/goal` is unavailable.
+
+After T01–T04, Astra reviews the findings and helps define the next ready work. Each project review sets the next milestone for review; agents retain local autonomy between reviews.
