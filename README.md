@@ -6,7 +6,7 @@ Workstream agents choose local methods and revise their task breakdowns; one int
 
 ## Start here
 
-- [Glossary](docs/glossary.md) explains project terms, abbreviations, and task IDs in plain language.
+- [Domain glossary](docs/glossary.md) defines geospatial and research terminology.
 - [AGENTS.md](AGENTS.md) defines decision rights, evidence standards, and required operating procedures.
 - [checklist.md](checklist.md) holds the implementation plan and current project state, maintained as work progresses.
 - [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md) holds prepared requests for necessary human actions and their delivery checks.
