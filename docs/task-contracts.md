@@ -2,7 +2,7 @@
 
 [checklist.md](../checklist.md) is the state entry point. [AGENTS.md](../AGENTS.md) defines decision rights and authority; [research direction](research-direction.md) defines the scientific commitments and current hypotheses. **T01–T04 are ready briefs. T05 onward are revisable roadmap sketches.**
 
-[Astra project reviews](project-reviews.md) use each round's evidence to detail the next ready work; AR01 follows T01–T04. Local subtasks and independent preparation can proceed between reviews. The [glossary](glossary.md) explains terms and IDs.
+[Astra project reviews](project-reviews.md) use each round's evidence to detail the next ready work; AR01 follows T01–T04. Local subtasks and independent preparation can proceed between reviews. The [glossary](glossary.md) defines domain terminology.
 
 ## Rules shared by every item
 

@@ -103,6 +103,8 @@ When every useful next task is gated, save a recoverable checkpoint, record the 
 
 Use a working branch and inspect relevant remote changes before resuming. Routine in-scope commits and pushes to the campaign's working branch are authorized. Keep `main` as the reviewed baseline. Merging or pushing to `main`, force-pushing, rewriting published history, and deleting remote branches require explicit owner authorization.
 
+Before committing, verify the effective author and committer identities. Agent commits for this repository use **Ayan Sandybayev**; follow the [identity check](docs/operations.md#git-identity) if a provisioned environment supplies a different name.
+
 One integration owner handles staging, commits, and pushes in a shared checkout. When delegation is authorized and useful, give agents bounded assignments, explicit file ownership, expected evidence, and stop conditions; avoid duplicated investigations. Concurrent writers need coordinated ownership or isolated checkouts. Follow current model instructions and supported concurrency limits without probing for hidden capacity.
 
 Follow the [publication, handoff and stopping procedures](docs/operations.md#git-publication-handoffs-and-stopping). Preserve recoverable evidence throughout execution, publish meaningful milestones, verify pushed revisions, and leave an honest next action. An interruption or budget stop is not successful completion.
