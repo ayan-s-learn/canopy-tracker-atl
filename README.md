@@ -1,6 +1,6 @@
 # Canopy Tracker ATL
 
-A student research project investigating parcel-scale tree-canopy loss in metro Atlanta and reconciliation with permit records. The intended outputs are a reproducible pipeline, validated findings, a public presentation or website, and an agency briefing. Findings must communicate uncertainty and support inspection triage.
+A school yearlong research project for a STEM research class investigating parcel-scale tree-canopy loss in metro Atlanta and reconciliation with permit records. The intended outputs are a reproducible pipeline, validated findings, a public presentation or website, and an agency briefing. Findings must communicate uncertainty and support inspection triage.
 
 Workstream agents choose local methods and revise their task breakdowns; one integration owner keeps shared interfaces, evidence and repository state coherent.
 
@@ -14,6 +14,7 @@ Workstream agents choose local methods and revise their task breakdowns; one int
 - [Astra project reviews](docs/project-reviews.md) records milestone reviews and how each defines the next round of work.
 - [Operations guide](docs/operations.md) covers job recovery, publication, handoffs, and stopping.
 - [Archive guide](old/README.md) identifies the preserved documents and known issues for reassessment.
+- [School](school/README.md) defines work relating to school presentations, assignments, etc that are related to this project.
 
 ## Execute checklist items
 
