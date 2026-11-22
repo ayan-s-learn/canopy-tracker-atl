@@ -1,0 +1,485 @@
+{
+  "retrieved_utc": "2026-11-22T22:09:23.315039+00:00",
+  "samples": [
+    {
+      "site": "park",
+      "year": 2023,
+      "acquisition_date_field": "acquisition_date",
+      "attributes": {
+        "OBJECTID": 41288,
+        "Name": "m_3308414_sw_16_060_20231008",
+        "MinPS": 0,
+        "MaxPS": 19.1,
+        "Category": 1,
+        "CenterX": -9389101.088169754,
+        "CenterY": 3999470.5849917745,
+        "State": "GA",
+        "Year": 2023,
+        "raster_name": "m_3308414_sw_16_060_20231008",
+        "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3333024",
+        "acquisition_date": 1696723200000,
+        "agency": "USDA",
+        "vendor": "USDA-FSA-APFO",
+        "resolution_value": 0.6,
+        "resolution_units": "METER",
+        "band_count": 4,
+        "sensor_type": "CNIR",
+        "projection_name": "UTM",
+        "projection_zone": "16N",
+        "datum": "NAD83",
+        "Shape_Length": 33373.96998313707,
+        "Shape_Area": 69140851.45201501
+      },
+      "item_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41288?f=json",
+      "native_grid_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41288/info/rasterInfo?f=json",
+      "native_grid": {
+        "extent": {
+          "xmin": 742776,
+          "ymin": 3737334,
+          "xmax": 749148,
+          "ymax": 3744816,
+          "spatialReference": {
+            "wkid": 26916,
+            "latestWkid": 26916
+          }
+        },
+        "origin": {
+          "x": 742776,
+          "y": 3744816,
+          "spatialReference": {
+            "wkid": 26916,
+            "latestWkid": 26916
+          }
+        },
+        "pixelSizeX": 0.6,
+        "pixelSizeY": 0.6,
+        "bandCount": 4,
+        "pixelType": "U8",
+        "noDataValue": null
+      },
+      "rights_url": "https://index.nationalmap.gov/arcgis/rest/services/USGSNAIPImageryIndex/MapServer/0",
+      "image_description": null,
+      "band_properties": null,
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41288/image?bbox=743250%2C3741567%2C743403.6%2C3741720.6&bboxSR=26916&imageSR=26916&size=256%2C256&format=tiff&bandIds=0%2C1%2C2%2C3&f=image",
+      "sha256_pixels_band_major": "f045063420583f277eaf1ab20492c90355d82f0499c57686b1550f4afb4ffc8f",
+      "sha256_tiff": "a6651bf7fb48ce3efa26e136e9111a86568aad49a8d7b72901094aee1d0616cc",
+      "bytes": 263813,
+      "size": [
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "crs": "EPSG:26916",
+      "bbox": [
+        743250.0,
+        3741566.9999999995,
+        743403.6000000001,
+        3741720.5999999996
+      ],
+      "pixel_size": [
+        0.6000000000003638,
+        0.6000000000003638
+      ],
+      "nodata": null,
+      "mask_flags": [
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ]
+      ],
+      "all_bands_zero_pixels": 0,
+      "range_by_band": [
+        [
+          32,
+          205
+        ],
+        [
+          41,
+          201
+        ],
+        [
+          56,
+          190
+        ],
+        [
+          2,
+          229
+        ]
+      ]
+    },
+    {
+      "site": "park",
+      "year": 2025,
+      "acquisition_date_field": "QQDATE",
+      "attributes": {
+        "OBJECTID": 24351,
+        "Name": "m_3308414_sw_16_030_20251011",
+        "Category": 1,
+        "year_ts": 2025,
+        "ST": "GA",
+        "QQNAME": "3308414SW030",
+        "QQDATE": 1760140800000,
+        "iDate_ts": 1770817268786,
+        "Shape_Length": 0.2574220715940376,
+        "Shape_Area": 0.004141358138915524
+      },
+      "item_url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24351?f=json",
+      "native_grid_url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24351/info/rasterInfo?f=json",
+      "native_grid": {
+        "extent": {
+          "xmin": 742965.3,
+          "ymin": 3737520.6,
+          "xmax": 748956.9,
+          "ymax": 3744626.4,
+          "spatialReference": {
+            "wkid": 26916,
+            "latestWkid": 26916
+          }
+        },
+        "origin": {
+          "x": 742965.3,
+          "y": 3744626.4,
+          "spatialReference": {
+            "wkid": 26916,
+            "latestWkid": 26916
+          }
+        },
+        "pixelSizeX": 0.2999999999999988,
+        "pixelSizeY": 0.29999999999999216,
+        "bandCount": 4,
+        "pixelType": "U8",
+        "noDataValue": null
+      },
+      "rights_url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24351/info/keyProperties?f=json",
+      "image_description": "Image courtesy of USDA Farm Service Agency's National Agriculture Imagery Program (NAIP) under FPAC-Geo, Farm Production and Conservation contract 12FPC222A0007. Imagery has been placed in the public domain and may be used and reproduced without permission or fee. Please credit 'NAIP imagery provided by USDA Farm Service Agency' on any use.",
+      "band_properties": [
+        {
+          "KIND": "BAND",
+          "HAS_TABLE": 0,
+          "SourceBandIndex": 0,
+          "BandName": "Band_1"
+        },
+        {
+          "KIND": "BAND",
+          "HAS_TABLE": 0,
+          "SourceBandIndex": 1,
+          "BandName": "Band_2"
+        },
+        {
+          "KIND": "BAND",
+          "HAS_TABLE": 0,
+          "SourceBandIndex": 2,
+          "BandName": "Band_3"
+        },
+        {
+          "KIND": "BAND",
+          "HAS_TABLE": 0,
+          "SourceBandIndex": 3,
+          "BandName": "Band_4"
+        }
+      ],
+      "url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24351/image?bbox=743250%2C3741567%2C743403.6%2C3741720.6&bboxSR=26916&imageSR=26916&size=512%2C512&format=tiff&bandIds=0%2C1%2C2%2C3&f=image",
+      "sha256_pixels_band_major": "bcb3723d6cbf693e351c30d9884922a9b6acf2f636800bcf16db9bff975e90b3",
+      "sha256_tiff": "74ecae8775f18b4b2b85ec59a738438b028164639c5efd4ff2b838679f4e80c6",
+      "bytes": 1050356,
+      "size": [
+        512,
+        512
+      ],
+      "dtype": "uint8",
+      "crs": "EPSG:26916",
+      "bbox": [
+        743250.0,
+        3741566.9999999995,
+        743403.6000000001,
+        3741720.5999999996
+      ],
+      "pixel_size": [
+        0.3000000000001819,
+        0.3000000000001819
+      ],
+      "nodata": null,
+      "mask_flags": [
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ]
+      ],
+      "all_bands_zero_pixels": 0,
+      "range_by_band": [
+        [
+          20,
+          255
+        ],
+        [
+          37,
+          255
+        ],
+        [
+          1,
+          255
+        ],
+        [
+          18,
+          255
+        ]
+      ]
+    },
+    {
+      "site": "west",
+      "year": 2023,
+      "acquisition_date_field": "acquisition_date",
+      "attributes": {
+        "OBJECTID": 41313,
+        "Name": "m_3308421_ne_16_060_20231008",
+        "MinPS": 0,
+        "MaxPS": 19.1,
+        "Category": 1,
+        "CenterX": -9396060.535930408,
+        "CenterY": 3991102.83606175,
+        "State": "GA",
+        "Year": 2023,
+        "raster_name": "m_3308421_ne_16_060_20231008",
+        "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3333049",
+        "acquisition_date": 1696723200000,
+        "agency": "USDA",
+        "vendor": "USDA-FSA-APFO",
+        "resolution_value": 0.6,
+        "resolution_units": "METER",
+        "band_count": 4,
+        "sensor_type": "CNIR",
+        "projection_name": "UTM",
+        "projection_zone": "16N",
+        "datum": "NAD83",
+        "Shape_Length": 33351.01087396883,
+        "Shape_Area": 69045716.88491273
+      },
+      "item_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41313?f=json",
+      "native_grid_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41313/info/rasterInfo?f=json",
+      "native_grid": {
+        "extent": {
+          "xmin": 737160,
+          "ymin": 3730254,
+          "xmax": 743532,
+          "ymax": 3737736,
+          "spatialReference": {
+            "wkid": 26916,
+            "latestWkid": 26916
+          }
+        },
+        "origin": {
+          "x": 737160,
+          "y": 3737736,
+          "spatialReference": {
+            "wkid": 26916,
+            "latestWkid": 26916
+          }
+        },
+        "pixelSizeX": 0.6,
+        "pixelSizeY": 0.6,
+        "bandCount": 4,
+        "pixelType": "U8",
+        "noDataValue": null
+      },
+      "rights_url": "https://index.nationalmap.gov/arcgis/rest/services/USGSNAIPImageryIndex/MapServer/0",
+      "image_description": null,
+      "band_properties": null,
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41313/image?bbox=738671.4%2C3735680.4%2C738825.0%2C3735834.0&bboxSR=26916&imageSR=26916&size=256%2C256&format=tiff&bandIds=0%2C1%2C2%2C3&f=image",
+      "sha256_pixels_band_major": "0b99c205d9fe90c6bbeeb1e171560e691c1704e4a802140fc594c4f9d943aaca",
+      "sha256_tiff": "25897ed5cae67d68581672822a79014076377595757583830971eb95611f2340",
+      "bytes": 263813,
+      "size": [
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "crs": "EPSG:26916",
+      "bbox": [
+        738671.3999999999,
+        3735680.4,
+        738825.0,
+        3735834.0
+      ],
+      "pixel_size": [
+        0.6000000000003638,
+        0.6000000000003638
+      ],
+      "nodata": null,
+      "mask_flags": [
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ]
+      ],
+      "all_bands_zero_pixels": 0,
+      "range_by_band": [
+        [
+          63,
+          233
+        ],
+        [
+          69,
+          237
+        ],
+        [
+          69,
+          237
+        ],
+        [
+          46,
+          231
+        ]
+      ]
+    },
+    {
+      "site": "west",
+      "year": 2025,
+      "acquisition_date_field": "QQDATE",
+      "attributes": {
+        "OBJECTID": 24320,
+        "Name": "m_3308421_ne_16_030_20251011",
+        "Category": 1,
+        "year_ts": 2025,
+        "ST": "GA",
+        "QQNAME": "3308421NE030",
+        "QQDATE": 1760140800000,
+        "iDate_ts": 1770817268786,
+        "Shape_Length": 0.2572611446895366,
+        "Shape_Area": 0.004136196591565172
+      },
+      "item_url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24320?f=json",
+      "native_grid_url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24320/info/rasterInfo?f=json",
+      "native_grid": {
+        "extent": {
+          "xmin": 737351.1,
+          "ymin": 3730442.7,
+          "xmax": 743342.4,
+          "ymax": 3737544.6,
+          "spatialReference": {
+            "wkid": 26916,
+            "latestWkid": 26916
+          }
+        },
+        "origin": {
+          "x": 737351.1,
+          "y": 3737544.6,
+          "spatialReference": {
+            "wkid": 26916,
+            "latestWkid": 26916
+          }
+        },
+        "pixelSizeX": 0.3000000000000023,
+        "pixelSizeY": 0.29999999999999605,
+        "bandCount": 4,
+        "pixelType": "U8",
+        "noDataValue": null
+      },
+      "rights_url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24320/info/keyProperties?f=json",
+      "image_description": "Image courtesy of USDA Farm Service Agency's National Agriculture Imagery Program (NAIP) under FPAC-Geo, Farm Production and Conservation contract 12FPC222A0007. Imagery has been placed in the public domain and may be used and reproduced without permission or fee. Please credit 'NAIP imagery provided by USDA Farm Service Agency' on any use.",
+      "band_properties": [
+        {
+          "KIND": "BAND",
+          "HAS_TABLE": 0,
+          "SourceBandIndex": 0,
+          "BandName": "Band_1"
+        },
+        {
+          "KIND": "BAND",
+          "HAS_TABLE": 0,
+          "SourceBandIndex": 1,
+          "BandName": "Band_2"
+        },
+        {
+          "KIND": "BAND",
+          "HAS_TABLE": 0,
+          "SourceBandIndex": 2,
+          "BandName": "Band_3"
+        },
+        {
+          "KIND": "BAND",
+          "HAS_TABLE": 0,
+          "SourceBandIndex": 3,
+          "BandName": "Band_4"
+        }
+      ],
+      "url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24320/image?bbox=738671.4%2C3735680.4%2C738825.0%2C3735834.0&bboxSR=26916&imageSR=26916&size=512%2C512&format=tiff&bandIds=0%2C1%2C2%2C3&f=image",
+      "sha256_pixels_band_major": "4e0b2569158b2a87755c0c882eb800e6d9a1dda9f7e7c14da4ce24b80eac7f5f",
+      "sha256_tiff": "a36f9d730519c4e43be99ad5796ba9a6aac88cf27754d99e2a075af7516a0f4a",
+      "bytes": 1050356,
+      "size": [
+        512,
+        512
+      ],
+      "dtype": "uint8",
+      "crs": "EPSG:26916",
+      "bbox": [
+        738671.3999999999,
+        3735680.4,
+        738825.0,
+        3735834.0
+      ],
+      "pixel_size": [
+        0.3000000000001819,
+        0.3000000000001819
+      ],
+      "nodata": null,
+      "mask_flags": [
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ]
+      ],
+      "all_bands_zero_pixels": 0,
+      "range_by_band": [
+        [
+          31,
+          255
+        ],
+        [
+          44,
+          255
+        ],
+        [
+          1,
+          255
+        ],
+        [
+          20,
+          249
+        ]
+      ]
+    }
+  ]
+}
