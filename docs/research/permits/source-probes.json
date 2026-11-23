@@ -1,0 +1,1561 @@
+{
+  "scope": "Bounded public source audit, City of Atlanta. UTC timestamps. Individual permit IDs, addresses, coordinates and detail URLs are omitted.",
+  "replay": "GET the recorded URLs. Send Range: bytes=0-8191 for the historical CSV. For omitted Accela details, recover ACA_Link from its preceding sample in ArcGIS query order (the point arborist detail used the second infrastructure row). Keep record identifiers and raw responses outside Git. Source updates can change results and hashes.",
+  "observations": [
+    {
+      "name": "historical_arcgis_item",
+      "url": "https://www.arcgis.com/sharing/rest/content/items/655f985f43cc40b4bf2ab7bc73d2169b?f=json",
+      "checked_at_utc": "2026-11-23T23:53:48.085991+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 5651,
+      "sha256": "f0508a73be2c4d779c3bc1f339c8980cda98b192c43518a5834fbb891c3c6761",
+      "result": {
+        "id": "655f985f43cc40b4bf2ab7bc73d2169b",
+        "title": "All Building Permits 2019-2024",
+        "url": null,
+        "snippet": "All building permits from 2019 - 2024 pulled from the Accela database. File contains all permit statuses - in review, issued, closed - so you can gauge pipeline vs. actual permits vs. actual construction. PLEASE CONSULT THE KEY IN THE DESCRIPTION FOR PERMIT STATUS EXPLANATION. This also contains the Zoning and the Land Use that came from GIS at the time of application. Lat/Long are included for easy mapping.\n\nUSE AT YOUR OWN RISK, THE CITY OF ATLANTA CANNOT ENSURE TOTAL ACCURACY OF THE DATA",
+        "access": "public",
+        "licenseInfo": null,
+        "modified": 1723145328000
+      }
+    },
+    {
+      "name": "historical_service",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_permits_2019_2024/FeatureServer?f=json",
+      "checked_at_utc": "2026-11-23T23:53:48.211511+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 3470,
+      "sha256": "cea8bbe4c31f29391fa7a21e5545b5a6547b691fb845bfd55b2c7ade93e332ca",
+      "result": {
+        "serviceItemId": "8892628fc00c4db090fa56cdeff33364",
+        "serviceDescription": "Issued/CO new construction SF + MF housing. 48% are within conservation areas",
+        "copyrightText": "",
+        "layers": [
+          {
+            "id": 1,
+            "name": "CityDesignLayer_Dissolve",
+            "parentLayerId": -1,
+            "defaultVisibility": false,
+            "subLayerIds": null,
+            "minScale": 0,
+            "maxScale": 0,
+            "type": "Feature Layer",
+            "geometryType": "esriGeometryPolygon"
+          },
+          {
+            "id": 8,
+            "name": "BuildingPermits2019_2024",
+            "parentLayerId": -1,
+            "defaultVisibility": true,
+            "subLayerIds": null,
+            "minScale": 0,
+            "maxScale": 0,
+            "type": "Feature Layer",
+            "geometryType": "esriGeometryPoint"
+          }
+        ],
+        "tables": [],
+        "capabilities": "Query"
+      }
+    },
+    {
+      "name": "tracker_service",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer?f=json",
+      "checked_at_utc": "2026-11-23T23:53:48.528178+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 3310,
+      "sha256": "c651fdd98b6720903bf1a209910d625a413347b1af1e8fee702c6fcf3acbfd21",
+      "result": {
+        "serviceItemId": "653881b4cf9148ae947eebaf789b2c06",
+        "serviceDescription": "Official building permit data for the Building Permit Tracker application on gis.atlantaga.gov",
+        "copyrightText": "",
+        "layers": [
+          {
+            "id": 2,
+            "name": "BuildingPermits_ResComm_AllStatuses_AGOL",
+            "parentLayerId": -1,
+            "defaultVisibility": true,
+            "subLayerIds": null,
+            "minScale": 0,
+            "maxScale": 0,
+            "type": "Feature Layer",
+            "geometryType": "esriGeometryPoint"
+          }
+        ],
+        "tables": [],
+        "capabilities": "Query,Extract"
+      }
+    },
+    {
+      "name": "accela_landing",
+      "url": "https://aca-prod.accela.com/ATLANTA_GA/Default.aspx",
+      "checked_at_utc": "2026-11-23T23:53:48.760907+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "response_bytes": 12610,
+      "sha256": "c3300977889caf97699036041f6e5fbabebe1b273cf8e84b325538baba2cfd97"
+    },
+    {
+      "name": "accela_building_search",
+      "url": "https://aca-prod.accela.com/ATLANTA_GA/Cap/CapHome.aspx?module=Building&TabName=Building",
+      "checked_at_utc": "2026-11-23T23:53:48.894265+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "response_bytes": 244285,
+      "sha256": "65951efc3475e540509ce5c9d6154833f04ba3480d11d9c0e0f59092ba06c089"
+    },
+    {
+      "name": "arborist_sign_postings",
+      "url": "https://www.atlantaga.gov/government/departments/city-planning/nature-urban-ecology/arborist/arborist-sign-postings",
+      "checked_at_utc": "2026-11-23T23:53:49.131970+00:00",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "ordinance_versions",
+      "url": "https://www.atlantaga.gov/government/departments/city-planning/nature-urban-ecology/tree-protection-ordinance-rewrite",
+      "checked_at_utc": "2026-11-23T23:53:49.349586+00:00",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "historical_layer",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_permits_2019_2024/FeatureServer/0?f=json",
+      "checked_at_utc": "2026-11-23T23:53:49.490011+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 97,
+      "sha256": "abf924a5418691157d181a1f7dea9a24d42a3ff89056f4cf628360674d2d0513",
+      "result": {
+        "code": 400,
+        "message": "",
+        "details": [
+          "The requested layer (layerId: 0) was not found."
+        ]
+      }
+    },
+    {
+      "name": "tracker_layer",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2?f=json",
+      "checked_at_utc": "2026-11-23T23:53:49.678187+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 16522,
+      "sha256": "7ddddbdfda46d386f37295c58c5bba363b735246f68457fc4968d66a2d5118bc",
+      "result": {
+        "id": 2,
+        "name": "BuildingPermits_ResComm_AllStatuses_AGOL",
+        "description": "",
+        "fields": [
+          {
+            "name": "FID",
+            "type": "esriFieldTypeOID"
+          },
+          {
+            "name": "DisplayX",
+            "type": "esriFieldTypeDouble"
+          },
+          {
+            "name": "DisplayY",
+            "type": "esriFieldTypeDouble"
+          },
+          {
+            "name": "RecordID",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Name",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "OrigOpened",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "Opend",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "TypeCombo",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Use_",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Subtype",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Group_",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Status_1",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "StatusDate",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "R_StatDate",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "JOB_VALUE",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "PARCEL",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "QUADRANT",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "HELPER",
+            "type": "esriFieldTypeInteger"
+          },
+          {
+            "name": "JobValue",
+            "type": "esriFieldTypeInteger"
+          },
+          {
+            "name": "GroupedUse",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "ACA_Link",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "GrpdStatus",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "StreetView",
+            "type": "esriFieldTypeString"
+          }
+        ],
+        "capabilities": "Query,Extract",
+        "supportedQueryFormats": "JSON, geoJSON, PBF",
+        "maxRecordCount": 2000,
+        "editingInfo": {
+          "lastEditDate": 1732135285848,
+          "schemaLastEditDate": 1732135285848,
+          "dataLastEditDate": 1732135285848
+        }
+      }
+    },
+    {
+      "name": "historical_csv_prefix",
+      "checked_at_utc": "2026-11-23T23:54:43.989266+00:00",
+      "url": "https://www.arcgis.com/sharing/rest/content/items/655f985f43cc40b4bf2ab7bc73d2169b/data",
+      "status": 206,
+      "content_type": "application/octet-stream",
+      "captured_bytes": 8192,
+      "captured_sha256": "89114bf349c791c84a8be52eff2bf0d6dbe175745c7d7e145fbd72cea03e594e",
+      "content_range": "bytes 0-8191/11619738",
+      "result": {
+        "columns": [
+          "RECORD ID",
+          "ADDR FULL LINE#",
+          "RECORD TYPE",
+          "DATE OPENED",
+          "RECORD STATUS",
+          "RECORD STATUS DATE",
+          "Zoning",
+          "CDP Land use",
+          "DESCRIPTION",
+          "latitude",
+          "longitude",
+          "T",
+          "score",
+          "addr_type"
+        ],
+        "first_rows_checked": 9,
+        "row_widths": [
+          14
+        ]
+      }
+    },
+    {
+      "name": "similarly_named_city_layer",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_permits_2019_2024/FeatureServer/8?f=json",
+      "checked_at_utc": "2026-11-23T23:54:44.233219+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 10021,
+      "sha256": "6f1561d13f0f73f5b0cb30a44cb019edda292c1929c2cf25d838a1c6bdcb7fe2",
+      "result": {
+        "id": 8,
+        "name": "BuildingPermits2019_2024",
+        "description": "",
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID"
+          },
+          {
+            "name": "RECORD_ID",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "ADDR_FULL_LINE_",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "RECORD_TYPE",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "DATE_OPENED",
+            "type": "esriFieldTypeDateOnly"
+          },
+          {
+            "name": "RECORD_STATUS",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "RECORD_STATUS_DATE",
+            "type": "esriFieldTypeDateOnly"
+          },
+          {
+            "name": "Zoning",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "CDP_Land_use",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "DESCRIPTION",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Longitude",
+            "type": "esriFieldTypeDouble"
+          },
+          {
+            "name": "Latitude",
+            "type": "esriFieldTypeDouble"
+          },
+          {
+            "name": "Score",
+            "type": "esriFieldTypeDouble"
+          }
+        ],
+        "capabilities": "Query"
+      }
+    },
+    {
+      "name": "similarly_named_city_layer_sample",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_permits_2019_2024/FeatureServer/8/query?f=json&where=1%3D1&outFields=%2A&returnGeometry=false&resultRecordCount=2",
+      "checked_at_utc": "2026-11-23T23:54:44.415448+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 2969,
+      "sha256": "fcd8449513a2d797b8077ab6bf2a4c83964caa29d9d6983be6192cfd8a333505",
+      "result": {
+        "rows": 2
+      }
+    },
+    {
+      "name": "accela_building_search_html",
+      "checked_at_utc": "2026-11-23T23:54:44.936505+00:00",
+      "url": "https://aca-prod.accela.com/ATLANTA_GA/Cap/CapHome.aspx?module=Building&TabName=Building",
+      "status": 200,
+      "content_type": "text/html",
+      "captured_bytes": 244285,
+      "captured_sha256": "6f3536ba4dd57f5397c12fc5150691cc949a038537fc0470cd28d653e42cdaf2",
+      "result": {
+        "visible_or_embedded_labels": [
+          "Search for Records",
+          "Login",
+          "General Search",
+          "Record Number",
+          "Arborist",
+          "Access Denied"
+        ],
+        "form_labels_detected": {
+          "record type": 0,
+          "start date": 1,
+          "end date": 1
+        },
+        "search_input_count": 18
+      }
+    },
+    {
+      "name": "tracker_dates_count",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query?f=json&where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22Opend%22%2C%22outStatisticFieldName%22%3A%22min_Opend%22%7D%2C%7B%22statisticType%22%3A%22max%22%2C%22onStatisticField%22%3A%22Opend%22%2C%22outStatisticFieldName%22%3A%22max_Opend%22%7D%2C%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22StatusDate%22%2C%22outStatisticFieldName%22%3A%22min_StatusDate%22%7D%2C%7B%22statisticType%22%3A%22max%22%2C%22onStatisticField%22%3A%22StatusDate%22%2C%22outStatisticFieldName%22%3A%22max_StatusDate%22%7D%2C%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22FID%22%2C%22outStatisticFieldName%22%3A%22row_count%22%7D%5D&returnGeometry=false",
+      "checked_at_utc": "2026-11-23T23:54:45.279134+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 1070,
+      "sha256": "501a1d4f7d933f8dabcc308c63993d91e1b16ff8cc39b817192f4c6dc1a7897a",
+      "result": {
+        "min_Opend": 1292371200000,
+        "max_Opend": 1731974400000,
+        "min_StatusDate": 1668988800000,
+        "max_StatusDate": 1732060800000,
+        "row_count": 22778
+      }
+    },
+    {
+      "name": "tracker_groups",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query?f=json&where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22FID%22%2C%22outStatisticFieldName%22%3A%22row_count%22%7D%5D&groupByFieldsForStatistics=Group_&returnGeometry=false",
+      "checked_at_utc": "2026-11-23T23:54:45.594828+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 544,
+      "sha256": "bcba6eb2de6ff3635ebeb3fc32ccfc4b78b2217ac4169235c10e3621882f8358",
+      "result": {
+        "rows": 1,
+        "field_summaries": [
+          {
+            "row_count": 22778,
+            "Group_": "Building"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tracker_sample_1",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query?f=json&where=TypeCombo+LIKE+%27%25New%25%27&outFields=Group_%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=FID+ASC&returnGeometry=false&resultRecordCount=3",
+      "checked_at_utc": "2026-11-23T23:54:45.897927+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 2009,
+      "sha256": "287dfa6e69619d49274ac14e1e987c8e3e2785d5ead777b20fca7ef8174237f7",
+      "result": {
+        "rows": [
+          {
+            "group": "Building",
+            "type": "Residential New",
+            "status": "Closed",
+            "open_year": "2021",
+            "status_year": "2023",
+            "parcel_present": true,
+            "has_aca_link": true
+          },
+          {
+            "group": "Building",
+            "type": "Residential New",
+            "status": "Closed",
+            "open_year": "2021",
+            "status_year": "2023",
+            "parcel_present": true,
+            "has_aca_link": true
+          },
+          {
+            "group": "Building",
+            "type": "Commercial New",
+            "status": "Issued",
+            "open_year": "2021",
+            "status_year": "2023",
+            "parcel_present": true,
+            "has_aca_link": true
+          }
+        ],
+        "exceeded_transfer_limit": true
+      }
+    },
+    {
+      "name": "tracker_sample_2",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query?f=json&where=TypeCombo+LIKE+%27%25Alter%25%27&outFields=Group_%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=FID+ASC&returnGeometry=false&resultRecordCount=3",
+      "checked_at_utc": "2026-11-23T23:54:46.040903+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 2043,
+      "sha256": "27a903360023cb7f0aab43ef41cb55e013e946237ed3de456ce65880b7b966b2",
+      "result": {
+        "rows": [
+          {
+            "group": "Building",
+            "type": "Multi Family Alteration",
+            "status": "CO Issued",
+            "open_year": "2021",
+            "status_year": "2023",
+            "parcel_present": true,
+            "has_aca_link": true
+          },
+          {
+            "group": "Building",
+            "type": "Multi Family Alteration",
+            "status": "CO Issued",
+            "open_year": "2021",
+            "status_year": "2023",
+            "parcel_present": true,
+            "has_aca_link": true
+          },
+          {
+            "group": "Building",
+            "type": "Multi Family Alteration",
+            "status": "CO Issued",
+            "open_year": "2021",
+            "status_year": "2023",
+            "parcel_present": true,
+            "has_aca_link": true
+          }
+        ],
+        "exceeded_transfer_limit": true
+      }
+    },
+    {
+      "name": "tracker_sample_3",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query?f=json&where=TypeCombo+LIKE+%27%25Demol%25%27&outFields=Group_%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=FID+ASC&returnGeometry=false&resultRecordCount=3",
+      "checked_at_utc": "2026-11-23T23:54:46.199549+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 2036,
+      "sha256": "c928d2ddeca41be3dfc2a2332e0a49313e90da96b01f4f309948b58af8aee70c",
+      "result": {
+        "rows": [
+          {
+            "group": "Building",
+            "type": "Commercial Demolition",
+            "status": "Issued",
+            "open_year": "2021",
+            "status_year": "2022",
+            "parcel_present": true,
+            "has_aca_link": true
+          },
+          {
+            "group": "Building",
+            "type": "Commercial Demolition",
+            "status": "Issued",
+            "open_year": "2021",
+            "status_year": "2023",
+            "parcel_present": true,
+            "has_aca_link": true
+          },
+          {
+            "group": "Building",
+            "type": "Residential Demolition",
+            "status": "Ready to Issue",
+            "open_year": "2021",
+            "status_year": "2023",
+            "parcel_present": true,
+            "has_aca_link": true
+          }
+        ],
+        "exceeded_transfer_limit": true
+      }
+    },
+    {
+      "name": "accela_tracker_detail_1",
+      "checked_at_utc": "2026-11-23T23:54:46.361304+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "captured_bytes": 321394,
+      "captured_sha256": "56dd3278ac39649b1572c8075f34bc9ec4c2110af49eed4f42271e5089781c8f",
+      "result": {
+        "visible_or_embedded_labels": [
+          "Login",
+          "Arborist",
+          "Record Details",
+          "Work Location",
+          "More Details",
+          "Related Records",
+          "Processing Status",
+          "Application Information",
+          "Access Denied"
+        ],
+        "form_labels_detected": {
+          "record type": 0,
+          "start date": 1,
+          "end date": 1
+        },
+        "search_input_count": 13
+      }
+    },
+    {
+      "name": "accela_tracker_detail_2",
+      "checked_at_utc": "2026-11-23T23:54:48.551090+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "captured_bytes": 336652,
+      "captured_sha256": "70c1b8557e2e1a5c86e0eec7015dae8fa425fc67c269f8905e2a5a7c77c5704f",
+      "result": {
+        "visible_or_embedded_labels": [
+          "Login",
+          "Arborist",
+          "Record Details",
+          "Work Location",
+          "More Details",
+          "Related Records",
+          "Processing Status",
+          "Application Information",
+          "Access Denied"
+        ],
+        "form_labels_detected": {
+          "record type": 0,
+          "start date": 1,
+          "end date": 1
+        },
+        "search_input_count": 13
+      }
+    },
+    {
+      "name": "city_public_service_directory",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/?f=json",
+      "checked_at_utc": "2026-11-23T23:55:14.756076+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 165996,
+      "sha256": "91567ce2d60bd67bfc2e0932b16351c5bd7d5abc0ab2773a8acc6815f954c6a4",
+      "result": {
+        "candidates": [
+          "2019_Permits_NPU",
+          "Building_Permit_Growth_by_Census_Tract_2021_2023",
+          "Building_Permit_Tracker",
+          "Building_Permits_2009_2014",
+          "Building_Permits_Growth_by_NPU",
+          "Building_Permits_within_Growth_Areas",
+          "BuildingPermitClip_BusinessDistrict_B3",
+          "BuildingPermits_AMS_Districts",
+          "BuildingPermitsbypermittypew",
+          "BuildingPermitsbypermittypew2",
+          "BuildingPermitsStewart",
+          "CampbelltonRd_BuildingPermits_2019_2023",
+          "Commercial_Building_Permits_in_Campbellton_Corridor",
+          "Commercial_Building_Permits_March_2022_March_2024",
+          "IZPermits",
+          "JanFeb2020NPUPermits",
+          "Neighborhoods_and_NPU_Permit_Analysis_2018_2023",
+          "Peachtree_Corridor",
+          "Permit_cleaned",
+          "Permits_GroceryStores_Campbellton_Corridor_WFL1",
+          "Short_Term_Rental_Permits",
+          "test_building_permit",
+          "TreeCanopyChange_byNPU",
+          "Urban_Tree_Canopy_2018_WFL1",
+          "Building_Permit_latest",
+          "Dev_Zoning_Permitted_Uses_Enriched_Table",
+          "Building_permits_2019_2024",
+          "AMS_BuildingPermits",
+          "building_permit_featureLayer"
+        ]
+      }
+    },
+    {
+      "name": "city_arcgis_tree_search",
+      "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=orgid%3A5RxyIIJ9boPdptdo+AND+%28arborist+OR+DDH+OR+%22tree+removal%22%29&num=20",
+      "checked_at_utc": "2026-11-23T23:55:16.531643+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 58,
+      "sha256": "64bc9c2fda8a2e99b1e14ae1f24ebbd800ea89e70ca5ceeb6f69de830a09190c",
+      "result": {
+        "total": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "city_arcgis_permit_search",
+      "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=orgid%3A5RxyIIJ9boPdptdo+AND+%28%22building+permit%22+OR+%22building+permits%22%29&num=20",
+      "checked_at_utc": "2026-11-23T23:55:16.650414+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 30060,
+      "sha256": "c2817be9d4284bae86028946d1217f0d7736417b6bba69711f8c3ada8d8d5cdb",
+      "result": {
+        "total": 56,
+        "relevant_items_in_first_20": [
+          {
+            "id": "d3513091fa7744138c17c670fd2ee8c6",
+            "title": "Building_Permit_latest",
+            "type": "Feature Service",
+            "modified": 1769677232000,
+            "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/arcgis/rest/services/Building_Permit_latest/FeatureServer",
+            "access": "public"
+          },
+          {
+            "id": "653881b4cf9148ae947eebaf789b2c06",
+            "title": "Building Permit Tracker",
+            "type": "Feature Service",
+            "modified": 1732135294000,
+            "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/arcgis/rest/services/Building_Permit_Tracker/FeatureServer",
+            "access": "public"
+          },
+          {
+            "id": "655f985f43cc40b4bf2ab7bc73d2169b",
+            "title": "All Building Permits 2019-2024",
+            "type": "CSV",
+            "modified": 1723145328000,
+            "url": null,
+            "access": "public"
+          },
+          {
+            "id": "cecbda6378be4c289910f7dc145e8cdd",
+            "title": "New Building Permit Tracker",
+            "type": "Web Experience",
+            "modified": 1776784694000,
+            "url": "https://experience.arcgis.com/experience/cecbda6378be4c289910f7dc145e8cdd",
+            "access": "public"
+          }
+        ]
+      }
+    },
+    {
+      "name": "latest_service",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer?f=json",
+      "checked_at_utc": "2026-11-23T23:55:40.344583+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 3028,
+      "sha256": "9e061e1dfbd4559e0a47441ed448d26d7bf44e9207b52b87590b49690e53d865",
+      "result": {
+        "serviceItemId": "d3513091fa7744138c17c670fd2ee8c6",
+        "serviceDescription": "",
+        "copyrightText": "",
+        "layers": [
+          {
+            "id": 0,
+            "name": "Building_Permit_latest_points",
+            "parentLayerId": -1,
+            "defaultVisibility": true,
+            "subLayerIds": null,
+            "minScale": 0,
+            "maxScale": 0,
+            "type": "Feature Layer",
+            "geometryType": "esriGeometryPoint"
+          }
+        ],
+        "tables": [
+          {
+            "id": 1,
+            "name": "Building_Permit_latest_objects",
+            "parentLayerId": -1,
+            "defaultVisibility": true,
+            "subLayerIds": null,
+            "minScale": 0,
+            "maxScale": 0
+          }
+        ],
+        "capabilities": "Query"
+      }
+    },
+    {
+      "name": "latest_layer",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0?f=json",
+      "checked_at_utc": "2026-11-23T23:55:40.525951+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 14171,
+      "sha256": "fdb1dc7931b9e18e302c0cc8dacc77265112af999fe84c6ed119aac62948ee48",
+      "result": {
+        "id": 0,
+        "name": "Building_Permit_latest_points",
+        "description": "",
+        "editingInfo": {
+          "lastEditDate": 1769677229180,
+          "schemaLastEditDate": 1769677229180,
+          "dataLastEditDate": 1769677229180
+        },
+        "objectIdField": "ObjectId",
+        "capabilities": "Query",
+        "fields": [
+          {
+            "name": "DisplayX",
+            "type": "esriFieldTypeSingle"
+          },
+          {
+            "name": "DisplayY",
+            "type": "esriFieldTypeSingle"
+          },
+          {
+            "name": "RecordID",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Name",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "OrigOpened",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "Opend",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "TypeCombo",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Use_",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Subtype",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Group_",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Status_1",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "StatusDate",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "R_StatDate",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "JOB_VALUE",
+            "type": "esriFieldTypeSingle"
+          },
+          {
+            "name": "PARCEL",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "QUADRANT",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "JobValue",
+            "type": "esriFieldTypeSingle"
+          },
+          {
+            "name": "ACA_Link",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "StreetView",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "statusP",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "ObjectId",
+            "type": "esriFieldTypeOID"
+          }
+        ]
+      }
+    },
+    {
+      "name": "latest_dates_count",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query?f=json&where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22OrigOpened%22%2C%22outStatisticFieldName%22%3A%22min_OrigOpened%22%7D%2C%7B%22statisticType%22%3A%22max%22%2C%22onStatisticField%22%3A%22OrigOpened%22%2C%22outStatisticFieldName%22%3A%22max_OrigOpened%22%7D%2C%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22Opend%22%2C%22outStatisticFieldName%22%3A%22min_Opend%22%7D%2C%7B%22statisticType%22%3A%22max%22%2C%22onStatisticField%22%3A%22Opend%22%2C%22outStatisticFieldName%22%3A%22max_Opend%22%7D%2C%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22StatusDate%22%2C%22outStatisticFieldName%22%3A%22min_StatusDate%22%7D%2C%7B%22statisticType%22%3A%22max%22%2C%22onStatisticField%22%3A%22StatusDate%22%2C%22outStatisticFieldName%22%3A%22max_StatusDate%22%7D%2C%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22R_StatDate%22%2C%22outStatisticFieldName%22%3A%22min_R_StatDate%22%7D%2C%7B%22statisticType%22%3A%22max%22%2C%22onStatisticField%22%3A%22R_StatDate%22%2C%22outStatisticFieldName%22%3A%22max_R_StatDate%22%7D%2C%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22ObjectId%22%2C%22outStatisticFieldName%22%3A%22row_count%22%7D%5D&returnGeometry=false",
+      "checked_at_utc": "2026-11-23T23:55:40.692566+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 1792,
+      "sha256": "fd465cd6a98e70265f1c6062e35d8273f95f1634c5ce7105c92bcdd187a752f4",
+      "result": {
+        "min_OrigOpened": 1663632000000,
+        "max_OrigOpened": 1769644800000,
+        "min_Opend": 1663632000000,
+        "max_Opend": 1769644800000,
+        "min_StatusDate": 1524528000000,
+        "max_StatusDate": 1769657639000,
+        "min_R_StatDate": 1500289020000,
+        "max_R_StatDate": 1769656294000,
+        "row_count": 36115
+      }
+    },
+    {
+      "name": "latest_context_sample",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query?f=json&where=1%3D1&outFields=TypeCombo%2CGroup_%2CStatus_1&orderByFields=ObjectId+ASC&returnGeometry=false&resultRecordCount=3",
+      "checked_at_utc": "2026-11-23T23:55:40.946167+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 964,
+      "sha256": "b83ef7bc467cb88f46e1a4e70412745fec438d7b4b663daf0297054c788deb00",
+      "result": [
+        {
+          "TypeCombo": "Residential Alteration",
+          "Group_": "Building",
+          "Status_1": "Accepted"
+        },
+        {
+          "TypeCombo": "Residential Pool",
+          "Group_": "Building",
+          "Status_1": "ACA Pending"
+        },
+        {
+          "TypeCombo": "Temporary Power",
+          "Group_": "Building",
+          "Status_1": "Issued"
+        }
+      ]
+    },
+    {
+      "name": "latest_groups_and_types",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query?f=json&where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22ObjectId%22%2C%22outStatisticFieldName%22%3A%22n%22%7D%5D&groupByFieldsForStatistics=Group_%2CTypeCombo&orderByFields=Group_%2CTypeCombo&returnGeometry=false",
+      "checked_at_utc": "2026-11-23T23:56:07.570027+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 3975,
+      "sha256": "e0d7183e5e03801b3ca84fc9b4feb97ef81da3d3e95ba03fc4d2042b5ec15c05",
+      "result": {
+        "rows": [
+          {
+            "n": 8,
+            "Group_": "Building",
+            "TypeCombo": "Airport General"
+          },
+          {
+            "n": 1,
+            "Group_": "Building",
+            "TypeCombo": "Arborist Illegal Activity"
+          },
+          {
+            "n": 27,
+            "Group_": "Building",
+            "TypeCombo": "Arborist Infrastructure"
+          },
+          {
+            "n": 1412,
+            "Group_": "Building",
+            "TypeCombo": "Building Complaint"
+          },
+          {
+            "n": 6,
+            "Group_": "Building",
+            "TypeCombo": "Business Licenses"
+          },
+          {
+            "n": 158,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Addition"
+          },
+          {
+            "n": 3963,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Alteration"
+          },
+          {
+            "n": 330,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Conversion"
+          },
+          {
+            "n": 311,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Demolition"
+          },
+          {
+            "n": 176,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Land Development"
+          },
+          {
+            "n": 213,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Misc. Non-Structural"
+          },
+          {
+            "n": 145,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Misc. Structural"
+          },
+          {
+            "n": 853,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Miscellaneous"
+          },
+          {
+            "n": 317,
+            "Group_": "Building",
+            "TypeCombo": "Commercial New"
+          },
+          {
+            "n": 48,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Pool"
+          },
+          {
+            "n": 37,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Addition"
+          },
+          {
+            "n": 725,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Alteration"
+          },
+          {
+            "n": 93,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Conversion"
+          },
+          {
+            "n": 48,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Demolition"
+          },
+          {
+            "n": 170,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Land Development"
+          },
+          {
+            "n": 117,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Miscellaneous"
+          },
+          {
+            "n": 2071,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family New"
+          },
+          {
+            "n": 238,
+            "Group_": "Building",
+            "TypeCombo": "Noise Temporary Variance"
+          },
+          {
+            "n": 3715,
+            "Group_": "Building",
+            "TypeCombo": "Online Application"
+          },
+          {
+            "n": 1819,
+            "Group_": "Building",
+            "TypeCombo": "Open Record Request"
+          },
+          {
+            "n": 71,
+            "Group_": "Building",
+            "TypeCombo": "Outdoor Events"
+          },
+          {
+            "n": 2775,
+            "Group_": "Building",
+            "TypeCombo": "Residential Addition"
+          },
+          {
+            "n": 2558,
+            "Group_": "Building",
+            "TypeCombo": "Residential Alteration"
+          },
+          {
+            "n": 61,
+            "Group_": "Building",
+            "TypeCombo": "Residential Conversion"
+          },
+          {
+            "n": 1083,
+            "Group_": "Building",
+            "TypeCombo": "Residential Demolition"
+          },
+          {
+            "n": 6,
+            "Group_": "Building",
+            "TypeCombo": "Residential Express"
+          },
+          {
+            "n": 39,
+            "Group_": "Building",
+            "TypeCombo": "Residential Land Subdivision"
+          },
+          {
+            "n": 376,
+            "Group_": "Building",
+            "TypeCombo": "Residential Misc. Non-Structural"
+          },
+          {
+            "n": 493,
+            "Group_": "Building",
+            "TypeCombo": "Residential Misc. Structural"
+          },
+          {
+            "n": 1036,
+            "Group_": "Building",
+            "TypeCombo": "Residential Miscellaneous"
+          },
+          {
+            "n": 2126,
+            "Group_": "Building",
+            "TypeCombo": "Residential New"
+          },
+          {
+            "n": 510,
+            "Group_": "Building",
+            "TypeCombo": "Residential Pool"
+          },
+          {
+            "n": 1,
+            "Group_": "Building",
+            "TypeCombo": "Short Term Rental License"
+          },
+          {
+            "n": 5,
+            "Group_": "Building",
+            "TypeCombo": "Short Term Rental License Renewal"
+          },
+          {
+            "n": 33,
+            "Group_": "Building",
+            "TypeCombo": "Side Walk Waiver"
+          },
+          {
+            "n": 7941,
+            "Group_": "Building",
+            "TypeCombo": "Temporary Power"
+          }
+        ],
+        "exceeded_transfer_limit": null
+      }
+    },
+    {
+      "name": "latest_arborist_illegal_activity",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query?f=json&where=TypeCombo+%3D+%27Arborist+Illegal+Activity%27&outFields=RecordID%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=ObjectId+ASC&returnGeometry=false&resultRecordCount=2",
+      "checked_at_utc": "2026-11-23T23:56:35.349645+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 1507,
+      "sha256": "13d3b37ab1f0908595050175a45b135a805c6309a2263446073cf00d033e1fa7",
+      "result": [
+        {
+          "type": "Arborist Illegal Activity",
+          "status": "Fine",
+          "record_prefix": "BA",
+          "opened_year": "2025",
+          "status_year": "2025",
+          "parcel_present": true,
+          "has_detail_link": true
+        }
+      ]
+    },
+    {
+      "name": "latest_arborist_infrastructure",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query?f=json&where=TypeCombo+%3D+%27Arborist+Infrastructure%27&outFields=RecordID%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=ObjectId+ASC&returnGeometry=false&resultRecordCount=2",
+      "checked_at_utc": "2026-11-23T23:56:35.566462+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 1829,
+      "sha256": "6027ba9dbdd34cf684f73ff7dfbc56d72fdd25ac7ca185e1330b8cd62614faf5",
+      "result": [
+        {
+          "type": "Arborist Infrastructure",
+          "status": "Accepted",
+          "record_prefix": "BA",
+          "opened_year": "2025",
+          "status_year": "2025",
+          "parcel_present": true,
+          "has_detail_link": true
+        },
+        {
+          "type": "Arborist Infrastructure",
+          "status": "Closed - Approved",
+          "record_prefix": "BA",
+          "opened_year": "2023",
+          "status_year": "2023",
+          "parcel_present": true,
+          "has_detail_link": true
+        }
+      ]
+    },
+    {
+      "name": "accela_latest_arborist_detail",
+      "checked_at_utc": "2026-11-23T23:56:35.713902+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "captured_bytes": 273157,
+      "captured_sha256": "fd9c91861cc2f31a00caef47e7946ca4ff27f3a4ccc1e803f5fc60f86685c0e6",
+      "result": {
+        "visible_or_embedded_labels": [
+          "Login",
+          "Arborist",
+          "Record Details",
+          "Work Location",
+          "More Details",
+          "Related Records",
+          "Processing Status",
+          "Application Information",
+          "Access Denied"
+        ],
+        "form_labels_detected": {
+          "record type": 0,
+          "start date": 1,
+          "end date": 1
+        },
+        "search_input_count": 12
+      }
+    },
+    {
+      "name": "latest_companion_table",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/1?f=json",
+      "checked_at_utc": "2026-11-23T23:56:38.182307+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 10321,
+      "sha256": "439d769e0e738956d7cd1d3e637fe57979f64eb0cd94718f366a7656ebed2c12",
+      "result": {
+        "id": 1,
+        "name": "Building_Permit_latest_objects",
+        "description": "",
+        "capabilities": "Query",
+        "objectIdField": "ObjectId",
+        "editingInfo": {
+          "lastEditDate": 1769677230650,
+          "schemaLastEditDate": 1769677230650,
+          "dataLastEditDate": 1769677230650
+        },
+        "fields": [
+          {
+            "name": "DisplayX",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "DisplayY",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "RecordID",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Name",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "OrigOpened",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "Opend",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "TypeCombo",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Use_",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Subtype",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Group_",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "Status_1",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "StatusDate",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "R_StatDate",
+            "type": "esriFieldTypeDate"
+          },
+          {
+            "name": "JOB_VALUE",
+            "type": "esriFieldTypeSingle"
+          },
+          {
+            "name": "PARCEL",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "QUADRANT",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "JobValue",
+            "type": "esriFieldTypeSingle"
+          },
+          {
+            "name": "ACA_Link",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "StreetView",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "statusP",
+            "type": "esriFieldTypeString"
+          },
+          {
+            "name": "ObjectId",
+            "type": "esriFieldTypeOID"
+          }
+        ]
+      }
+    },
+    {
+      "name": "latest_table_groups_and_types",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/1/query?f=json&where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22ObjectId%22%2C%22outStatisticFieldName%22%3A%22n%22%7D%5D&groupByFieldsForStatistics=Group_%2CTypeCombo&orderByFields=Group_%2CTypeCombo&returnGeometry=false",
+      "checked_at_utc": "2026-11-23T23:56:51.535709+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 3250,
+      "sha256": "e4b8ae2a851004db95f7d74b8957c23ac41e13540ee079c7bfd47a5618e379c2",
+      "result": {
+        "rows": [
+          {
+            "n": 133,
+            "Group_": "Building",
+            "TypeCombo": "Airport General"
+          },
+          {
+            "n": 1,
+            "Group_": "Building",
+            "TypeCombo": "Arborist Infrastructure"
+          },
+          {
+            "n": 60,
+            "Group_": "Building",
+            "TypeCombo": "Building Complaint"
+          },
+          {
+            "n": 27,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Addition"
+          },
+          {
+            "n": 556,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Alteration"
+          },
+          {
+            "n": 55,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Conversion"
+          },
+          {
+            "n": 43,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Demolition"
+          },
+          {
+            "n": 26,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Land Development"
+          },
+          {
+            "n": 1,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Misc. Structural"
+          },
+          {
+            "n": 173,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Miscellaneous"
+          },
+          {
+            "n": 56,
+            "Group_": "Building",
+            "TypeCombo": "Commercial New"
+          },
+          {
+            "n": 7,
+            "Group_": "Building",
+            "TypeCombo": "Commercial Pool"
+          },
+          {
+            "n": 4,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Addition"
+          },
+          {
+            "n": 83,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Alteration"
+          },
+          {
+            "n": 3,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Conversion"
+          },
+          {
+            "n": 1,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Demolition"
+          },
+          {
+            "n": 8,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Land Development"
+          },
+          {
+            "n": 45,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family Miscellaneous"
+          },
+          {
+            "n": 132,
+            "Group_": "Building",
+            "TypeCombo": "Multi Family New"
+          },
+          {
+            "n": 26,
+            "Group_": "Building",
+            "TypeCombo": "Noise Temporary Variance"
+          },
+          {
+            "n": 349,
+            "Group_": "Building",
+            "TypeCombo": "Open Record Request"
+          },
+          {
+            "n": 13,
+            "Group_": "Building",
+            "TypeCombo": "Outdoor Events"
+          },
+          {
+            "n": 1,
+            "Group_": "Building",
+            "TypeCombo": "Public Kiosk"
+          },
+          {
+            "n": 191,
+            "Group_": "Building",
+            "TypeCombo": "Residential Addition"
+          },
+          {
+            "n": 221,
+            "Group_": "Building",
+            "TypeCombo": "Residential Alteration"
+          },
+          {
+            "n": 8,
+            "Group_": "Building",
+            "TypeCombo": "Residential Conversion"
+          },
+          {
+            "n": 95,
+            "Group_": "Building",
+            "TypeCombo": "Residential Demolition"
+          },
+          {
+            "n": 2,
+            "Group_": "Building",
+            "TypeCombo": "Residential Land Subdivision"
+          },
+          {
+            "n": 135,
+            "Group_": "Building",
+            "TypeCombo": "Residential Miscellaneous"
+          },
+          {
+            "n": 193,
+            "Group_": "Building",
+            "TypeCombo": "Residential New"
+          },
+          {
+            "n": 31,
+            "Group_": "Building",
+            "TypeCombo": "Residential Pool"
+          },
+          {
+            "n": 1,
+            "Group_": "Building",
+            "TypeCombo": "Short Term Rental License"
+          },
+          {
+            "n": 1,
+            "Group_": "Building",
+            "TypeCombo": "Side Walk Waiver"
+          },
+          {
+            "n": 819,
+            "Group_": "Building",
+            "TypeCombo": "Temporary Power"
+          }
+        ],
+        "exceeded_transfer_limit": null
+      }
+    },
+    {
+      "name": "latest_table_dates_count",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/1/query?f=json&where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22Opend%22%2C%22outStatisticFieldName%22%3A%22min_Opend%22%7D%2C%7B%22statisticType%22%3A%22max%22%2C%22onStatisticField%22%3A%22Opend%22%2C%22outStatisticFieldName%22%3A%22max_Opend%22%7D%2C%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22StatusDate%22%2C%22outStatisticFieldName%22%3A%22min_StatusDate%22%7D%2C%7B%22statisticType%22%3A%22max%22%2C%22onStatisticField%22%3A%22StatusDate%22%2C%22outStatisticFieldName%22%3A%22max_StatusDate%22%7D%2C%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22ObjectId%22%2C%22outStatisticFieldName%22%3A%22row_count%22%7D%5D&returnGeometry=false",
+      "checked_at_utc": "2026-11-23T23:57:11.361177+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 991,
+      "sha256": "6c5daa08fe3d0cfef07caca9482f3f6d8c7717db58d7fd3a837df0ee2dc6d195",
+      "result": {
+        "min_Opend": 1726790400000,
+        "max_Opend": 1769558400000,
+        "min_StatusDate": 1710288000000,
+        "max_StatusDate": 1769614317000,
+        "row_count": 3500
+      }
+    },
+    {
+      "name": "latest_table_arborist_example",
+      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/1/query?f=json&where=TypeCombo+%3D+%27Arborist+Infrastructure%27&outFields=TypeCombo%2CStatus_1%2COpend%2CRecordID%2CPARCEL%2CACA_Link%2CDisplayX%2CDisplayY&returnGeometry=false&resultRecordCount=2",
+      "checked_at_utc": "2026-11-23T23:57:30.513651+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "response_bytes": 1569,
+      "sha256": "57d4fa554377280330890797a8801fb5743ffd4c328a6b098047714838723e62",
+      "result": [
+        {
+          "type": "Arborist Infrastructure",
+          "status": "Accepted",
+          "opened_year": "2025",
+          "has_detail_link": true,
+          "parcel_present": true,
+          "x_present": false,
+          "y_present": false
+        }
+      ]
+    },
+    {
+      "name": "accela_table_arborist_detail",
+      "checked_at_utc": "2026-11-23T23:57:30.701241+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "captured_bytes": 274450,
+      "captured_sha256": "20d53b7c5b3c77468c3ba37ff4e71787c74d3f2f911461023304fa82ffa6d966",
+      "result": {
+        "visible_or_embedded_labels": [
+          "Login",
+          "Arborist",
+          "Record Details",
+          "Work Location",
+          "More Details",
+          "Related Records",
+          "Processing Status",
+          "Application Information",
+          "Access Denied"
+        ],
+        "form_labels_detected": {
+          "record type": 0,
+          "start date": 1,
+          "end date": 1
+        },
+        "linked_identifier_in_page_text": true,
+        "search_input_count": 12
+      }
+    }
+  ]
+}

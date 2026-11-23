@@ -4,7 +4,11 @@ Use this queue when a necessary part of the authorized plan requires the owner o
 
 ## Active actions
 
-None.
+### HA-0002 — Confirm City receipt or file scoped records requests
+
+- **Status / owner / task:** ready, 2026-11-23. Project owner for confirmation or filing. Codex handles validation in [T03](docs/research/permits/T03.md) on `codex/t03-permit-audit`.
+- Check whether the Gmail send already reached the designated City custodian. If so, share the acknowledgment or filing ID and scope privately. If City filing is outstanding, use the [prepared request and City routes](docs/research/permits/T03.md#draft-for-city-custodians) for the missing Office of Buildings and Parks scopes. Reuse any existing filing for an equivalent scope.
+- Allow about 10 minutes to check and file, depending on account setup. Request a quote before any paid work. Share the filing ID and covered scope privately. When the City responds, arrange private access to the export before sharing address-linked files. Codex will verify schema, date and jurisdiction coverage, and exclusions before closing the action.
 
 ## How to use the queue
 
@@ -46,7 +50,9 @@ This template is not an active request. Replace every bracketed field before mar
 
 ## Fulfilled actions
 
-None. Retain completed requests here with their IDs, dates, prepared instructions/revision, verified delivery or decision, artifact locations, limitations, and consuming tasks.
+### HA-0001 — Send the Tier 4 draft
+
+Fulfilled for the send step on the owner's 2026-11-23 report. The owner sent the [Tier 4 draft](old/permits-and-pixels.md#tier-4--open-records-request--file-week-one) via Gmail to the Georgia arborist community. [T03](docs/research/permits/T03.md) uses this as outreach evidence. The send date and City custodian receipt are unverified. HA-0002 tracks formal filing or confirmation.
 
 ## Closed without fulfillment
 
