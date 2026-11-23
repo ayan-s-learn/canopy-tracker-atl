@@ -25,7 +25,7 @@ T01 is complete for its two sampled locations. T02–T04 remain independently cl
 | [T01](docs/task-contracts.md#t01--verify-candidate-imagery-intervals) | Imagery access, dates and paired samples | complete — Codex, `codex/t01-imagery` ([findings and recovery](docs/research/imagery/T01.md)) | Two 2023/2025 sample pairs read and independently checked. Piedmont Park replay passed for both years. West End 2023 replay timed out. |
 | [T02](docs/task-contracts.md#t02--establish-geography-parcels-and-comparison-layers) | Jurisdiction, parcels and GT layers | ready — unclaimed | Source leads/GT report; retrieve boundary and share it before finishing every source inquiry |
 | [T03](docs/task-contracts.md#t03--audit-permit-sources-and-temporal-meaning) | Permit feasibility, coverage and semantics | ready — unclaimed | Recorded errors/official guidance; inspect accessible source metadata and diverse records |
-| [T04](docs/task-contracts.md#t04--establish-a-minimal-reproducible-environment-and-durable-artifact-path) | Reproducible operation and durable storage | ready — unclaimed | Provisioned environment/permitted fixture; prove environment and storage capabilities separately |
+| [T04](docs/task-contracts.md#t04--establish-a-minimal-reproducible-environment-and-durable-artifact-path) | Reproducible operation and durable storage | in progress — Codex, `codex/t04-reproducible-runtime` | [Launch and evidence](docs/operations.md#t04--runtime-and-artifact-recovery) |
 
 A ready brief is not a scheduled job. When claiming one, record its owner, branch/checkout, write reservation, status and linked launch/evidence record here or in a reserved section.
 
