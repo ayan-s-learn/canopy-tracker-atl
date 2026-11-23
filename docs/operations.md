@@ -17,3 +17,7 @@ Commit at meaningful milestones and before planned stops. Stage explicit paths, 
 At a stop boundary, stop launching new work, preserve partial results, update the checklist and human-action queue, and publish an honest checkpoint. A declared independent job may continue within its recorded authority and resource limits when the host supports it; an explicit instruction to stop that job overrides continuation. Stop only owned processes that should end and retain exact recovery steps. Do not describe a budget stop as successful completion.
 
 Handoffs identify the branch and checkpoint, completed and unfinished work, checks and review status, artifact recovery locations, process ownership, blockers, and exact next actions. On resume, reconcile from those records and actual artifacts.
+
+## T04 — Runtime and artifact recovery
+
+Codex launched T04 on 2026-11-23 from `fd31146` on `codex/t04-reproducible-runtime`. The write reservation covers the environment lock, executable check, compact derived raster, operations, and T04 checklist entry. The [T01 Piedmont Park 2023 window](research/imagery/T01.md) is the input. Use at most 100 MiB of wheel and fixture transfers, 500 MiB of temporary space, and one GitHub working branch for the recovery check. No paid provisioning. Start with the existing TIFF, then replay in a clean directory and retrieve the derived raster from the remote. Stop after both checks pass or after recording the blocked capability and resume steps.
