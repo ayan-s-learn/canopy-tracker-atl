@@ -1,6 +1,6 @@
 # Canopy Tracker ATL — plan and current state
 
-Updated **2026-11-22, America/New_York**. Integration owner: **Codex campaign lead**. T01 working branch: **`codex/t01-imagery`**, based on `main` at `a16d4fb`. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
+Updated **2026-11-23, America/New_York**. Integration owner: **Codex campaign lead**. T01 working branch: **`codex/t01-imagery`**, based on `main` at `a16d4fb`. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
 
 ## Objective and current evidence
 
@@ -8,23 +8,23 @@ Build a reproducible, independently evaluated canopy-loss investigation with par
 
 Current direction remains **City of Atlanta first**, including its parts in both counties, with a varied pilot before regional findings. Prefer 2023→2025 if usable; investigate 2019→2023 or another justified fallback. Compare practical methods before committing to U-Net. Measure endpoint-visible loss, then many-to-many parcel overlap and coverage-aware three-way permit reconciliation. These methods/intervals are revisable hypotheses; [research direction](docs/research-direction.md) preserves the scientific standards and tradeoffs.
 
-**Known:** GT already maps fine-resolution canopy, uses ML/manual corrections and compares some permits; our proposed contribution is validated smaller-event analysis and a reproducible evidence trail. T01 retrieved four-band October 2023 and October 2025 NAIP imagery at Piedmont Park and West End. The pair supports local development. Citywide coverage and registration remain open. [Sample windows and evidence](docs/research/imagery/T01.md). Permit access/completeness is unproven. These are scoped observations, not full-city readiness.
+**Known:** GT already maps fine-resolution canopy, uses ML/manual corrections and compares some permits; our proposed contribution is validated smaller-event analysis and a reproducible evidence trail. T01 retrieved four-band October 2023 and October 2025 NAIP imagery at Piedmont Park and West End. The pair supports local development. Citywide coverage and registration remain open. [Sample windows and evidence](docs/research/imagery/T01.md). Public building and selected arborist records are accessible. Coverage of tree authorizations remains unverified. [T03 evidence](docs/research/permits/T03.md). These are scoped observations, not full-city readiness.
 
 **Absent:** full study dataset, independent reference labels, measured detector accuracy, usable permit snapshot, operational pipeline, proven durable raster/model storage and public release. **Jobs:** none running. T01 sample retrieval and review finished. Compact evidence is recorded in the repository; GT PDFs are recoverable by source URL/hash. No automated goal runtime, watcher or restart service has been established.
 
-**Human actions:** none ready or blocking the first inquiries. Agents prepare concrete packages when access/storage, independent annotation, publication/communications or briefing delivery actually need a human. Do not create requests for routine local planning changes.
+**Human actions:** [HA-0001](HUMAN_ACTIONS.md#ha-0001--send-the-tier-4-draft) fulfilled on owner confirmation. [HA-0002](HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests) ready to confirm City receipt or file the missing scopes.
 
 **Next Astra project review:** [AR01 — feasibility findings and next work](docs/project-reviews.md#ar01--feasibility-findings-and-next-work), planned after T01–T04 complete (earlier for a material blocker or change in direction). The integration owner prepares it; Astra defines the next round and AR02 trigger. The [initial layout](docs/project-reviews.md#initial-layout--t01t04-astra-2026-10-15) covers T01–T04 only; feasibility remains unreviewed. See the [glossary](docs/glossary.md) for domain terminology.
 
 ## Ready work and ownership
 
-T01 is complete for its two sampled locations. T02–T04 remain independently claimable. Each brief specifies inputs, outputs, checks and suggested write paths. Set finite launch budgets from actual capacity/provider limits and coordinate shared resources before simultaneous jobs.
+T01 is complete for its two sampled locations. T03 has a public-audit checkpoint and an outstanding access action. Each brief specifies inputs, outputs, checks and suggested write paths. Set finite launch budgets from actual capacity/provider limits and coordinate shared resources before simultaneous jobs.
 
 | ID | Useful next inquiry | Status / claimant | Starting evidence / next action |
 |---|---|---|---|
 | [T01](docs/task-contracts.md#t01--verify-candidate-imagery-intervals) | Imagery access, dates and paired samples | complete — Codex, `codex/t01-imagery` ([findings and recovery](docs/research/imagery/T01.md)) | Two 2023/2025 sample pairs read and independently checked. Piedmont Park replay passed for both years. West End 2023 replay timed out. |
 | [T02](docs/task-contracts.md#t02--establish-geography-parcels-and-comparison-layers) | Jurisdiction, parcels and GT layers | ready — unclaimed | Source leads/GT report; retrieve boundary and share it before finishing every source inquiry |
-| [T03](docs/task-contracts.md#t03--audit-permit-sources-and-temporal-meaning) | Permit feasibility, coverage and semantics | ready — unclaimed | Recorded errors/official guidance; inspect accessible source metadata and diverse records |
+| [T03](docs/task-contracts.md#t03--audit-permit-sources-and-temporal-meaning) | Permit feasibility, coverage and semantics | in progress — Codex, `codex/t03-permit-audit` | [Public-source audit and request package](docs/research/permits/T03.md). City receipt and historical DDH, BB/LD review, and public-tree records pending. |
 | [T04](docs/task-contracts.md#t04--establish-a-minimal-reproducible-environment-and-durable-artifact-path) | Reproducible operation and durable storage | ready — unclaimed | Provisioned environment/permitted fixture; prove environment and storage capabilities separately |
 
 A ready brief is not a scheduled job. When claiming one, record its owner, branch/checkout, write reservation, status and linked launch/evidence record here or in a reserved section.
@@ -63,4 +63,4 @@ Read AGENTS.md and current state, claim an item, and use its [ready brief](docs/
 
 ## Next action
 
-Claim T02 and retrieve the dated City of Atlanta boundary so coverage can be checked against both county portions. T03 and T04 are independently ready. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.
+Claim T02 and retrieve the dated City of Atlanta boundary so coverage can be checked against both county portions. For T03, reconcile any City acknowledgment or delivered records against the scoped request and check coverage before using permit absences. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.

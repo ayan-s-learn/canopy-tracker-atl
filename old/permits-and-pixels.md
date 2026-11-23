@@ -50,6 +50,8 @@ The city maintains a page listing current arborist sign postings. The signs have
 
 ### Tier 4 — Open records request · *file week one*
 
+[Current Tier 4 outreach and City filing status](../docs/research/permits/T03.md#outreach).
+
 Georgia's Open Records Act, **O.C.G.A. § 50-18-71**, requires a response within **three business days**. If responsive records exist but cannot be produced that fast, the agency must supply a description and a timeline, then deliver as soon as practicable. Fees cap at 10¢ per page for standard copies, staff time at no more than the prorated hourly salary of the lowest-paid full-time employee with the necessary skill, and **the first quarter hour is free**. A modest, well-scoped request should cost nothing.
 
 The decisive provision is subsection (f), on electronic records:
@@ -87,7 +89,7 @@ Reconcile detected clearing against the Tier 1 building-permit CSV alone. The cl
 ## Week one checklist
 
 - [ ] Download the Tier 1 CSV (five minutes, unblocks the reconciliation stage)
-- [ ] Send the Tier 4 request (three business days to an answer)
+- [x] Send the Tier 4 draft via Gmail to the Georgia arborist community (owner confirmed 2026-11-23). City custodian receipt is tracked in [HA-0002](../HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests).
 - [ ] Stand up the Tier 3 daily scrape (every day of delay is unrecoverable history)
 - [ ] Spend twenty minutes in Accela by hand; write down the record-type prefixes you actually see
 
