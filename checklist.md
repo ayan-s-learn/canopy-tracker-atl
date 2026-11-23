@@ -1,6 +1,6 @@
 # Canopy Tracker ATL — plan and current state
 
-Updated **2026-11-22, America/New_York**. Integration owner: **Codex campaign lead**. T01 working branch: **`codex/t01-imagery`**, based on `main` at `eeb5e0f`. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
+Updated **2026-11-23, America/New_York**. Integration owner: **Codex campaign lead**. T04 working branch: **`codex/t04-reproducible-runtime`**, based on `main` at `fd31146`. Follow [AGENTS.md](AGENTS.md); necessary human actions live in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). This is the single state entry point; linked task/run records hold detail.
 
 ## Objective and current evidence
 
@@ -10,7 +10,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 **Known:** GT already maps fine-resolution canopy, uses ML/manual corrections and compares some permits; our proposed contribution is validated smaller-event analysis and a reproducible evidence trail. T01 retrieved four-band October 2023 and October 2025 NAIP imagery at Piedmont Park and West End. The pair supports local development. Citywide coverage and registration remain open. [Sample windows and evidence](docs/research/imagery/T01.md). Permit access/completeness is unproven. These are scoped observations, not full-city readiness.
 
-**Absent:** full study dataset, independent reference labels, measured detector accuracy, usable permit snapshot, operational pipeline, proven durable raster/model storage and public release. **Jobs:** none running. T01 sample retrieval and review finished. Compact evidence is recorded in the repository; GT PDFs are recoverable by source URL/hash. No automated goal runtime, watcher or restart service has been established.
+**Absent:** full study dataset, independent reference labels, measured detector accuracy, usable permit snapshot, operational pipeline, verified storage for raw imagery and model weights, and public release. **Jobs:** none running. T01 sample retrieval and review finished. Compact evidence is recorded in the repository; GT PDFs are recoverable by source URL/hash. No automated goal runtime, watcher or restart service has been established.
 
 **Human actions:** none ready or blocking the first inquiries. Agents prepare concrete packages when access/storage, independent annotation, publication/communications or briefing delivery actually need a human. Do not create requests for routine local planning changes.
 
@@ -18,14 +18,14 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 ## Ready work and ownership
 
-T01 is complete for its two sampled locations. T02–T04 remain independently claimable. Each brief specifies inputs, outputs, checks and suggested write paths. Set finite launch budgets from actual capacity/provider limits and coordinate shared resources before simultaneous jobs.
+Each brief specifies inputs, outputs, checks and suggested write paths. Set finite launch budgets from actual capacity/provider limits and coordinate shared resources before simultaneous jobs.
 
 | ID | Useful next inquiry | Status / claimant | Starting evidence / next action |
 |---|---|---|---|
 | [T01](docs/task-contracts.md#t01--verify-candidate-imagery-intervals) | Imagery access, dates and paired samples | complete — Codex, `codex/t01-imagery` ([findings and recovery](docs/research/imagery/T01.md)) | Two 2023/2025 sample pairs read and independently checked. Piedmont Park replay passed for both years. West End 2023 replay timed out. |
 | [T02](docs/task-contracts.md#t02--establish-geography-parcels-and-comparison-layers) | Jurisdiction, parcels and GT layers | ready — unclaimed | Source leads/GT report; retrieve boundary and share it before finishing every source inquiry |
 | [T03](docs/task-contracts.md#t03--audit-permit-sources-and-temporal-meaning) | Permit feasibility, coverage and semantics | ready — unclaimed | Recorded errors/official guidance; inspect accessible source metadata and diverse records |
-| [T04](docs/task-contracts.md#t04--establish-a-minimal-reproducible-environment-and-durable-artifact-path) | Reproducible operation and durable storage | in progress — Codex, `codex/t04-reproducible-runtime` | [Launch and evidence](docs/operations.md#t04--runtime-and-artifact-recovery) |
+| [T04](docs/task-contracts.md#t04--establish-a-minimal-reproducible-environment-and-durable-artifact-path) | Reproducible operation and durable storage | complete — Codex, `codex/t04-reproducible-runtime` | Fresh fixture replay and hash-verified GitHub retrieval of a compact derived GeoTIFF. [Checks and recovery limits](docs/operations.md#t04--runtime-and-artifact-recovery). |
 
 A ready brief is not a scheduled job. When claiming one, record its owner, branch/checkout, write reservation, status and linked launch/evidence record here or in a reserved section.
 
@@ -50,12 +50,12 @@ See [research direction](docs/research-direction.md#evidence-gates-and-recoverab
 
 | Gate | Required evidence | Current state |
 |---|---|---|
-| G1 — study feasible | Suitable readable paired inputs, scoped geography/source interfaces and recoverable artifacts | Unpassed; two paired sites verified, with geography, permit coverage, reference planning and durable recovery still open |
+| G1 — study feasible | Suitable readable paired inputs, scoped geography/source interfaces and recoverable artifacts | Unpassed; two paired sites verified, with geography, permit coverage, reference planning and bulk artifact recovery still open |
 | G2 — evaluation candidate selected | Controlled development evidence, reviewed protocol/reference capacity, pinned method and inputs | Unpassed; method/MMU/registration policy unchosen |
 | G3 — findings validated | Appropriate independent references, uncertainty/coverage, protected evaluation and independent numerical reproduction | Unpassed; no project accuracy measurements |
 | G4 — delivered and maintainable | Supported reviewable bundle, authorized public result, delivered agency briefing and tested rerun | Unpassed; no release or briefing |
 
-Unresolved: recent-image coverage and suitability across the city; valid-area denominator; parcel history; effective-dated permit coverage; reference effort; local detection scale/registration limits; useful review yield/subgroup precision; durable storage; public detail, project license and future custodian.
+Unresolved: recent-image coverage and suitability across the city; valid-area denominator; parcel history; effective-dated permit coverage; reference effort; local detection scale/registration limits; useful review yield/subgroup precision; storage for raw imagery and model weights; public detail, project license and future custodian.
 
 ## Launch ready work
 
@@ -63,4 +63,4 @@ Read AGENTS.md and current state, claim an item, and use its [ready brief](docs/
 
 ## Next action
 
-Claim T02 and retrieve the dated City of Atlanta boundary so coverage can be checked against both county portions. T03 and T04 are independently ready. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.
+Claim T02 and retrieve the dated City of Atlanta boundary so coverage can be checked against both county portions. T03 is independently ready. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.
