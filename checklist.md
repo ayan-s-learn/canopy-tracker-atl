@@ -18,12 +18,12 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 ## Ready work and ownership
 
-T01 is complete for its two sampled locations. T02–T04 remain independently claimable. Each brief specifies inputs, outputs, checks and suggested write paths. Set finite launch budgets from actual capacity/provider limits and coordinate shared resources before simultaneous jobs.
+Each brief specifies inputs, outputs, checks and suggested write paths. Set finite launch budgets from actual capacity/provider limits and coordinate shared resources before simultaneous jobs.
 
 | ID | Useful next inquiry | Status / claimant | Starting evidence / next action |
 |---|---|---|---|
 | [T01](docs/task-contracts.md#t01--verify-candidate-imagery-intervals) | Imagery access, dates and paired samples | complete — Codex, `codex/t01-imagery` ([findings and recovery](docs/research/imagery/T01.md)) | Two 2023/2025 sample pairs read and independently checked. Piedmont Park replay passed for both years. West End 2023 replay timed out. |
-| [T02](docs/task-contracts.md#t02--establish-geography-parcels-and-comparison-layers) | Jurisdiction, parcels and GT layers | ready — unclaimed | Source leads/GT report; retrieve boundary and share it before finishing every source inquiry |
+| [T02](docs/task-contracts.md#t02--establish-geography-parcels-and-comparison-layers) | Jurisdiction, parcels and GT layers | complete — Codex, `codex/t02-geography`, 2026-11-23 | [Findings and replay](docs/research/geography/T02.md). Official City footprint archived, both county overlays and parcel samples checked. GT 2023 raster read. Parcel history, historical City jurisdiction and GT reuse remain open. |
 | [T03](docs/task-contracts.md#t03--audit-permit-sources-and-temporal-meaning) | Permit feasibility, coverage and semantics | ready — unclaimed | Recorded errors/official guidance; inspect accessible source metadata and diverse records |
 | [T04](docs/task-contracts.md#t04--establish-a-minimal-reproducible-environment-and-durable-artifact-path) | Reproducible operation and durable storage | ready — unclaimed | Provisioned environment/permitted fixture; prove environment and storage capabilities separately |
 
@@ -50,7 +50,7 @@ See [research direction](docs/research-direction.md#evidence-gates-and-recoverab
 
 | Gate | Required evidence | Current state |
 |---|---|---|
-| G1 — study feasible | Suitable readable paired inputs, scoped geography/source interfaces and recoverable artifacts | Unpassed; two paired sites verified, with geography, permit coverage, reference planning and durable recovery still open |
+| G1 — study feasible | Suitable readable paired inputs, scoped geography/source interfaces and recoverable artifacts | Unpassed; two paired sites and a current City footprint verified. Epoch-specific jurisdiction, parcel history, permit coverage, reference planning and durable recovery remain open |
 | G2 — evaluation candidate selected | Controlled development evidence, reviewed protocol/reference capacity, pinned method and inputs | Unpassed; method/MMU/registration policy unchosen |
 | G3 — findings validated | Appropriate independent references, uncertainty/coverage, protected evaluation and independent numerical reproduction | Unpassed; no project accuracy measurements |
 | G4 — delivered and maintainable | Supported reviewable bundle, authorized public result, delivered agency briefing and tested rerun | Unpassed; no release or briefing |
@@ -63,4 +63,4 @@ Read AGENTS.md and current state, claim an item, and use its [ready brief](docs/
 
 ## Next action
 
-Claim T02 and retrieve the dated City of Atlanta boundary so coverage can be checked against both county portions. T03 and T04 are independently ready. Resume through [AGENTS.md](AGENTS.md#start-or-resume). Full delivery requires validated findings, the authorized public result, an actual agency briefing and a reproducible maintenance handoff.
+Use T02's City geometry to inventory 2023/2025 imagery coverage across Atlanta’s Fulton and DeKalb portions. Reconcile effective-dated annexations and parcel history before historical attribution. Resume the remaining briefs through [AGENTS.md](AGENTS.md#start-or-resume).
