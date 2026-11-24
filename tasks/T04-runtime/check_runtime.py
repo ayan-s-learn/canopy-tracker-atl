@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -10,7 +11,9 @@ import rasterio
 from rasterio.io import MemoryFile
 from rasterio.transform import from_bounds
 
-from recover_windows import verify_window
+T01 = Path(__file__).resolve().parents[1] / "T01-imagery"
+sys.path.insert(0, str(T01))
+from recover_windows import verify_window  # noqa: E402
 
 
 def main():
@@ -19,7 +22,7 @@ def main():
     parser.add_argument("output", type=Path, help="New output GeoTIFF path")
     args = parser.parse_args()
 
-    manifest = Path(__file__).resolve().parents[3] / "manifests/imagery/t01-windows.json"
+    manifest = T01 / "t01-windows.json"
     sample = next(
         sample for sample in json.loads(manifest.read_text())["samples"]
         if (sample["site"], sample["year"]) == ("park", 2023)

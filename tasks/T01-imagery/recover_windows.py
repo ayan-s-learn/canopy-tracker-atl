@@ -28,7 +28,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path, help="Directory for verified GeoTIFFs (rerun to resume)")
     args = parser.parse_args()
-    manifest = Path(__file__).resolve().parents[3] / "manifests/imagery/t01-windows.json"
+    manifest = Path(__file__).with_name("t01-windows.json")
     samples = json.loads(manifest.read_text())["samples"]
     args.output.mkdir(parents=True, exist_ok=True)
     for sample in samples:

@@ -50,7 +50,7 @@ The city maintains a page listing current arborist sign postings. The signs have
 
 ### Tier 4 — Open records request · *file week one*
 
-[Current Tier 4 outreach and City filing status](../docs/research/permits/T03.md#outreach).
+[Current Tier 4 outreach and City filing status](../tasks/T03-permits/README.md#outreach).
 
 Georgia's Open Records Act, **O.C.G.A. § 50-18-71**, requires a response within **three business days**. If responsive records exist but cannot be produced that fast, the agency must supply a description and a timeline, then deliver as soon as practicable. Fees cap at 10¢ per page for standard copies, staff time at no more than the prorated hourly salary of the lowest-paid full-time employee with the necessary skill, and **the first quarter hour is free**. A modest, well-scoped request should cost nothing.
 
