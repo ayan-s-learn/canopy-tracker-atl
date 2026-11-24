@@ -1,6 +1,6 @@
 {
   "scope": "Bounded public source audit, City of Atlanta. UTC timestamps. Individual permit IDs, addresses, coordinates and detail URLs are omitted.",
-  "replay": "GET the recorded URLs. Send Range: bytes=0-8191 for the historical CSV. For omitted Accela details, recover ACA_Link from its preceding sample in ArcGIS query order (the point arborist detail used the second infrastructure row). Keep record identifiers and raw responses outside Git. Source updates can change results and hashes.",
+  "replay": "GET the recorded metadata and aggregate queries. Send Range: bytes=0-8191 for the historical CSV. Individual sample queries and Accela links are omitted to avoid pointing to specific parcels. The retained sample summaries record counts, field presence and generalized labels. Source updates can change results and hashes.",
   "observations": [
     {
       "name": "historical_arcgis_item",
@@ -360,15 +360,14 @@
     },
     {
       "name": "similarly_named_city_layer_sample",
-      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_permits_2019_2024/FeatureServer/8/query?f=json&where=1%3D1&outFields=%2A&returnGeometry=false&resultRecordCount=2",
       "checked_at_utc": "2026-11-23T23:54:44.415448+00:00",
       "status": 200,
       "content_type": "application/json",
       "response_bytes": 2969,
-      "sha256": "fcd8449513a2d797b8077ab6bf2a4c83964caa29d9d6983be6192cfd8a333505",
       "result": {
         "rows": 2
-      }
+      },
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_permits_2019_2024/FeatureServer/8/query"
     },
     {
       "name": "accela_building_search_html",
@@ -431,12 +430,10 @@
     },
     {
       "name": "tracker_sample_1",
-      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query?f=json&where=TypeCombo+LIKE+%27%25New%25%27&outFields=Group_%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=FID+ASC&returnGeometry=false&resultRecordCount=3",
       "checked_at_utc": "2026-11-23T23:54:45.897927+00:00",
       "status": 200,
       "content_type": "application/json",
       "response_bytes": 2009,
-      "sha256": "287dfa6e69619d49274ac14e1e987c8e3e2785d5ead777b20fca7ef8174237f7",
       "result": {
         "rows": [
           {
@@ -468,16 +465,15 @@
           }
         ],
         "exceeded_transfer_limit": true
-      }
+      },
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query"
     },
     {
       "name": "tracker_sample_2",
-      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query?f=json&where=TypeCombo+LIKE+%27%25Alter%25%27&outFields=Group_%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=FID+ASC&returnGeometry=false&resultRecordCount=3",
       "checked_at_utc": "2026-11-23T23:54:46.040903+00:00",
       "status": 200,
       "content_type": "application/json",
       "response_bytes": 2043,
-      "sha256": "27a903360023cb7f0aab43ef41cb55e013e946237ed3de456ce65880b7b966b2",
       "result": {
         "rows": [
           {
@@ -509,16 +505,15 @@
           }
         ],
         "exceeded_transfer_limit": true
-      }
+      },
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query"
     },
     {
       "name": "tracker_sample_3",
-      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query?f=json&where=TypeCombo+LIKE+%27%25Demol%25%27&outFields=Group_%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=FID+ASC&returnGeometry=false&resultRecordCount=3",
       "checked_at_utc": "2026-11-23T23:54:46.199549+00:00",
       "status": 200,
       "content_type": "application/json",
       "response_bytes": 2036,
-      "sha256": "c928d2ddeca41be3dfc2a2332e0a49313e90da96b01f4f309948b58af8aee70c",
       "result": {
         "rows": [
           {
@@ -550,7 +545,8 @@
           }
         ],
         "exceeded_transfer_limit": true
-      }
+      },
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_Tracker/FeatureServer/2/query"
     },
     {
       "name": "accela_tracker_detail_1",
@@ -558,7 +554,6 @@
       "status": 200,
       "content_type": "text/html",
       "captured_bytes": 321394,
-      "captured_sha256": "56dd3278ac39649b1572c8075f34bc9ec4c2110af49eed4f42271e5089781c8f",
       "result": {
         "visible_or_embedded_labels": [
           "Login",
@@ -585,7 +580,6 @@
       "status": 200,
       "content_type": "text/html",
       "captured_bytes": 336652,
-      "captured_sha256": "70c1b8557e2e1a5c86e0eec7015dae8fa425fc67c269f8905e2a5a7c77c5704f",
       "result": {
         "visible_or_embedded_labels": [
           "Login",
@@ -879,12 +873,10 @@
     },
     {
       "name": "latest_context_sample",
-      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query?f=json&where=1%3D1&outFields=TypeCombo%2CGroup_%2CStatus_1&orderByFields=ObjectId+ASC&returnGeometry=false&resultRecordCount=3",
       "checked_at_utc": "2026-11-23T23:55:40.946167+00:00",
       "status": 200,
       "content_type": "application/json",
       "response_bytes": 964,
-      "sha256": "b83ef7bc467cb88f46e1a4e70412745fec438d7b4b663daf0297054c788deb00",
       "result": [
         {
           "TypeCombo": "Residential Alteration",
@@ -901,7 +893,8 @@
           "Group_": "Building",
           "Status_1": "Issued"
         }
-      ]
+      ],
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query"
     },
     {
       "name": "latest_groups_and_types",
@@ -1124,32 +1117,22 @@
     },
     {
       "name": "latest_arborist_illegal_activity",
-      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query?f=json&where=TypeCombo+%3D+%27Arborist+Illegal+Activity%27&outFields=RecordID%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=ObjectId+ASC&returnGeometry=false&resultRecordCount=2",
       "checked_at_utc": "2026-11-23T23:56:35.349645+00:00",
       "status": 200,
       "content_type": "application/json",
       "response_bytes": 1507,
-      "sha256": "13d3b37ab1f0908595050175a45b135a805c6309a2263446073cf00d033e1fa7",
-      "result": [
-        {
-          "type": "Arborist Illegal Activity",
-          "status": "Fine",
-          "record_prefix": "BA",
-          "opened_year": "2025",
-          "status_year": "2025",
-          "parcel_present": true,
-          "has_detail_link": true
-        }
-      ]
+      "result": {
+        "rows": 1,
+        "record_prefix": "BA"
+      },
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query"
     },
     {
       "name": "latest_arborist_infrastructure",
-      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query?f=json&where=TypeCombo+%3D+%27Arborist+Infrastructure%27&outFields=RecordID%2CTypeCombo%2CStatus_1%2COpend%2CStatusDate%2CPARCEL%2CACA_Link&orderByFields=ObjectId+ASC&returnGeometry=false&resultRecordCount=2",
       "checked_at_utc": "2026-11-23T23:56:35.566462+00:00",
       "status": 200,
       "content_type": "application/json",
       "response_bytes": 1829,
-      "sha256": "6027ba9dbdd34cf684f73ff7dfbc56d72fdd25ac7ca185e1330b8cd62614faf5",
       "result": [
         {
           "type": "Arborist Infrastructure",
@@ -1169,7 +1152,8 @@
           "parcel_present": true,
           "has_detail_link": true
         }
-      ]
+      ],
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/0/query"
     },
     {
       "name": "accela_latest_arborist_detail",
@@ -1177,7 +1161,6 @@
       "status": 200,
       "content_type": "text/html",
       "captured_bytes": 273157,
-      "captured_sha256": "fd9c91861cc2f31a00caef47e7946ca4ff27f3a4ccc1e803f5fc60f86685c0e6",
       "result": {
         "visible_or_embedded_labels": [
           "Login",
@@ -1511,23 +1494,20 @@
     },
     {
       "name": "latest_table_arborist_example",
-      "url": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/1/query?f=json&where=TypeCombo+%3D+%27Arborist+Infrastructure%27&outFields=TypeCombo%2CStatus_1%2COpend%2CRecordID%2CPARCEL%2CACA_Link%2CDisplayX%2CDisplayY&returnGeometry=false&resultRecordCount=2",
       "checked_at_utc": "2026-11-23T23:57:30.513651+00:00",
       "status": 200,
       "content_type": "application/json",
       "response_bytes": 1569,
-      "sha256": "57d4fa554377280330890797a8801fb5743ffd4c328a6b098047714838723e62",
       "result": [
         {
           "type": "Arborist Infrastructure",
-          "status": "Accepted",
-          "opened_year": "2025",
           "has_detail_link": true,
           "parcel_present": true,
           "x_present": false,
           "y_present": false
         }
-      ]
+      ],
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Building_Permit_latest/FeatureServer/1/query"
     },
     {
       "name": "accela_table_arborist_detail",
@@ -1535,7 +1515,6 @@
       "status": 200,
       "content_type": "text/html",
       "captured_bytes": 274450,
-      "captured_sha256": "20d53b7c5b3c77468c3ba37ff4e71787c74d3f2f911461023304fa82ffa6d966",
       "result": {
         "visible_or_embedded_labels": [
           "Login",
@@ -1557,5 +1536,39 @@
         "search_input_count": 12
       }
     }
-  ]
+  ],
+  "official_document_checks": {
+    "checked_on": "2026-11-23 America/New_York",
+    "method": "Official pages and documents read through indexed text. See direct HTTP results above where probed.",
+    "findings": [
+      {
+        "source": "https://www.atlantaga.gov/government/departments/city-planning/nature-urban-ecology/arborist/arborist-sign-postings",
+        "observation": "From August 3, 2020, reviews for new building-plan submissions appear under BB or LD. Earlier reviews stay under BA. Standalone BA includes DDH and appeals. Orange denotes submission and yellow denotes preliminary approval."
+      },
+      {
+        "source": "https://www.atlantaga.gov/government/departments/city-planning/nature-urban-ecology/tree-protection-ordinance-rewrite",
+        "observation": "City page gives April 13, 2023 to December 31, 2025 and January 1, 2026 versions, selected by original submission to the Office of Buildings."
+      },
+      {
+        "source": "https://www.atlantaga.gov/government/departments/city-planning/about-dcp/office-of-buildings",
+        "observation": "City dates pre-submission arborist meeting requirement to June 25, 2025 and provides open records routes."
+      },
+      {
+        "source": "https://www.atlantaga.gov/government/departments/department-parks-recreation/office-of-natural-resources/arborist-division",
+        "observation": "Parks arborists handle public tree permits, street and park trees, and site plan reviews."
+      },
+      {
+        "source": "https://www.atlantaga.gov/home/showpublisheddocument/58736/638163870828600000",
+        "observation": "2021 Q3 City Planning tree activity report describes private property only and names Parks as the public-property record holder."
+      },
+      {
+        "source": "https://www.atlantaga.gov/home/showdocument?id=67054&t=638990066293839561",
+        "observation": "Section 158-109(1) distinguishes verbal approval with later application from qualifying after-hours removal, subsequent contact and documentation without a permit."
+      },
+      {
+        "source": "https://www.atlantaga.gov/government/departments/city-planning/public-meetings-boards-commissions/tree-conservation-commission",
+        "observation": "The commission hears and decides tree-related appeals. The indexed 2026 schedule has a decisions column. Historical decision coverage was not verified."
+      }
+    ]
+  }
 }
