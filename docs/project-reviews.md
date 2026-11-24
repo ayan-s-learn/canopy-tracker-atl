@@ -28,9 +28,19 @@ Use stable IDs (`AR01`, `AR02`, …). For each completed review, retain: date/mo
 
 ### AR01 — Feasibility findings and next work
 
-- **Status:** planned; no review held. Preparation/integration owner: current checklist integration owner. Review lead: Astra.
-- **Trigger:** T01–T04 complete; bring forward if a material blocker or finding changes the shared direction. A negative inquiry can be complete under its brief without passing G1; a blocked item remains blocked.
-- **Evidence to bring:** imagery suitability/access (T01), boundary/parcel/GT findings (T02), permit coverage/semantics (T03), and environment/storage evidence (T04), with checks and outstanding limitations.
-- **Decisions to resolve:** viable study interval/region, remaining access or recovery gaps, which reference/preparation/linkage work can start, and what evidence the next round must produce. No method or feasibility conclusion is predetermined.
-- **Expected outcome:** recorded decisions, a small set of detailed parallel-ready task Briefs with dependencies and acceptance checks, carried blockers, and an explicit AR02 trigger. Future sketches may be split, replaced or deferred with their evidence preserved.
-- **Resume action when due:** assemble the packet, invoke Astra for AR01, then integrate its recorded outcome. AR02's trigger is intentionally unset until AR01 has evidence to choose it.
+Held 2026-11-24 by Astra in the integration-owner session after T01–T04 completed. Evidence baseline `8ac1ac9`. The integration revision introducing this record and the three briefs is recoverable with `git log -1 --diff-filter=A --format=%H -- tasks/T05-paired-coverage/README.md`.
+
+| Evidence reviewed | Decision and limit |
+|---|---|
+| [T01 window manifest](../tasks/T01-imagery/t01-windows.json). All four cached TIFF hashes matched. Both October pairs are in Fulton, with 0.6 m and 0.3 m pixels across epochs. | Retain 2023–2025 for pilot discovery. Check DeKalb, per-tile dates and measured registration before choosing pilot sites or a minimum event size. The older fallback lengthens the change interval and is warranted only if the recent pair cannot support a varied pilot. |
+| [T02 geography and comparison sources](../tasks/T02-geography/t02-sources.json). The archived City, county and annexation inputs matched their hashes. The county overlay leaves 9,340 m² of City area unassigned. Recorded annexations fall on both sides of the October 2025 sample dates. | Inventory imagery across the whole dated City footprint, retaining the residual. Resolve municipal membership using local observation dates before historical attribution. Current parcels support exploratory overlap only. GT's 2023 zero value also denotes nodata, and its reuse terms remain unresolved. Exclude GT from reference truth and training in this round. |
+| [T03 permit probes](../tasks/T03-permits/source-probes.json). Public sources returned building and selected arborist rows. The audit did not establish historical decision coverage for private trees or Parks records. | Keep [HA-0002](../HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests) open. Validate any delivery by authority, record family, dates and county portion before interpreting absences. Partial coverage leaves a case ambiguous. Imagery and reference preparation can proceed. |
+| [T04 recovery check](../tasks/T04-runtime/README.md#recover-the-archived-geotiff). The 1,874-byte derivative matched the archived SHA-256. The four T01 originals were previously recovered from services. | Use small replayable windows now. Before costly acquisition or training, size the pilot and verify retrieval and retention in an authorized store for raw inputs or weights. Git recovery of one derivative establishes only that path. |
+
+G1 remains open. The most consequential near-term risk is viewing new imagery before reserving development and protected geography. Begin the source inventory, split design and historical boundary work in parallel. Defer detector selection until the development comparison has a defined frame. Independent reference capacity and the eventual protected evaluation remain outstanding.
+
+The three briefs opened unclaimed for this round are [T05 paired coverage](../tasks/T05-paired-coverage/README.md), [T06 reference design](../tasks/T06-reference-design/README.md) and [T07 historical geography](../tasks/T07-historical-geography/README.md). Revisit historical parcel vintages and split/merge evidence before interpreting parcel-level results.
+
+### AR02 — Pilot footprint and reference feasibility
+
+Review when T05 has reconciled paired coverage across the City and recorded a DeKalb pair or its access failure, and T06 has a versioned exclusion map and reference workload estimate. Use the available T07 membership evidence and mark any unresolved geography. Bring the review forward if either stream demonstrates that the proposed pilot or protected design is infeasible. Decide which pilot footprint and image preparation can proceed, what can be evaluated with available interpreters, and which G1 gaps still limit each claim.
