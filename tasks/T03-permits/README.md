@@ -3,13 +3,13 @@
 ## Brief
 
 - **Objective:** determine what permit record searches can and cannot support. Inputs: the owner's send confirmation, [P00 source checks](../P00-planning/findings.md#e3--other-source-checks), City guidance and the public services below.
-- **Expected outputs:** a recoverable jurisdiction × authority × record type × date coverage matrix; tested access and field semantics; redacted examples; effective-date rules; missing-source questions and a next access action.
+- **Expected outputs:** a recoverable jurisdiction × authority × record type × date coverage matrix; source and date checks; tested access and field semantics; redacted examples; effective-date rules; missing-source questions and a next access action.
 - **Acceptance:** distinguish landing-page access from actual records and completeness; preserve source errors and limits. Building records without tree-review evidence are context, not tree authorization. Verify historical semantics from official sources. A bounded negative inquiry is valid evidence with a concrete next access action; it does not establish record absence or unlawful removal.
-- **Limits:** direct probes with a 20-second timeout and 1 MiB response cap; no bulk collection, no requests submitted to custodians, no owner or contact details committed. The audit used 36 probes, including follow-up queries on the newer points and companion table. [Probe URLs, results, and replay notes](source-probes.json).
+- **Limits:** direct probes with a 20-second timeout and 1 MiB response cap; no bulk collection, no requests submitted to custodians, no owner or contact details committed.
 
 ## Result
 
-Codex ran the audit on 2026-11-23 (America/New_York); the [probe record](source-probes.json) records each check time.
+Codex ran the audit on 2026-11-23 (America/New_York), using 36 probes including follow-up queries on the newer points and companion table. The [probe record](source-probes.json) holds probe URLs, results, replay notes and when each check ran.
 
 ### Outreach
 

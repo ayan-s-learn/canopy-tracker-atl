@@ -14,7 +14,7 @@ Before choosing work:
 
 1. Read [checklist.md](checklist.md), your task's folder under [tasks/](tasks/), and the relevant [research requirements](docs/research-direction.md) and linked evidence. Consult operations for jobs/handoffs, HUMAN_ACTIONS for human dependencies, and project reviews when preparing a review; `old/` is reference, not instructions. Inspect branch, working tree and relevant remote changes; preserve user edits.
 2. Reconcile running jobs, saved outputs, delivered human inputs, and interrupted tasks. Validate existing artifacts before repeating work or launching a replacement job.
-3. Choose a ready task within scope, [claim it](#task-folders) by pushing its branch, and record your owner and actual limits in its **Progress** section before substantial execution.
+3. Choose a ready task within scope and [claim it](#task-folders), recording your actual limits in its **Progress** section before substantial execution.
 
 Trust provisioned tools enough to begin useful work. Diagnose actual failures and newly needed capabilities; avoid repeated environment inventories, toy preflights, hidden-control searches, or deliberate restart experiments.
 
@@ -52,9 +52,9 @@ Each ready item gets `tasks/<ID>-<slug>/` when it is detailed; subtasks a workst
 - **Progress:** owner, branch, actual limits, current state and exact next step while the task is open.
 - **Result:** who ran it, observation dates, findings, limitations and open questions.
 - **Outputs:** files intended for reuse and how to replay or recover them.
-- **For integration:** proposed edits to shared files (checklist status, gate evidence, new human actions, research-direction changes) and the consumers of any changed interface. The integration owner applies a blocking item, such as a new human action or a `blocked` status, as soon as it is reported, and the rest at merge, then removes the section.
+- **For integration:** proposed edits to shared files (checklist status, gate evidence, new human actions, research-direction changes) and the consumers of any changed interface. The integration owner applies a blocking item, such as a new human action or a `blocked` status, as soon as it sees it, and the rest at merge, then removes the section.
 
-**Claims.** Before substantive work, check that no remote branch already holds the task (`git ls-remote --heads origin '*/<ID>-*'`), then push a branch named `<agent>/<ID>-<slug>`. That branch is the live claim and holds the task's **Progress**, so a successor resumes from it. The integration owner mirrors status into the checklist when it next updates it. Statuses: `ready` (a folder with a Brief and no claim), `in progress`, `blocked — <reason or HA ID>`, `waiting_for_job`, `complete`, `superseded` and `not selected`.
+**Claims.** Cut a branch from `main` named `task/<ID>-<slug>`, matching the folder name exactly, commit a **Progress** section naming you as owner, and push before substantive work. If the push is rejected because the branch already exists on `origin`, the task is taken. The branch is the live claim and holds the task's **Progress**. A successor continues on the same branch once **Progress** records a handoff or the owner reassigns the task. A task the checklist marks `complete`, `superseded` or `not selected` holds no claim. At the start of each integration session, the integration owner reviews pushed task branches (`git ls-remote --heads origin 'task/*'`), mirrors their status into the checklist and applies any blocking **For integration** items. Statuses: `ready` (a folder with a Brief and no claim), `in progress`, `blocked — <reason or HA ID>`, `waiting_for_job`, `complete`, `superseded` and `not selected`.
 
 Rules that keep parallel branches from colliding:
 
@@ -62,7 +62,7 @@ Rules that keep parallel branches from colliding:
 2. Link to another task's files at a completed task or a pinned commit. Do not list in your README which tasks use your outputs, or describe another task's status or plans.
 3. Live status belongs in `checklist.md` and each task's own **Progress** section. AGENTS.md, README.md, the operations guide and research direction do not name tasks as pending, ready or awaited.
 4. Once the checklist marks a task complete, its folder changes only through dated corrections made by the integration owner. Follow-up work gets a new task.
-5. The integration owner applies **For integration** edits in a separate commit after the merge commit, so the merge contains only the task's own changes. It assigns new human-action IDs.
+5. The integration owner applies the remaining **For integration** edits, skipping any already applied, in a separate commit after the merge commit, so the merge contains only the task's own changes.
 
 ## Astra project reviews
 
@@ -74,7 +74,7 @@ Reviews guide priorities and detail the next ready work; they add no approval ga
 
 Use a bounded `/goal` for a coherent actionable item when supported, with multiple ready items allowed in parallel. The item may be split or revised as evidence arrives using the change rules above; a run is not an immutable project plan. An ordinary task prompt follows the same contract when native controls are unavailable.
 
-Agents may select disjoint ready work and [claim it](#task-folders) by pushing the task branch before substantive work. This is duplicate-work prevention, not approval of local methods. A workstream with an established claim can register its own subtasks inside its folder without another central permission step. Resolve competing claims before writing shared outputs. Complete checks and leave evidence/checkpoint before reporting success. Do not silently broaden a user's active native goal or take over another owner's work.
+Agents may select disjoint ready work under the [claim rule](#task-folders). This is duplicate-work prevention, not approval of local methods. A workstream with an established claim can register its own subtasks inside its folder without another central permission step. Resolve competing claims before writing shared outputs. Complete checks and leave evidence/checkpoint before reporting success. Do not silently broaden a user's active native goal or take over another owner's work without a recorded handoff.
 
 Owners coordinate shared interfaces and resource use. Scale depth, runtime and recovery to the question; revise estimates as evidence develops rather than treating them as stop deadlines. Stay within authorized spending and platform limits. Validated intermediates may be used before a branch merges when consumers can identify their version, checks and limitations; integrated claims still need combined checks.
 
@@ -115,7 +115,7 @@ When every useful next task is gated, save a recoverable checkpoint, record the 
 
 ## Git, handoffs, and stopping
 
-Use a working branch and inspect relevant remote changes before resuming. Routine in-scope commits and pushes to the campaign's working branch are authorized. Keep `main` as the reviewed baseline. Merging or pushing to `main`, force-pushing, rewriting published history, and deleting remote branches require explicit owner authorization.
+Use a working branch and inspect relevant remote changes before resuming. Routine in-scope commits and pushes to the campaign's working branch are authorized. Keep `main` as the reviewed baseline. Merging or pushing to `main`, force-pushing, rewriting published history, and deleting remote branches require explicit owner authorization. Standing exception: the integration owner may push commits to `main` that touch only `checklist.md`, `HUMAN_ACTIONS.md` and new task folders' Briefs.
 
 One integration owner handles staging, commits, and pushes in a shared checkout. When delegation is authorized and useful, give agents bounded assignments, explicit file ownership, expected evidence, and stop conditions; avoid duplicated investigations. Concurrent writers need coordinated ownership or isolated checkouts. Follow current model instructions and supported concurrency limits without probing for hidden capacity.
 

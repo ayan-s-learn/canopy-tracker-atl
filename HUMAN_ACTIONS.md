@@ -8,7 +8,7 @@ Use this queue when a necessary part of the authorized plan requires the owner o
 
 - **Status / owner / task:** ready, 2026-11-23. Project owner for confirmation or filing. Validation of delivered records becomes a new task; the [T03 audit](tasks/T03-permits/README.md#next-access-action) lists the checks.
 - Check whether the Gmail send already reached the designated City custodian. If so, share the acknowledgment or filing ID and scope privately. If City filing is outstanding, use the [prepared request and City routes](tasks/T03-permits/README.md#draft-for-city-custodians) for the missing Office of Buildings and Parks scopes. Reuse any existing filing for an equivalent scope.
-- Allow about 10 minutes to check and file, depending on account setup. Request a quote before any paid work. Share the filing ID and covered scope privately. When the City responds, arrange private access to the export before sharing address-linked files. Codex will verify schema, date and jurisdiction coverage, and exclusions before closing the action.
+- Allow about 10 minutes to check and file, depending on account setup. Request a quote before any paid work. Share the filing ID and covered scope privately. When the City responds, arrange private access to the export before sharing address-linked files. The validation task will verify schema, date and jurisdiction coverage, and exclusions before closing the action.
 
 ## How to use the queue
 

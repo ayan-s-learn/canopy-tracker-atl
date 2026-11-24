@@ -9,7 +9,7 @@
 
 ## Result
 
-Codex observed these sources on 2026-11-23 (America/New_York); the [manifest](t02-sources.json) records a retrieval time for each source.
+Codex observed these sources on 2026-11-23 (America/New_York); the [manifest](t02-sources.json) records retrieval times for fetched responses.
 
 ### Municipal footprint
 
