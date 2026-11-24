@@ -246,7 +246,9 @@
       "bytes": 3515,
       "sha256": "cb4488407f5150b7b248e27f83169fd13585c4e4bff1615549896cc72427c52e",
       "rgba_colors": 2,
-      "opaque_pixels": 40115
+      "opaque_pixels": 40115,
+      "service_copyright_text": "Digital Globe",
+      "terms": "Redistribution and derivative-publication rights remain unverified."
     },
     "rendered_2023_tile": {
       "query_url": "https://tiles.arcgis.com/tiles/I9cUOJUZvdGAJncI/arcgis/rest/services/Canopy_Raster_2023/MapServer/tile/17/52452/34817",
