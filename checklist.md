@@ -14,7 +14,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 **Human actions:** [HA-0002](HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests) is ready: confirm City receipt or file the missing scopes.
 
-**Next Astra project review:** [AR01 — feasibility findings and next work](docs/project-reviews.md#ar01--feasibility-findings-and-next-work) is due.
+**Next Astra project review:** [AR02 — pilot footprint and reference feasibility](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) awaits the paired-coverage accounting and DeKalb probe outcome from T05, plus the exclusion map and reference workload estimate from T06. Use AR02 to choose the development baseline task or a bounded imagery fallback. Review earlier if either inquiry rules out the proposed pilot or protected design.
 
 ## Tasks
 
@@ -24,6 +24,9 @@ Current direction remains **City of Atlanta first**, including its parts in both
 | [T02](tasks/T02-geography/README.md) | Jurisdiction, parcels and GT layers | complete |
 | [T03](tasks/T03-permits/README.md) | Permit feasibility, coverage and semantics | complete |
 | [T04](tasks/T04-runtime/README.md) | Reproducible operation and durable storage | complete |
+| [T05](tasks/T05-paired-coverage/README.md) | Where do the 2023 and 2025 assets overlap, and where has a usable pair actually been read? | ready |
+| [T06](tasks/T06-reference-design/README.md) | Which geography can be protected, and how much independent reference work would the pilot require? | ready |
+| [T07](tasks/T07-historical-geography/README.md) | Which parts of the City footprint have verified membership at the local image dates? | ready |
 
 ## Future workstreams — revisable, unclaimed
 
@@ -55,4 +58,4 @@ Unresolved: recent-image coverage and suitability across the city; valid-area de
 
 ## Next action
 
-Hold AR01 with the four task records, the open G1 gaps and HA-0002. The next imagery question is paired coverage of the official City footprint in both counties; both T01 sample sites are in Fulton. When the City delivers records under HA-0002, open a task to validate their scope before interpreting permit absences.
+Claim T05, T06 or T07. Imagery catalog work, reference design and historical boundary checks can start independently. Coordinate development footprints before inspecting new pixels. On City delivery under HA-0002, open a task to validate the export. Historical parcel-vintage checks remain on the parcels workstream before parcel attribution.
