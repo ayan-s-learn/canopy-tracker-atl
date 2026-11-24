@@ -1,6 +1,6 @@
 # Research and technical direction
 
-[Source findings](research/2026-10-14-planning/findings.md). [Current state](../checklist.md).
+[Source findings](../tasks/P00-planning/findings.md). [Current state](../checklist.md).
 
 The objective, authority boundaries and evidence standards are commitments. The preferred interval, methods, thresholds, stack and sequencing below are revisable hypotheses/defaults until adopted for a specific study or evaluation. Workstream owners can change local methods with a recorded reason; coordinate shared interfaces and obtain independent review for consequential scientific changes. Freeze the version actually being evaluated, not the entire future project. The workstream roadmap remains revisable.
 
@@ -109,10 +109,10 @@ These are scoped readiness/claim checks, not global phase barriers. Owners may d
 3. **G3: validated research.** Protected evaluation, independent reproduction, uncertainty and disclosure of unsupported strata. Failure limits claims rather than automatically creating a new model experiment.
 4. **G4: public and agency delivery.** Reviewable release, approved handling/granularity and deployment, briefing delivery evidence, and maintenance ownership. Verify that the served public result matches the approved release. Demonstrate a representative clean rerun of the accepted pipeline, artifact retrieval and declared output tolerance, with source/version drift handling and named custody, retention and correction responsibilities. A deployed prototype is not a validated study; a prepared deck is not a delivered briefing.
 
-Study inputs, evaluated versions and outputs must remain reproducible and retrievable. Follow the [operations guide](operations.md#cloud-jobs-recovery-and-waiting); T04 establishes the usable environment and durable artifact path.
+Study inputs, evaluated versions and outputs must remain reproducible and retrievable. Follow the [operations guide](operations.md#cloud-jobs-recovery-and-waiting).
 
 ## Human contributions and revisability
 
 Agents own source discovery, ordinary downloads, code, schema checks, sampling preparation, annotation tooling, analysis, documentation and reviewable release/briefing packages. Necessary human roles may include obtaining unavailable exports/account access, independent imagery interpretation/adjudication, safe field observations, choosing public granularity, approving spending/communications/deployment, and attending/authorizing agency briefings. Each becomes an `HA-NNNN` only after agents prepare an executable package or identify a concrete preparation blocker. There are no ready human requests at initial planning completion.
 
-T01–T04 address the earliest unknowns. Workstream owners choose useful next slices and revise local hypotheses; affected owners coordinate shared assumptions/interfaces. Record the study agreement and selected evaluation version; independent evaluation and review constrain findings. Investigate future opportunities when evidence makes them useful, with owner authority controlling expansion beyond scope. Record consequential changes in an existing task/experiment record or a dated decision when cross-cutting; link them from the checklist. Retain supersession history and remaining checks. Maintain the original goal through revisions and distinguish a useful partial release from full completion.
+Workstream owners choose useful next slices and revise local hypotheses; affected owners coordinate shared assumptions/interfaces. Record the study agreement and selected evaluation version; independent evaluation and review constrain findings. Investigate future opportunities when evidence makes them useful, with owner authority controlling expansion beyond scope. Record consequential changes in an existing task/experiment record or a dated decision when cross-cutting; link them from the checklist. Retain supersession history and remaining checks. Maintain the original goal through revisions and distinguish a useful partial release from full completion.

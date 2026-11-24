@@ -1,6 +1,6 @@
 # Initial evidence and reassessment
 
-Planning date: 2026-10-14, America/Los_Angeles. Network observations occurred on 2026-10-15 UTC. This is supporting evidence, not a second project-state file; use [checklist.md](../../../checklist.md).
+Planning date: 2026-10-14, America/Los_Angeles. Network observations occurred on 2026-10-15 UTC. This is supporting evidence, not a second project-state file; use [checklist.md](../../checklist.md).
 
 ## What was actually examined
 
@@ -11,7 +11,7 @@ Eight bounded HTTP probes, two report downloads, primary-source reading, and ind
 Evidence: [script](probe_sources.py), [recorded JSON](source-probes.json). Python standard library; eight sequential requests; 30-second timeout each; 4 MiB response cap; no retries. Reproduce from repository root with:
 
 ```sh
-python docs/research/2026-10-14-planning/probe_sources.py /tmp/canopy-source-probes-new.json
+python tasks/P00-planning/probe_sources.py /tmp/canopy-source-probes-new.json
 ```
 
 Use the authorized network-enabled executor through its inherited proxy. Do not overwrite the original observation. The JSON stores query URLs, UTC timestamps, status, response size/hash, relevant public metadata, unsigned asset URLs, and pagination state. It does not retain HTML or permit records. Hashes identify received responses; only the selected JSON fields are retained, not byte-for-byte original response bodies.

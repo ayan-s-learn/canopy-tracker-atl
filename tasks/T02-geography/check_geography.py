@@ -11,7 +11,7 @@ from shapely import segmentize, transform, union_all
 from shapely.geometry import box, shape
 
 
-MANIFEST_DIR = Path(__file__).resolve().parents[3] / 'manifests' / 'geography'
+MANIFEST_DIR = Path(__file__).resolve().parent
 
 
 class GeographySnapshotTest(unittest.TestCase):
