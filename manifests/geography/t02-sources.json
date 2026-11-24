@@ -14,6 +14,306 @@
     "object_id": 1281,
     "last_edited_utc": "2026-11-02T15:33:27Z",
     "legal_effective_date": null,
-    "terms": "Public City open-data layer, no explicit license in the linked item. Scoped use as the municipal GIS footprint for feasibility; verify terms before broader reuse."
+    "terms": "Public City open-data layer, no explicit license in the linked item. Scoped use as the municipal GIS footprint for feasibility; verify terms before broader reuse.",
+    "source_units": "US survey feet",
+    "bytes": 183885
+  },
+  "county_overlay": {
+    "query_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/82/query?where=STATE%3D%2713%27+AND+COUNTY+IN+%28%27089%27%2C%27121%27%29&outFields=GEOID,NAME&outSR=4326&f=geojson",
+    "retrieved_at_utc": "2026-11-24T00:08:32.900782+00:00",
+    "bytes": 508521,
+    "sha256": "c8de283047ee1df5a0c110d07c9ef0cf75b753b497f88853ed9cc5e8198c9e6b",
+    "path": "tiger-acs2024-counties.geojson.gz",
+    "provider": "U.S. Census Bureau TIGERweb ACS 2024",
+    "layer_id": 82,
+    "sha256_applies_to": "uncompressed GeoJSON",
+    "export_crs": "OGC:CRS84",
+    "county_geoids": {
+      "13089": "DeKalb",
+      "13121": "Fulton"
+    }
+  },
+  "area_check": {
+    "crs": "EPSG:5070",
+    "units": "square metres",
+    "rectangle_lonlat": [
+      -84.552,
+      33.647,
+      -84.289,
+      33.887
+    ],
+    "rectangle_segment_max_degrees": 0.001,
+    "tolerance_m2": 2,
+    "expected_m2": {
+      "city": 353372845.201,
+      "rectangle": 648560415.435,
+      "city_outside_rectangle": 0,
+      "rectangle_outside_city": 295187570.233,
+      "fulton_city_intersection": 329917693.818,
+      "dekalb_city_intersection": 23445810.994,
+      "city_outside_counties": 9340.389,
+      "city_in_both_counties": 0
+    }
+  },
+  "annexations": {
+    "query_url": "https://gis.atlantaga.gov/dpcd/rest/services/OpenDataService1/FeatureServer/5/query?where=YEARANNEXED%3E%3D2023&outFields=YEARANNEXED%2CEFF_DATE%2CSTATUS&returnGeometry=false&resultRecordCount=10&f=json",
+    "retrieved_at_utc": "2026-11-24T00:09:13.047605+00:00",
+    "bytes": 978,
+    "sha256": "ac86ac86e9a4faa0449c0b571c1c450e13b39fe6d030c8fa5d66b5daa80542e6",
+    "path": "atlanta-annexations-2023-onward.json",
+    "layer_id": 5,
+    "effective_dates_utc": [
+      "2023-09-01",
+      "2024-07-01",
+      "2024-12-01",
+      "2025-05-14",
+      "2025-05-14",
+      "2025-09-24",
+      "2025-12-10"
+    ]
+  },
+  "parcels": {
+    "fulton": {
+      "layer_url": "https://gismaps.fultoncountyga.gov/arcgispub/rest/services/OpenData/Tax_Parcels/MapServer/0",
+      "service_item_id": "8bb9d08bff814abf8b4a5ed52690ead4",
+      "source_crs": "EPSG:2240",
+      "source_units": "US survey feet",
+      "terms_url": "https://gis.fultoncountyga.gov/Apps/propertymapviewer_EB/?dlg=Accessibility-Window"
+    },
+    "dekalb": {
+      "layer_url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/TaxParcels/FeatureServer/0",
+      "service_item_id": "c388629ef4214ee7972dc66201afd3c0",
+      "source_crs": "EPSG:3857",
+      "source_units": "metres, Web Mercator",
+      "terms_url": "https://dekalbcountyga.gov/departments/gis/property-mapping-and-land-records"
+    },
+    "export_crs": "OGC:CRS84",
+    "area_crs": "EPSG:5070",
+    "samples": {
+      "Fulton, Piedmont Park": {
+        "query_url": "https://gismaps.fultoncountyga.gov/arcgispub/rest/services/OpenData/Tax_Parcels/MapServer/0/query?where=1%3D1&outFields=OBJECTID%2CParcelID%2CTaxYear%2CTaxDist%2CClassCode%2CLandAcres%2CFeatureID&outSR=4326&f=geojson&geometry=-84.372%2C33.787&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at_utc": "2026-11-24T00:10:28.445226+00:00",
+        "bytes": 3271,
+        "sha256": "c562426636bdd2ae33fb543ea99f4077572fdc07186eb0a8a0e6d23db8f6d65a",
+        "point_in_city": true,
+        "features": [
+          {
+            "geometry_type": "Polygon",
+            "geometry_valid": true,
+            "geometry_covers_point": true,
+            "area_m2": 439741.97,
+            "overlap_city_m2": 439741.97,
+            "attributes": {
+              "TaxYear": 2027,
+              "TaxDist": "05TT",
+              "ClassCode": "E1",
+              "LandAcres": 179.4
+            }
+          }
+        ]
+      },
+      "Fulton, West End": {
+        "query_url": "https://gismaps.fultoncountyga.gov/arcgispub/rest/services/OpenData/Tax_Parcels/MapServer/0/query?where=1%3D1&outFields=OBJECTID%2CParcelID%2CTaxYear%2CTaxDist%2CClassCode%2CLandAcres%2CFeatureID&outSR=4326&f=geojson&geometry=-84.4238%2C33.7355&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at_utc": "2026-11-24T00:10:28.445298+00:00",
+        "bytes": 496,
+        "sha256": "dcdc6e972a5eeda487d0a1fc3d67db33b34324f288386423ddaeb4edb1c32222",
+        "point_in_city": true,
+        "features": [
+          {
+            "geometry_type": "Polygon",
+            "geometry_valid": true,
+            "geometry_covers_point": true,
+            "area_m2": 672.73,
+            "overlap_city_m2": 672.73,
+            "attributes": {
+              "TaxYear": 2027,
+              "TaxDist": "05",
+              "ClassCode": "R3",
+              "LandAcres": 0.1639
+            }
+          }
+        ]
+      },
+      "DeKalb, Kirkwood parcel": {
+        "query_url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/TaxParcels/FeatureServer/0/query?where=1%3D1&outFields=OBJECTID%2CPARCELID%2CPRCLKEY%2CCVTTXCD%2CCVTTXDSCRP%2CCLASSCD%2CCLASSDSCRP%2CCITY%2CACREAGE%2CSTATEDAREA%2CREASCD%2CSTATUS&outSR=4326&f=geojson&geometry=-84.3245%2C33.7531&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at_utc": "2026-11-24T00:10:28.610201+00:00",
+        "bytes": 727,
+        "sha256": "a18154c4f6fca171e7a9ecd70d29082ae642fc88fc1bc30cf8ec784b1394be09",
+        "point_in_city": true,
+        "features": [
+          {
+            "geometry_type": "Polygon",
+            "geometry_valid": true,
+            "geometry_covers_point": true,
+            "area_m2": 2591.93,
+            "overlap_city_m2": 2591.93,
+            "attributes": {
+              "CVTTXCD": "61",
+              "CVTTXDSCRP": "ATLANTA",
+              "CLASSDSCRP": "C3",
+              "CITY": "Atlanta",
+              "ACREAGE": 0.64
+            }
+          }
+        ]
+      },
+      "DeKalb, East Lake parcel at city edge": {
+        "query_url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/TaxParcels/FeatureServer/0/query?where=1%3D1&outFields=OBJECTID%2CPARCELID%2CPRCLKEY%2CCVTTXCD%2CCVTTXDSCRP%2CCLASSCD%2CCLASSDSCRP%2CCITY%2CACREAGE%2CSTATEDAREA%2CREASCD%2CSTATUS&outSR=4326&f=geojson&geometry=-84.3199%2C33.7437&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at_utc": "2026-11-24T00:10:28.445390+00:00",
+        "bytes": 1451,
+        "sha256": "51393ed8533e4c1c1a116e24980fec4c2d9bcd3b6132ced88cc2a64aa55874cd",
+        "point_in_city": true,
+        "features": [
+          {
+            "geometry_type": "Polygon",
+            "geometry_valid": true,
+            "geometry_covers_point": true,
+            "area_m2": 90722.15,
+            "overlap_city_m2": 90662.09,
+            "attributes": {
+              "CVTTXCD": "61A",
+              "CVTTXDSCRP": "ATLANTA-ANNEX",
+              "CLASSDSCRP": "C4",
+              "CITY": "Atlanta",
+              "ACREAGE": 22.41
+            }
+          }
+        ]
+      },
+      "DeKalb, outside city": {
+        "query_url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/TaxParcels/FeatureServer/0/query?where=1%3D1&outFields=OBJECTID%2CPARCELID%2CPRCLKEY%2CCVTTXCD%2CCVTTXDSCRP%2CCLASSCD%2CCLASSDSCRP%2CCITY%2CACREAGE%2CSTATEDAREA%2CREASCD%2CSTATUS&outSR=4326&f=geojson&geometry=-84.321%2C33.783&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at_utc": "2026-11-24T00:10:28.445426+00:00",
+        "bytes": 639,
+        "sha256": "48902b8fb96a1263d5e729161cea1eaae3f6406ce98d4e0cefe5a6dd082642f2",
+        "point_in_city": false,
+        "features": [
+          {
+            "geometry_type": "Polygon",
+            "geometry_valid": true,
+            "geometry_covers_point": true,
+            "area_m2": 1479.64,
+            "overlap_city_m2": 0.0,
+            "attributes": {
+              "CVTTXCD": "04",
+              "CVTTXDSCRP": "UNINCORPORATED",
+              "CLASSDSCRP": "R3",
+              "CITY": "Atlanta",
+              "ACREAGE": 0.37
+            }
+          }
+        ]
+      },
+      "DeKalb, Kirkwood unassigned point": {
+        "query_url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/TaxParcels/FeatureServer/0/query?where=1%3D1&outFields=OBJECTID%2CPARCELID%2CPRCLKEY%2CCVTTXCD%2CCVTTXDSCRP%2CCLASSCD%2CCLASSDSCRP%2CCITY%2CACREAGE%2CSTATEDAREA%2CREASCD%2CSTATUS&outSR=4326&f=geojson&geometry=-84.325%2C33.753&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at_utc": "2026-11-24T00:10:28.445348+00:00",
+        "bytes": 42,
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "point_in_city": true,
+        "features": []
+      }
+    }
+  },
+  "georgia_tech": {
+    "hub_experience_item": "a5cc602b023f42cdbbb6a1d2a35e8ec8",
+    "hub_catalog": "https://city-of-atlanta-urban-tree-canopy-hub-gtmaps.hub.arcgis.com/search",
+    "web_map_item": "4768688562b246f2a99312dab18ffce0",
+    "vector_item": "2830093f1a2941a6bf90e37ac7cf63d4",
+    "grid_sample": {
+      "query_url": "https://services2.arcgis.com/I9cUOJUZvdGAJncI/arcgis/rest/services/Canopy_Data_2023_WFL1/FeatureServer/7/query?where=1%3D1&outFields=OBJECTID%2CAcres%2CUTCac18%2CUTCper18%2CNUTCAC23%2CNUTCP23%2CNUTCACCHG1823&outSR=4326&f=geojson&geometry=-84.372%2C33.787&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+      "retrieved_at_utc": "2026-11-24T00:10:28.620426+00:00",
+      "bytes": 527,
+      "sha256": "97d5043f4ec40023b9ae1ce0aef1f13aaf68c2becdb458ad5f7c113ea75f6aa3",
+      "attributes": {
+        "OBJECTID": 10400,
+        "Acres": 5.744116,
+        "UTCac18": 3.6482582092285156,
+        "UTCper18": 63.5129585594231,
+        "NUTCAC23": 3.9312,
+        "NUTCP23": 68.43873,
+        "NUTCACCHG1823": 0.2829418
+      }
+    },
+    "right_of_way_proxy_sample": {
+      "query_url": "https://services2.arcgis.com/I9cUOJUZvdGAJncI/arcgis/rest/services/Canopy_Data_2023_WFL1/FeatureServer/3/query?where=1%3D1&geometry=-84.325%2C33.753&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID&returnGeometry=false&f=json",
+      "retrieved_at_utc": "2026-11-24T00:11:34.725691+00:00",
+      "bytes": 388,
+      "sha256": "1f11fd9066aba9c21a1ec274cc14403d29d82ab040606034b74e5e0c58efaa88",
+      "feature_count": 1
+    },
+    "rendered_2018_tile": {
+      "query_url": "https://mapz.design.gatech.edu/arcgis/rest/services/UTC/UTC2018/MapServer/tile/17/52452/34817",
+      "retrieved_at_utc": "2026-11-24T00:10:28.744193+00:00",
+      "bytes": 3515,
+      "sha256": "cb4488407f5150b7b248e27f83169fd13585c4e4bff1615549896cc72427c52e",
+      "rgba_colors": 2,
+      "opaque_pixels": 40115
+    },
+    "rendered_2023_tile": {
+      "query_url": "https://tiles.arcgis.com/tiles/I9cUOJUZvdGAJncI/arcgis/rest/services/Canopy_Raster_2023/MapServer/tile/17/52452/34817",
+      "retrieved_at_utc": "2026-11-24T00:10:28.665482+00:00",
+      "bytes": 4715,
+      "sha256": "8cd9e2fd8244c95dd5f9c300028c0f4fb7e529100571cff935be2d53424a73f5",
+      "rgba_colors": 2,
+      "opaque_pixels": 33602
+    },
+    "canopy_2023_download": {
+      "item_url": "https://www.arcgis.com/home/item.html?id=33c5f759da6546b9ab7f28c1f7e5bdb7",
+      "url": "https://cura.design.gatech.edu/UTC/UTCMosaic2023.zip",
+      "retrieved_at_utc": "2026-11-24T00:11:02Z",
+      "zip_bytes": 26384341,
+      "zip_sha256": "e7a99c898c16e66c1137cff263605754cb125a83fabbbb51e341b783c15fdbf9",
+      "raster_name": "UTCMosaic2023.tif",
+      "raster_sha256": "2da149ea8b5c8f24ef69ef18cb15a1e08c1e29cd564687c8b82bef2a3407af0f",
+      "raster_crs": "EPSG:26916",
+      "width": 24161,
+      "height": 26488,
+      "pixel_size_m": [
+        0.9999694135176885,
+        0.9999891384778281
+      ],
+      "band_count": 1,
+      "dtype": "uint8",
+      "nodata": 0,
+      "window_col_row_width_height": [
+        16280,
+        10895,
+        256,
+        256
+      ],
+      "window_raw_value_counts": {
+        "0": 34009,
+        "1": 31527
+      },
+      "window_uint8_sha256": "0a265641ddadbe9220b0552f4526a972f3f0fa026fc64f9d7a0d2420091e7bd3",
+      "lineage_clip_layer": "Atlanta_City_Limits2024"
+    },
+    "terms": "Georgia Tech is credited on the grid. The vector and canopy raster ArcGIS items do not state reuse terms. The download contains no license file. Training, redistribution and derivative publication permissions remain unverified."
+  },
+  "income_context": {
+    "product": "2020–2024 ACS five-year table B19013, 2024 inflation-adjusted dollars",
+    "table_url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b19013.dat",
+    "table_bytes": 17917916,
+    "table_sha256": "b25a176b0e6c339b6f3a2a0d3d8446bf06f5f080b4395993ec9a8313efb1c229",
+    "margin_of_error_confidence_level": 0.9,
+    "samples": [
+      {
+        "query_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/10/query?where=1%3D1&geometry=-84.3245%2C33.7531&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=GEOID&outSR=4326&f=geojson",
+        "retrieved_at_utc": "2026-11-24T00:11:34.725628+00:00",
+        "bytes": 2549,
+        "sha256": "ecf0a3baa13fb0676df6beb89090fdf59417c27a85455666fdffb6a94fb207f1",
+        "block_group_geoid": "130890207001",
+        "estimate_usd": 101319,
+        "margin_of_error_usd": 54775
+      },
+      {
+        "query_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/10/query?where=1%3D1&geometry=-84.372%2C33.787&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=GEOID&outSR=4326&f=geojson",
+        "retrieved_at_utc": "2026-11-24T00:11:34.725413+00:00",
+        "bytes": 5608,
+        "sha256": "98d3e2f25ac6a4bbc124aac0e1e89b992da84505a7ed792db9876c9047e4d319",
+        "block_group_geoid": "131210004002",
+        "estimate_usd": 132384,
+        "margin_of_error_usd": 16769
+      }
+    ]
   }
 }
