@@ -9,7 +9,7 @@
 
 ## Result
 
-Codex observed these sources on 2026-11-23 (America/New_York); the [manifest](t02-sources.json) records retrieval times for fetched responses.
+Codex observed these sources on 2026-11-23 (America/New_York); the [manifest](t02-sources.json) records retrieval times for the boundary, annexation, sample and Georgia Tech fetches.
 
 ### Municipal footprint
 

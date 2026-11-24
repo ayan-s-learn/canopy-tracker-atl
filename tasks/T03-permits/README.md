@@ -9,7 +9,7 @@
 
 ## Result
 
-Codex ran the audit on 2026-11-23 (America/New_York), using 36 probes including follow-up queries on the newer points and companion table. The [probe record](source-probes.json) holds probe URLs, results, replay notes and when each check ran.
+Codex ran the audit on 2026-11-23 (America/New_York), using 36 probes including follow-up queries on the newer points and companion table. The [probe record](source-probes.json) holds each probe's result, replay notes and check time or date.
 
 ### Outreach
 

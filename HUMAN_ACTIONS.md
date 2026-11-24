@@ -1,6 +1,6 @@
 # Human action queue
 
-Use this queue when a necessary part of the authorized plan requires the owner or another human. Agents prepare what they can, explain the decision unlocked, and validate the result. Routine agent work and healthy long-running jobs belong in task folders and the checklist. Task agents prepare the package in their task folder and propose the action under its **For integration** section; the integration owner adds it here as soon as it is reported.
+Use this queue when a necessary part of the authorized plan requires the owner or another human. Agents prepare what they can, explain the decision unlocked, and validate the result. Routine agent work and healthy long-running jobs belong in task folders and the checklist. Task agents prepare the package in their task folder and propose the action under its **For integration** section; the integration owner adds it here as soon as it sees it.
 
 ## Active actions
 
