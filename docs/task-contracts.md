@@ -32,7 +32,7 @@ The checklist owns live status and claims; the briefs below describe the work. S
 
 ## T03 — Audit permit sources and temporal meaning
 
-- **Objective / starting inputs:** determine what record searches can and cannot support. Start from P00's source/error evidence; imagery dates can remain candidate intervals during discovery.
+- **Objective / starting inputs:** determine what record searches can and cannot support. Start from P00's source/error evidence and the [T03 public-source audit](research/permits/T03.md). Imagery dates can remain candidate intervals during discovery.
 - **Suggested owner / write reservation:** records agent; `docs/research/permits/`, `manifests/permits/` and its task record, or agreed equivalents.
 - **Useful output:** jurisdiction × authority × record type × date coverage matrix; tested access/field semantics; redacted examples; effective-date rules and missing-source questions.
 - **Method freedom:** diagnose actual access failures, discover the published export endpoint, and sample diverse records where accessible, including arborist reviews inside building records, DDH, status/amendment relationships and public/private responsibilities. Choose the sample and access route that resolve uncertainty; no broad scrape is required. Draft missing-export questions as soon as gaps are clear rather than waiting for every other stream.
