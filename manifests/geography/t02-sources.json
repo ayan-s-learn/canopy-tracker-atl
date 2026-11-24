@@ -1,0 +1,19 @@
+{
+  "snapshot_date_local": "2026-11-23 America/New_York",
+  "city_boundary": {
+    "provider": "City of Atlanta Department of City Planning GIS",
+    "layer_url": "https://gis.atlantaga.gov/dpcd/rest/services/OpenDataService1/FeatureServer/1",
+    "catalog_item": "3718407151454be3ab11c15526430997",
+    "query_url": "https://gis.atlantaga.gov/dpcd/rest/services/OpenDataService1/FeatureServer/1/query?where=1%3D1&outFields=OBJECTID%2CNAME%2CGEOTYPE%2CEFFECTDATE%2CLAST_EDITED_DATE%2CGLOBALID%2CACRES%2CSQMILES&outSR=4326&f=geojson",
+    "retrieved_at_utc": "2026-11-24T00:10:28.444994+00:00",
+    "path": "atlanta-city-limits-2026-11-23.geojson",
+    "sha256": "dc8b3b1d50dcafbfd7134b7cbaaf18f9b1bb71c9eb308cc1a6e87b47b5a5ffce",
+    "source_crs": "EPSG:6447",
+    "export_crs": "OGC:CRS84",
+    "global_id": "{4A492DB2-E5E2-47DB-9EE2-2CD4B49C61BD}",
+    "object_id": 1281,
+    "last_edited_utc": "2026-11-02T15:33:27Z",
+    "legal_effective_date": null,
+    "terms": "Public City open-data layer, no explicit license in the linked item. Scoped use as the municipal GIS footprint for feasibility; verify terms before broader reuse."
+  }
+}
