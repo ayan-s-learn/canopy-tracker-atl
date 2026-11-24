@@ -1568,6 +1568,14 @@
       {
         "source": "https://www.atlantaga.gov/government/departments/city-planning/public-meetings-boards-commissions/tree-conservation-commission",
         "observation": "The commission hears and decides tree-related appeals. The indexed 2026 schedule has a decisions column. Historical decision coverage was not verified."
+      },
+      {
+        "source": "https://citycouncil.atlantaga.gov/home/showpublisheddocument/17125/638802382275730000",
+        "observation": "April 16, 2025 hearing agenda includes a BA appeal of a DDH denial. The agenda does not give the final ruling or the underlying DDH record."
+      },
+      {
+        "source": "https://www.atlantaga.gov/home/showpublisheddocument/67644/639059041201030000",
+        "observation": "January 21, 2026 hearing agenda links a BA appeal to a 2025 BB site plan. It describes preliminary approval before issuance. Embedded workflow history and final disposition are unverified."
       }
     ]
   }

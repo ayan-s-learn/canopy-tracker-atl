@@ -5,10 +5,23 @@ import hashlib
 import json
 import subprocess
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
-import numpy as np
-import rasterio
 from rasterio.io import MemoryFile
+from rasterio.transform import from_bounds
+
+
+def verify_window(data, sample):
+    with MemoryFile(data) as mem, mem.open() as image:
+        transform = from_bounds(*sample["bbox"], *sample["size"])
+        if (image.crs != sample["crs"] or [image.width, image.height] != sample["size"]
+                or not image.transform.almost_equals(transform, precision=1e-6)
+                or image.dtypes != (sample["dtype"],) * 4 or image.nodata != sample["nodata"]
+                or [[flag.name for flag in flags] for flags in image.mask_flag_enums]
+                != sample["mask_flags"]):
+            raise ValueError(f"Grid, bands or mask changed for {sample['attributes']['Name']}")
+        if hashlib.sha256(image.read().tobytes()).hexdigest() != sample["sha256_pixels_band_major"]:
+            raise ValueError(f"Pixel content changed for {sample['attributes']['Name']}")
 
 
 def main():
@@ -19,30 +32,31 @@ def main():
     samples = json.loads(manifest.read_text())["samples"]
     args.output.mkdir(parents=True, exist_ok=True)
     for sample in samples:
-        path = args.output / f"{sample['site']}-{sample['year']}.tif"
-        if path.exists():
-            if hashlib.sha256(path.read_bytes()).hexdigest() != sample["sha256_tiff"]:
-                raise ValueError(f"Existing file differs from the archived TIFF: {path}")
-            print(f"{path.name}  existing TIFF verified", flush=True)
-            continue
-        # A service object ID can be reused after an imagery refresh.
-        item = json.loads(fetch(sample["item_url"]))
-        if item["attributes"]["Name"] != sample["attributes"]["Name"]:
-            raise ValueError(f"Tile identity changed at {sample['item_url']}")
-        data = fetch(sample["url"])
-        with MemoryFile(data) as mem, mem.open() as image:
-            if (image.crs.to_string() != sample["crs"]
-                    or [image.width, image.height] != sample["size"]
-                    or not np.allclose(image.bounds, sample["bbox"], rtol=0, atol=1e-6)
-                    or image.count != 4 or image.nodata != sample["nodata"]):
-                raise ValueError(f"Grid, bands or nodata changed for {item['attributes']['Name']}")
-            digest = hashlib.sha256(image.read().tobytes()).hexdigest()
-        if digest != sample["sha256_pixels_band_major"]:
-            raise ValueError(f"Pixel content changed for {item['attributes']['Name']}")
-        with path.open("xb") as out:
-            out.write(data)
+        recover(sample, args.output)
+
+
+def recover(sample, directory):
+    path = directory / f"{sample['site']}-{sample['year']}.tif"
+    if path.exists():
+        data = path.read_bytes()
         same_file = hashlib.sha256(data).hexdigest() == sample["sha256_tiff"]
-        print(f"{path.name}  pixels verified  identical TIFF bytes={same_file}", flush=True)
+        if not same_file:
+            verify_window(data, sample)
+        print(f"{path.name}  existing TIFF verified  identical TIFF bytes={same_file}", flush=True)
+        return
+    # A service object ID can be reused after an imagery refresh.
+    item = json.loads(fetch(sample["item_url"]))
+    if item["attributes"]["Name"] != sample["attributes"]["Name"]:
+        raise ValueError(f"Tile identity changed at {sample['item_url']}")
+    data = fetch(sample["url"])
+    verify_window(data, sample)
+    # An interrupted write must not leave a partial TIFF at the resume path.
+    with TemporaryDirectory(dir=directory) as staging:
+        staged = Path(staging) / path.name
+        staged.write_bytes(data)
+        path.hardlink_to(staged)
+    same_file = hashlib.sha256(data).hexdigest() == sample["sha256_tiff"]
+    print(f"{path.name}  pixels verified  identical TIFF bytes={same_file}", flush=True)
 
 
 def fetch(url):
