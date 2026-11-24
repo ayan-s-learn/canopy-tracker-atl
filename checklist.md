@@ -14,7 +14,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 **Human actions:** [HA-0002](HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests) is ready: confirm City receipt or file the missing scopes.
 
-**Next Astra project review:** [AR02 — pilot footprint and reference feasibility](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) awaits the paired-coverage accounting and DeKalb probe outcome from T05, plus the exclusion map and reference workload estimate from T06. Review earlier if either inquiry rules out the proposed pilot or protected design.
+**Next Astra project review:** [AR02 — pilot footprint and reference feasibility](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) awaits the paired-coverage accounting and DeKalb probe outcome from T05, plus the exclusion map and reference workload estimate from T06. Use AR02 to choose the development baseline task or a bounded imagery fallback. Review earlier if either inquiry rules out the proposed pilot or protected design.
 
 ## Tasks
 
