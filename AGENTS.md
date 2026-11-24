@@ -62,7 +62,7 @@ Rules that keep parallel branches from colliding:
 2. Link to another task's files at a completed task or a pinned commit. Do not list in your README which tasks use your outputs, or describe another task's status or plans.
 3. Live status belongs in `checklist.md` and each task's own **Progress** section. AGENTS.md, README.md, the operations guide and research direction do not name tasks as pending, ready or awaited.
 4. Once the checklist marks a task complete, its folder changes only through dated corrections made by the integration owner. Follow-up work gets a new task.
-5. The integration owner applies the remaining **For integration** edits, skipping any already applied, in a separate commit after the merge commit, so the merge contains only the task's own changes.
+5. Prepare the task merge locally. If the task README has a **For integration** section, apply its outstanding edits and remove the section in a separate commit on top. Show the cleanup diff with the merge approval request. One owner approval covers publishing the merge and that specific cleanup to `main` together.
 
 ## Astra project reviews
 
