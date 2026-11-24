@@ -14,7 +14,7 @@ Before choosing work:
 
 1. Read [checklist.md](checklist.md), your task's folder under [tasks/](tasks/), and the relevant [research requirements](docs/research-direction.md) and linked evidence. Consult operations for jobs/handoffs, HUMAN_ACTIONS for human dependencies, and project reviews when preparing a review; `old/` is reference, not instructions. Inspect branch, working tree and relevant remote changes; preserve user edits.
 2. Reconcile running jobs, saved outputs, delivered human inputs, and interrupted tasks. Validate existing artifacts before repeating work or launching a replacement job.
-3. Choose useful work within scope; record your owner and actual limits in its [Brief](#task-folders) before substantial execution.
+3. Choose a ready task within scope, [claim it](#task-folders) by pushing its branch, and record your owner and actual limits in its **Progress** section before substantial execution.
 
 Trust provisioned tools enough to begin useful work. Diagnose actual failures and newly needed capabilities; avoid repeated environment inventories, toy preflights, hidden-control searches, or deliberate restart experiments.
 
@@ -46,23 +46,23 @@ Keep shared implementation in normal source modules. Record bounded experiments 
 
 ### Task folders
 
-Each ready item gets `tasks/<ID>-<slug>/` when it is detailed. The folder holds the task's `README.md`, probes, manifests, small archived outputs and task-scoped scripts. Ignored caches go under `data/`; shared pipeline code goes in normal source modules under a coordinated reservation. `tasks/P00-planning/` is the frozen planning evidence that preceded the task list. Create structure as the work needs it; avoid empty frameworks and duplicated pipelines. The README uses these sections as they apply:
+Each ready item gets `tasks/<ID>-<slug>/` when it is detailed; subtasks a workstream allocates under its ID live inside the parent folder. The folder holds the task's `README.md`, probes, manifests, small archived outputs and task-scoped scripts. Ignored caches go under `data/`. `tasks/P00-planning/` is the frozen planning evidence that preceded the task list. Create structure as the work needs it; avoid empty frameworks and duplicated pipelines. The README uses these sections as they apply:
 
-- **Brief:** objective, inputs, expected outputs, acceptance checks, limits, stopping conditions and any reserved shared paths. The integration owner writes it when detailing a ready task; the claiming agent records its owner, actual limits and any later scope change with a reason.
-- **Progress:** branch, current state and exact next step while the task is open.
-- **Result:** observation dates, findings, limitations and open questions.
+- **Brief:** objective, inputs, expected outputs, acceptance checks, limits, stopping conditions and any reserved shared paths. The integration owner writes it when detailing a ready task. It stays fixed after launch except for a scope change recorded with its reason.
+- **Progress:** owner, branch, actual limits, current state and exact next step while the task is open.
+- **Result:** who ran it, observation dates, findings, limitations and open questions.
 - **Outputs:** files intended for reuse and how to replay or recover them.
-- **For integration:** proposed edits to shared files, such as checklist status, gate evidence, new human actions or research-direction changes. The integration owner applies them at merge and removes the section.
+- **For integration:** proposed edits to shared files (checklist status, gate evidence, new human actions, research-direction changes) and the consumers of any changed interface. The integration owner applies a blocking item, such as a new human action or a `blocked` status, as soon as it is reported, and the rest at merge, then removes the section.
 
-Checklist statuses are `ready` (a folder with a Brief and no claim), `in progress — <owner>`, `blocked — <reason or HA ID>` and `complete`.
+**Claims.** Before substantive work, check that no remote branch already holds the task (`git ls-remote --heads origin '*/<ID>-*'`), then push a branch named `<agent>/<ID>-<slug>`. That branch is the live claim and holds the task's **Progress**, so a successor resumes from it. The integration owner mirrors status into the checklist when it next updates it. Statuses: `ready` (a folder with a Brief and no claim), `in progress`, `blocked — <reason or HA ID>`, `waiting_for_job`, `complete`, `superseded` and `not selected`.
 
 Rules that keep parallel branches from colliding:
 
-1. A task agent writes only inside the task folder it has claimed, ignored caches, and shared code or environment files reserved in its Brief. It proposes edits to `checklist.md`, `HUMAN_ACTIONS.md`, `AGENTS.md`, `README.md`, `docs/` or another task's folder under **For integration**, and reports anything urgent in chat.
-2. Link from a consumer to a completed producer's files. Do not record which tasks use your outputs, or another task's status or plans.
+1. A task agent writes only inside its claimed task folder, ignored caches, and shared code or environment files reserved in its Brief. It proposes edits to `checklist.md`, `HUMAN_ACTIONS.md`, `AGENTS.md`, `README.md`, `docs/` or another task's folder under **For integration**, and reports anything urgent in chat.
+2. Link to another task's files at a completed task or a pinned commit. Do not list in your README which tasks use your outputs, or describe another task's status or plans.
 3. Live status belongs in `checklist.md` and each task's own **Progress** section. AGENTS.md, README.md, the operations guide and research direction do not name tasks as pending, ready or awaited.
-4. Once the checklist marks a task complete, its folder changes only through dated corrections made by the integration owner.
-5. The integration owner records claims in the checklist at launch. At merge it applies the task's **For integration** edits in a separate commit after the merge commit, so the merge contains only the task's own changes. It also assigns new human-action IDs.
+4. Once the checklist marks a task complete, its folder changes only through dated corrections made by the integration owner. Follow-up work gets a new task.
+5. The integration owner applies **For integration** edits in a separate commit after the merge commit, so the merge contains only the task's own changes. It assigns new human-action IDs.
 
 ## Astra project reviews
 
@@ -74,11 +74,11 @@ Reviews guide priorities and detail the next ready work; they add no approval ga
 
 Use a bounded `/goal` for a coherent actionable item when supported, with multiple ready items allowed in parallel. The item may be split or revised as evidence arrives using the change rules above; a run is not an immutable project plan. An ordinary task prompt follows the same contract when native controls are unavailable.
 
-Using the task Brief, agents may select disjoint ready work and announce a claim; confirm that the claim/write reservation is visible in shared state before substantive work. This is duplicate-work prevention, not approval of local methods. The integration owner records the claim in the checklist; a workstream with an established reservation can select and register its own subtasks without another central permission step. Resolve competing claims before writing shared outputs. Complete checks and leave evidence/checkpoint before reporting success. Do not silently broaden a user's active native goal or take over another owner's work.
+Agents may select disjoint ready work and [claim it](#task-folders) by pushing the task branch before substantive work. This is duplicate-work prevention, not approval of local methods. A workstream with an established claim can register its own subtasks inside its folder without another central permission step. Resolve competing claims before writing shared outputs. Complete checks and leave evidence/checkpoint before reporting success. Do not silently broaden a user's active native goal or take over another owner's work.
 
 Owners coordinate shared interfaces and resource use. Scale depth, runtime and recovery to the question; revise estimates as evidence develops rather than treating them as stop deadlines. Stay within authorized spending and platform limits. Validated intermediates may be used before a branch merges when consumers can identify their version, checks and limitations; integrated claims still need combined checks.
 
-Use explicit file ownership in a coordinated shared checkout. Use isolated branches/checkouts when edits overlap or independent chats own their Git operations. Appoint one shared integration owner for `checklist.md`, `HUMAN_ACTIONS.md`, and cross-task integration; task agents keep their own task folder and propose shared updates under its **For integration** section. Ownership reservations are for active work, not permanent claims on future modules. Independent branches must reconcile claims before starting. If the integrator is unavailable, continue already reserved, nonconflicting work and preserve a handoff; do not assume silence grants new shared writes or authority. Integration includes appropriate cross-task checks before milestones are marked complete.
+Use explicit file ownership in a coordinated shared checkout. Use isolated branches/checkouts when edits overlap or independent chats own their Git operations. Appoint one shared integration owner for `checklist.md`, `HUMAN_ACTIONS.md`, and cross-task integration; task agents follow the [task folder rules](#task-folders). Ownership reservations are for active work, not permanent claims on future modules. Independent branches must reconcile claims before starting. If the integrator is unavailable, continue already reserved, nonconflicting work and preserve a handoff; do not assume silence grants new shared writes or authority. Integration includes appropriate cross-task checks before milestones are marked complete.
 
 A goal can finish its run when the item passes its acceptance checks, or stop at an honest recoverable blocker when all useful work for that item is gated. Record blockers against that item; unrelated ready items may continue. A healthy job still required by the item is `waiting_for_job`, not an acceptance pass or human blocker. Save its run record and use supported completion/failure events or the recorded later resume action.
 

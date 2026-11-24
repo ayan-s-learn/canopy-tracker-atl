@@ -22,7 +22,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 |---|---|---|
 | [T01](tasks/T01-imagery/README.md) | Imagery access, dates and paired samples | complete |
 | [T02](tasks/T02-geography/README.md) | Jurisdiction, parcels and GT layers | complete |
-| [T03](tasks/T03-permits/README.md) | Permit feasibility, coverage and semantics | blocked — HA-0002; public-source audit done |
+| [T03](tasks/T03-permits/README.md) | Permit feasibility, coverage and semantics | complete |
 | [T04](tasks/T04-runtime/README.md) | Reproducible operation and durable storage | complete |
 
 ## Future workstreams — revisable, unclaimed
@@ -55,4 +55,4 @@ Unresolved: recent-image coverage and suitability across the city; valid-area de
 
 ## Next action
 
-Hold AR01 with the four task records, the open G1 gaps and HA-0002. The next imagery question is paired coverage of the official City footprint in both counties; both T01 sample sites are in Fulton. When the City delivers records, verify their scope before interpreting permit absences.
+Hold AR01 with the four task records, the open G1 gaps and HA-0002. The next imagery question is paired coverage of the official City footprint in both counties; both T01 sample sites are in Fulton. When the City delivers records under HA-0002, open a task to validate their scope before interpreting permit absences.

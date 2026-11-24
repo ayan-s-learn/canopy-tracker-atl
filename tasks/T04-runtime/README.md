@@ -3,12 +3,13 @@
 ## Brief
 
 - **Objective:** show how a successor can reproduce a real small geospatial operation and recover its artifacts. Input: the [T01 Piedmont Park 2023 window](../T01-imagery/README.md).
+- **Expected outputs:** demonstrated environment and fixture reproduction; an authorized storage round trip; recovery, retention and permission limits; a concrete storage action if the missing capability needs a human.
 - **Acceptance:** open and process a real permitted raster from a fresh directory using recorded versions; verify output tolerance; copy, retrieve and hash-check a real artifact from the authorized durable path. Document disconnect, crash, reboot and deletion survival honestly; a local file or checksum alone does not establish durability. Do not deliberately restart the host to test it.
-- **Limits:** 100 MiB of wheel and fixture transfers, 500 MiB of temporary space, one GitHub working branch, no paid provisioning. Stop at a verified clean replay and remote retrieval, or a recorded blocker with resume steps.
+- **Limits:** 100 MiB of wheel and fixture transfers, 500 MiB of temporary space, one GitHub working branch, no paid provisioning. Reserved shared path: `requirements.txt`. Stop at a verified clean replay and remote retrieval, or a recorded blocker with resume steps.
 
 ## Result
 
-Observed 2026-11-23 (America/New_York). A fresh environment built from the pinned requirements reproduced the derived near-infrared raster exactly, and a fresh HTTPS clone returned the archived copy with a matching SHA-256. This recovery path covers small shareable derivatives and records only. Before costly acquisitions or training, identify an authorized store for raw imagery and model weights, then verify a separate round trip and record retention and access there.
+Codex ran the checks on 2026-11-23 (America/New_York). A fresh environment built from the pinned requirements reproduced the derived near-infrared raster exactly, and a fresh HTTPS clone returned the archived copy with a matching SHA-256. This recovery path covers small shareable derivatives and records only. Before costly acquisitions or training, identify an authorized store for raw imagery and model weights, then verify a separate round trip and record retention and access there.
 
 ## Outputs and replay
 

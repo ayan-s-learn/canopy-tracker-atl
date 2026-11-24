@@ -3,12 +3,13 @@
 ## Brief
 
 - **Objective:** identify the real study jurisdiction and what parcel and comparison data can support, starting from the [P00 source findings](../P00-planning/findings.md).
+- **Expected outputs:** dated official boundary; parcel source, vintage and schema matrix with representative geometry; GT access and rights findings; suitable neighborhood context leads. Record unexamined or inaccessible sources explicitly.
 - **Acceptance:** source IDs and terms, geometry validity, CRS/units/area checks, city versus county/mailing-address distinction, historical limitations, and comparison of the old screening rectangle with the actual boundary. A discovery report may document unavailable data; it cannot certify complete historical attribution.
 - **Limits:** 60 public data requests, 64 MiB of source transfers, 100 MiB of temporary wheel transfers and 500 MiB of scratch space. Stop once the boundary and representative geometry are usable and the remaining history and rights gaps are identified.
 
 ## Result
 
-Observed 2026-11-23 (America/New_York); the [manifest](t02-sources.json) records each request time.
+Codex observed these sources on 2026-11-23 (America/New_York); the [manifest](t02-sources.json) records a retrieval time for each source.
 
 ### Municipal footprint
 

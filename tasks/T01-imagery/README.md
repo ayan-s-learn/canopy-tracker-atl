@@ -3,12 +3,13 @@
 ## Brief
 
 - **Objective:** find a usable, accessible image pair for local canopy-loss research. Start from the [saved P00 NAIP catalog screen](../P00-planning/findings.md#e1--imagery-catalog-probe) and its unsigned tile URLs. Prefer 2023–2025, with 2019–2023 as fallback.
+- **Expected outputs:** source, rights, date and coverage ledger; actual paired sample evidence; suitability and access limitations; a recommended interval or justified next access action.
 - **Acceptance:** read actual four-band windows from two dates and validate acquisition date/range, CRS/grid/resolution, nodata, rights and source identity; record them with window hashes in a compact ledger. Document leaf, shadow, alignment and seamline concerns and missing inputs before recommending an interval. Metadata alone cannot certify usable imagery.
 - **Limits:** up to three development locations; twelve source/catalog lookups plus bounded tile/index/range requests; 1 GiB of imagery transfers and 2 GiB of temporary storage. No training, protected evaluation, citywide acquisition, spending or external messages. Stop at sufficient local evidence or document the failed routes and exact recovery action.
 
 ## Result
 
-Samples were retrieved on 2026-11-22 (America/New_York); the [window manifest](t01-windows.json) records request times.
+Codex retrieved the samples on 2026-11-22 (America/New_York); the [window manifest](t01-windows.json) records the retrieval time.
 
 Use October 2023 to October 2025 for local development. Both services returned four distinct, nonconstant uint8 bands covering the same 153.6 m square at each site in NAD83 / UTM zone 16N (EPSG:26916). The 2023 samples are 256 × 256 at 0.6 m. The 2025 samples are 512 × 512 at 0.3 m. Each request specified source bands 0–3 in order. NAIP documents these as red, green, blue and near-infrared. The exports have undefined band labels, so band identities rely on the provider. [NAIP collection metadata](../P00-planning/source-probes.json). None of the four exports declared nodata or masked any pixels, and none contained a pixel with zeros in all four bands. Shadows and water still require interpretation.
 

@@ -8,7 +8,7 @@ Choose a recovery strategy appropriate to the job: rerun cheap deterministic wor
 
 Choose validation, backup and monitoring frequency based on failure cost and available capabilities. Inspect existing work before restarting; preserve healthy jobs and useful partial results. Events, supported waits or proportionate status checks are all acceptable. Revise estimates and methods as evidence arrives within authorized resource limits; elapsed estimates alone do not require stopping a productive run.
 
-Report completed, pending and failed work honestly; distinguish an ongoing job from a blocker or completion. Do not claim durable recovery without a verified retrieval path. Keep raw rasters, model weights, personal records, secrets and expiring signed URLs out of Git; retain provenance and retrieval instructions.
+Report completed, pending and failed work honestly; distinguish an ongoing job from a blocker or completion. Do not claim durable recovery without a verified retrieval path. Keep raw rasters, model weights, personal records, secrets and expiring signed URLs out of Git; retain provenance and retrieval instructions. The [T04 replay](../tasks/T04-runtime/README.md#outputs-and-replay) shows how to rebuild the pinned environment and recover a small archived artifact.
 
 ## Git publication, handoffs, and stopping
 

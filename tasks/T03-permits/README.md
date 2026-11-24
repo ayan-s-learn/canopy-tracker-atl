@@ -2,13 +2,14 @@
 
 ## Brief
 
-- **Objective:** determine what permit record searches can and cannot support. Inputs: the owner's send confirmation, [P00 source checks](../P00-planning/findings.md#e3--other-source-checks), City guidance and the public services below. Output: a recoverable coverage matrix, source and date checks, redacted examples and a next access action.
+- **Objective:** determine what permit record searches can and cannot support. Inputs: the owner's send confirmation, [P00 source checks](../P00-planning/findings.md#e3--other-source-checks), City guidance and the public services below.
+- **Expected outputs:** a recoverable jurisdiction × authority × record type × date coverage matrix; tested access and field semantics; redacted examples; effective-date rules; missing-source questions and a next access action.
 - **Acceptance:** distinguish landing-page access from actual records and completeness; preserve source errors and limits. Building records without tree-review evidence are context, not tree authorization. Verify historical semantics from official sources. A bounded negative inquiry is valid evidence with a concrete next access action; it does not establish record absence or unlawful removal.
 - **Limits:** direct probes with a 20-second timeout and 1 MiB response cap; no bulk collection, no requests submitted to custodians, no owner or contact details committed. The audit used 36 probes, including follow-up queries on the newer points and companion table. [Probe URLs, results, and replay notes](source-probes.json).
 
 ## Result
 
-Observed 2026-11-23 (America/New_York); the [probe record](source-probes.json) records each check time.
+Codex ran the audit on 2026-11-23 (America/New_York); the [probe record](source-probes.json) records each check time.
 
 ### Outreach
 
@@ -35,7 +36,7 @@ Scope is City of Atlanta, including its Fulton and DeKalb portions. The two part
 - Check emergency documentation as well as permits. Under §158-109(1) in the 2023 ordinance, verbal approval can precede removal and the application. The qualifying after-hours procedure calls for next-working-day contact and documentation within five working days of removal, with a permit exemption. Verify the applicable version and the recorded sequence for each case. [City code supplement, §158-109](https://www.atlantaga.gov/home/showdocument?id=67054&t=638990066293839561)
 - Link BB/LD and BA records by the authoritative record relationships and reconcile site/parcel identity and vintage. Resolve overlapping revisions, appeals and parcel matches before assigning a match. Reserve unmatched for a documented search of the relevant covered sources. Keep missing coverage, conflicting versions and unresolved joins ambiguous. Record authorization and actual removal separately.
 
-## Progress and next access action
+## Next access action
 
 The bounded T03 public-source audit is complete. Five aggregate queries reproduced the recorded counts, dates and grouped types on November 23, 2026. Historical permit reconciliation remains open under HA-0002. It needs underlying standalone DDH records, embedded BB/LD decisions, amendment histories, Parks records and a coverage denominator for each county portion. Use the prepared request for any scope missing from an existing City filing. On delivery, inventory exports and exclusions by authority, date and record type, check representative redacted records against the field definitions and reconcile their locations with the [T02 City footprint and historical limits](../T02-geography/README.md).
 

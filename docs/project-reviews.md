@@ -17,6 +17,15 @@ An Astra planning review does not itself pass a research gate. Preserve protecte
 
 Use stable IDs (`AR01`, `AR02`, …). For each completed review, retain: date/model and contributors; triggering milestone and evidence revisions; findings and unresolved objections; decisions and reasons; next ready task IDs with linked briefs and owners or `unclaimed`; carried blockers and human actions; next review ID/trigger; integration revision. Add dated amendments rather than silently rewriting previous decisions. Pending entries must not imply a meeting occurred.
 
+### Initial layout — T01–T04 (Astra, 2026-10-15)
+
+- **T01:** `docs/research/imagery/` for findings and probe scripts; `manifests/imagery/` when separate source metadata is useful.
+- **T02:** `docs/research/geography/` for findings and probes; `manifests/geography/` when useful.
+- **T03:** `docs/research/permits/` for findings and probes; `manifests/permits/` when useful.
+- **T04:** extend `docs/operations.md`; use environment files and executable checks appropriate to the chosen tooling. Defer shared code and storage layout until needed; create paths with their first artifact.
+
+**Amended 2026-11-23:** superseded by [task folders](../AGENTS.md#task-folders); these records moved to `tasks/`.
+
 ### AR01 — Feasibility findings and next work
 
 - **Status:** planned; no review held. Preparation/integration owner: current checklist integration owner. Review lead: Astra.
