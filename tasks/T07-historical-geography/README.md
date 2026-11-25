@@ -13,7 +13,7 @@ Start with the [dated City boundary, county overlay and annexation records](../T
 
 - Owner: Codex, 2026-11-25 14:02 ET. Branch: `task/T07-historical-geography`.
 - Scope: public boundary and legislative evidence, archived imagery dates, and local replay. No paid data or new imagery reads.
-- Status: evidence package prepared for integration review. The remaining historical coverage gaps are recorded below.
+- Status: complete. Integration reproduced the default artifacts and date-range scenarios. The historical coverage gaps below remain open under G1.
 
 ## Result
 
@@ -46,7 +46,3 @@ python -m unittest discover -s tasks/T07-historical-geography -v
 ```
 
 The straddle replay moves 1,308 m² of Wilkinson from `second_only` to `unresolved`. The same lookup gives Gresham `outside_both` through December 31, `second_only` at January 1, and `unresolved` for a range crossing that date. The Sol reviewer independently rebuilt the defaults from the archived geometry and verified the dated scenarios and exported partition.
-
-## For integration
-
-On acceptance, record T07 completion in the checklist and link the membership layer. Keep the missing geometry and unverified boundary changes open under G1. Replay the layer with local acquisition dates before freezing a pilot frame or attributing historical jurisdiction.
