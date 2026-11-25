@@ -1,0 +1,493 @@
+{
+  "evidence_version": 1,
+  "first": [
+    "2023-10-08",
+    "2023-10-08"
+  ],
+  "second": [
+    "2025-10-11",
+    "2025-10-11"
+  ],
+  "area_crs": "EPSG:5070",
+  "reconciliation_tolerance_m2": 2,
+  "discovery_m2": {
+    "total": 353372845.20138496,
+    "fulton": 329917693.81843174,
+    "dekalb": 23445810.9943116,
+    "county_unassigned": 9340.388642514374,
+    "county_overlap": 0.0
+  },
+  "membership_m2": {
+    "discovery": {
+      "inside_both": {
+        "total": 352382464.1917974,
+        "fulton": 329587361.8274849,
+        "dekalb": 22795102.27181474,
+        "county_unassigned": 0.09249786927775064,
+        "county_overlap": 0.0
+      },
+      "first_only": {
+        "total": 0.0,
+        "fulton": 0.0,
+        "dekalb": 0.0,
+        "county_unassigned": 0.0,
+        "county_overlap": 0.0
+      },
+      "second_only": {
+        "total": 124497.24242166386,
+        "fulton": 0.0,
+        "dekalb": 124497.24242166392,
+        "county_unassigned": 0.0,
+        "county_overlap": 0.0
+      },
+      "outside_both": {
+        "total": 175572.8690398967,
+        "fulton": 19.596481396651342,
+        "dekalb": 175553.27255850035,
+        "county_unassigned": 0.0,
+        "county_overlap": 0.0
+      },
+      "unresolved": {
+        "total": 690310.8981269081,
+        "fulton": 330312.3944656736,
+        "dekalb": 350658.20751660515,
+        "county_unassigned": 9340.296144637026,
+        "county_overlap": 0.0
+      }
+    },
+    "outside_discovery": {
+      "inside_both": {
+        "total": 0.0,
+        "fulton": 0.0,
+        "dekalb": 0.0,
+        "county_unassigned": 0.0,
+        "county_overlap": 0.0
+      },
+      "first_only": {
+        "total": 0.0,
+        "fulton": 0.0,
+        "dekalb": 0.0,
+        "county_unassigned": 0.0,
+        "county_overlap": 0.0
+      },
+      "second_only": {
+        "total": 0.0,
+        "fulton": 0.0,
+        "dekalb": 0.0,
+        "county_unassigned": 0.0,
+        "county_overlap": 0.0
+      },
+      "outside_both": {
+        "total": 0.0,
+        "fulton": 0.0,
+        "dekalb": 0.0,
+        "county_unassigned": 0.0,
+        "county_overlap": 0.0
+      },
+      "unresolved": {
+        "total": 7283522.774041959,
+        "fulton": 6153603.878921567,
+        "dekalb": 1062358.0292478339,
+        "county_unassigned": 67560.86587259277,
+        "county_overlap": 0.0
+      }
+    }
+  },
+  "total_historical_extent_outside_discovery_m2": null,
+  "census_comparison_m2": {
+    "2023-01-01": {
+      "area": 353102369.7488727,
+      "outside_discovery": 394995.25922718545,
+      "discovery_outside_tiger": 665470.7117399184
+    },
+    "2024-01-01": {
+      "area": 353230743.1801104,
+      "outside_discovery": 415023.9197176053,
+      "discovery_outside_tiger": 557125.9409925669,
+      "added_since_previous": 218690.50088506783,
+      "removed_since_previous": 90317.06964731858
+    },
+    "2025-01-01": {
+      "area": 353154187.6084724,
+      "outside_discovery": 342686.41571031616,
+      "discovery_outside_tiger": 561344.0086232183,
+      "added_since_previous": 1411.635022399447,
+      "removed_since_previous": 77967.20666030978
+    },
+    "2026-01-01": {
+      "area": 353233340.4616492,
+      "outside_discovery": 334523.69403243746,
+      "discovery_outside_tiger": 474028.43376854697,
+      "added_since_previous": 90521.01651200777,
+      "removed_since_previous": 11368.163335238158
+    }
+  },
+  "change_geometry": [
+    {
+      "city_objectid": 1,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 91795.51845407777,
+        "inside_discovery": 0.0,
+        "outside_discovery": 91795.51845407774,
+        "inside_tiger": {
+          "2023-01-01": 0.0,
+          "2024-01-01": 0.0,
+          "2025-01-01": 0.0,
+          "2026-01-01": 0.0
+        }
+      }
+    },
+    {
+      "city_objectid": 4,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 1127969.3391824728,
+        "inside_discovery": 223364.2990399182,
+        "outside_discovery": 904605.0401425593,
+        "inside_tiger": {
+          "2023-01-01": 224286.64943103393,
+          "2024-01-01": 225614.20427523635,
+          "2025-01-01": 225614.20427523635,
+          "2026-01-01": 225614.20427523635
+        }
+      }
+    },
+    {
+      "city_objectid": 71,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 101862.20881150311,
+        "inside_discovery": 166.4780324890657,
+        "outside_discovery": 101695.73077902485,
+        "inside_tiger": {
+          "2023-01-01": 459.03424648478585,
+          "2024-01-01": 459.03424648478585,
+          "2025-01-01": 459.03424648478585,
+          "2026-01-01": 459.03424648478585
+        }
+      }
+    },
+    {
+      "city_objectid": 84,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 436028.5812761121,
+        "inside_discovery": 152.30990794741803,
+        "outside_discovery": 435876.271368224,
+        "inside_tiger": {
+          "2023-01-01": 1281.843717097027,
+          "2024-01-01": 1281.843717097027,
+          "2025-01-01": 1281.843717097027,
+          "2026-01-01": 1281.843717097027
+        }
+      }
+    },
+    {
+      "city_objectid": 98,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 60024.250518388566,
+        "inside_discovery": 184.4639292685967,
+        "outside_discovery": 59839.78658909687,
+        "inside_tiger": {
+          "2023-01-01": 1061.045289461569,
+          "2024-01-01": 1061.045289461569,
+          "2025-01-01": 1061.045289461569,
+          "2026-01-01": 1061.045289461569
+        }
+      }
+    },
+    {
+      "city_objectid": 99,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 87064.06022575921,
+        "inside_discovery": 0.2207196374308591,
+        "outside_discovery": 87063.83950611817,
+        "inside_tiger": {
+          "2023-01-01": 9.132127404233188,
+          "2024-01-01": 9.132127404233188,
+          "2025-01-01": 9.132127404233188,
+          "2026-01-01": 9.132127404233188
+        }
+      }
+    },
+    {
+      "city_objectid": 105,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 255463.58618928317,
+        "inside_discovery": 580.1440673680651,
+        "outside_discovery": 254883.4421218988,
+        "inside_tiger": {
+          "2023-01-01": 52.142471920408724,
+          "2024-01-01": 52.142471920408724,
+          "2025-01-01": 52.142471920408724,
+          "2026-01-01": 52.142471920408724
+        }
+      }
+    },
+    {
+      "city_objectid": 106,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 553132.1447403142,
+        "inside_discovery": 145.8802884462651,
+        "outside_discovery": 552986.2644518693,
+        "inside_tiger": {
+          "2023-01-01": 2001.9391098932877,
+          "2024-01-01": 2001.9391098932877,
+          "2025-01-01": 2001.9391098932877,
+          "2026-01-01": 2001.9391098932877
+        }
+      }
+    },
+    {
+      "city_objectid": 136,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 63347.854632376446,
+        "inside_discovery": 1844.1883522896492,
+        "outside_discovery": 61503.66628008754,
+        "inside_tiger": {
+          "2023-01-01": 1425.2325155749688,
+          "2024-01-01": 1425.2325155749688,
+          "2025-01-01": 1425.2325155749688,
+          "2026-01-01": 1425.2325155749688
+        }
+      }
+    },
+    {
+      "city_objectid": 140,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 5681586.43380147,
+        "inside_discovery": 96335.09473742181,
+        "outside_discovery": 5585251.339064067,
+        "inside_tiger": {
+          "2023-01-01": 90674.82410773025,
+          "2024-01-01": 99749.71419698068,
+          "2025-01-01": 99749.71419698068,
+          "2026-01-01": 99749.71419698068
+        }
+      }
+    },
+    {
+      "city_objectid": 166,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 53038.80844664392,
+        "inside_discovery": 80.50177065164975,
+        "outside_discovery": 52958.306675992506,
+        "inside_tiger": {
+          "2023-01-01": 111.72540512515445,
+          "2024-01-01": 111.72540512515445,
+          "2025-01-01": 111.72540512515445,
+          "2026-01-01": 111.72540512515445
+        }
+      }
+    },
+    {
+      "city_objectid": 4801,
+      "ordinance": "23-O-1126",
+      "date_lookup": "inside_both",
+      "area_m2": {
+        "total": 577.5924108819889,
+        "inside_discovery": 577.592410881989,
+        "outside_discovery": 0.0,
+        "inside_tiger": {
+          "2023-01-01": 22.54568699280921,
+          "2024-01-01": 22.54568699280921,
+          "2025-01-01": 22.54568699280921,
+          "2026-01-01": 577.592410881989
+        }
+      }
+    },
+    {
+      "city_objectid": 5121,
+      "ordinance": "23-O-1619",
+      "date_lookup": "second_only",
+      "area_m2": {
+        "total": 3066.406186641744,
+        "inside_discovery": 3061.005493889539,
+        "outside_discovery": 5.400692753069754,
+        "inside_tiger": {
+          "2023-01-01": 47.23364827648692,
+          "2024-01-01": 47.23364827648692,
+          "2025-01-01": 47.23364827648692,
+          "2026-01-01": 2999.1001932862596
+        }
+      }
+    },
+    {
+      "city_objectid": 5441,
+      "ordinance": "24-O-1459",
+      "date_lookup": "second_only",
+      "area_m2": {
+        "total": 71538.55775601826,
+        "inside_discovery": 71290.04592237367,
+        "outside_discovery": 248.51183364605842,
+        "inside_tiger": {
+          "2023-01-01": 323.70065499285863,
+          "2024-01-01": 323.70065499285863,
+          "2025-01-01": 323.70065499285863,
+          "2026-01-01": 70840.65652903395
+        }
+      }
+    },
+    {
+      "city_objectid": 5761,
+      "ordinance": "25-O-1060",
+      "date_lookup": "second_only",
+      "area_m2": {
+        "total": 46307.8218401676,
+        "inside_discovery": 46082.90143716484,
+        "outside_discovery": 224.92040300415718,
+        "inside_tiger": {
+          "2023-01-01": 0.0,
+          "2024-01-01": 0.0,
+          "2025-01-01": 0.0,
+          "2026-01-01": 131.92284367302668
+        }
+      }
+    },
+    {
+      "city_objectid": 5762,
+      "ordinance": "25-O-1056",
+      "date_lookup": "second_only",
+      "area_m2": {
+        "total": 2755.154182903146,
+        "inside_discovery": 2755.1541829031466,
+        "outside_discovery": 0.0,
+        "inside_tiger": {
+          "2023-01-01": 56.76151725821103,
+          "2024-01-01": 56.76151725821103,
+          "2025-01-01": 56.76151725821103,
+          "2026-01-01": 56.76151725821103
+        }
+      }
+    },
+    {
+      "city_objectid": 6081,
+      "ordinance": null,
+      "date_lookup": null,
+      "area_m2": {
+        "total": 1317.3767729741305,
+        "inside_discovery": 1308.1353853209407,
+        "outside_discovery": 9.241387652968896,
+        "inside_tiger": {
+          "2023-01-01": 44.57673394299663,
+          "2024-01-01": 44.57673394299663,
+          "2025-01-01": 44.57673394299663,
+          "2026-01-01": 44.57673394299663
+        }
+      }
+    },
+    {
+      "city_objectid": 6083,
+      "ordinance": "25-O-1375",
+      "date_lookup": "second_only",
+      "area_m2": {
+        "total": 1317.3767729741305,
+        "inside_discovery": 1308.1353853209407,
+        "outside_discovery": 9.241387652968896,
+        "inside_tiger": {
+          "2023-01-01": 44.57673394299663,
+          "2024-01-01": 44.57673394299663,
+          "2025-01-01": 44.57673394299663,
+          "2026-01-01": 44.57673394299663
+        }
+      }
+    },
+    {
+      "city_objectid": 6401,
+      "ordinance": "26-O-1090",
+      "date_lookup": "outside_both",
+      "area_m2": {
+        "total": 160797.20765624198,
+        "inside_discovery": 160793.0539998371,
+        "outside_discovery": 4.153656403017634,
+        "inside_tiger": {
+          "2023-01-01": 65.79708674994635,
+          "2024-01-01": 65.79708674994635,
+          "2025-01-01": 65.79708674994635,
+          "2026-01-01": 65.79708674994635
+        }
+      }
+    },
+    {
+      "city_objectid": 6721,
+      "ordinance": "25-O-1532",
+      "date_lookup": "outside_both",
+      "area_m2": {
+        "total": 1102.0689767755812,
+        "inside_discovery": 1095.921143641283,
+        "outside_discovery": 6.147833133130989,
+        "inside_tiger": {
+          "2023-01-01": 13.696596146110569,
+          "2024-01-01": 13.696596146110569,
+          "2025-01-01": 13.696596146110569,
+          "2026-01-01": 13.696596146110569
+        }
+      }
+    },
+    {
+      "city_objectid": 7041,
+      "ordinance": "26-O-1149",
+      "date_lookup": "outside_both",
+      "area_m2": {
+        "total": 13899.932094327627,
+        "inside_discovery": 13683.893896419542,
+        "outside_discovery": 216.03819791509054,
+        "inside_tiger": {
+          "2023-01-01": 19.596100537951976,
+          "2024-01-01": 19.596100537951976,
+          "2025-01-01": 19.596100537951976,
+          "2026-01-01": 19.596100537951976
+        }
+      }
+    },
+    {
+      "city_objectid": null,
+      "ordinance": "26-O-1348",
+      "date_lookup": null,
+      "area_m2": null
+    },
+    {
+      "city_objectid": null,
+      "ordinance": "23-O-1658",
+      "date_lookup": null,
+      "area_m2": null
+    }
+  ],
+  "t01_windows_m2": {
+    "park-2023": {
+      "total": 23577.397829843547,
+      "inside_both": 23577.397829843547
+    },
+    "park-2025": {
+      "total": 23577.397829843547,
+      "inside_both": 23577.397829843547
+    },
+    "west-2023": {
+      "total": 23578.680440230437,
+      "inside_both": 23578.680440230437
+    },
+    "west-2025": {
+      "total": 23578.680440230437,
+      "inside_both": 23578.680440230437
+    }
+  }
+}
