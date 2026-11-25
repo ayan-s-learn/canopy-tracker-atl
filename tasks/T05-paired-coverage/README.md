@@ -13,4 +13,6 @@ Use the [T01 dated imagery sources](../T01-imagery/README.md) and [T02 City and 
 
 Owner and session start: Codex T05, 2026-11-24 19:14 EST. Branch `task/T05-paired-coverage` from `83509aa`. Limits: use public metadata and small development reads within 128 MiB of source transfers and 500 MiB of task cache. Reserve only this folder and `data/imagery/t05/`.
 
-Next: inventory source footprints and publish the proposed full-window exclusions before requesting new pixels.
+The [development reservation](development-windows.geojson) covers the full Kirkwood and far west read extents plus a 1 m margin. It also includes the previously inspected T01 windows. The DeKalb window tests readability across the county line. The other new window tests the October 15, 2025 tile date outside T01's October 11 samples.
+
+Next: fetch the published main and task refs, check reference exclusions, then request the reserved windows if clear.
