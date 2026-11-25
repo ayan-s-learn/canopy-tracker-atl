@@ -26,7 +26,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 | [T04](tasks/T04-runtime/README.md) | Reproducible operation and durable storage | complete |
 | [T05](tasks/T05-paired-coverage/README.md) | Where do the 2023 and 2025 assets overlap, and where has a usable pair actually been read? | complete |
 | [T06](tasks/T06-reference-design/README.md) | Which geography can be protected, and how much independent reference work would the pilot require? | complete |
-| [T07](tasks/T07-historical-geography/README.md) | Which parts of the City footprint have verified membership at the local image dates? | ready |
+| [T07](tasks/T07-historical-geography/README.md) | Which parts of the City footprint have verified membership at the local image dates? | complete |
 
 ## Future workstreams — revisable, unclaimed
 
@@ -49,7 +49,7 @@ See [research direction](docs/research-direction.md#evidence-gates-and-recoverab
 
 | Gate | Required evidence | Current state |
 |---|---|---|
-| G1 — study feasible | Suitable readable paired inputs, scoped geography/source interfaces and recoverable artifacts | Unpassed; four paired development sites and a current City footprint verified. Epoch-specific jurisdiction, parcel history, permit coverage, reference planning and bulk artifact recovery remain open |
+| G1 — study feasible | Suitable readable paired inputs, scoped geography/source interfaces and recoverable artifacts | Unpassed. Four paired development sites and the current City footprint are verified. T07 supports both T01 windows at their image dates. Boundary changes with missing dates or geometry, parcel history, permit coverage, reference planning and bulk artifact recovery remain open |
 | G2 — evaluation candidate selected | Controlled development evidence, reviewed protocol/reference capacity, pinned method and inputs | Unpassed; method/MMU/registration policy unchosen |
 | G3 — findings validated | Appropriate independent references, uncertainty/coverage, protected evaluation and independent numerical reproduction | Unpassed; no project accuracy measurements |
 | G4 — delivered and maintainable | Supported reviewable bundle, authorized public result, delivered agency briefing and tested rerun | Unpassed; no release or briefing |
@@ -58,4 +58,4 @@ Unresolved: citywide pixel suitability and valid-observation area; parcel histor
 
 ## Next action
 
-Run AR02 with the T05 and T06 evidence and any available T07 findings. T07 can proceed independently. Before reading any new development imagery, reserve its full influence footprint and check it against the T06 candidate context plus its 600 m guard. If AR02 selects the calibration, prepare the development assignment and return package and register the staffing request in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). On City delivery under HA-0002, open a task to validate the export. Historical parcel-vintage checks remain on the parcels workstream before parcel attribution.
+Run AR02 with the T05 and T06 evidence and the [T07 membership layer](tasks/T07-historical-geography/membership.geojson.gz). Replay membership at each site's local image dates before freezing a pilot frame or assigning historical jurisdiction. Before reading any new development imagery, reserve its full influence footprint and check it against the T06 candidate context plus its 600 m guard. If AR02 selects the calibration, prepare the development assignment and return package and register the staffing request in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). On City delivery under HA-0002, open a task to validate the export. Historical parcel-vintage checks remain on the parcels workstream before parcel attribution.
