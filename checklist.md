@@ -14,7 +14,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 **Human actions:** [HA-0002](HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests) is ready: confirm City receipt or file the missing scopes.
 
-**Next Astra project review:** [AR02 — pilot footprint and reference feasibility](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) has the T05 coverage ledger and four candidate development windows and awaits the exclusion map and reference workload estimate from T06. Use AR02 to choose the development baseline task or a bounded imagery fallback. Review earlier if either inquiry rules out the proposed pilot or protected design.
+**Next Astra project review:** [AR02 — pilot footprint and reference feasibility](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) is ready with the T05 coverage ledger and four development windows, plus the [T06 candidate exclusion map](tasks/T06-reference-design/split.geojson) and [reference workload estimate](tasks/T06-reference-design/README.md#staffing-and-decision). Use AR02 to decide whether to reserve the candidate blocks, run the development baseline or a bounded imagery fallback, and select the proposed development-only calibration. Frame freeze, protocol adoption and staffing remain pending.
 
 ## Tasks
 
@@ -25,7 +25,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 | [T03](tasks/T03-permits/README.md) | Permit feasibility, coverage and semantics | complete |
 | [T04](tasks/T04-runtime/README.md) | Reproducible operation and durable storage | complete |
 | [T05](tasks/T05-paired-coverage/README.md) | Where do the 2023 and 2025 assets overlap, and where has a usable pair actually been read? | complete |
-| [T06](tasks/T06-reference-design/README.md) | Which geography can be protected, and how much independent reference work would the pilot require? | ready |
+| [T06](tasks/T06-reference-design/README.md) | Which geography can be protected, and how much independent reference work would the pilot require? | complete |
 | [T07](tasks/T07-historical-geography/README.md) | Which parts of the City footprint have verified membership at the local image dates? | ready |
 
 ## Future workstreams — revisable, unclaimed
@@ -58,4 +58,4 @@ Unresolved: citywide pixel suitability and valid-observation area; parcel histor
 
 ## Next action
 
-Claim T06 or T07. Reference design and historical boundary checks can start independently. For T06, pin the [T05 development reservation](tasks/T05-paired-coverage/development-windows.geojson) at `8b437f3` before checking the candidate holdout and its buffer. On City delivery under HA-0002, open a task to validate the export. Historical parcel-vintage checks remain on the parcels workstream before parcel attribution.
+Run AR02 with the T05 and T06 evidence and any available T07 findings. T07 can proceed independently. Before reading any new development imagery, reserve its full influence footprint and check it against the T06 candidate context plus its 600 m guard. If AR02 selects the calibration, prepare the development assignment and return package and register the staffing request in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). On City delivery under HA-0002, open a task to validate the export. Historical parcel-vintage checks remain on the parcels workstream before parcel attribution.

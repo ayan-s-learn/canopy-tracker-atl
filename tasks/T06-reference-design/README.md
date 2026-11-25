@@ -42,11 +42,11 @@ T05 establishes catalog overlap in all blocks. Local readability, effective date
 
 ### Staffing and decision
 
-The following are scenarios, with zero interpreter or adjudicator hours confirmed. Primary rates assume eight minutes per landscape cell and five per queue case. Budget the same rates for a 25% repeat sample, eight minutes for 20% of repeats that need adjudication and eight minutes for difficult single reads equal to another 10% of first reads. The table rounds repeat and adjudication case counts up. It excludes onboarding, frame construction, tool setup, long context traces and analysis.
+The following are scenarios, with zero interpreter or adjudicator hours confirmed. Primary rates assume eight minutes per landscape cell and five per queue case. Budget the same rates for a 25% repeat sample, eight minutes for 20% of repeats that need adjudication and eight minutes for difficult single reads equal to another 10% of first reads. The table rounds repeat counts up within each landscape stratum and the queue, then rounds each adjudication allowance up. It excludes onboarding, frame construction, tool setup, long context traces and analysis.
 
 | Scenario | Landscape draws, loss / uncertain / nonloss | Queue draws | First / repeat / adjudication hours | Total |
 |---|---:|---:|---:|---:|
-| Exploratory evaluation | 80 / 90 / 250 | 120 | 66.0 / 16.5 / 10.8 | 93.3 h |
+| Exploratory evaluation | 80 / 90 / 250 | 120 | 66.0 / 16.6 / 10.9 | 93.6 h |
 | Promotion planning case | 110 / 140 / 500 | 180 | 115.0 / 28.8 / 18.7 | 162.5 h |
 | Rare-loss planning case | 120 / 165 / 600 | 180 | 133.0 / 33.4 / 21.5 | 187.8 h |
 
@@ -69,8 +69,3 @@ python -m unittest discover -s tasks/T06-reference-design -v
 ```
 
 Before adopting the split, a reviewer can reconstruct the GT tile and raster extents from the pinned metadata, replay exact disjointness using the latest reservations, challenge the read ancestry, 600 m guard and county/condition spread, then run the example with an edge crossing, a match outside its anchor cell and unknown cover. Challenge the sizing with the observed development prevalence, weights and assessor time, and verify that quality exclusions and adjudication cannot feed back into the frozen method.
-
-## For integration
-
-- Link the candidate split and staffing estimate for AR02. The next in-scope decisions are whether to reserve these candidate blocks and which development-only baseline and calibration to run. Keep frame freeze, annotation capacity and independent protocol adoption pending.
-- Staffing request is prepared for the calibration above. If AR02 selects it, assign a human-action ID and link the frozen development assignment and return package when ready. Recruitment and protected evaluation remain outside this task.
