@@ -8,3 +8,9 @@ Use the [evaluation requirements](../../docs/research-direction.md#validation-is
 - Draft the image-reference protocol for endpoint-visible crown loss, including obscured pixels, edge-crossing events, independent interpretation, overlap and adjudication. Distinguish performance in the buffered holdout from any later probability survey of the whole frozen map. Specify how to select units for missed loss and queue yield, calculate their inclusion probabilities at the draw, and report sparse neighborhood or income strata.
 - Estimate interpreter and adjudicator time against the proposed precision, recall and yield criteria. Show which assumptions need pilot observations, what human capacity is confirmed, and which claims a smaller effort could support. Use a synthetic or already inspected development example to test whether the instructions produce a scorable record. If human capacity is the limiting input, prepare the smallest actionable staffing request with roles, hours and the claims that effort would support. Record how an independent reviewer can challenge the split and protocol before adoption.
 - Finish with the exclusion files, passing spatial checks and a proposal whose remaining coverage or staffing dependencies are explicit. Use this task folder and its ignored cache. Do not read protected outcomes, draw the final evaluation sample, recruit annotators or treat estimated capacity as committed.
+
+## Progress
+
+Owner: Codex, 2026-11-24 20:45 EST. Branch: `task/T06-reference-design`. Base: `c959a32`.
+
+In progress. Use saved metadata and a synthetic scoring example. No protected imagery reads, final sample, recruitment or spending. Next, reconcile T05 reservations and audit earlier imagery and Georgia Tech exposures before generating the candidate split.
