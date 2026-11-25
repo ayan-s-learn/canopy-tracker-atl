@@ -1,0 +1,31 @@
+{
+  "version": "t06-candidate-v1",
+  "sources": {
+    "t01": ["8ac1ac9", "T01-imagery/t01-windows.json", "cfd1e4e76140e7d554f42756beae8405b270122b6644f510ab97b0c7c4d5c70d"],
+    "city": ["8ac1ac9", "T02-geography/atlanta-city-limits-2026-11-23.geojson", "dc8b3b1d50dcafbfd7134b7cbaaf18f9b1bb71c9eb308cc1a6e87b47b5a5ffce"],
+    "t02": ["8ac1ac9", "T02-geography/t02-sources.json", "f523d74250df65a5efc59ef328a77b62ae32bf3d5d3b18ce1047f8b248483c1e"],
+    "reservations": ["8b437f3", "T05-paired-coverage/development-windows.geojson", "fd1a168b17938aa91dcb6ab143642acf63c5672dcbc87e6874815e5e7b817153"],
+    "coverage": ["b2f65e0", "T05-paired-coverage/catalog-mask.geojson.gz", "a4efa88760a1e32e2e64d526ab737ffdc93a2f04143344f7ec53e508f60a5b4c"],
+    "reads": ["b2f65e0", "T05-paired-coverage/window-evidence.json", "ce34fbe6be19357d961acb564cd446052533006e92c2d1ba6fa023d417aaa77b"]
+  },
+  "gt_window": {
+    "transform": [0.9999694135176885, 0.0, 726919.4585999995, 0.0, -0.9999891384778281, 3752667.5250000004],
+    "raster_sha256": "2da149ea8b5c8f24ef69ef18cb15a1e08c1e29cd564687c8b82bef2a3407af0f"
+  },
+  "gt_tile_scheme": {
+    "crs": "EPSG:3857",
+    "origin": [-20037508.342787, 20037508.342787],
+    "level": 17,
+    "resolution": 1.19432856685505,
+    "tile_pixels": 256
+  },
+  "gt_grid_cell": {
+    "oid": 10400,
+    "response_sha256": "97d5043f4ec40023b9ae1ce0aef1f13aaf68c2becdb458ad5f7c113ea75f6aa3",
+    "bounds_crs84": [-84.3734063896622, 33.7867362047107, -84.37175740974, 33.7881130635065]
+  },
+  "gt_reports": {
+    "context_envelope": "Entire T02 City snapshot, for prior historical canopy and change maps. See README for adoption limits.",
+    "manifest": "../P00-planning/gt-report-manifest.json"
+  }
+}

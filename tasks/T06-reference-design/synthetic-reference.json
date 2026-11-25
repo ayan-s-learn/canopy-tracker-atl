@@ -1,0 +1,41 @@
+{
+  "image_pair": "synthetic-2023-2025",
+  "crs": "synthetic local metres",
+  "mmu_m2": 404.68564224,
+  "match_min_iou": 0.5,
+  "cells": {
+    "A": {"bbox": [0, 0, 120, 120], "inclusion_probability": 0.25},
+    "B": {"bbox": [120, 0, 240, 120], "inclusion_probability": 0.50}
+  },
+  "interpretations": {
+    "first": {
+      "A": {"loss": ["R1"], "obscured": ["U1"]},
+      "B": {"loss": ["R1", "R2"], "obscured": []}
+    },
+    "repeat": {
+      "B": {"loss": ["R1"], "obscured": [], "uncertain": ["R2"]}
+    }
+  },
+  "adjudication": {
+    "B": "Accept R2 based on visible earlier crown and now-exposed ground. R1 crosses both cores and is owned by A."
+  },
+  "reference": {
+    "R1": {"status": "loss", "bbox": [117, 40, 141, 64], "anchor_cell": "A"},
+    "R2": {"status": "loss", "bbox": [165, 60, 189, 84], "anchor_cell": "B"},
+    "U1": {"status": "obscured", "bbox": [20, 40, 50, 70], "anchor_cell": "A"}
+  },
+  "queue": {
+    "Q1": {"bbox": [120, 40, 144, 64], "status": "match", "reference_id": "R1"},
+    "Q2": {"bbox": [75, 80, 99, 104], "status": "false_positive"},
+    "Q3": {"bbox": [22, 42, 46, 66], "status": "unresolved"}
+  },
+  "expected": {
+    "reference_anchors": 2,
+    "matched_anchors": 1,
+    "unweighted_recall": 0.5,
+    "weighted_recall": 0.6666666666666666,
+    "unknown_area_m2": 900,
+    "queue_complete_case_precision": 0.5,
+    "queue_precision_bounds": [0.3333333333333333, 0.6666666666666666]
+  }
+}
