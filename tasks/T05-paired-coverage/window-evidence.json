@@ -1,0 +1,541 @@
+{
+  "samples": [
+    {
+      "site": "kirkwood",
+      "year": 2023,
+      "attributes": {
+        "OBJECTID": 41288,
+        "Name": "m_3308414_sw_16_060_20231008",
+        "MinPS": 0,
+        "MaxPS": 19.1,
+        "Category": 1,
+        "CenterX": -9389101.088169754,
+        "CenterY": 3999470.5849917745,
+        "State": "GA",
+        "Year": 2023,
+        "raster_name": "m_3308414_sw_16_060_20231008",
+        "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3333024",
+        "acquisition_date": 1696723200000,
+        "agency": "USDA",
+        "vendor": "USDA-FSA-APFO",
+        "resolution_value": 0.6,
+        "resolution_units": "METER",
+        "band_count": 4,
+        "sensor_type": "CNIR",
+        "projection_name": "UTM",
+        "projection_zone": "16N",
+        "datum": "NAD83"
+      },
+      "bbox": [
+        747589.8,
+        3739162.2,
+        747897.0,
+        3739469.4
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "crs": "EPSG:26916",
+      "item_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41288?f=json",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41288/image?bbox=747589.8%2C3739162.2%2C747897.0%2C3739469.4&bboxSR=26916&imageSR=26916&size=512%2C512&format=tiff&bandIds=0%2C1%2C2%2C3&f=image",
+      "retrieved_utc": "2026-11-25T00:17:42.721232+00:00",
+      "status": "read",
+      "dtype": "uint8",
+      "nodata": null,
+      "mask_flags": [
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ]
+      ],
+      "color_interpretation": [
+        "undefined",
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "invalid_pixels_by_band": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "all_bands_zero": 0,
+      "band_ranges": [
+        [
+          15,
+          244
+        ],
+        [
+          22,
+          245
+        ],
+        [
+          37,
+          245
+        ],
+        [
+          9,
+          240
+        ]
+      ],
+      "sha256_pixels_band_major": "befc7f1efc816ce2d7e6a4fdd91181a4b07fbad264cdf48755b5d5cb00200ff5",
+      "sha256_masks_band_major": "f5fb04aa5b882706b9309e885f19477261336ef76a150c3b4d3489dfac3953ec",
+      "sha256_tiff": "1560a6d61ec71fef45005f48ac6c20475146bd3ede68d8a8147b5410e8e50c35",
+      "tiff_bytes": 1050341
+    },
+    {
+      "site": "kirkwood",
+      "year": 2025,
+      "attributes": {
+        "OBJECTID": 24351,
+        "Name": "m_3308414_sw_16_030_20251011",
+        "Category": 1,
+        "year_ts": 2025,
+        "ST": "GA",
+        "QQNAME": "3308414SW030",
+        "QQDATE": 1760140800000,
+        "iDate_ts": 1770817268786
+      },
+      "bbox": [
+        747589.8,
+        3739162.2,
+        747897.0,
+        3739469.4
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "crs": "EPSG:26916",
+      "item_url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24351?f=json",
+      "url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24351/image?bbox=747589.8%2C3739162.2%2C747897.0%2C3739469.4&bboxSR=26916&imageSR=26916&size=1024%2C1024&format=tiff&bandIds=0%2C1%2C2%2C3&f=image",
+      "retrieved_utc": "2026-11-25T00:17:37.869288+00:00",
+      "status": "read",
+      "dtype": "uint8",
+      "nodata": null,
+      "mask_flags": [
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ]
+      ],
+      "color_interpretation": [
+        "undefined",
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "invalid_pixels_by_band": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "all_bands_zero": 0,
+      "band_ranges": [
+        [
+          21,
+          255
+        ],
+        [
+          22,
+          255
+        ],
+        [
+          1,
+          255
+        ],
+        [
+          7,
+          255
+        ]
+      ],
+      "sha256_pixels_band_major": "457753b3e50da8e31b9c15da9a1f1511f1c659957441d2c4200d79e5b18fa8a9",
+      "sha256_masks_band_major": "cd3517473707d59c3d915b52a3e16213cadce80d9ffb2b4371958fb7acb51a08",
+      "sha256_tiff": "b3abd028e399aefcc07cc4976411cf160cfe8651bd40b94dbf9c5366a962828d",
+      "tiff_bytes": 4196468
+    },
+    {
+      "site": "west-fulton",
+      "year": 2023,
+      "attributes": {
+        "OBJECTID": 41279,
+        "Name": "m_3308412_se_16_060_20231008",
+        "MinPS": 0,
+        "MaxPS": 19.1,
+        "Category": 1,
+        "CenterX": -9409974.50915225,
+        "CenterY": 3999470.7896923176,
+        "State": "GA",
+        "Year": 2023,
+        "raster_name": "m_3308412_se_16_060_20231008",
+        "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3333015",
+        "acquisition_date": 1696723200000,
+        "agency": "USDA",
+        "vendor": "USDA-FSA-APFO",
+        "resolution_value": 0.6,
+        "resolution_units": "METER",
+        "band_count": 4,
+        "sensor_type": "CNIR",
+        "projection_name": "UTM",
+        "projection_zone": "16N",
+        "datum": "NAD83"
+      },
+      "bbox": [
+        730092.0,
+        3738280.2,
+        730399.2,
+        3738587.4
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "crs": "EPSG:26916",
+      "item_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41279?f=json",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/41279/image?bbox=730092.0%2C3738280.2%2C730399.2%2C3738587.4&bboxSR=26916&imageSR=26916&size=512%2C512&format=tiff&bandIds=0%2C1%2C2%2C3&f=image",
+      "retrieved_utc": "2026-11-25T00:17:41.189551+00:00",
+      "status": "read",
+      "dtype": "uint8",
+      "nodata": null,
+      "mask_flags": [
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ]
+      ],
+      "color_interpretation": [
+        "undefined",
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "invalid_pixels_by_band": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "all_bands_zero": 0,
+      "band_ranges": [
+        [
+          40,
+          246
+        ],
+        [
+          53,
+          246
+        ],
+        [
+          61,
+          248
+        ],
+        [
+          29,
+          240
+        ]
+      ],
+      "sha256_pixels_band_major": "2459639a3d229ec63d0ec3b3afa9e1db6256aac5c4ba0b491607a21cce88efdb",
+      "sha256_masks_band_major": "f5fb04aa5b882706b9309e885f19477261336ef76a150c3b4d3489dfac3953ec",
+      "sha256_tiff": "6a5adb284a728d58719c92530db2ae9cc2a32cb316026df95affaa351a1bedcc",
+      "tiff_bytes": 1050341
+    },
+    {
+      "site": "west-fulton",
+      "year": 2025,
+      "attributes": {
+        "OBJECTID": 24358,
+        "Name": "m_3308412_se_16_030_20251015",
+        "Category": 1,
+        "year_ts": 2025,
+        "ST": "GA",
+        "QQNAME": "3308412SE030",
+        "QQDATE": 1760486400000,
+        "iDate_ts": 1770817268786
+      },
+      "bbox": [
+        730092.0,
+        3738280.2,
+        730399.2,
+        3738587.4
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "crs": "EPSG:26916",
+      "item_url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24358?f=json",
+      "url": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer/24358/image?bbox=730092.0%2C3738280.2%2C730399.2%2C3738587.4&bboxSR=26916&imageSR=26916&size=1024%2C1024&format=tiff&bandIds=0%2C1%2C2%2C3&f=image",
+      "retrieved_utc": "2026-11-25T00:17:38.353119+00:00",
+      "status": "read",
+      "dtype": "uint8",
+      "nodata": null,
+      "mask_flags": [
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ],
+        [
+          "all_valid"
+        ]
+      ],
+      "color_interpretation": [
+        "undefined",
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "invalid_pixels_by_band": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "all_bands_zero": 0,
+      "band_ranges": [
+        [
+          21,
+          255
+        ],
+        [
+          33,
+          255
+        ],
+        [
+          1,
+          255
+        ],
+        [
+          1,
+          255
+        ]
+      ],
+      "sha256_pixels_band_major": "5e3543cda18361024a67ba40fbd9ebf3d5952b945832cb6068725f73807c7ae7",
+      "sha256_masks_band_major": "cd3517473707d59c3d915b52a3e16213cadce80d9ffb2b4371958fb7acb51a08",
+      "sha256_tiff": "b39576b47b3450362886488b1574bdabdf2564b2d57e3f0c45c3ec932d4834bd",
+      "tiff_bytes": 4196468
+    }
+  ],
+  "alignment_anchors": {
+    "park": [
+      {
+        "pixel_xy": [
+          14,
+          31
+        ],
+        "half_size": 8,
+        "feature": "Northwest paved-path bend"
+      }
+    ],
+    "west": [
+      {
+        "pixel_xy": [
+          118,
+          125
+        ],
+        "half_size": 10,
+        "feature": "Northwest running-track bend"
+      },
+      {
+        "pixel_xy": [
+          188,
+          122
+        ],
+        "half_size": 10,
+        "feature": "Northeast running-track bend"
+      },
+      {
+        "pixel_xy": [
+          65,
+          121
+        ],
+        "half_size": 10,
+        "feature": "Sidewalk approach at west-side driveway"
+      },
+      {
+        "pixel_xy": [
+          68,
+          194
+        ],
+        "half_size": 11,
+        "feature": "West-side paved apron and curb"
+      }
+    ],
+    "kirkwood": [
+      {
+        "pixel_xy": [
+          90,
+          287
+        ],
+        "half_size": 13,
+        "feature": "Pavement at west street junction"
+      },
+      {
+        "pixel_xy": [
+          192,
+          278
+        ],
+        "half_size": 14,
+        "feature": "Sidewalk approach at central street junction"
+      },
+      {
+        "pixel_xy": [
+          389,
+          194
+        ],
+        "half_size": 13,
+        "feature": "Pavement at northeast street bend"
+      },
+      {
+        "pixel_xy": [
+          368,
+          396
+        ],
+        "half_size": 12,
+        "feature": "Southeast street curb bend"
+      },
+      {
+        "pixel_xy": [
+          370,
+          192
+        ],
+        "half_size": 10,
+        "feature": "Inner northeast road corner by fixed curb"
+      },
+      {
+        "pixel_xy": [
+          483,
+          328
+        ],
+        "half_size": 11,
+        "feature": "Eastern road edge and driveway approach"
+      },
+      {
+        "pixel_xy": [
+          471,
+          319
+        ],
+        "half_size": 8,
+        "feature": "Northeast curb at eastern street"
+      },
+      {
+        "pixel_xy": [
+          123,
+          285
+        ],
+        "half_size": 9,
+        "feature": "Sidewalk edge at west street driveway"
+      }
+    ],
+    "west-fulton": [
+      {
+        "pixel_xy": [
+          158,
+          79
+        ],
+        "half_size": 14,
+        "feature": "Northwest street intersection curb"
+      },
+      {
+        "pixel_xy": [
+          172,
+          185
+        ],
+        "half_size": 14,
+        "feature": "Central-left street and driveway edges"
+      },
+      {
+        "pixel_xy": [
+          349,
+          94
+        ],
+        "half_size": 13,
+        "feature": "Northeast intersection curb"
+      },
+      {
+        "pixel_xy": [
+          469,
+          366
+        ],
+        "half_size": 13,
+        "feature": "Southeast street intersection curb"
+      },
+      {
+        "pixel_xy": [
+          309,
+          387
+        ],
+        "half_size": 12,
+        "feature": "Southern street and driveway edges"
+      },
+      {
+        "pixel_xy": [
+          170,
+          152
+        ],
+        "half_size": 10,
+        "feature": "West street driveway and curb"
+      },
+      {
+        "pixel_xy": [
+          167,
+          175
+        ],
+        "half_size": 9,
+        "feature": "West street pavement corner near a second driveway"
+      }
+    ]
+  },
+  "reservation_commit": "8b437f3bddd4cffdaa182efcbaff7a1ce60dc51d",
+  "main_checked_after_reservation": "83509aa3c424c165d28d03f87fade2ed5d2405cc",
+  "ref_check": {
+    "task_branches": [
+      "task/T05-paired-coverage"
+    ],
+    "t06_main_files": [
+      "tasks/T06-reference-design/README.md"
+    ],
+    "published_holdout_or_buffer_found": false
+  },
+  "fresh_replay": {
+    "date_local": "2026-11-24",
+    "completed_time_local": "19:22:34 EST",
+    "same_tiff_bytes": {
+      "kirkwood-2023": true,
+      "kirkwood-2025": true,
+      "west-fulton-2023": true,
+      "west-fulton-2025": true
+    }
+  }
+}

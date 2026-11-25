@@ -1,0 +1,290 @@
+{
+  "park": [
+    {
+      "pixel_xy": [
+        14,
+        31
+      ],
+      "half_size": 8,
+      "feature": "Northwest paved-path bend",
+      "east_m": -2.4,
+      "north_m": -1.2,
+      "magnitude_m": 2.68,
+      "score": 0.569,
+      "runner_up_gap": 0.015,
+      "passes_screen": false
+    }
+  ],
+  "west": [
+    {
+      "pixel_xy": [
+        118,
+        125
+      ],
+      "half_size": 10,
+      "feature": "Northwest running-track bend",
+      "east_m": 1.2,
+      "north_m": 0.6,
+      "magnitude_m": 1.34,
+      "score": 0.948,
+      "runner_up_gap": 0.02,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        188,
+        122
+      ],
+      "half_size": 10,
+      "feature": "Northeast running-track bend",
+      "east_m": 2.4,
+      "north_m": -0.6,
+      "magnitude_m": 2.47,
+      "score": 0.724,
+      "runner_up_gap": 0.062,
+      "passes_screen": true
+    },
+    {
+      "pixel_xy": [
+        65,
+        121
+      ],
+      "half_size": 10,
+      "feature": "Sidewalk approach at west-side driveway",
+      "east_m": 0.6,
+      "north_m": 1.8,
+      "magnitude_m": 1.9,
+      "score": 0.75,
+      "runner_up_gap": 0.047,
+      "passes_screen": true
+    },
+    {
+      "pixel_xy": [
+        68,
+        194
+      ],
+      "half_size": 11,
+      "feature": "West-side paved apron and curb",
+      "east_m": 0.6,
+      "north_m": 0.6,
+      "magnitude_m": 0.85,
+      "score": 0.747,
+      "runner_up_gap": 0.148,
+      "passes_screen": true
+    }
+  ],
+  "kirkwood": [
+    {
+      "pixel_xy": [
+        90,
+        287
+      ],
+      "half_size": 13,
+      "feature": "Pavement at west street junction",
+      "east_m": 1.2,
+      "north_m": 0.0,
+      "magnitude_m": 1.2,
+      "score": 0.353,
+      "runner_up_gap": 0.016,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        192,
+        278
+      ],
+      "half_size": 14,
+      "feature": "Sidewalk approach at central street junction",
+      "east_m": 1.2,
+      "north_m": 0.0,
+      "magnitude_m": 1.2,
+      "score": 0.497,
+      "runner_up_gap": 0.071,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        389,
+        194
+      ],
+      "half_size": 13,
+      "feature": "Pavement at northeast street bend",
+      "east_m": 0.6,
+      "north_m": 0.0,
+      "magnitude_m": 0.6,
+      "score": 0.604,
+      "runner_up_gap": 0.163,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        368,
+        396
+      ],
+      "half_size": 12,
+      "feature": "Southeast street curb bend",
+      "east_m": -2.4,
+      "north_m": 1.2,
+      "magnitude_m": 2.68,
+      "score": 0.346,
+      "runner_up_gap": 0.01,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        370,
+        192
+      ],
+      "half_size": 10,
+      "feature": "Inner northeast road corner by fixed curb",
+      "east_m": 0.0,
+      "north_m": -0.6,
+      "magnitude_m": 0.6,
+      "score": 0.771,
+      "runner_up_gap": 0.097,
+      "passes_screen": true
+    },
+    {
+      "pixel_xy": [
+        483,
+        328
+      ],
+      "half_size": 11,
+      "feature": "Eastern road edge and driveway approach",
+      "east_m": 0.0,
+      "north_m": 0.6,
+      "magnitude_m": 0.6,
+      "score": 0.298,
+      "runner_up_gap": 0.015,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        471,
+        319
+      ],
+      "half_size": 8,
+      "feature": "Northeast curb at eastern street",
+      "east_m": 1.2,
+      "north_m": 0.6,
+      "magnitude_m": 1.34,
+      "score": 0.274,
+      "runner_up_gap": 0.015,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        123,
+        285
+      ],
+      "half_size": 9,
+      "feature": "Sidewalk edge at west street driveway",
+      "east_m": 0.6,
+      "north_m": -0.6,
+      "magnitude_m": 0.85,
+      "score": 0.627,
+      "runner_up_gap": 0.073,
+      "passes_screen": false
+    }
+  ],
+  "west-fulton": [
+    {
+      "pixel_xy": [
+        158,
+        79
+      ],
+      "half_size": 14,
+      "feature": "Northwest street intersection curb",
+      "east_m": 0.6,
+      "north_m": 0.6,
+      "magnitude_m": 0.85,
+      "score": 0.644,
+      "runner_up_gap": 0.091,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        172,
+        185
+      ],
+      "half_size": 14,
+      "feature": "Central-left street and driveway edges",
+      "east_m": 3.6,
+      "north_m": 2.4,
+      "magnitude_m": 4.33,
+      "score": 0.492,
+      "runner_up_gap": 0.089,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        349,
+        94
+      ],
+      "half_size": 13,
+      "feature": "Northeast intersection curb",
+      "east_m": 2.4,
+      "north_m": 3.0,
+      "magnitude_m": 3.84,
+      "score": 0.181,
+      "runner_up_gap": 0.026,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        469,
+        366
+      ],
+      "half_size": 13,
+      "feature": "Southeast street intersection curb",
+      "east_m": 0.6,
+      "north_m": 0.6,
+      "magnitude_m": 0.85,
+      "score": 0.868,
+      "runner_up_gap": 0.171,
+      "passes_screen": true
+    },
+    {
+      "pixel_xy": [
+        309,
+        387
+      ],
+      "half_size": 12,
+      "feature": "Southern street and driveway edges",
+      "east_m": 1.2,
+      "north_m": 0.0,
+      "magnitude_m": 1.2,
+      "score": 0.45,
+      "runner_up_gap": 0.053,
+      "passes_screen": false
+    },
+    {
+      "pixel_xy": [
+        170,
+        152
+      ],
+      "half_size": 10,
+      "feature": "West street driveway and curb",
+      "east_m": 0.6,
+      "north_m": 0.0,
+      "magnitude_m": 0.6,
+      "score": 0.702,
+      "runner_up_gap": 0.148,
+      "passes_screen": true
+    },
+    {
+      "pixel_xy": [
+        167,
+        175
+      ],
+      "half_size": 9,
+      "feature": "West street pavement corner near a second driveway",
+      "east_m": 0.6,
+      "north_m": 0.0,
+      "magnitude_m": 0.6,
+      "score": 0.68,
+      "runner_up_gap": 0.093,
+      "passes_screen": true
+    }
+  ]
+}
