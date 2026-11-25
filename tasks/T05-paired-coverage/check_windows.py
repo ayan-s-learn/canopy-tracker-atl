@@ -48,7 +48,7 @@ def gradients(pixels, year):
     if year == 2025:
         height, width = rgb.shape
         rgb = rgb.reshape(height // 2, 2, width // 2, 2).mean(axis=(1, 3))
-    # The two sensors have different edge sharpness even at the same pixel size.
+    # The exports have different edge sharpness even at the same pixel size.
     kernel = np.array([1, 4, 6, 4, 1]) / 16
     for axis in (0, 1):
         rgb = np.apply_along_axis(lambda line: np.convolve(line, kernel, mode='same'), axis, rgb)

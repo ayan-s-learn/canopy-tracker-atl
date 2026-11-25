@@ -158,11 +158,15 @@ def exposure_dates(city, windows, catalogs, assigned):
                 response['spatialReference']['wkid'] != 4326):
             raise ValueError(f'Incomplete exposure-date query for {year}')
         dates = defaultdict(list)
+        source_pieces = []
         for feature in response['features']:
             attrs = feature['attributes']
+            source_id = attrs['objectid'] if year == '2023' else attrs['FID']
             date = (datetime.fromtimestamp(attrs['date'] / 1000, timezone.utc).date().isoformat()
                     if year == '2023' else attrs['IDATE'])
-            dates[date].append(catalog_polygon(feature['geometry']['rings']).intersection(city))
+            polygon = catalog_polygon(feature['geometry']['rings']).intersection(city)
+            dates[date].append(polygon)
+            source_pieces.append((source_id, date, polygon))
         by_date = {date: union_all(polygons) for date, polygons in sorted(dates.items())}
         footprint = union_all(list(by_date.values()))
         tile_dates = catalogs[int(year)][0]
@@ -179,6 +183,12 @@ def exposure_dates(city, windows, catalogs, assigned):
             'window_intersection_m2': {
                 name: {**{date: round(window.intersection(p).area, 3) for date, p in by_date.items()},
                        'outside_date_index': round(window.difference(footprint).area, 3)}
+                for name, window in windows.items()
+            },
+            'window_source_polygons': {
+                name: [{'id': source_id, 'date': date, 'area_m2': area}
+                       for source_id, date, polygon in sorted(source_pieces)
+                       if (area := round(window.intersection(polygon).area, 3)) > 0]
                 for name, window in windows.items()
             },
         }
