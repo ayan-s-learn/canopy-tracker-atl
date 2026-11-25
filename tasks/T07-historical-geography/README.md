@@ -8,3 +8,9 @@ Start with the [dated City boundary, county overlay and annexation records](../T
 - Produce a versioned boundary or uncertainty layer and an effective-date ledger. Distinguish areas inside at both dates, inside only at the first, inside only at the second, outside at both, and unresolved. Show how a local acquisition date range that straddles a change affects membership. Identify any historical areas outside the discovery footprint separately.
 - Replay area accounting against the T02 discovery footprint, by county and county-unassigned area, within a stated tolerance. Exercise the dated lookup on the September and December 2025 changes around the October sample dates. Distinguish a missing geometry or unverified effective date from a measured zero-area change.
 - Stop with the reproducible membership evidence available from public sources, and quantify unresolved area within the discovery footprint. Where missing historical geometry leaves the extent outside that footprint unknown, identify the missing evidence and report the extent as unknown. Reserve this task folder and its ignored cache. Historical parcel splits and permit coverage require separate evidence. No parcel-owner data, records requests or new imagery reads are needed.
+
+## Progress
+
+- Owner: Codex, 2026-11-25 14:02 ET. Branch: `task/T07-historical-geography`.
+- Scope: public boundary and legislative evidence, archived imagery dates, and local replay. No paid data or new imagery reads.
+- Next: reconcile the archived annexation entries with effective-date evidence and check dated boundaries and changes in both directions.
