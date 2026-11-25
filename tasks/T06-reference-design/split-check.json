@@ -1,0 +1,23 @@
+{
+  "version": "t06-candidate-v1",
+  "analysis_crs": "EPSG:26916",
+  "geojson_crs": "OGC:CRS84",
+  "minimum_development_distance_m": 713.44,
+  "buffer_context_disjoint": true,
+  "buffer_context_intersection_m2": 0.0,
+  "buffer_context_distance_m": 112.59,
+  "development_union_km2_utm": 0.30971,
+  "buffered_development_km2_utm": 7.44894,
+  "by_county": {
+    "Fulton": {
+      "blocks": 36,
+      "cells_before_QC": 1296,
+      "candidate_km2_utm": 18.6624
+    },
+    "DeKalb": {
+      "blocks": 4,
+      "cells_before_QC": 144,
+      "candidate_km2_utm": 2.0736
+    }
+  }
+}
