@@ -56,7 +56,3 @@ python -m unittest discover -s tasks/T05-paired-coverage -v
 ```
 
 Compare the rebuilt area ledger, decompressed mask and alignment JSON with the linked outputs. Use the 2 m² tolerance for the area and mask checks. The pixel replay verifies the live item ID, tile name and date before downloading and checks the recorded grid, masks and pixels. Cached raw rasters live outside Git.
-
-## For integration
-
-After review and merge, mark T05 complete and carry the catalog and four read windows into AR02. T06 should pin the published reservation when checking its buffer and candidate holdout.

@@ -8,13 +8,13 @@ Build a reproducible, independently evaluated canopy-loss investigation with par
 
 Current direction remains **City of Atlanta first**, including its parts in both counties, with a varied pilot before regional findings. Prefer 2023→2025 if usable; investigate 2019→2023 or another justified fallback. Compare practical methods before committing to U-Net. Measure endpoint-visible loss, then many-to-many parcel overlap and coverage-aware three-way permit reconciliation. These methods/intervals are revisable hypotheses; [research direction](docs/research-direction.md) preserves the scientific standards and tradeoffs.
 
-**Known:** GT already maps fine-resolution canopy, uses ML/manual corrections and compares some permits; our proposed contribution is validated smaller-event analysis and a reproducible evidence trail. T01 retrieved four-band October 2023 and October 2025 NAIP imagery at Piedmont Park and West End. The pair supports local development. Citywide coverage and registration remain open. [Sample windows and evidence](tasks/T01-imagery/README.md). Public building and selected arborist records are accessible. Coverage of tree authorizations remains unverified. [T03 evidence](tasks/T03-permits/README.md). These are scoped observations, not full-city readiness.
+**Known:** GT already maps fine-resolution canopy, uses ML/manual corrections and compares some permits; our proposed contribution is validated smaller-event analysis and a reproducible evidence trail. Both recent NAIP catalogs cover the full 2026 City footprint. Four sampled windows returned usable four-band pairs for development, including Kirkwood in DeKalb. Citywide pixel suitability and local registration remain open. [Coverage and sample evidence](tasks/T05-paired-coverage/README.md). Public building and selected arborist records are accessible. Coverage of tree authorizations remains unverified. [T03 evidence](tasks/T03-permits/README.md). These are scoped observations, not full-city readiness.
 
 **Absent:** full study dataset, independent reference labels, measured detector accuracy, usable permit snapshot, operational pipeline, verified storage for raw imagery and model weights, and public release. **Jobs:** none running. Compact evidence is recorded in the repository; GT PDFs are recoverable by source URL/hash. No automated goal runtime, watcher or restart service has been established.
 
 **Human actions:** [HA-0002](HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests) is ready: confirm City receipt or file the missing scopes.
 
-**Next Astra project review:** [AR02 — pilot footprint and reference feasibility](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) awaits the paired-coverage accounting and DeKalb probe outcome from T05, plus the exclusion map and reference workload estimate from T06. Use AR02 to choose the development baseline task or a bounded imagery fallback. Review earlier if either inquiry rules out the proposed pilot or protected design.
+**Next Astra project review:** [AR02 — pilot footprint and reference feasibility](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) has the T05 coverage ledger and four candidate development windows and awaits the exclusion map and reference workload estimate from T06. Use AR02 to choose the development baseline task or a bounded imagery fallback. Review earlier if either inquiry rules out the proposed pilot or protected design.
 
 ## Tasks
 
@@ -24,7 +24,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 | [T02](tasks/T02-geography/README.md) | Jurisdiction, parcels and GT layers | complete |
 | [T03](tasks/T03-permits/README.md) | Permit feasibility, coverage and semantics | complete |
 | [T04](tasks/T04-runtime/README.md) | Reproducible operation and durable storage | complete |
-| [T05](tasks/T05-paired-coverage/README.md) | Where do the 2023 and 2025 assets overlap, and where has a usable pair actually been read? | ready |
+| [T05](tasks/T05-paired-coverage/README.md) | Where do the 2023 and 2025 assets overlap, and where has a usable pair actually been read? | complete |
 | [T06](tasks/T06-reference-design/README.md) | Which geography can be protected, and how much independent reference work would the pilot require? | ready |
 | [T07](tasks/T07-historical-geography/README.md) | Which parts of the City footprint have verified membership at the local image dates? | ready |
 
@@ -49,13 +49,13 @@ See [research direction](docs/research-direction.md#evidence-gates-and-recoverab
 
 | Gate | Required evidence | Current state |
 |---|---|---|
-| G1 — study feasible | Suitable readable paired inputs, scoped geography/source interfaces and recoverable artifacts | Unpassed; two paired sites and a current City footprint verified. Epoch-specific jurisdiction, parcel history, permit coverage, reference planning and bulk artifact recovery remain open |
+| G1 — study feasible | Suitable readable paired inputs, scoped geography/source interfaces and recoverable artifacts | Unpassed; four paired development sites and a current City footprint verified. Epoch-specific jurisdiction, parcel history, permit coverage, reference planning and bulk artifact recovery remain open |
 | G2 — evaluation candidate selected | Controlled development evidence, reviewed protocol/reference capacity, pinned method and inputs | Unpassed; method/MMU/registration policy unchosen |
 | G3 — findings validated | Appropriate independent references, uncertainty/coverage, protected evaluation and independent numerical reproduction | Unpassed; no project accuracy measurements |
 | G4 — delivered and maintainable | Supported reviewable bundle, authorized public result, delivered agency briefing and tested rerun | Unpassed; no release or briefing |
 
-Unresolved: recent-image coverage and suitability across the city; valid-area denominator; parcel history; effective-dated permit coverage and its denominator in each county portion; Georgia Tech data reuse terms; reference effort; local detection scale/registration limits; useful review yield/subgroup precision; storage for raw imagery and model weights; public detail, project license and future custodian.
+Unresolved: citywide pixel suitability and valid-observation area; parcel history; effective-dated permit coverage and its denominator in each county portion; Georgia Tech data reuse terms; reference effort; local detection scale/registration limits; useful review yield/subgroup precision; storage for raw imagery and model weights; public detail, project license and future custodian.
 
 ## Next action
 
-Claim T05, T06 or T07. Imagery catalog work, reference design and historical boundary checks can start independently. Coordinate development footprints before inspecting new pixels. On City delivery under HA-0002, open a task to validate the export. Historical parcel-vintage checks remain on the parcels workstream before parcel attribution.
+Claim T06 or T07. Reference design and historical boundary checks can start independently. For T06, pin the [T05 development reservation](tasks/T05-paired-coverage/development-windows.geojson) at `8b437f3` before checking the candidate holdout and its buffer. On City delivery under HA-0002, open a task to validate the export. Historical parcel-vintage checks remain on the parcels workstream before parcel attribution.
