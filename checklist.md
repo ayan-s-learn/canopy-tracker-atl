@@ -28,7 +28,7 @@ Current direction remains **City of Atlanta first**, including its parts in both
 | [T06](tasks/T06-reference-design/README.md) | Which geography can be protected, and how much independent reference work would the pilot require? | complete |
 | [T07](tasks/T07-historical-geography/README.md) | Which parts of the City footprint have verified membership at the local image dates? | complete |
 | [T08](tasks/T08-development-baseline/README.md) | Does a reproducible loss baseline survive registration checks on the four sites? | ready |
-| [T09](tasks/T09-calibration-package/README.md) | Can two blinded readers and an adjudicator complete and return the development exercises? | ready |
+| [T09](tasks/T09-calibration-package/README.md) | Can the development assignment be delivered, returned privately and scored in a dry run? | ready |
 | [T10](tasks/T10-parcel-vintages/README.md) | Which historical parcel links are supportable at the pilot sites? | ready |
 
 ## Future workstreams — revisable, unclaimed
