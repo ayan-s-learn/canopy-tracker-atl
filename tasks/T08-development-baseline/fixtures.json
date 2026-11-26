@@ -1,0 +1,222 @@
+{
+  "cases": {
+    "inserted_loss": {
+      "expected": {
+        "area_m2": 466.56,
+        "events": [
+          "fixture-85-100"
+        ],
+        "floors": {
+          "0": {
+            "count": 1,
+            "m2": 466.56
+          },
+          "0.05": {
+            "count": 1,
+            "m2": 466.56
+          },
+          "0.1": {
+            "count": 1,
+            "m2": 466.56
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "4d4606e26a428a504d367ec952dc15f345ffa4633576b93020e9f879f8422ea4"
+      },
+      "observed": {
+        "area_m2": 466.56,
+        "events": [
+          "fixture-85-100"
+        ],
+        "floors": {
+          "0": {
+            "count": 1,
+            "m2": 466.56
+          },
+          "0.05": {
+            "count": 1,
+            "m2": 466.56
+          },
+          "0.1": {
+            "count": 1,
+            "m2": 466.56
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "4d4606e26a428a504d367ec952dc15f345ffa4633576b93020e9f879f8422ea4"
+      },
+      "scored_m2": 22861.44
+    },
+    "same_epoch": {
+      "expected": {
+        "area_m2": 0.0,
+        "events": [],
+        "floors": {
+          "0": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.05": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.1": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+      },
+      "observed": {
+        "area_m2": 0.0,
+        "events": [],
+        "floors": {
+          "0": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.05": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.1": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+      },
+      "scored_m2": 22861.44
+    },
+    "shift_raw": {
+      "expected": {
+        "area_m2": 194.04,
+        "events": [
+          "fixture-60-65"
+        ],
+        "floors": {
+          "0": {
+            "count": 1,
+            "m2": 194.04
+          },
+          "0.05": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.1": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "3b2bdbb1cb0b35e0fcac15187ed24743b8760eed85122f73f7cee832e27d385d"
+      },
+      "observed": {
+        "area_m2": 194.04,
+        "events": [
+          "fixture-60-65"
+        ],
+        "floors": {
+          "0": {
+            "count": 1,
+            "m2": 194.04
+          },
+          "0.05": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.1": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "3b2bdbb1cb0b35e0fcac15187ed24743b8760eed85122f73f7cee832e27d385d"
+      },
+      "scored_m2": 22861.44
+    },
+    "shift_registered": {
+      "expected": {
+        "area_m2": 0.0,
+        "events": [],
+        "floors": {
+          "0": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.05": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.1": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+      },
+      "observed": {
+        "area_m2": 0.0,
+        "events": [],
+        "floors": {
+          "0": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.05": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.1": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+      },
+      "scored_m2": 5080.32
+    }
+  },
+  "check_residuals_east_north_m": [
+    [
+      0.0,
+      -0.0
+    ],
+    [
+      0.0,
+      -0.0
+    ]
+  ],
+  "fitted_sampling_offset_rc": [
+    3,
+    -2
+  ]
+}
