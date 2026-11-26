@@ -148,11 +148,11 @@
     }
   },
   "west": {
-    "common_scored_m2": 21699.36,
+    "common_scored_m2": 21258.36,
     "comparison_outside_image_m2": 731.52,
-    "comparison_seam_excluded_inside_m2": 448.56,
-    "comparison_spatial_excluded_m2": 1180.08,
-    "comparison_unknown_m2": 713.52,
+    "comparison_seam_excluded_inside_m2": 896.04,
+    "comparison_spatial_excluded_m2": 1627.56,
+    "comparison_unknown_m2": 707.04,
     "dates": {
       "2023": "2023-10-08",
       "2025": "2025-10-11"
@@ -233,11 +233,11 @@
     }
   },
   "west-fulton": {
-    "common_scored_m2": 90275.4,
+    "common_scored_m2": 89110.44,
     "comparison_outside_image_m2": 1468.8,
-    "comparison_seam_excluded_inside_m2": 1178.28,
-    "comparison_spatial_excluded_m2": 2647.08,
-    "comparison_unknown_m2": 1449.36,
+    "comparison_seam_excluded_inside_m2": 2350.44,
+    "comparison_spatial_excluded_m2": 3819.24,
+    "comparison_unknown_m2": 1442.16,
     "dates": {
       "2023": "2023-10-08",
       "2025": "2025-10-15"

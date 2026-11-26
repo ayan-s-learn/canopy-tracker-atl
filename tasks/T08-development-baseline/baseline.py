@@ -176,7 +176,13 @@ def analyze_pair(site, pixels, dates, grid, sides, prior, config):
     for i, (_, cells) in enumerate(sides.values()):
         side_ids[cells] = i
     common = np.ones((h, w), bool)
-    spatial = common.copy()
+    texture = config["texture_window_px"]
+    # A cell's crown decision uses the whole texture patch at both sample positions.
+    single_side = ndimage.minimum_filter(
+        side_ids, texture, mode="nearest"
+    ) == ndimage.maximum_filter(side_ids, texture, mode="nearest")
+    side_ids[~single_side] = -1
+    spatial = single_side.copy()
     inside_all = common.copy()
     for _, (dr, dc) in scenarios(supported, offsets, sides, controls):
         source_side, inside = sample_late(side_ids, dr, dc)

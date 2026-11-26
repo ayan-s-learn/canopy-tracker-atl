@@ -154,6 +154,36 @@ class BaselineChecks(unittest.TestCase):
     def test_archived_controls(self):
         self.assertEqual(exercise(), read(HERE / "fixtures.json"))
 
+    def test_comparisons_keep_texture_neighborhoods_on_one_side(self):
+        n = 64
+        mid = n // 2
+        early = np.full((4, n, n), 100, np.uint8)
+        pixels = {2023: early, 2025: early.repeat(2, 1).repeat(2, 2)}
+        grid = from_origin(0, n * 0.6, 0.6, 0.6)
+        rows, cols = np.indices((n, n))
+        sides = {
+            "left": (box(0, 0, mid * 0.6, n * 0.6), cols < mid),
+            "right": (box(mid * 0.6, 0, n * 0.6, n * 0.6), cols >= mid),
+        }
+        config = {
+            **read(HERE / "config.json"),
+            "fresh_controls": {"fixture": []},
+            "t05_roles": {"fixture": []},
+        }
+        summary, _, _, _ = analyze_pair(
+            "fixture", pixels, {2023: "2023", 2025: "2025"}, grid, sides, [], config
+        )
+        # Two pixels for texture and two for trial offsets at each outer and seam edge.
+        eligible = (
+            (rows >= 4)
+            & (rows < n - 4)
+            & (cols >= 4)
+            & (cols < n - 4)
+            & ((cols < mid - 4) | (cols >= mid + 4))
+        )
+        self.assertEqual(summary["common_scored_m2"], area(eligible))
+        self.assertEqual(summary["native_scored_m2"], round((n - 4) ** 2 * 0.36, 2))
+
     def test_exact_texture_cutoff_and_unknown(self):
         config = read(HERE / "config.json")
         bands = np.full((4, 11, 11), 60, dtype=np.uint8)

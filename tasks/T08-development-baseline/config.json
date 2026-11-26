@@ -6,14 +6,54 @@
   "floors_acres": [0.05, 0.10, 0.25],
   "match_iou_min": 0.10,
   "fresh_controls": {
-    "park": [[18,46,"fit","west path edge"],[132,197,"fit","southern path bend"],[182,238,"check","southeast path junction"],[235,31,"check","northeast path verge"],[183,235,"fit","southern path bend"],[231,157,"check","east cleared path verge"]],
-    "west": [[144,162,"check","field marking"],[213,174,"check","east track edge"],[97,190,"fit","west track edge"],[218,53,"check","northeast paved aisle"],[67,54,"fit","north street curb by drive"],[26,65,"check","west driveway apron"],[152,36,"fit","northern drive beside building"],[51,215,"fit","southwest paved driveway"],[216,183,"fit","southeast track edge"],[216,231,"check","southeast track straight"],[97,234,"check","southwest inner track edge"]],
-    "kirkwood": [[72,246,"fit","west driveway"],[300,454,"check","southern roadway bend"],[161,86,"check","northern driveway"],[432,295,"fit","east road bend"],[266,166,"fit","central driveway edge"]],
-    "west-fulton": [[286,91,"fit","north cul-de-sac"],[66,298,"check","southwest drive entrance"],[239,423,"fit","south road junction"],[478,352,"check","east road and drive"],[96,70,"check","west road bend"],[38,70,"fit","northwest junction"],[215,45,"fit","north-central paved approach"],[430,75,"fit","northeast driveway approach"],[315,43,"check","northern driveway near house"],[150,290,"fit","southwest road bend"],[54,380,"fit","southwest street and driveway"],[385,365,"fit","southeast road edge"],[278,447,"check","southern driveway apron"]]
+    "park": [
+      [18, 46, "fit", "west path edge"],
+      [132, 197, "fit", "southern path bend"],
+      [182, 238, "check", "southeast path junction"],
+      [235, 31, "check", "northeast path verge"],
+      [183, 235, "fit", "southern path bend"],
+      [231, 157, "check", "east cleared path verge"]
+    ],
+    "west": [
+      [144, 162, "check", "field marking"],
+      [213, 174, "check", "east track edge"],
+      [97, 190, "fit", "west track edge"],
+      [218, 53, "check", "northeast paved aisle"],
+      [67, 54, "fit", "north street curb by drive"],
+      [26, 65, "check", "west driveway apron"],
+      [152, 36, "fit", "northern drive beside building"],
+      [51, 215, "fit", "southwest paved driveway"],
+      [216, 183, "fit", "southeast track edge"],
+      [216, 231, "check", "southeast track straight"],
+      [97, 234, "check", "southwest inner track edge"]
+    ],
+    "kirkwood": [
+      [72, 246, "fit", "west driveway"],
+      [300, 454, "check", "southern roadway bend"],
+      [161, 86, "check", "northern driveway"],
+      [432, 295, "fit", "east road bend"],
+      [266, 166, "fit", "central driveway edge"]
+    ],
+    "west-fulton": [
+      [286, 91, "fit", "north cul-de-sac"],
+      [66, 298, "check", "southwest drive entrance"],
+      [239, 423, "fit", "south road junction"],
+      [478, 352, "check", "east road and drive"],
+      [96, 70, "check", "west road bend"],
+      [38, 70, "fit", "northwest junction"],
+      [215, 45, "fit", "north-central paved approach"],
+      [430, 75, "fit", "northeast driveway approach"],
+      [315, 43, "check", "northern driveway near house"],
+      [150, 290, "fit", "southwest road bend"],
+      [54, 380, "fit", "southwest street and driveway"],
+      [385, 365, "fit", "southeast road edge"],
+      [278, 447, "check", "southern driveway apron"]
+    ]
   },
   "t05_roles": {
-    "park":["fit"], "west":["fit","fit","check","fit"],
-    "kirkwood":["fit","check","fit","check","diagnostic","check","diagnostic","diagnostic"],
-    "west-fulton":["fit","fit","check","diagnostic","check","diagnostic","diagnostic"]
+    "park": ["fit"],
+    "west": ["fit", "fit", "check", "fit"],
+    "kirkwood": ["fit", "check", "fit", "check", "diagnostic", "check", "diagnostic", "diagnostic"],
+    "west-fulton": ["fit", "fit", "check", "diagnostic", "check", "diagnostic", "diagnostic"]
   }
 }

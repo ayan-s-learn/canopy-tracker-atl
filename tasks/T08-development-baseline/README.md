@@ -24,15 +24,15 @@ On 2026-11-26, the four-window baseline found 20 uncorrected candidates at or ab
 | Site | TIFF footprint m² | Both dates scored m² | Unknown m² | Common comparison m² | Native candidates ≥0.05 / 0.10 / 0.25 acre | Common-grid ≥0.10 acre, raw → hypothetical range |
 |---|---:|---:|---:|---:|---:|---:|
 | Piedmont Park | 23,592.96 | 22,861.44 | 731.52 | 22,141.44 | 0 / 0 / 0 | 0 → 0 |
-| West End | 23,592.96 | 22,861.44 | 731.52 | 21,699.36 | 1 / 0 / 0 | 0 → 0–1 |
+| West End | 23,592.96 | 22,861.44 | 731.52 | 21,258.36 | 1 / 0 / 0 | 0 → 0–1 |
 | Kirkwood | 94,371.84 | 92,706.84 | 1,665.00 | 91,253.16 | 20 / 8 / 0 | 8 → 5–10 |
-| Far west Atlanta | 94,371.84 | 92,903.04 | 1,468.80 | 90,275.40 | 23 / 12 / 2 | 11 → 8–13 |
+| Far west Atlanta | 94,371.84 | 92,903.04 | 1,468.80 | 89,110.44 | 23 / 12 / 2 | 11 → 7–13 |
 
 TIFF masks were valid throughout. The 2023 NAD83/UTM 16N grid has 0.6 m cells. Average each aligned 2×2 block of 2025 samples by band before classification. At each date the rule calls a cell crown when NDVI ≥0.20 and the 5×5 near-infrared population standard deviation ≥10 DN. An RGB mean below 35 DN or an incomplete texture neighborhood makes the center unknown. A known crown followed by a known noncrown contributes to gross candidate loss. Four-neighbor components form before any area filter. The first row-major pixel identifies each component within a site and scenario. Native coverage excludes the reservation margin and has zero additional spatial exclusions. Area is projected grid area at 0.36 m² per cell.
 
 The [control ledger](controls.json) replays all 20 T05 anchors and adds 35 candidate controls. Five of the six indexed sides initially lacked enough spatially independent placements to pass even with perfect matches. Seventeen supplemental locations and roles were pinned at `a414398` before measuring them. All six sides then had at least three fit and two check placements before the correlation screen. Each displacement is the late feature position minus its early position, signed east/north in metres. Full-support overlap, a boundary crossing, a diagnostic-only role or failure of the T05 correlation screen can exclude a control. West End admitted one fit and one check on the same indexed side, with offsets (+2.4, −0.6) and (+0.6, +1.8) m. Kirkwood and Piedmont each admitted one check. Far west admitted one fit and four checks spread over two sides. The [site ledger](sites.json) reports each 2023/2025 exposure-ID pair and its supported and uncertain area using cell centers. Index polygons describe possible seams. The strip used in the four-band export remains unverified.
 
-Each hypothetical trial samples the late mask 0 or ±2 cells in each axis, including diagonals. Intersect all trials' known cells and require the source center to remain inside the same indexed side for every comparison. The site ledger separates image-edge and internal-seam exclusions from unknown area. On the common mask Kirkwood has eight raw candidates ≥0.10 acre. Sampling two rows south and two columns east leaves five. Four raw candidates lose their match, four retain one and one new candidate appears. The [comparison ledger](comparisons.json.gz) gives counts, areas and individual links for every trial. At each floor, keep every raw/trial pair with intersection over union ≥0.10. One-to-many links mark splits, many-to-one links mark merges. The raw entry also links native IDs to the common-mask IDs. Displacements in these trials are sensitivity assumptions.
+Each hypothetical trial samples the late mask 0 or ±2 cells in each axis, including diagonals. Intersect all trials' known cells and require the complete 5×5 texture neighborhoods at the early center and every sampled late center to stay on the same indexed side. The site ledger separates image-edge and internal-seam exclusions from unknown area. On the common mask Kirkwood has eight raw candidates ≥0.10 acre. Sampling two rows south and two columns east leaves five. Four raw candidates lose their match, four retain one and one new candidate appears. The [comparison ledger](comparisons.json.gz) gives counts, areas and individual links for every trial. At each floor, keep every raw/trial pair with intersection over union ≥0.10. One-to-many links mark splits, many-to-one links mark merges. The raw entry also links native IDs to the common-mask IDs. Displacements in these trials are sensitivity assumptions.
 
 ### Paired inspection
 
@@ -52,16 +52,19 @@ In the additional low-loss crown tiles, textured crowns remain visible at Piedmo
 Use this PR revision, CPython 3.14.7, the [raster requirements](../../requirements.txt), SciPy 1.18.1, Shapely 2.2.0 and pyproj 3.8.0. The [config](config.json) pins the thresholds, controls and their roles. Use the T05 recovery instructions linked in the brief for missing TIFFs. The runner checks the archived pixels, grid, masks and reservation tile/date metadata before scoring. Source and rights details are in the T01 and T05 manifests.
 
 ```sh
+(
+set -eu
 task=tasks/T08-development-baseline
 out=$(mktemp -d)
 python "$task/baseline.py" data/imagery "$out"
 python -m unittest discover -s "$task" -v
-for file in sites.json controls.json; do cmp "$task/$file" "$out/$file" || exit 1; done
+for file in sites.json controls.json; do cmp "$task/$file" "$out/$file"; done
 for file in events.geojson.gz comparisons.json.gz; do
   gzip -dc "$task/$file" > "$out/reference"
   gzip -dc "$out/$file" > "$out/rebuilt"
-  cmp "$out/reference" "$out/rebuilt" || exit 1
+  cmp "$out/reference" "$out/rebuilt"
 done
+)
 ```
 
 The [event layer](events.geojson.gz) contains all 6,962 uncorrected components in WGS84, including subthreshold components. Use `area_m2` for filtering. Flags identify possible truncation at unknown or footprint edges and exposure to unresolved registration. Event replay on this host matched exactly for IDs, geometries, counts and areas. The eight cached TIFFs occupied 13,121,956 bytes. The four generated evidence files occupied about 1.36 MB. A warm local CPU run took 1.8 s, excluding input recovery and environment setup.
