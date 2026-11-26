@@ -1,0 +1,12 @@
+# T09 — Prepare a blinded development calibration
+
+## Brief
+
+Turn the [T06 reference and staffing proposal](../T06-reference-design/README.md#staffing-and-decision) at `2ac905e` into an assignment the owner can hand to two interpreters and a third adjudicator. Package preparation can start from T01/T05 without detector predictions, a permit delivery or interpreter commitments. Reserve this folder and ignored cache `data/imagery/t09/`.
+
+- Assemble the same 12 exercises for each interpreter, eight contained subwindows from the four existing [development reads](../T05-paired-coverage/development-windows.geojson) and four synthetic cases. Supply only previously read context. Cover the protocol's edge, shadow/unknown, stable and visible-change decisions in the synthetic cases. Pin both dates, grid, display settings and case IDs. Disclose any unresolved displacement in the instructions without revealing an expected disposition. Keep answer keys, predictions, records and the other reader’s answers out of the reader packet.
+- Supply a working image viewer or instructions for an accessible tool, unmarked image pairs, a blank return form and a private return path. Collect per-epoch crown and unknown geometry, visible loss, edge flags, confidence, reasons and active minutes. Distinguish a completed no-loss read from a skipped or unreadable case. Keep both original returns. Give the adjudicator a separate disagreement workflow with rationale, unresolved status and time.
+- From a clean directory, rebuild or recover the packet using pinned inputs, open a pair and complete a synthetic read through scoring and adjudication. Verify counts, coordinates and missing-data handling. Provide hashes, distribution and resume instructions. Keep raw imagery and identifiable returns outside Git. Document prior exposure and conflicts for each role before assigning readers.
+- The package is complete when the integrator can reproduce that dry run and the owner can distribute and receive it with the stated tools and access. Then propose a staffing action under **For integration** with the pinned package, skill requirements and the T06 budget of 2.5 hours per reader and 2 hours for adjudication. No recruitment or paid commitment is authorized.
+
+Use returned development reads to refine scorable labels, disagreement handling and workload. A later probability pilot would be needed to size reference sampling for prevalence, missed loss and queue yield. Package acceptance and human delivery are separate decisions.
