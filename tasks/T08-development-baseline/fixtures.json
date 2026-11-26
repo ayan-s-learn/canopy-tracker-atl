@@ -155,6 +155,59 @@
       },
       "scored_m2": 22861.44
     },
+    "shift_raw_supported": {
+      "expected": {
+        "area_m2": 151.56,
+        "events": [
+          "fixture-60-65"
+        ],
+        "floors": {
+          "0": {
+            "count": 1,
+            "m2": 151.56
+          },
+          "0.05": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.1": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "f1d67eda8a54de983456df0ef23486d0f054c26eff93c697f1151e2ef36d7d13"
+      },
+      "observed": {
+        "area_m2": 151.56,
+        "events": [
+          "fixture-60-65"
+        ],
+        "floors": {
+          "0": {
+            "count": 1,
+            "m2": 151.56
+          },
+          "0.05": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.1": {
+            "count": 0,
+            "m2": 0.0
+          },
+          "0.25": {
+            "count": 0,
+            "m2": 0.0
+          }
+        },
+        "mask_sha256": "f1d67eda8a54de983456df0ef23486d0f054c26eff93c697f1151e2ef36d7d13"
+      },
+      "scored_m2": 5081.04
+    },
     "shift_registered": {
       "expected": {
         "area_m2": 0.0,
@@ -202,7 +255,7 @@
         },
         "mask_sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
       },
-      "scored_m2": 5080.32
+      "scored_m2": 5081.04
     }
   },
   "check_residuals_east_north_m": [

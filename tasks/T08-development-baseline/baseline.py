@@ -1,30 +1,29 @@
 import argparse
-from datetime import datetime, timezone
 import gzip
 import json
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
-from pyproj import Transformer
-from rasterio.features import shapes
-from rasterio.transform import from_bounds
-from scipy import ndimage
-from shapely import transform as project
-from shapely.geometry import mapping, shape
-from shapely.geometry.polygon import orient
-
 from detector import (
+    ACRE_M2,
+    CROSS,
+    PIXEL_M2,
     classify,
     components,
     distribution,
     event_id,
     match,
     sample_late,
-    CROSS,
-    ACRE_M2,
-    PIXEL_M2,
 )
+from pyproj import Transformer
+from rasterio.features import shapes
+from rasterio.transform import from_bounds
 from registration import HERE, T05, area, exposure_sides, registration, t05
+from scipy import ndimage
+from shapely import transform as project
+from shapely.geometry import mapping, shape
+from shapely.geometry.polygon import orient
 
 
 def read(path):
@@ -44,7 +43,7 @@ def inputs(cache, samples, tiles):
         pixels[year] = t05.verify(path.read_bytes(), sample)
         attrs = sample["attributes"]
         date = datetime.fromtimestamp(
-            attrs["acquisition_date" if year == 2023 else "QQDATE"] / 1000, timezone.utc
+            attrs["acquisition_date" if year == 2023 else "QQDATE"] / 1000, UTC
         ).date()
         if attrs["Name"] not in tiles or not attrs["Name"].endswith(
             date.strftime("%Y%m%d")
@@ -54,7 +53,7 @@ def inputs(cache, samples, tiles):
         grids.append(from_bounds(*sample["bbox"], *sample["size"]))
     early, late = grids
     if not (
-        early.almost_equals(late * late.scale(2), precision=1e-7)
+        early.almost_equals(late @ late.scale(2), precision=1e-7)
         and np.allclose([early.a, early.e], [0.6, -0.6], rtol=0, atol=1e-7)
     ):
         raise ValueError("Incompatible pair for block averaging")
@@ -73,25 +72,25 @@ def features(site, cc, grid, known, supported, dates):
         # GDAL may emit self-touching rings at diagonal contacts within one component.
         if not polygon.is_valid:
             polygon = polygon.buffer(0)
-        if abs(polygon.area - sizes[i] * 0.36) > 1e-5:
+        if abs(polygon.area - sizes[i] * PIXEL_M2) > 1e-5:
             raise ValueError("Component area differs from polygon area")
         projected = project(polygon, to_wgs, interleaved=False)
         if projected.geom_type == "Polygon":
             projected = orient(projected)
-        yield dict(
-            type="Feature",
-            id=event_id(site, keys[i], labels.shape[1]),
-            properties=dict(
-                site=site,
-                pixels=int(sizes[i]),
-                area_m2=round(sizes[i] * 0.36, 2),
-                first=dates[2023],
-                second=dates[2025],
-                edge_truncated_possible=i in boundary,
-                registration_uncertain=i in reg_unknown,
-            ),
-            geometry=mapping(projected),
-        )
+        yield {
+            "type": "Feature",
+            "id": event_id(site, keys[i], labels.shape[1]),
+            "properties": {
+                "site": site,
+                "pixels": int(sizes[i]),
+                "area_m2": round(sizes[i] * PIXEL_M2, 2),
+                "first": dates[2023],
+                "second": dates[2025],
+                "edge_truncated_possible": i in boundary,
+                "registration_uncertain": i in reg_unknown,
+            },
+            "geometry": mapping(projected),
+        }
 
 
 def scenarios(supported, offsets, sides, controls):
@@ -134,7 +133,7 @@ def scenarios(supported, offsets, sides, controls):
                     yield f"hypothetical_rc_{dr}_{dc}", trial
 
 
-def inspect_tiles(loss, known, crown):
+def inspect_tiles(loss, known, crown, reported):
     tiles = []
     for r in range(0, loss.shape[0], 32):
         for c in range(0, loss.shape[1], 32):
@@ -146,16 +145,27 @@ def inspect_tiles(loss, known, crown):
     # Peak loss count; among zero-loss tiles prefer the most known prior crown.
     flagged = max((t for t in tiles if t[2]), key=lambda t: t[2], default=None)
     quiet = max((t for t in tiles if not t[2]), key=lambda t: t[3], default=None)
-    return dict(flagged=flagged, apparently_unchanged=quiet)
+    quiet_crown = min(
+        (
+            t
+            for t in tiles
+            if t[3] >= 256 and not reported[t[0] : t[0] + 32, t[1] : t[1] + 32].any()
+        ),
+        key=lambda t: (t[2] / t[3], -t[3]),
+        default=None,
+    )
+    return {
+        "flagged": flagged,
+        "apparently_unchanged": quiet,
+        "low_loss_crown": quiet_crown,
+    }
 
 
-def run_site(site, cache, samples, tiles, prior, config):
-    pixels, dates, grid = inputs(cache, samples, tiles)
+def analyze_pair(site, pixels, dates, grid, sides, prior, config):
     h, w = pixels[2023].shape[1:]
     late = pixels[2025].reshape(4, h, 2, w, 2).mean(axis=(2, 4))
     early_crown, early_known = classify(pixels[2023], config)
     late_crown, late_known = classify(late, config)
-    sides = exposure_sides(grid, (h, w))
     controls, side_report, supported, offsets = registration(
         site, pixels, grid, config, prior, sides
     )
@@ -183,19 +193,19 @@ def run_site(site, cache, samples, tiles, prior, config):
         if name == "raw":
             raw = corrected = candidate
         reference = raw if name == "supported_correction" else corrected
-        labels, sizes, keys = candidate
+        _, sizes, keys = candidate
         above = (
             np.flatnonzero(
                 sizes[1:] * PIXEL_M2 >= min(config["floors_acres"]) * ACRE_M2
             )
             + 1
         )
-        entry = dict(
-            totals=distribution(sizes, config["floors_acres"]),
-            candidate_m2={
-                event_id(site, keys[i], w): round(sizes[i] * 0.36, 2) for i in above
+        entry = {
+            "totals": distribution(sizes, config["floors_acres"]),
+            "candidate_m2": {
+                event_id(site, keys[i], w): round(sizes[i] * PIXEL_M2, 2) for i in above
             },
-        )
+        }
         if name == "raw":
             entry["native_to_common_lineage"] = match(site, native, candidate, config)
         if name != "raw":
@@ -204,28 +214,31 @@ def run_site(site, cache, samples, tiles, prior, config):
         comparisons[name] = entry
         if name == "supported_correction":
             corrected = candidate
-    summary = dict(
-        dates=dates,
-        native_m2=round(h * w * 0.36, 2),
-        native_excluded_m2=0,
-        epoch_known_crown_m2=[
+    summary = {
+        "dates": dates,
+        "native_m2": round(h * w * PIXEL_M2, 2),
+        "native_excluded_m2": 0,
+        "epoch_known_crown_m2": [
             area(early_known & early_crown),
             area(late_known & late_crown),
         ],
-        native_scored_m2=area(native_known),
-        native_unknown_m2=area(~native_known),
-        epoch_unknown_m2=[area(~early_known), area(~late_known)],
-        common_scored_m2=area(common),
-        comparison_spatial_excluded_m2=area(~spatial),
-        comparison_unknown_m2=area(spatial & ~common),
-        comparison_outside_image_m2=area(~inside_all),
-        comparison_seam_excluded_inside_m2=area(inside_all & ~spatial),
-        registration=side_report,
-        native_counts=distribution(native[1], config["floors_acres"]),
-        inspection_rc_loss_prior_crown=inspect_tiles(
-            native_loss, native_known, early_crown
+        "native_scored_m2": area(native_known),
+        "native_unknown_m2": area(~native_known),
+        "epoch_unknown_m2": [area(~early_known), area(~late_known)],
+        "common_scored_m2": area(common),
+        "comparison_spatial_excluded_m2": area(~spatial),
+        "comparison_unknown_m2": area(spatial & ~common),
+        "comparison_outside_image_m2": area(~inside_all),
+        "comparison_seam_excluded_inside_m2": area(inside_all & ~spatial),
+        "registration": side_report,
+        "native_counts": distribution(native[1], config["floors_acres"]),
+        "inspection_rc_loss_prior_crown": inspect_tiles(
+            native_loss,
+            native_known,
+            early_crown,
+            (native[0] != 0) & (native[1][native[0]] * PIXEL_M2 >= 0.10 * ACRE_M2),
         ),
-    )
+    }
     return (
         summary,
         controls,
@@ -266,21 +279,22 @@ def main():
     for reservation in read(T05 / "development-windows.geojson")["features"]:
         props = reservation["properties"]
         site = props["site"]
-        summaries[site], controls[site], comparisons[site], fs = run_site(
-            site,
-            args.imagery_cache,
-            sorted((s for s in samples if s["site"] == site), key=lambda s: s["year"]),
-            props["tiles"],
-            prior[site],
-            config,
+        samples_here = sorted(
+            (s for s in samples if s["site"] == site), key=lambda s: s["year"]
         )
+        pixels, dates, grid = inputs(args.imagery_cache, samples_here, props["tiles"])
+        sides = exposure_sides(grid, pixels[2023].shape[1:])
+        summaries[site], controls[site], comparisons[site], fs = analyze_pair(
+            site, pixels, dates, grid, sides, prior[site], config
+        )
+
         events.extend(fs)
     save(args.output / "sites.json", summaries)
     save(args.output / "controls.json", controls)
     save(args.output / "comparisons.json.gz", comparisons)
     save(
         args.output / "events.geojson.gz",
-        dict(type="FeatureCollection", features=events),
+        {"type": "FeatureCollection", "features": events},
     )
 
 

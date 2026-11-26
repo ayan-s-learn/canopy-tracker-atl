@@ -2,25 +2,26 @@
 
 import gzip
 import json
-from pathlib import Path
 import sys
+from pathlib import Path
 
 import numpy as np
 from pyproj import Transformer
 from rasterio.features import geometry_mask
-from shapely import segmentize, transform as project
+from shapely import intersects_xy, segmentize
+from shapely import transform as project
 from shapely.geometry import MultiPoint, Polygon, box
 from shapely.ops import unary_union
 
 HERE = Path(__file__).resolve().parent
 T05 = HERE.parent / "T05-paired-coverage"
 sys.path.insert(0, str(T05))
-import check_windows as t05  # noqa: E402
+import check_windows as t05
 
 
 def exposure_sides(grid, shape):
     """Intersect source polygons before assigning native grid cell centers."""
-    window = box(*(grid * (0, shape[0])), *(grid * (shape[1], 0)))
+    window = box(*(grid @ (0, shape[0])), *(grid @ (shape[1], 0)))
     layers = [("", window)]
     to_utm = Transformer.from_crs(4326, 26916, always_xy=True).transform
     for year, entry in json.loads(
@@ -63,7 +64,7 @@ def registration(site, pixels, grid, config, prior, sides):
         anchors.append((anchor, role, "T05"))
     for x, y, role, feature in config["fresh_controls"][site]:
         anchors.append(
-            (dict(pixel_xy=[x, y], half_size=9, feature=feature), role, "T08")
+            ({"pixel_xy": [x, y], "half_size": 9, "feature": feature}, role, "T08")
         )
     records = []
     footprints = []
@@ -72,7 +73,7 @@ def registration(site, pixels, grid, config, prior, sides):
         x, y = anchor["pixel_xy"]
         # Search + binomial smoothing + gradient neighbor.
         r = anchor["half_size"] + t05.SEARCH_PIXELS + 3
-        footprint = box(*(grid * (x - r, y + r + 1)), *(grid * (x + r + 1, y - r)))
+        footprint = box(*(grid @ (x - r, y + r + 1)), *(grid @ (x + r + 1, y - r)))
         side = next(
             (k for k, (geom, _) in sides.items() if geom.covers(footprint)), None
         )
@@ -105,9 +106,8 @@ def registration(site, pixels, grid, config, prior, sides):
         accepted = [c for c in records if c["side"] == side and c["rejection"] is None]
         fit = [c for c in accepted if c["role"] == "fit"]
         checks = [c for c in accepted if c["role"] == "check"]
-        hull = MultiPoint(
-            [grid * (c["pixel_xy"][0] + 0.5, c["pixel_xy"][1] + 0.5) for c in fit]
-        ).convex_hull
+        # Integer center indices keep collinear controls collinear at large UTM origins.
+        hull = MultiPoint([c["pixel_xy"] for c in fit]).convex_hull
         enough = len(fit) >= 3 and len(checks) >= 2 and hull.area > 0
         offset = None
         reason = "insufficient independent fit/check support"
@@ -124,21 +124,33 @@ def registration(site, pixels, grid, config, prior, sides):
                 c["residual_east_north_m"] = vector.tolist()
                 residuals.append(np.linalg.norm(vector))
             if max(residuals) <= 1.2 + 1e-9:
-                support = geometry_mask([hull], cells.shape, grid, invert=True) & cells
-                supported |= support
-                offsets[:, support] = np.array(offset)[:, None]
-                reason = None
+                rows, cols = np.nonzero(cells)
+                inside = intersects_xy(hull, cols, rows)
+                if inside.any():
+                    rr, cc = rows[inside], cols[inside]
+                    supported[rr, cc] = True
+                    offsets[:, rr, cc] = np.array(offset)[:, None]
+                    reason = None
+                else:
+                    reason = "no native cell center within fit hull"
             else:
                 reason = "residual exceeds 1.2 m"
-        report[side] = dict(
-            native_m2=area(cells),
-            supported_m2=area(cells & supported),
-            uncertain_m2=area(cells & ~supported),
-            fit_count=len(fit),
-            check_count=len(checks),
-            trial_sampling_offset_rc=offset,
-            abstention=reason,
-        )
+        allocated = [
+            c
+            for c in records
+            if c["side"] == side and c["rejection"] in (None, "T05 match screen")
+        ]
+        report[side] = {
+            "fit_before_match_screen": sum(c["role"] == "fit" for c in allocated),
+            "check_before_match_screen": sum(c["role"] == "check" for c in allocated),
+            "native_m2": area(cells),
+            "supported_m2": area(cells & supported),
+            "uncertain_m2": area(cells & ~supported),
+            "fit_count": len(fit),
+            "check_count": len(checks),
+            "trial_sampling_offset_rc": offset,
+            "abstention": reason,
+        }
     return records, report, supported, offsets
 
 

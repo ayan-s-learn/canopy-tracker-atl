@@ -11,10 +11,13 @@ CROSS = ndimage.generate_binary_structure(2, 1)
 def classify(bands, config):
     red, green, blue, nir = bands.astype("float64")
     n = config["texture_window_px"]
-    mean = ndimage.uniform_filter(nir, n)
-    variance = np.maximum(0, ndimage.uniform_filter(nir * nir, n) - mean * mean)
+    # With uint8 samples or 2x2 averages these sums are exact, even at the SD threshold.
+    kernel = np.ones((n, n))
+    total = ndimage.correlate(nir, kernel)
+    total_sq = ndimage.correlate(nir * nir, kernel)
+    textured = n * n * total_sq - total * total >= (n * n * config["nir_sd_min"]) ** 2
     ndvi = (nir - red) / np.maximum(1, nir + red)
-    crown = (ndvi >= config["ndvi_min"]) & (variance >= config["nir_sd_min"] ** 2)
+    crown = (ndvi >= config["ndvi_min"]) & textured
     dark = (red + green + blue) / 3 < config["shadow_rgb_mean_below"]
     known = ~dark
     radius = n // 2
@@ -52,10 +55,10 @@ def event_id(site, position, width):
 def distribution(sizes, floors):
     areas = sizes[1:] * PIXEL_M2
     return {
-        str(acres): dict(
-            count=int((areas >= acres * ACRE_M2).sum()),
-            m2=round(float(areas[areas >= acres * ACRE_M2].sum()), 2),
-        )
+        str(acres): {
+            "count": int((areas >= acres * ACRE_M2).sum()),
+            "m2": round(float(areas[areas >= acres * ACRE_M2].sum()), 2),
+        }
         for acres in [0, *floors]
     }
 
@@ -84,13 +87,13 @@ def match(site, base, trial, config):
         kept = [(l, r, s) for l, r, s in edges if l in aa and r in bb]
         lhs = [l for l, _, _ in kept]
         rhs = [r for _, r, _ in kept]
-        report[str(floor)] = dict(
-            retained_links=[
+        report[str(floor)] = {
+            "retained_links": [
                 [ids(a_keys, [l])[0], ids(b_keys, [r])[0], s] for l, r, s in kept
             ],
-            lost=ids(a_keys, aa - set(lhs)),
-            new=ids(b_keys, bb - set(rhs)),
-            split=ids(a_keys, {l for l in lhs if lhs.count(l) > 1}),
-            merged=ids(b_keys, {r for r in rhs if rhs.count(r) > 1}),
-        )
+            "lost": ids(a_keys, aa - set(lhs)),
+            "new": ids(b_keys, bb - set(rhs)),
+            "split": ids(a_keys, {l for l in lhs if lhs.count(l) > 1}),
+            "merged": ids(b_keys, {r for r in rhs if rhs.count(r) > 1}),
+        }
     return report

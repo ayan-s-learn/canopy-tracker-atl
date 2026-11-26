@@ -10,7 +10,7 @@
       "2025": "2025-10-11"
     },
     "epoch_known_crown_m2": [
-      37267.2,
+      37268.28,
       34695.36
     ],
     "epoch_unknown_m2": [
@@ -29,12 +29,18 @@
         96,
         656,
         673
+      ],
+      "low_loss_crown": [
+        288,
+        448,
+        49,
+        384
       ]
     },
     "native_counts": {
       "0": {
         "count": 3319,
-        "m2": 21735.72
+        "m2": 21736.44
       },
       "0.05": {
         "count": 20,
@@ -56,7 +62,9 @@
     "registration": {
       "17/23917": {
         "abstention": "insufficient independent fit/check support",
+        "check_before_match_screen": 5,
         "check_count": 1,
+        "fit_before_match_screen": 4,
         "fit_count": 0,
         "native_m2": 94371.84,
         "supported_m2": 0.0,
@@ -76,7 +84,7 @@
       "2025": "2025-10-11"
     },
     "epoch_known_crown_m2": [
-      7948.8,
+      7949.88,
       10153.8
     ],
     "epoch_unknown_m2": [
@@ -95,12 +103,18 @@
         96,
         424,
         480
+      ],
+      "low_loss_crown": [
+        160,
+        160,
+        59,
+        402
       ]
     },
     "native_counts": {
       "0": {
         "count": 976,
-        "m2": 3103.92
+        "m2": 3104.64
       },
       "0.05": {
         "count": 0,
@@ -122,7 +136,9 @@
     "registration": {
       "17/25065": {
         "abstention": "insufficient independent fit/check support",
-        "check_count": 0,
+        "check_before_match_screen": 2,
+        "check_count": 1,
+        "fit_before_match_screen": 3,
         "fit_count": 0,
         "native_m2": 23592.96,
         "supported_m2": 0.0,
@@ -161,6 +177,12 @@
         96,
         454,
         511
+      ],
+      "low_loss_crown": [
+        128,
+        224,
+        97,
+        413
       ]
     },
     "native_counts": {
@@ -188,7 +210,9 @@
     "registration": {
       "17/24140": {
         "abstention": "insufficient independent fit/check support",
+        "check_before_match_screen": 2,
         "check_count": 0,
+        "fit_before_match_screen": 3,
         "fit_count": 0,
         "native_m2": 8612.28,
         "supported_m2": 0.0,
@@ -197,7 +221,9 @@
       },
       "17/24188": {
         "abstention": "insufficient independent fit/check support",
+        "check_before_match_screen": 3,
         "check_count": 1,
+        "fit_before_match_screen": 4,
         "fit_count": 1,
         "native_m2": 14980.68,
         "supported_m2": 0.0,
@@ -217,7 +243,7 @@
       "2025": "2025-10-15"
     },
     "epoch_known_crown_m2": [
-      31240.8,
+      31241.52,
       20898.36
     ],
     "epoch_unknown_m2": [
@@ -236,12 +262,18 @@
         224,
         674,
         743
+      ],
+      "low_loss_crown": [
+        448,
+        384,
+        61,
+        393
       ]
     },
     "native_counts": {
       "0": {
         "count": 2291,
-        "m2": 23120.28
+        "m2": 23120.64
       },
       "0.05": {
         "count": 23,
@@ -263,8 +295,10 @@
     "registration": {
       "17/19582": {
         "abstention": "insufficient independent fit/check support",
-        "check_count": 1,
-        "fit_count": 0,
+        "check_before_match_screen": 3,
+        "check_count": 2,
+        "fit_before_match_screen": 5,
+        "fit_count": 1,
         "native_m2": 31740.84,
         "supported_m2": 0.0,
         "trial_sampling_offset_rc": null,
@@ -272,7 +306,9 @@
       },
       "17/20857": {
         "abstention": "insufficient independent fit/check support",
+        "check_before_match_screen": 4,
         "check_count": 2,
+        "fit_before_match_screen": 5,
         "fit_count": 0,
         "native_m2": 62631.0,
         "supported_m2": 0.0,
