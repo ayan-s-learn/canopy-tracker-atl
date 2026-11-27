@@ -8,7 +8,7 @@ import shutil
 from stat import S_IMODE
 from tempfile import TemporaryDirectory
 
-from shapely import Polygon, box, union_all
+from shapely import Polygon, box, get_parts, union_all
 
 from build_packet import LAYERS, YEARS, blank_case, digest, dump_json, file_hash, read_json, write_assignment
 
@@ -121,8 +121,8 @@ def measure(item, readers, scale):
             unknown = union_all([masks[f'unknown_{period}'] for period in UNKNOWN])
             loss = masks['loss'].intersection(core)
             visible = loss.difference(unknown)
-            if visible.area and (not visible.intersection(masks['crown_2023']).area
-                                 or not visible.difference(masks['crown_2025']).area):
+            endpoint_loss = masks['crown_2023'].difference(masks['crown_2025'])
+            if visible.difference(endpoint_loss).area:
                 reasons.append(f'reader {reader} loss conflicts with their crown traces')
             result.update(
                 disposition=('visible_loss' if visible.area else
@@ -131,7 +131,8 @@ def measure(item, readers, scale):
                 visible_loss_m2=area(visible), traced_loss_m2=area(loss),
                 unknown_m2={period: area(masks[f'unknown_{period}'].intersection(core)) for period in UNKNOWN},
                 trace_touches_crop=any(mask.intersects(crop.boundary) for mask in masks.values()),
-                loss_crosses_core=(loss.area > 0 and masks['loss'].difference(core).area > 0),
+                loss_crosses_core=any(part.intersection(core).area > 0 and part.difference(core).area > 0
+                                      for part in get_parts(masks['loss'])),
             )
         details.append(result)
 

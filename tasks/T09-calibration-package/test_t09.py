@@ -152,6 +152,20 @@ class ScoringChecks(unittest.TestCase):
         self.assertIn('reader A loss conflicts with their crown traces', result['adjudication_reasons'])
         self.assertEqual(result['readers'][0]['visible_loss_m2'], 36)
 
+    def test_persistent_crown_and_noncrown_cannot_jointly_support_loss(self):
+        crown = ring(40, 40, 50, 50)
+        a = complete('C01', 1, crown_2023=crown, crown_2025=crown, loss=ring(40, 40, 60, 50))
+        result = self.measure(a, a)
+        self.assertEqual(result['readers'][0]['traced_loss_m2'], 72)
+        self.assertIn('reader A loss conflicts with their crown traces', result['adjudication_reasons'])
+
+    def test_separate_inside_and_outside_events_do_not_cross_core(self):
+        a = complete('C01', 1)
+        a['masks']['loss'] = a['masks']['crown_2023'] = [ring(5, 5, 15, 15), ring(40, 40, 50, 50)]
+        result = self.measure(a, a)
+        self.assertFalse(result['readers'][0]['loss_crosses_core'])
+        self.assertEqual(result['adjudication_reasons'], [])
+
     def test_transition_uncertainty_does_not_mask_either_epoch_crown(self):
         trace = ring(40, 40, 50, 50)
         a = complete('C01', 1, crown_2023=trace, unknown_change=trace)
