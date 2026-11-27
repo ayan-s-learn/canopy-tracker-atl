@@ -10,3 +10,9 @@ Turn the [T06 reference and staffing proposal](../T06-reference-design/README.md
 - The package is complete when the integrator can reproduce that dry run and the owner can distribute and receive it with the stated tools and access. Then propose a staffing action under **For integration** with the pinned package, skill requirements and the T06 budget of 2.5 hours per reader and 2 hours for adjudication. No recruitment or paid commitment is authorized.
 
 After staffing and delivery, actual returns can inform labeling rules and workload for the supplied context. Prevalence, missed loss and queue yield require separate probability sampling.
+
+## Progress
+
+Owner: Codex, 2026-11-27 09:35 EST. Branch `task/T09-calibration-package` from AR02 `c41c8e7`.
+
+Build and replay an offline assignment using only the eight pinned T01/T05 rasters and four synthetic cases. Use local private staging for the dry run. Next, pin crop and grid choices and test the reader, scoring and adjudication flow.
