@@ -1,0 +1,48 @@
+{
+  "C02": {
+    "crown_common_known_m2": {
+      "2023": 14400.0,
+      "2025": 14364.0
+    },
+    "crown_iou": {
+      "2023": 0.25,
+      "2025": 1
+    },
+    "loss_common_known_m2": 14364.0,
+    "loss_common_known_xor_m2": 54.0,
+    "loss_xor_m2": 72.0,
+    "unknown_xor_m2": {
+      "2023": 0.0,
+      "2025": 36.0,
+      "change": 0.0
+    }
+  },
+  "C06_dispositions": [
+    "no_loss",
+    "unreadable"
+  ],
+  "C06_loss_xor_m2": null,
+  "adjudication": {
+    "C02": "resolved",
+    "C06": "unresolved"
+  },
+  "minutes": {
+    "A01": {
+      "missing": 0,
+      "recorded": 12,
+      "total": 3.75
+    },
+    "R01": {
+      "missing": 10,
+      "recorded": 2,
+      "total": 4.25
+    },
+    "R02": {
+      "missing": 10,
+      "recorded": 2,
+      "total": 6.5
+    }
+  },
+  "packet": "cfe9025fcb63866e7384a20647bc7c3f8b72d75dbb622af2d7d5d65dd06a6cc3",
+  "reader_files": 53
+}

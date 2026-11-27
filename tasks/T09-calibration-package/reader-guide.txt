@@ -1,0 +1,62 @@
+Canopy interpretation
+=====================
+
+Unzip your assignment into a private folder. Open viewer.html in Chrome with
+JavaScript enabled. Use a mouse or trackpad to trace. Enter your assigned code
+and use the Case menu to move through the assignment. Work independently and use only the imagery
+in the packet. Keep the project repository and other readers’ work closed.
+NAIP imagery provided by USDA Farm Service Agency.
+
+The columns show the earlier and later acquisition dates. The upper row is RGB.
+The lower row is the same near-infrared/red/green composite at both dates.
+Both dates use a nominal 0.6 m grid. Registration notes describe displacement
+measured on features in the parent window, where available. The 2025 imagery
+is averaged to that grid. No extra shift is applied. Tile dates have limited
+flight-strip precision. Small position, color and shadow differences can be
+image effects.
+
+The dashed square is the 120 m scoring area. Use the full supplied context to
+trace across it when a crown or loss component continues past the dashed line.
+Follow the visible trace as far as the crop permits and flag continuation past
+the crop. The square lacks the 120 m of surrounding context proposed for later
+evaluation. Hide the scoring boundary, scale and traces for a clean view.
+
+1. On each date, trace overhead tree crowns visible within the scoring square
+   and the visible continuation of anything that crosses it. Trace unknown
+   areas on the corresponding date if shadows, leaf state, seams, missing
+   data or other obscuration prevent a reliable interpretation of that date.
+   Treat other readable areas as noncrown. Use multiple polygons if necessary.
+   For an interior hole, trace pieces that leave the hole open.
+2. If displacement or another date-to-date difference makes the transition
+   unclear even when the individual dates are readable, use Unknown change on
+   the early-date footprint. Trace the part of each early crown that is clearly
+   absent later on the Visible loss layer. Keep separate loss fragments at any
+   size you can interpret. The two dates show visible cover. Leave the cause
+   and exact removal date undetermined.
+3. Select a trace layer, click vertices on its date's RGB or NIR view, and
+   choose Finish polygon. The last vertex is automatically joined to the first.
+   Use Undo vertex during drawing. To correct a saved trace, remove it and
+   redraw. Inspect the traces and the unmarked views before finishing the case.
+4. Mark every case Read complete, Unreadable or Skipped. Use Read complete
+   for a finished read even if the loss mask is empty. For Unreadable or Skipped,
+   clear all geometry, confidence and the crop flag. Enter active minutes
+   for readings and unreadable cases, plus any time spent on skipped cases.
+   Enter confidence for completed reads. In Reasons, explain unreadability
+   or locate unknown areas or crop truncation by date and approximate position.
+5. Keep Chrome downloads in a private folder. Download return when finished
+   and send the JSON only to the coordinator through your agreed one-to-one
+   route. For a break, download a draft and use Resume from file on the same
+   assignment. Keep your final copy until the coordinator verifies receipt.
+
+Adjudicator only
+----------------
+
+The adjudication assignment contains cases flagged by the comparison. Use
+Original traces to inspect one reader at a time. Use the Trace menu to switch
+which original layer is shown. Original overlays are dashed cyan and read-only.
+Hide them as needed and trace your own decision.
+Record the rationale, disposition and active adjudication minutes. Resolved
+requires Read complete. Choose Unresolved when the imagery cannot settle the
+disagreement. For Unreadable or Skipped, clear geometry, confidence and the
+crop flag.
+Return your separate JSON privately to the coordinator.
