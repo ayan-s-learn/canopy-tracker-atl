@@ -99,6 +99,9 @@ def replay(packet, run):
     save_return(source, adjudicator, 'A01', decisions)
     sha = archive(source, vault, adjudicator, 'A01')
     final = finish(scored, vault)
+    with check.assertRaises(FileExistsError):
+        finish(scored, vault)
+    check.assertEqual(read_json(scored / 'adjudication.json'), final)
     check.assertEqual(final['adjudication_sha256'], sha)
     check.assertEqual(final['minutes'], {'total': 3.75, 'recorded': 12, 'missing': 0})
     check.assertEqual(final['cases']['C02']['resolution'], 'resolved')
@@ -141,6 +144,13 @@ class ScoringChecks(unittest.TestCase):
         self.assertEqual(comparison['loss_xor_m2'], 0)
         missing = self.measure(dict(blank_case('C01'), status='skipped'), empty)
         self.assertIsNone(missing['comparison']['unknown_xor_m2']['2023'])
+
+    def test_loss_with_no_support_from_own_crowns_flags_adjudication(self):
+        trace = ring(40, 40, 50, 50)
+        a = complete('C01', 1, crown_2025=trace, loss=trace)
+        result = self.measure(a, a)
+        self.assertIn('reader A loss conflicts with their crown traces', result['adjudication_reasons'])
+        self.assertEqual(result['readers'][0]['visible_loss_m2'], 36)
 
     def test_transition_uncertainty_does_not_mask_either_epoch_crown(self):
         trace = ring(40, 40, 50, 50)

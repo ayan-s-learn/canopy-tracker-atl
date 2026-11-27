@@ -58,6 +58,11 @@ function repaint() {
     if ($('guide').checked) {
       addElement(svg, 'rect', {x: x0, y: y0, width: x1 - x0, height: y1 - y0, fill: 'none',
         stroke: '#fff', 'stroke-dasharray': '4 3', 'vector-effect': 'non-scaling-stroke'});
+      const barX = item.size - 43;
+      const barY = item.size - 9;
+      addElement(svg, 'rect', {x: barX - 4, y: barY - 11, width: 42, height: 16, fill: '#142720'});
+      addElement(svg, 'line', {x1: barX, x2: barX + 20 / assignment.scale_m, y1: barY, y2: barY, stroke: '#fff'});
+      addElement(svg, 'text', {x: barX + 7, y: barY - 3, fill: '#fff', 'font-size': 7}).textContent = '20 m';
     }
     for (const mask of allowedLayers.filter(key => key.endsWith(year) || changeLayers.has(key))) {
       if (mask === layer) {
@@ -71,11 +76,6 @@ function repaint() {
       trace(svg, draft, colors[layer], false);
       for (const [x, y] of draft) addElement(svg, 'circle', {cx: x, cy: y, r: 1, fill: colors[layer]});
     }
-    const barX = item.size - 43;
-    const barY = item.size - 9;
-    addElement(svg, 'rect', {x: barX - 4, y: barY - 11, width: 42, height: 16, fill: '#142720'});
-    addElement(svg, 'line', {x1: barX, x2: barX + 20 / assignment.scale_m, y1: barY, y2: barY, stroke: '#fff'});
-    addElement(svg, 'text', {x: barX + 7, y: barY - 3, fill: '#fff', 'font-size': 7}).textContent = '20 m';
     svg.setAttribute('aria-label', `${year} ${mode} view of ${item.id}`);
   }
   $('finish').disabled = draft.length < 3;

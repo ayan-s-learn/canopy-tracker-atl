@@ -64,7 +64,7 @@ python "$task/score_returns.py" receive "$run/packet" "$run/vault" R02 /private/
 python "$task/score_returns.py" compare "$run/packet" "$run/vault" "$run/scored"
 ```
 
-4. Give only A01 the contents of `scored/adjudicator/` privately. The packet includes the full traces for cases flagged by any difference in full-crop geometry or disposition, incomplete reads, low confidence or possible crop truncation. Even an off-core disagreement can call for adjudication, so A01 may see all 12 cases. Keep the comparison private. A01 records independent geometry where scorable and a rationale, resolved/unresolved status and minutes for every flagged case. Receive that JSON privately, then verify the originals and save the adjudication log separately.
+4. Give only A01 the contents of `scored/adjudicator/` privately. The packet includes the full traces for cases flagged by any difference in full-crop geometry or disposition, incomplete reads, low confidence, possible crop truncation, or a loss trace without support from the same reader’s crown traces. The report keeps the submitted geometry for comparison. Even an off-core disagreement can call for adjudication, so A01 may see all 12 cases. Keep the comparison private. A01 records independent geometry where scorable and a rationale, resolved/unresolved status and minutes for every flagged case. Receive that JSON privately, then verify the originals and save the adjudication log separately.
 
 ```sh
 python "$task/score_returns.py" receive "$run/scored" "$run/vault" A01 /private/path/adjudicator.json

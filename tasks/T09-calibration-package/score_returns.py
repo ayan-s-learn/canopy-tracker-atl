@@ -112,8 +112,8 @@ def measure(item, readers, scale):
 
     core = box(*item['core'])
     crop = box(0, 0, item['size'], item['size'])
-    details = []
-    for record, masks in readers:
+    details, reasons = [], []
+    for reader, (record, masks) in zip(('A', 'B'), readers, strict=True):
         result = {key: record[key] for key in ('status', 'active_minutes', 'confidence', 'reason', 'crop_cutoff')}
         result.update(disposition=record['status'], visible_loss_m2=None, traced_loss_m2=None,
                       unknown_m2=None, trace_touches_crop=None, loss_crosses_core=None)
@@ -121,6 +121,9 @@ def measure(item, readers, scale):
             unknown = union_all([masks[f'unknown_{period}'] for period in UNKNOWN])
             loss = masks['loss'].intersection(core)
             visible = loss.difference(unknown)
+            if visible.area and (not visible.intersection(masks['crown_2023']).area
+                                 or not visible.difference(masks['crown_2025']).area):
+                reasons.append(f'reader {reader} loss conflicts with their crown traces')
             result.update(
                 disposition=('visible_loss' if visible.area else
                              'no_visible_loss_with_unknown' if unknown.intersection(core).area else
@@ -158,7 +161,6 @@ def measure(item, readers, scale):
 
     # Keep disagreements in the supplied context even if their clipped score is identical.
     (_, a), (_, b) = readers
-    reasons = []
     if any(record['status'] != 'complete' for record, _ in readers):
         reasons.append('incomplete read')
     if details[0]['disposition'] != details[1]['disposition']:
@@ -239,8 +241,11 @@ def finish(scored, vault):
                   adjudication_sha256=file_hash(source) if cases else None,
                   minutes=minutes([record for record, _ in adjudication.values()]),
                   cases={key: record for key, (record, _) in adjudication.items()})
-    with (scored / 'adjudication.json').open('x') as output:
-        output.write(dump_json(report))
+    target = scored / 'adjudication.json'
+    with TemporaryDirectory(dir=scored) as staging:
+        log = Path(staging) / target.name
+        log.write_text(dump_json(report))
+        target.hardlink_to(log)
     return report
 
 

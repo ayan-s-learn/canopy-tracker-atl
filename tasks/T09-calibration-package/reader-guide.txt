@@ -19,7 +19,7 @@ The dashed square is the 120 m scoring area. Use the full supplied context to
 trace across it when a crown or loss component continues past the dashed line.
 Follow the visible trace as far as the crop permits and flag continuation past
 the crop. The square lacks the 120 m of surrounding context proposed for later
-evaluation. Toggle the scoring boundary and traces for a clean image view.
+evaluation. Hide the scoring boundary, scale and traces for a clean view.
 
 1. On each date, trace overhead tree crowns visible within the scoring square
    and the visible continuation of anything that crosses it. Trace unknown
