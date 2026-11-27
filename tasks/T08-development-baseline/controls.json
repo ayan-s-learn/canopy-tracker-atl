@@ -1,0 +1,1220 @@
+{
+  "kirkwood": [
+    {
+      "east_m": 1.2,
+      "feature": "Pavement at west street junction",
+      "half_size": 13,
+      "magnitude_m": 1.2,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        90,
+        287
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.016,
+      "score": 0.353,
+      "side": "17/23917",
+      "source": "T05"
+    },
+    {
+      "east_m": 1.2,
+      "feature": "Sidewalk approach at central street junction",
+      "half_size": 14,
+      "magnitude_m": 1.2,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        192,
+        278
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.071,
+      "score": 0.497,
+      "side": "17/23917",
+      "source": "T05"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "Pavement at northeast street bend",
+      "half_size": 13,
+      "magnitude_m": 0.6,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        389,
+        194
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.163,
+      "score": 0.604,
+      "side": "17/23917",
+      "source": "T05"
+    },
+    {
+      "east_m": -2.4,
+      "feature": "Southeast street curb bend",
+      "half_size": 12,
+      "magnitude_m": 2.68,
+      "north_m": 1.2,
+      "passes_screen": false,
+      "pixel_xy": [
+        368,
+        396
+      ],
+      "raw_residual_east_north_m": [
+        -2.4,
+        1.2
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.01,
+      "score": 0.346,
+      "side": "17/23917",
+      "source": "T05"
+    },
+    {
+      "east_m": 0.0,
+      "feature": "Inner northeast road corner by fixed curb",
+      "half_size": 10,
+      "magnitude_m": 0.6,
+      "north_m": -0.6,
+      "passes_screen": true,
+      "pixel_xy": [
+        370,
+        192
+      ],
+      "raw_residual_east_north_m": [
+        0.0,
+        -0.6
+      ],
+      "rejection": "diagnostic only",
+      "role": "diagnostic",
+      "runner_up_gap": 0.097,
+      "score": 0.771,
+      "side": "17/23917",
+      "source": "T05"
+    },
+    {
+      "east_m": 0.0,
+      "feature": "Eastern road edge and driveway approach",
+      "half_size": 11,
+      "magnitude_m": 0.6,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        483,
+        328
+      ],
+      "raw_residual_east_north_m": [
+        0.0,
+        0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.015,
+      "score": 0.298,
+      "side": "17/23917",
+      "source": "T05"
+    },
+    {
+      "east_m": 1.2,
+      "feature": "Northeast curb at eastern street",
+      "half_size": 8,
+      "magnitude_m": 1.34,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        471,
+        319
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        0.6
+      ],
+      "rejection": "diagnostic only",
+      "role": "diagnostic",
+      "runner_up_gap": 0.015,
+      "score": 0.274,
+      "side": "17/23917",
+      "source": "T05"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "Sidewalk edge at west street driveway",
+      "half_size": 9,
+      "magnitude_m": 0.85,
+      "north_m": -0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        123,
+        285
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        -0.6
+      ],
+      "rejection": "diagnostic only",
+      "role": "diagnostic",
+      "runner_up_gap": 0.073,
+      "score": 0.627,
+      "side": "17/23917",
+      "source": "T05"
+    },
+    {
+      "east_m": 2.4,
+      "feature": "west driveway",
+      "half_size": 9,
+      "magnitude_m": 2.4,
+      "north_m": 0.0,
+      "passes_screen": true,
+      "pixel_xy": [
+        72,
+        246
+      ],
+      "raw_residual_east_north_m": [
+        2.4,
+        0.0
+      ],
+      "rejection": "overlaps previously allocated control support",
+      "role": "fit",
+      "runner_up_gap": 0.122,
+      "score": 0.836,
+      "side": "17/23917",
+      "source": "T08"
+    },
+    {
+      "east_m": 2.4,
+      "feature": "southern roadway bend",
+      "half_size": 9,
+      "magnitude_m": 2.4,
+      "north_m": 0.0,
+      "passes_screen": true,
+      "pixel_xy": [
+        300,
+        454
+      ],
+      "raw_residual_east_north_m": [
+        2.4,
+        0.0
+      ],
+      "rejection": null,
+      "role": "check",
+      "runner_up_gap": 0.033,
+      "score": 0.906,
+      "side": "17/23917",
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "northern driveway",
+      "half_size": 9,
+      "magnitude_m": 1.9,
+      "north_m": -1.8,
+      "passes_screen": false,
+      "pixel_xy": [
+        161,
+        86
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        -1.8
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.037,
+      "score": 0.541,
+      "side": "17/23917",
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "east road bend",
+      "half_size": 9,
+      "magnitude_m": 1.34,
+      "north_m": 1.2,
+      "passes_screen": false,
+      "pixel_xy": [
+        432,
+        295
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        1.2
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.019,
+      "score": 0.365,
+      "side": "17/23917",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.8,
+      "feature": "central driveway edge",
+      "half_size": 9,
+      "magnitude_m": 1.8,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        266,
+        166
+      ],
+      "raw_residual_east_north_m": [
+        1.8,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.063,
+      "score": 0.344,
+      "side": "17/23917",
+      "source": "T08"
+    }
+  ],
+  "park": [
+    {
+      "east_m": -2.4,
+      "feature": "Northwest paved-path bend",
+      "half_size": 8,
+      "magnitude_m": 2.68,
+      "north_m": -1.2,
+      "passes_screen": false,
+      "pixel_xy": [
+        14,
+        31
+      ],
+      "raw_residual_east_north_m": [
+        -2.4,
+        -1.2
+      ],
+      "rejection": "crosses exposure or window boundary",
+      "role": "fit",
+      "runner_up_gap": 0.015,
+      "score": 0.569,
+      "side": null,
+      "source": "T05"
+    },
+    {
+      "east_m": -1.8,
+      "feature": "west path edge",
+      "half_size": 9,
+      "magnitude_m": 4.02,
+      "north_m": 3.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        18,
+        46
+      ],
+      "raw_residual_east_north_m": [
+        -1.8,
+        3.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.07,
+      "score": 0.552,
+      "side": "17/25065",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.8,
+      "feature": "southern path bend",
+      "half_size": 9,
+      "magnitude_m": 4.02,
+      "north_m": -3.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        132,
+        197
+      ],
+      "raw_residual_east_north_m": [
+        1.8,
+        -3.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.023,
+      "score": 0.336,
+      "side": "17/25065",
+      "source": "T08"
+    },
+    {
+      "east_m": -0.6,
+      "feature": "southeast path junction",
+      "half_size": 9,
+      "magnitude_m": 0.85,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        182,
+        238
+      ],
+      "raw_residual_east_north_m": [
+        -0.6,
+        0.6
+      ],
+      "rejection": "crosses exposure or window boundary",
+      "role": "check",
+      "runner_up_gap": 0.015,
+      "score": 0.599,
+      "side": null,
+      "source": "T08"
+    },
+    {
+      "east_m": -3.6,
+      "feature": "northeast path verge",
+      "half_size": 9,
+      "magnitude_m": 5.09,
+      "north_m": 3.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        235,
+        31
+      ],
+      "raw_residual_east_north_m": [
+        -3.6,
+        3.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.058,
+      "score": 0.591,
+      "side": "17/25065",
+      "source": "T08"
+    },
+    {
+      "east_m": 3.6,
+      "feature": "southern path bend",
+      "half_size": 9,
+      "magnitude_m": 3.65,
+      "north_m": -0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        183,
+        235
+      ],
+      "raw_residual_east_north_m": [
+        3.6,
+        -0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.046,
+      "score": 0.57,
+      "side": "17/25065",
+      "source": "T08"
+    },
+    {
+      "east_m": -1.2,
+      "feature": "east cleared path verge",
+      "half_size": 9,
+      "magnitude_m": 1.34,
+      "north_m": -0.6,
+      "passes_screen": true,
+      "pixel_xy": [
+        231,
+        157
+      ],
+      "raw_residual_east_north_m": [
+        -1.2,
+        -0.6
+      ],
+      "rejection": null,
+      "role": "check",
+      "runner_up_gap": 0.138,
+      "score": 0.697,
+      "side": "17/25065",
+      "source": "T08"
+    }
+  ],
+  "west": [
+    {
+      "east_m": 1.2,
+      "feature": "Northwest running-track bend",
+      "half_size": 10,
+      "magnitude_m": 1.34,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        118,
+        125
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.02,
+      "score": 0.948,
+      "side": "17/24188",
+      "source": "T05"
+    },
+    {
+      "east_m": 2.4,
+      "feature": "Northeast running-track bend",
+      "half_size": 10,
+      "magnitude_m": 2.47,
+      "north_m": -0.6,
+      "passes_screen": true,
+      "pixel_xy": [
+        188,
+        122
+      ],
+      "raw_residual_east_north_m": [
+        2.4,
+        -0.6
+      ],
+      "rejection": null,
+      "role": "fit",
+      "runner_up_gap": 0.062,
+      "score": 0.724,
+      "side": "17/24188",
+      "source": "T05"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "Sidewalk approach at west-side driveway",
+      "half_size": 10,
+      "magnitude_m": 1.9,
+      "north_m": 1.8,
+      "passes_screen": true,
+      "pixel_xy": [
+        65,
+        121
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        1.8
+      ],
+      "rejection": null,
+      "role": "check",
+      "runner_up_gap": 0.047,
+      "score": 0.75,
+      "side": "17/24188",
+      "source": "T05"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "West-side paved apron and curb",
+      "half_size": 11,
+      "magnitude_m": 0.85,
+      "north_m": 0.6,
+      "passes_screen": true,
+      "pixel_xy": [
+        68,
+        194
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.6
+      ],
+      "rejection": "crosses exposure or window boundary",
+      "role": "fit",
+      "runner_up_gap": 0.148,
+      "score": 0.747,
+      "side": null,
+      "source": "T05"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "field marking",
+      "half_size": 9,
+      "magnitude_m": 0.85,
+      "north_m": 0.6,
+      "passes_screen": true,
+      "pixel_xy": [
+        144,
+        162
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.6
+      ],
+      "rejection": "crosses exposure or window boundary",
+      "role": "check",
+      "runner_up_gap": 0.099,
+      "score": 0.78,
+      "side": null,
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "east track edge",
+      "half_size": 9,
+      "magnitude_m": 1.9,
+      "north_m": 1.8,
+      "passes_screen": false,
+      "pixel_xy": [
+        213,
+        174
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        1.8
+      ],
+      "rejection": "crosses exposure or window boundary",
+      "role": "check",
+      "runner_up_gap": 0.018,
+      "score": 0.638,
+      "side": null,
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "west track edge",
+      "half_size": 9,
+      "magnitude_m": 0.85,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        97,
+        190
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.004,
+      "score": 0.963,
+      "side": "17/24140",
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "northeast paved aisle",
+      "half_size": 9,
+      "magnitude_m": 3.65,
+      "north_m": 3.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        218,
+        53
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        3.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.108,
+      "score": 0.544,
+      "side": "17/24188",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.2,
+      "feature": "north street curb by drive",
+      "half_size": 9,
+      "magnitude_m": 1.34,
+      "north_m": -0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        67,
+        54
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        -0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.028,
+      "score": 0.564,
+      "side": "17/24188",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.8,
+      "feature": "west driveway apron",
+      "half_size": 9,
+      "magnitude_m": 1.9,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        26,
+        65
+      ],
+      "raw_residual_east_north_m": [
+        1.8,
+        0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.174,
+      "score": 0.644,
+      "side": "17/24188",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.2,
+      "feature": "northern drive beside building",
+      "half_size": 9,
+      "magnitude_m": 3.79,
+      "north_m": -3.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        152,
+        36
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        -3.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.114,
+      "score": 0.405,
+      "side": "17/24188",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.2,
+      "feature": "southwest paved driveway",
+      "half_size": 9,
+      "magnitude_m": 1.2,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        51,
+        215
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.088,
+      "score": 0.615,
+      "side": "17/24140",
+      "source": "T08"
+    },
+    {
+      "east_m": -1.8,
+      "feature": "southeast track edge",
+      "half_size": 9,
+      "magnitude_m": 2.55,
+      "north_m": 1.8,
+      "passes_screen": false,
+      "pixel_xy": [
+        216,
+        183
+      ],
+      "raw_residual_east_north_m": [
+        -1.8,
+        1.8
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.034,
+      "score": 0.648,
+      "side": "17/24140",
+      "source": "T08"
+    },
+    {
+      "east_m": -0.6,
+      "feature": "southeast track straight",
+      "half_size": 9,
+      "magnitude_m": 2.47,
+      "north_m": 2.4,
+      "passes_screen": false,
+      "pixel_xy": [
+        216,
+        231
+      ],
+      "raw_residual_east_north_m": [
+        -0.6,
+        2.4
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.01,
+      "score": 0.767,
+      "side": "17/24140",
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "southwest inner track edge",
+      "half_size": 9,
+      "magnitude_m": 0.6,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        97,
+        234
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.002,
+      "score": 0.957,
+      "side": "17/24140",
+      "source": "T08"
+    }
+  ],
+  "west-fulton": [
+    {
+      "east_m": 0.6,
+      "feature": "Northwest street intersection curb",
+      "half_size": 14,
+      "magnitude_m": 0.85,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        158,
+        79
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.091,
+      "score": 0.644,
+      "side": "17/19582",
+      "source": "T05"
+    },
+    {
+      "east_m": 3.6,
+      "feature": "Central-left street and driveway edges",
+      "half_size": 14,
+      "magnitude_m": 4.33,
+      "north_m": 2.4,
+      "passes_screen": false,
+      "pixel_xy": [
+        172,
+        185
+      ],
+      "raw_residual_east_north_m": [
+        3.6,
+        2.4
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.089,
+      "score": 0.492,
+      "side": "17/20857",
+      "source": "T05"
+    },
+    {
+      "east_m": 2.4,
+      "feature": "Northeast intersection curb",
+      "half_size": 13,
+      "magnitude_m": 3.84,
+      "north_m": 3.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        349,
+        94
+      ],
+      "raw_residual_east_north_m": [
+        2.4,
+        3.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.026,
+      "score": 0.181,
+      "side": "17/19582",
+      "source": "T05"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "Southeast street intersection curb",
+      "half_size": 13,
+      "magnitude_m": 0.85,
+      "north_m": 0.6,
+      "passes_screen": true,
+      "pixel_xy": [
+        469,
+        366
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.6
+      ],
+      "rejection": "diagnostic only",
+      "role": "diagnostic",
+      "runner_up_gap": 0.171,
+      "score": 0.868,
+      "side": "17/20857",
+      "source": "T05"
+    },
+    {
+      "east_m": 1.2,
+      "feature": "Southern street and driveway edges",
+      "half_size": 12,
+      "magnitude_m": 1.2,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        309,
+        387
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.053,
+      "score": 0.45,
+      "side": "17/20857",
+      "source": "T05"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "West street driveway and curb",
+      "half_size": 10,
+      "magnitude_m": 0.6,
+      "north_m": 0.0,
+      "passes_screen": true,
+      "pixel_xy": [
+        170,
+        152
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.0
+      ],
+      "rejection": "crosses exposure or window boundary",
+      "role": "diagnostic",
+      "runner_up_gap": 0.148,
+      "score": 0.702,
+      "side": null,
+      "source": "T05"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "West street pavement corner near a second driveway",
+      "half_size": 9,
+      "magnitude_m": 0.6,
+      "north_m": 0.0,
+      "passes_screen": true,
+      "pixel_xy": [
+        167,
+        175
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.0
+      ],
+      "rejection": "diagnostic only",
+      "role": "diagnostic",
+      "runner_up_gap": 0.093,
+      "score": 0.68,
+      "side": "17/20857",
+      "source": "T05"
+    },
+    {
+      "east_m": 3.0,
+      "feature": "north cul-de-sac",
+      "half_size": 9,
+      "magnitude_m": 3.0,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        286,
+        91
+      ],
+      "raw_residual_east_north_m": [
+        3.0,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.031,
+      "score": 0.608,
+      "side": "17/19582",
+      "source": "T08"
+    },
+    {
+      "east_m": 2.4,
+      "feature": "southwest drive entrance",
+      "half_size": 9,
+      "magnitude_m": 2.47,
+      "north_m": 0.6,
+      "passes_screen": true,
+      "pixel_xy": [
+        66,
+        298
+      ],
+      "raw_residual_east_north_m": [
+        2.4,
+        0.6
+      ],
+      "rejection": null,
+      "role": "check",
+      "runner_up_gap": 0.099,
+      "score": 0.726,
+      "side": "17/20857",
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "south road junction",
+      "half_size": 9,
+      "magnitude_m": 1.34,
+      "north_m": 1.2,
+      "passes_screen": false,
+      "pixel_xy": [
+        239,
+        423
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        1.2
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.026,
+      "score": 0.293,
+      "side": "17/20857",
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "east road and drive",
+      "half_size": 9,
+      "magnitude_m": 0.6,
+      "north_m": 0.0,
+      "passes_screen": true,
+      "pixel_xy": [
+        478,
+        352
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.0
+      ],
+      "rejection": null,
+      "role": "check",
+      "runner_up_gap": 0.164,
+      "score": 0.82,
+      "side": "17/20857",
+      "source": "T08"
+    },
+    {
+      "east_m": 0.6,
+      "feature": "west road bend",
+      "half_size": 9,
+      "magnitude_m": 0.85,
+      "north_m": 0.6,
+      "passes_screen": true,
+      "pixel_xy": [
+        96,
+        70
+      ],
+      "raw_residual_east_north_m": [
+        0.6,
+        0.6
+      ],
+      "rejection": null,
+      "role": "check",
+      "runner_up_gap": 0.137,
+      "score": 0.794,
+      "side": "17/19582",
+      "source": "T08"
+    },
+    {
+      "east_m": 3.6,
+      "feature": "northwest junction",
+      "half_size": 9,
+      "magnitude_m": 3.65,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        38,
+        70
+      ],
+      "raw_residual_east_north_m": [
+        3.6,
+        0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.064,
+      "score": 0.455,
+      "side": "17/19582",
+      "source": "T08"
+    },
+    {
+      "east_m": 3.6,
+      "feature": "north-central paved approach",
+      "half_size": 9,
+      "magnitude_m": 3.65,
+      "north_m": 0.6,
+      "passes_screen": false,
+      "pixel_xy": [
+        215,
+        45
+      ],
+      "raw_residual_east_north_m": [
+        3.6,
+        0.6
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.059,
+      "score": 0.494,
+      "side": "17/19582",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.2,
+      "feature": "northeast driveway approach",
+      "half_size": 9,
+      "magnitude_m": 1.2,
+      "north_m": 0.0,
+      "passes_screen": true,
+      "pixel_xy": [
+        430,
+        75
+      ],
+      "raw_residual_east_north_m": [
+        1.2,
+        0.0
+      ],
+      "rejection": null,
+      "role": "fit",
+      "runner_up_gap": 0.061,
+      "score": 0.747,
+      "side": "17/19582",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.8,
+      "feature": "northern driveway near house",
+      "half_size": 9,
+      "magnitude_m": 1.8,
+      "north_m": 0.0,
+      "passes_screen": true,
+      "pixel_xy": [
+        315,
+        43
+      ],
+      "raw_residual_east_north_m": [
+        1.8,
+        0.0
+      ],
+      "rejection": null,
+      "role": "check",
+      "runner_up_gap": 0.136,
+      "score": 0.937,
+      "side": "17/19582",
+      "source": "T08"
+    },
+    {
+      "east_m": -1.2,
+      "feature": "southwest road bend",
+      "half_size": 9,
+      "magnitude_m": 1.7,
+      "north_m": 1.2,
+      "passes_screen": false,
+      "pixel_xy": [
+        150,
+        290
+      ],
+      "raw_residual_east_north_m": [
+        -1.2,
+        1.2
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.067,
+      "score": 0.408,
+      "side": "17/20857",
+      "source": "T08"
+    },
+    {
+      "east_m": 1.8,
+      "feature": "southwest street and driveway",
+      "half_size": 9,
+      "magnitude_m": 2.16,
+      "north_m": 1.2,
+      "passes_screen": false,
+      "pixel_xy": [
+        54,
+        380
+      ],
+      "raw_residual_east_north_m": [
+        1.8,
+        1.2
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.126,
+      "score": 0.628,
+      "side": "17/20857",
+      "source": "T08"
+    },
+    {
+      "east_m": 3.6,
+      "feature": "southeast road edge",
+      "half_size": 9,
+      "magnitude_m": 3.79,
+      "north_m": 1.2,
+      "passes_screen": false,
+      "pixel_xy": [
+        385,
+        365
+      ],
+      "raw_residual_east_north_m": [
+        3.6,
+        1.2
+      ],
+      "rejection": "T05 match screen",
+      "role": "fit",
+      "runner_up_gap": 0.185,
+      "score": 0.717,
+      "side": "17/20857",
+      "source": "T08"
+    },
+    {
+      "east_m": 3.6,
+      "feature": "southern driveway apron",
+      "half_size": 9,
+      "magnitude_m": 3.6,
+      "north_m": 0.0,
+      "passes_screen": false,
+      "pixel_xy": [
+        278,
+        447
+      ],
+      "raw_residual_east_north_m": [
+        3.6,
+        0.0
+      ],
+      "rejection": "T05 match screen",
+      "role": "check",
+      "runner_up_gap": 0.144,
+      "score": 0.617,
+      "side": "17/20857",
+      "source": "T08"
+    }
+  ]
+}
