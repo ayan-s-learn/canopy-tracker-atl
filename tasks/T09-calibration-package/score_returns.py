@@ -13,6 +13,7 @@ from shapely import Polygon, box, union_all
 from build_packet import LAYERS, YEARS, blank_case, digest, dump_json, file_hash, read_json, write_assignment
 
 CODES = ('R01', 'R02', 'A01')
+UNKNOWN = ('2023', '2025', 'change')
 
 
 def validate(path, assignment, code):
@@ -64,7 +65,7 @@ def validate_case(record, item, role):
         raise ValueError('An unreadable or skipped return must leave traces, confidence and crop flag empty')
     if status == 'unreadable' and time is None:
         raise ValueError('An unreadable return needs active minutes')
-    if (status == 'unreadable' or cutoff or any(layers[f'unknown_{year}'] for year in YEARS)) and not reason.strip():
+    if (status == 'unreadable' or cutoff or any(layers[f'unknown_{period}'] for period in UNKNOWN)) and not reason.strip():
         raise ValueError('Describe unreadability, crop truncation or unknown geometry')
     if role == 'adjudicator':
         if record['resolution'] not in ('resolved', 'unresolved') or not reason.strip() or time is None:
@@ -117,7 +118,7 @@ def measure(item, readers, scale):
         result.update(disposition=record['status'], visible_loss_m2=None, traced_loss_m2=None,
                       unknown_m2=None, trace_touches_crop=None, loss_crosses_core=None)
         if record['status'] == 'complete':
-            unknown = union_all([masks[f'unknown_{year}'] for year in YEARS])
+            unknown = union_all([masks[f'unknown_{period}'] for period in UNKNOWN])
             loss = masks['loss'].intersection(core)
             visible = loss.difference(unknown)
             result.update(
@@ -125,7 +126,7 @@ def measure(item, readers, scale):
                              'no_visible_loss_with_unknown' if unknown.intersection(core).area else
                              'no_loss'),
                 visible_loss_m2=area(visible), traced_loss_m2=area(loss),
-                unknown_m2={year: area(masks[f'unknown_{year}'].intersection(core)) for year in YEARS},
+                unknown_m2={period: area(masks[f'unknown_{period}'].intersection(core)) for period in UNKNOWN},
                 trace_touches_crop=any(mask.intersects(crop.boundary) for mask in masks.values()),
                 loss_crosses_core=(loss.area > 0 and masks['loss'].difference(core).area > 0),
             )
@@ -133,7 +134,7 @@ def measure(item, readers, scale):
 
     comparison = dict(crown_iou={year: None for year in YEARS},
                       crown_common_known_m2={year: None for year in YEARS},
-                      unknown_xor_m2={year: None for year in YEARS},
+                      unknown_xor_m2={period: None for period in UNKNOWN},
                       loss_xor_m2=None, loss_common_known_xor_m2=None, loss_common_known_m2=None)
     if all(record['status'] == 'complete' for record, _ in readers):
         a, b = [masks for _, masks in readers]
@@ -148,7 +149,9 @@ def measure(item, readers, scale):
                 comparison['crown_iou'][year] = round(first.intersection(second).area / union, 9) if union else 1
             comparison['unknown_xor_m2'][year] = area(
                 a[f'unknown_{year}'].symmetric_difference(b[f'unknown_{year}']).intersection(core))
-        known = core.difference(union_all(unknown_pairs))
+        comparison['unknown_xor_m2']['change'] = area(
+            a['unknown_change'].symmetric_difference(b['unknown_change']).intersection(core))
+        known = core.difference(union_all(unknown_pairs + [a['unknown_change'], b['unknown_change']]))
         xor = a['loss'].symmetric_difference(b['loss']).intersection(core)
         comparison.update(loss_xor_m2=area(xor), loss_common_known_xor_m2=area(xor.intersection(known))
                           if known.area else None, loss_common_known_m2=area(known))
@@ -209,7 +212,9 @@ def compare(packet, vault, output):
     blank = dict(packet=adjudication_id, code='', role='adjudicator',
                  cases=[dict(blank_case(item['id']), resolution=None) for item in cases])
     adjudication_assignment = dict(packet=adjudication_id, scale_m=assignment['scale_m'],
-                                   cases=cases, blank=blank, originals=originals)
+                                   cases=cases, blank=blank, originals=originals,
+                                   flags={item['id']: comparisons[item['id']]['adjudication_reasons']
+                                          for item in cases})
     write_assignment(adjudication / 'assignment.js', adjudication_assignment)
     (adjudication / 'blank-return.json').write_text(dump_json(blank))
     (output / 'adjudication-state.json').write_text(dump_json(

@@ -13,7 +13,8 @@
     "loss_xor_m2": 72.0,
     "unknown_xor_m2": {
       "2023": 0.0,
-      "2025": 36.0
+      "2025": 36.0,
+      "change": 0.0
     }
   },
   "C06_dispositions": [
@@ -42,6 +43,6 @@
       "total": 6.5
     }
   },
-  "packet": "f07c098698f5b9d14f631eef3c9ca49e11d0d71231f913b02a67e60ddb39ea6b",
+  "packet": "3ced942e0716f8ae8235dc6e47e32c2810bb7b4a00aecbe5fcb6e46ec60f8990",
   "reader_files": 53
 }

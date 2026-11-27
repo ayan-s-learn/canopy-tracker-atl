@@ -1,11 +1,11 @@
 Canopy interpretation
 =====================
 
-Unzip your assignment into a private folder. Open viewer.html in Chrome or
-Firefox with JavaScript enabled. Work at a computer with a mouse or trackpad.
-Enter the assigned code privately supplied by the coordinator. Use the Case menu
-to move through the assignment. Work independently and use only the imagery
-in the packet. NAIP imagery provided by USDA Farm Service Agency.
+Unzip your assignment into a private folder. Open viewer.html in Chrome with
+JavaScript enabled. Use a mouse or trackpad to trace. Enter your assigned code
+and use the Case menu to move through the assignment. Work independently and use only the imagery
+in the packet. Keep the project repository and other readers’ work closed.
+NAIP imagery provided by USDA Farm Service Agency.
 
 The columns show the earlier and later acquisition dates. The upper row is RGB.
 The lower row is the same near-infrared/red/green composite at both dates.
@@ -23,37 +23,40 @@ evaluation. Toggle the scoring boundary and traces for a clean image view.
 
 1. On each date, trace overhead tree crowns visible within the scoring square
    and the visible continuation of anything that crosses it. Trace unknown
-   areas on the corresponding date if shadows, leaf state, seam/no-data,
-   displacement, or other obscuration prevent a reliable interpretation.
+   areas on the corresponding date if shadows, leaf state, seams, missing
+   data or other obscuration prevent a reliable interpretation of that date.
    Treat other readable areas as noncrown. Use multiple polygons if necessary.
    For an interior hole, trace pieces that leave the hole open.
-2. On the early-date image, trace the part of each early crown that is clearly
-   absent later. Keep separate loss fragments. Trace loss at any size you can
-   interpret. An unknown area does not establish loss. The two dates establish
-   a change in visible cover, with cause and exact removal date undetermined.
+2. If displacement or another date-to-date difference makes the transition
+   unclear even when the individual dates are readable, use Unknown change on
+   the early-date footprint. Trace the part of each early crown that is clearly
+   absent later on the Visible loss layer. Keep separate loss fragments at any
+   size you can interpret. The two dates show visible cover. Leave the cause
+   and exact removal date undetermined.
 3. Select a trace layer, click vertices on its date's RGB or NIR view, and
    choose Finish polygon. The last vertex is automatically joined to the first.
    Use Undo vertex during drawing. To correct a saved trace, remove it and
    redraw. Inspect the traces and the unmarked views before finishing the case.
-4. Mark a finished case Read complete, even if its loss mask is empty. Mark
-   Unreadable if the case as a whole cannot be interpreted. Record active
-   minutes for both. If you skip a case, leave its geometry empty and record
-   active minutes if you spent time on it. Enter confidence for each completed
-   interpretation. In Reasons, identify affected date and approximate location
-   when explaining unknown patches or crop truncation, and explain unreadable
-   cases. You may also note why a complete read was difficult or why you skipped.
-5. Download return when finished. Send the JSON only to the coordinator through
-   the private one-to-one route supplied with your assignment. For a break,
-   download a draft to your private folder and use Resume from file when you
-   return. Keep your final copy until the coordinator verifies receipt.
+4. Mark every case Read complete, Unreadable or Skipped. Use Read complete
+   for a finished read even if the loss mask is empty. For Unreadable or Skipped,
+   clear all geometry, confidence and the crop flag. Enter active minutes
+   for readings and unreadable cases, plus any time spent on skipped cases.
+   Enter confidence for completed reads. In Reasons, explain unreadability
+   or locate unknown areas or crop truncation by date and approximate position.
+5. Keep Chrome downloads in a private folder. Download return when finished
+   and send the JSON only to the coordinator through your agreed one-to-one
+   route. For a break, download a draft and use Resume from file on the same
+   assignment. Keep your final copy until the coordinator verifies receipt.
 
 Adjudicator only
 ----------------
 
 The adjudication assignment contains cases flagged by the comparison. Use
 Original traces to inspect one reader at a time. Use the Trace menu to switch
-which original layer is shown. Original overlays are dashed cyan and read-only. Hide them as needed and trace your own decision.
-Record the rationale, disposition, and active adjudication minutes. Mark a
-case Unresolved if the available imagery cannot settle the disagreement.
-If it remains unreadable or is skipped, leave geometry and confidence empty.
+which original layer is shown. Original overlays are dashed cyan and read-only.
+Hide them as needed and trace your own decision.
+Record the rationale, disposition and active adjudication minutes. Resolved
+requires Read complete. Choose Unresolved when the imagery cannot settle the
+disagreement. For Unreadable or Skipped, clear geometry, confidence and the
+crop flag.
 Return your separate JSON privately to the coordinator.

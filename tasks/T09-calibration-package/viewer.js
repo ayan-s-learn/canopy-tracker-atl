@@ -7,8 +7,9 @@ const adjudicating = assignment.blank.role === 'adjudicator';
 const ns = 'http://www.w3.org/2000/svg';
 const colors = {
   crown_2023: '#8dff9c', unknown_2023: '#fce075', crown_2025: '#8dff9c',
-  unknown_2025: '#fce075', loss: '#ff968a',
+  unknown_2025: '#fce075', unknown_change: '#fce075', loss: '#ff968a',
 };
+const changeLayers = new Set(['loss', 'unknown_change']);
 let response = structuredClone(assignment.blank);
 let index = 0;
 let draft = [];
@@ -36,15 +37,20 @@ function repaint() {
   const record = response.cases[index];
   const comparison = $('comparison').value;
   const original = comparison === '' ? null : assignment.originals?.[item.id]?.[Number(comparison)];
-  $('comparison-notes').hidden = !original;
+  const notes = [];
+  if (adjudicating) notes.push(`Review flags: ${assignment.flags[item.id].join(', ')}.`);
   if (original) {
     const time = original.active_minutes === null ? 'Time missing.' : `${original.active_minutes} active min.`;
-    $('comparison-notes').textContent = `Original read: ${original.status}. ${time} ${original.reason}`;
+    const confidence = original.confidence ? `Confidence: ${original.confidence}.` : '';
+    const cutoff = original.crop_cutoff ? 'Reader flagged continuation past the crop.' : '';
+    notes.push([`Original read: ${original.status}.`, time, confidence, cutoff, original.reason].filter(Boolean).join(' '));
   }
+  $('comparison-notes').hidden = !notes.length;
+  $('comparison-notes').textContent = notes.join(' ');
   const [x0, y0, x1, y1] = item.core;
   for (const {svg, img, year, mode} of panels) {
     svg.replaceChildren();
-    const active = layer === 'loss' ? year === '2023' : layer.endsWith(year);
+    const active = changeLayers.has(layer) ? year === '2023' : layer.endsWith(year);
     svg.classList.toggle('draw', active);
     svg.setAttribute('viewBox', `0 0 ${item.size} ${item.size}`);
     svg.style.width = $('detail').checked ? '150%' : '100%';
@@ -53,7 +59,7 @@ function repaint() {
       addElement(svg, 'rect', {x: x0, y: y0, width: x1 - x0, height: y1 - y0, fill: 'none',
         stroke: '#fff', 'stroke-dasharray': '4 3', 'vector-effect': 'non-scaling-stroke'});
     }
-    for (const mask of allowedLayers.filter(key => key.endsWith(year) || key === 'loss')) {
+    for (const mask of allowedLayers.filter(key => key.endsWith(year) || changeLayers.has(key))) {
       if (mask === layer) {
         for (const points of original?.masks[mask] ?? []) trace(svg, points, '#7be7ff', true, true);
       }
@@ -153,6 +159,7 @@ function setRecord() {
 }
 
 function checkRecord(record) {
+  if (record.status === 'pending') return 'Choose Read complete, Unreadable or Skipped.';
   if (record.active_minutes !== null && (!Number.isFinite(record.active_minutes) || record.active_minutes < 0)) {
     return 'Enter zero or positive active minutes.';
   }
@@ -163,7 +170,7 @@ function checkRecord(record) {
   if (record.status === 'complete' && (record.confidence === null || record.active_minutes === null)) {
     return 'Enter confidence and active minutes for a completed case.';
   }
-  const unknown = record.masks.unknown_2023.length || record.masks.unknown_2025.length;
+  const unknown = ['unknown_2023', 'unknown_2025', 'unknown_change'].some(layer => record.masks[layer].length);
   if ((record.status === 'unreadable' || record.crop_cutoff || unknown) && !record.reason) {
     return 'Describe the unreadable image, unknown areas or cropped trace in Reasons.';
   }
@@ -202,18 +209,39 @@ for (const field of ['status', 'confidence', 'cutoff', 'minutes', 'reason', 'res
 }
 for (const field of ['comparison', 'guide', 'traces', 'detail']) $(field).onchange = repaint;
 
-$('finish').onclick = () => {
-  const vertices = new Set(draft.map(point => point.join(',')));
-  if (vertices.size !== draft.length) {
-    setNotice('Use each vertex once. Finish polygon closes the trace.');
-    return;
+function cross([ax, ay], [bx, by], [cx, cy]) {
+  return (bx - ax) * (cy - ay) - (by - ay) * (cx - ax);
+}
+
+function onSegment(a, b, point) {
+  return point.every((value, i) => value >= Math.min(a[i], b[i]) && value <= Math.max(a[i], b[i]));
+}
+
+function intersects(a, b, c, d) {
+  const turns = [cross(a, b, c), cross(a, b, d), cross(c, d, a), cross(c, d, b)];
+  return (turns[0] * turns[1] < 0 && turns[2] * turns[3] < 0)
+    || (turns[0] === 0 && onSegment(a, b, c)) || (turns[1] === 0 && onSegment(a, b, d))
+    || (turns[2] === 0 && onSegment(c, d, a)) || (turns[3] === 0 && onSegment(c, d, b));
+}
+
+function simplePolygon(points) {
+  const count = points.length;
+  if (new Set(points.map(point => point.join(','))).size !== count) return false;
+  for (const [i, a] of points.entries()) {
+    const b = points[(i + 1) % count];
+    const c = points[(i + 2) % count];
+    if (cross(a, b, c) === 0 && (onSegment(a, b, c) || onSegment(b, c, a))) return false;
+    for (let j = i + 2; j < count; j++) {
+      if (i === 0 && j === count - 1) continue;
+      if (intersects(a, b, points[j], points[(j + 1) % count])) return false;
+    }
   }
-  const area = draft.reduce((sum, [x, y], i) => {
-    const [nextX, nextY] = draft[(i + 1) % draft.length];
-    return sum + x * nextY - y * nextX;
-  }, 0);
-  if (!area) {
-    setNotice('Trace an area with distinct, non-collinear vertices.');
+  return true;
+}
+
+$('finish').onclick = () => {
+  if (!simplePolygon(draft)) {
+    setNotice('Draw a single outline without repeated vertices, overlaps or crossings.');
     return;
   }
   response.cases[index].masks[$('layer').value].push(draft);
@@ -227,7 +255,8 @@ $('clear').onclick = () => { draft = []; setNotice(''); repaint(); };
 function download(check) {
   if (draft.length) return setNotice('Finish or cancel the polygon before downloading.');
   const code = $('code').value.trim().toUpperCase();
-  if (!/^[A-Z][0-9]{2}$/.test(code)) return setNotice('Enter your assigned code, for example R01.');
+  const codes = adjudicating ? ['A01'] : ['R01', 'R02'];
+  if (!codes.includes(code)) return setNotice(`Enter the assigned code (${codes.join(' or ')}).`);
   response.code = code;
   if (check) {
     for (const record of response.cases) {

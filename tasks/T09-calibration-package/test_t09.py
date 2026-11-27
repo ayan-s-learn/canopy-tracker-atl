@@ -26,7 +26,7 @@ def complete(key, minutes, **masks):
 def save_return(path, assignment, code, updates):
     data = deepcopy(assignment['blank'])
     data['code'] = code
-    data['cases'] = [updates.get(record['id'], record) for record in data['cases']]
+    data['cases'] = [updates.get(record['id'], dict(record, status='skipped')) for record in data['cases']]
     path.write_text(dump_json(data))
 
 
@@ -70,7 +70,7 @@ def replay(packet, run):
     check.assertEqual(case['comparison'], {
         'crown_iou': {'2023': 0.25, '2025': 1},
         'crown_common_known_m2': {'2023': 14400, '2025': 14364},
-        'unknown_xor_m2': {'2023': 0, '2025': 36},
+        'unknown_xor_m2': {'2023': 0, '2025': 36, 'change': 0},
         'loss_xor_m2': 72, 'loss_common_known_xor_m2': 54, 'loss_common_known_m2': 14364,
     })
     empty = report['cases']['C06']
@@ -86,7 +86,7 @@ def replay(packet, run):
     state = read_json(scored / 'adjudication-state.json')
     adjudicator = state['assignment']
     check.assertNotEqual(adjudicator['packet'], assignment['packet'])
-    decisions = {item['id']: dict(blank_case(item['id']), resolution='unresolved',
+    decisions = {item['id']: dict(blank_case(item['id']), status='skipped', resolution='unresolved',
                                   reason='Fixture supplied no interpretation.', active_minutes=0)
                  for item in adjudicator['cases']}
     decisions['C02'] = dict(a, resolution='resolved', reason='Fixture selects reader A.',
@@ -136,11 +136,22 @@ class ScoringChecks(unittest.TestCase):
         a['reason'] = 'Obscured.'
         comparison = self.measure(a, empty)['comparison']
         self.assertEqual(comparison['crown_iou'], {'2023': None, '2025': 1})
-        self.assertEqual(comparison['unknown_xor_m2'], {'2023': 14400, '2025': 0})
+        self.assertEqual(comparison['unknown_xor_m2'], {'2023': 14400, '2025': 0, 'change': 0})
         self.assertIsNone(comparison['loss_common_known_xor_m2'])
         self.assertEqual(comparison['loss_xor_m2'], 0)
-        missing = self.measure(blank_case('C01'), empty)
+        missing = self.measure(dict(blank_case('C01'), status='skipped'), empty)
         self.assertIsNone(missing['comparison']['unknown_xor_m2']['2023'])
+
+    def test_transition_uncertainty_does_not_mask_either_epoch_crown(self):
+        trace = ring(40, 40, 50, 50)
+        a = complete('C01', 1, crown_2023=trace, unknown_change=trace)
+        a['reason'] = 'Date-to-date displacement.'
+        b = complete('C01', 1, crown_2023=trace, loss=trace)
+        result = self.measure(a, b)
+        self.assertEqual(result['comparison']['crown_iou']['2023'], 1)
+        self.assertEqual(result['comparison']['loss_xor_m2'], 36)
+        self.assertEqual(result['comparison']['loss_common_known_xor_m2'], 0)
+        self.assertEqual(result['comparison']['unknown_xor_m2']['change'], 36)
 
     def test_touching_scoring_boundary_without_area_is_no_loss(self):
         a = complete('C01', 0, loss=ring(8, 40, 22, 50), crown_2023=ring(8, 40, 22, 50))
@@ -159,6 +170,10 @@ class ScoringChecks(unittest.TestCase):
         a['masks']['loss'] = [ring(5, 5, 20, 15)]
         with self.assertRaisesRegex(ValueError, 'must leave traces'):
             validate_case(a, self.item, 'reader')
+
+    def test_unstarted_case_requires_a_deliberate_disposition(self):
+        with self.assertRaisesRegex(ValueError, 'Invalid status'):
+            validate_case(blank_case('C01'), self.item, 'reader')
 
     def test_wrong_package_is_rejected_before_archive(self):
         assignment = dict(packet='expected', cases=[self.item])

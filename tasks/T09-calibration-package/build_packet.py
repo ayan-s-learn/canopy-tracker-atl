@@ -20,7 +20,7 @@ sys.path.insert(0, str(T05))
 from check_windows import verify  # noqa: E402
 
 YEARS = ('2023', '2025')
-LAYERS = ('crown_2023', 'unknown_2023', 'crown_2025', 'unknown_2025', 'loss')
+LAYERS = ('crown_2023', 'unknown_2023', 'crown_2025', 'unknown_2025', 'unknown_change', 'loss')
 SCALE = 0.6
 CORE = 200
 # Fixed offsets are in 0.6 m parent pixels. The small-site cores overlap by design.
@@ -179,7 +179,7 @@ def synthetic_pairs():
 
 
 def blank_case(case_id):
-    return dict(id=case_id, status='skipped', confidence=None, reason='', crop_cutoff=False,
+    return dict(id=case_id, status='pending', confidence=None, reason='', crop_cutoff=False,
                 active_minutes=None, masks={layer: [] for layer in LAYERS})
 
 
@@ -200,8 +200,9 @@ def build(output, t01, t05):
             for view, bands in (('rgb', [0, 1, 2]), ('nir', [3, 0, 1])):
                 (reader / f'{case_id}-{year}-{view}.png').write_bytes(png(spectral[bands]))
     files = {path.name: file_hash(path) for path in sorted(reader.iterdir())}
-    packet = digest(dump_json(dict(cases=public, scale_m=SCALE, files=files)).encode())
-    blank = dict(packet=packet, role='reader', code='', cases=[blank_case(c['id']) for c in public])
+    blank = dict(role='reader', code='', cases=[blank_case(c['id']) for c in public])
+    packet = digest(dump_json(dict(cases=public, scale_m=SCALE, files=files, blank=blank)).encode())
+    blank['packet'] = packet
     assignment = dict(packet=packet, scale_m=SCALE, cases=public, blank=blank)
     write_assignment(reader / 'assignment.js', assignment)
     (reader / 'blank-return.json').write_text(dump_json(blank))
