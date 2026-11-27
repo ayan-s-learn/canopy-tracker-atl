@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; style-src 'unsafe-inline'; img-src 'self' file: data:; base-uri 'none'; form-action 'none'">
+<title>Canopy interpretation</title>
+<style>
+  :root { color-scheme: light; font: 16px/1.4 system-ui, sans-serif; background: #f1f4f2; color: #162b27; }
+  body { max-width: 1120px; padding: 1.25rem; margin: auto; }
+  h1 { font-size: 1.65rem; margin: 0 0 .75rem; font-weight: 650; }
+  p { margin: .5rem 0; }
+  section { margin: 1rem 0; }
+  fieldset { border: 1px solid #7d9289; padding: .65rem .8rem; }
+  button, input, select, textarea { font: inherit; }
+  button { color: #fff; background: #255d51; border: 1px solid #255d51; border-radius: 3px; padding: .3rem .6rem; cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  :focus-visible { outline: 3px solid #995712; outline-offset: 3px; }
+  .line { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1rem; }
+  .views { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+  figure { margin: 0; min-width: 0; }
+  figcaption { padding: .15rem .35rem; background: #d8e6df; font-size: .9rem; }
+  svg { display: block; width: 100%; aspect-ratio: 1; background: #354a44; }
+  svg.draw { cursor: crosshair; touch-action: manipulation; }
+  #notice { min-height: 1.5em; color: #78420c; }
+  .remove { margin: .15rem .4rem .15rem 0; background: transparent; color: #255d51; }
+  #file { max-width: 16rem; }
+  #reason { display: block; width: min(100%, 55ch); }
+  [hidden] { display: none !important; }
+</style>
+<main>
+  <h1>Canopy interpretation</h1>
+  <div class="line">
+    <a href="reader-guide.txt" target="_blank" rel="noopener">Assignment instructions</a>
+    <label>Assigned code <input id="code" size="5" autocomplete="off"></label>
+    <button id="save" type="button">Download return</button>
+    <button id="draft-file" type="button">Download draft</button>
+    <label>Resume from file <input id="file" type="file" accept=".json,application/json"></label>
+  </div>
+  <section aria-label="Case navigation">
+    <div class="line">
+      <label>Case <select id="case"></select></label>
+      <span id="progress"></span>
+      <label id="comparison-control" hidden>Original traces <select id="comparison">
+        <option value="">Hide</option><option value="0">Reader A</option><option value="1">Reader B</option>
+      </select></label>
+      <label><input id="guide" type="checkbox" checked> Show scoring boundary</label>
+      <label><input id="traces" type="checkbox" checked> Show traces</label>
+      <label><input id="detail" type="checkbox"> Magnify all views</label>
+    </div>
+    <p id="registration"></p>
+    <p id="comparison-notes" hidden></p>
+    <p id="notice" role="status" aria-live="polite"></p>
+  </section>
+  <div class="line">
+    <label>Trace <select id="layer">
+      <option value="crown_2023">2023 crown</option><option value="unknown_2023">2023 unknown</option>
+      <option value="crown_2025">2025 crown</option><option value="unknown_2025">2025 unknown</option>
+      <option value="loss">Visible loss on 2023 footprint</option>
+    </select></label>
+    <button id="finish" type="button">Finish polygon</button>
+    <button id="undo" type="button">Undo vertex</button>
+    <button id="clear" type="button">Cancel polygon</button>
+  </div>
+  <p id="drawing-note">Click vertices on either view for the selected date. Use the full crop to trace across the dashed scoring boundary.</p>
+  <div class="views" id="views"></div>
+  <div id="polygons" aria-label="Saved traces on selected layer"></div>
+  <section aria-label="Case return">
+    <fieldset>
+      <legend>Case record</legend>
+      <div class="line">
+        <label>Status <select id="status">
+          <option value="skipped">Skipped</option><option value="complete">Read complete</option><option value="unreadable">Unreadable</option>
+        </select></label>
+        <label>Confidence <select id="confidence">
+          <option value="">Select</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option>
+        </select></label>
+        <label><input id="cutoff" type="checkbox"> Trace may continue past the crop</label>
+        <label>Active minutes <input id="minutes" type="number" min="0" step="any" size="4"></label>
+        <label id="resolution-control" hidden>Adjudication <select id="resolution">
+          <option value="">Select</option><option value="resolved">Resolved</option><option value="unresolved">Unresolved</option>
+        </select></label>
+      </div>
+      <label>Reasons <textarea id="reason" rows="2"></textarea></label>
+    </fieldset>
+  </section>
+</main>
+<script src="assignment.js"></script>
+<script src="viewer.js"></script>
+</html>

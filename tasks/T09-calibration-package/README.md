@@ -15,4 +15,63 @@ After staffing and delivery, actual returns can inform labeling rules and worklo
 
 Owner: Codex, 2026-11-27 09:35 EST. Branch `task/T09-calibration-package` from AR02 `c41c8e7`.
 
-Build and replay an offline assignment using only the eight pinned T01/T05 rasters and four synthetic cases. Use local private staging for the dry run. Next, pin crop and grid choices and test the reader, scoring and adjudication flow.
+Built the offline assignment from eight pinned T01/T05 rasters and four synthetic cases. Clean retrieval, packet rebuild and private dry run passed. Next, integrate the staffing action and obtain independent reads after owner assignment.
+
+## Result
+
+The packet contains 12 exercises with an offline viewer and blank JSON return. Eight crops use the four T01/T05 development reads, two per site. Four synthetic scenes exercise stable cover, visible change, shadow uncertainty and loss ending at the crop. Case IDs and order are fixed and identical for both readers. The owner ledger alone identifies the synthetic scenarios, locations, source tiles and geographic transforms.
+
+The 2023 pixels stay on their EPSG:26916 0.6 m source grid. Each corresponding 2×2 block of 2025 0.3 m pixels is averaged with rounding to the nearest byte, ties up. Both years use the original byte values after that resampling, displayed as RGB and NIR/red/green. No shift is applied. Tile dates are 2023-10-08 and 2025-10-11, except far west Atlanta uses 2025-10-15. The registration notes give parent-window T05 diagnostics where available, and describe unresolved displacement in each real case. These diagnostics leave local error unbounded.
+
+Each 200×200-pixel scoring square is 120 m across. The surrounding viewed context is 13.2 m per side at Piedmont and West End, and 36 m at Kirkwood and far west Atlanta. Both small-site pairs of scoring squares overlap. The build checks the complete parent reads against the four pinned reservations and every T06 context block plus its 600 m guard. Scoring uses the square, retains original traces across its boundary and flags possible crop truncation. No event-size cutoff applies. This targeted exercise tests agreement and workload. Accuracy, prevalence, missed loss and yield need separate probability sampling.
+
+### Dry run
+
+The [expected and reproduced result](dry-run.json) uses hand-specified geometry to test scoring. Chrome 158 also opened the offline views, drew and resumed work in two isolated sessions, downloaded both returns, displayed the original overlays in the separate adjudicator view, and archived the third return. No real staffing, interpretation or live transfer took place.
+
+For C02 each loss trace is 100 px² (36 m²) with zero intersection. The raw symmetric difference is 72 m². The 2025 unknown traces differ by 36 m², of which 18 m² overlaps one loss trace, leaving 54 m² of loss disagreement on common-known support. The early crown intersection and union are 100 px² and 400 px², giving IoU 0.25. Both late crown masks are empty on nonzero common-known support, giving IoU 1. C06 yields a completed no-loss read (0 m²) and an unreadable read (null), with null pairwise scores. The fixture records 4.25 and 6.5 reader minutes, and 3.75 adjudicator minutes. The archived return hashes survive adjudication unchanged.
+
+## Outputs and replay
+
+Use CPython 3.14 and the [pinned raster dependencies](../../requirements.txt). The four real-source ledgers are the T01 [read ledger](../T01-imagery/t01-windows.json), T05 [read ledger](../T05-paired-coverage/window-evidence.json), [reservations](../T05-paired-coverage/development-windows.geojson) and [registration diagnostics](../T05-paired-coverage/alignment.json) at `2ac905e9472f9b900055c87380876be36571ee6b`. The T06 [split](../T06-reference-design/split.geojson) is pinned at the same revision. From the repository root, build in a new private directory outside Git.
+
+```sh
+umask 077
+run=$(mktemp -d)
+task=tasks/T09-calibration-package
+python tasks/T01-imagery/recover_windows.py "$run/t01"
+python tasks/T05-paired-coverage/check_windows.py "$run/t05" "$run/t01" --retrieve > "$run/alignment.json"
+python "$task/build_packet.py" "$run/packet" "$run/t01" "$run/t05"
+python "$task/test_t09.py" "$run/packet" "$run/dry" > "$run/dry-run.json"
+cmp "$run/dry-run.json" "$task/dry-run.json"
+python -m unittest discover -s "$task" -v
+```
+
+Recovery retrieved all eight TIFFs byte-for-byte on 2026-11-27. Rerun retrieval into the interrupted directory to reuse verified files, or point the builder to existing caches. The two build and dry-run output paths must be new. Preserve a private copy of the reader ZIP and its owner ledger for each distributed version in case service URLs change. Compare the printed packet ID to the expected result. The ledger records the pixel and mask inputs and the SHA-256 of each distributed file.
+
+Geometry uses polygon vertices at integer crop pixel boundaries from the top left, with x increasing rightward and y downward. The owner ledger gives a pixel-to-EPSG:26916 affine for real cases. The scorer unions rings within each layer and clips to the scoring square. It converts area using 0.36 m² per pixel². Per-date crown IoU excludes either reader's unknown for that date. Loss disagreement is reported both raw and after excluding either reader's unknown in either date. The per-date unknown differences retain the full scoring square. Completed empty masks give zero area, and two empty crowns yield IoU 1 when they share some known area. With zero common-known area, the corresponding IoU or common-known loss comparison is null. A skipped or unreadable return has null geometry scores. Timing totals include recorded zeroes and count missing entries separately.
+
+### Distribution and return
+
+1. Before assigning access, record the names and contact details privately with a role code, relevant imagery or canopy qualifications, any prior exposure to the exact imagery or known sites, and any prediction, permit, key, or other-reader exposure and conflicts. Use R01 and R02 for people who can independently trace crowns in RGB/NIR and distinguish image artifacts from change. Use A01 for a third qualified interpreter experienced in resolving imagery disagreements. Replace a reader with compromising exposure or conflicts before distribution.
+2. Zip only the contents of `packet/reader/` and give the identical archive to each reader separately. Supply their role code and your direct return instructions outside the ZIP. Each reader unzips privately, opens `viewer.html` in Chrome, follows the [reader guide](reader-guide.txt) and downloads their JSON. They can resume by reopening a private draft in the same packet version. Accept the file one-to-one through the owner's existing private transfer or by direct handoff into separate owner-only folders. Confirm which route with each recipient before assignment. Keep the ZIP, owner ledger, draft files, returns and reports outside Git and shared links.
+3. Keep each delivered JSON unchanged. In the replay shell, substitute the actual paths, using a vault directory accessible only to the owner. The commands validate identity, geometry and completeness before archiving each original. A duplicate slot fails without replacing the first file. If a return needs correction after acceptance, retain that version privately, use a new vault for the corrected pair and regenerate adjudication against those hashes.
+
+```sh
+python "$task/score_returns.py" receive "$run/packet" "$run/vault" R01 /private/path/reader-one.json
+python "$task/score_returns.py" receive "$run/packet" "$run/vault" R02 /private/path/reader-two.json
+python "$task/score_returns.py" compare "$run/packet" "$run/vault" "$run/scored"
+```
+
+4. Give only A01 the contents of `scored/adjudicator/` privately. The packet includes the full traces for cases flagged by geometry or disposition disagreement, incomplete reads, low confidence or possible crop truncation. Keep the comparison private. A01 records independent geometry where scorable and a rationale, resolved/unresolved status and minutes for every flagged case. Receive that JSON privately, then verify the originals and save the adjudication log separately.
+
+```sh
+python "$task/score_returns.py" receive "$run/scored" "$run/vault" A01 /private/path/adjudicator.json
+python "$task/score_returns.py" finish "$run/scored" "$run/vault"
+```
+
+If no cases need adjudication, run `finish` without an A01 return. Recover an interrupted comparison by choosing a new output directory and using the same immutable vault. Keep both original returns, their comparison and the adjudication log available for the development protocol decision.
+
+## For integration
+
+Register a seven-person-hour staffing action for the reader packet pinned by [dry-run.json](dry-run.json). Ask the owner to assign two independent image interpreters (2.5 hours each) and a third adjudicator (2 hours), using the canopy, RGB/NIR and conflict criteria above. The coordinator can reproduce the packet and dry run before any handoff, establish the private route, and verify the two originals plus adjudication log on delivery. This unlocks a decision on the interpretation instructions and actual task time. Staffing hours remain uncommitted.
