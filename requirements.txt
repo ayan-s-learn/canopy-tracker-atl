@@ -6,4 +6,6 @@ click-plugins==1.1.1.2
 cligj==0.7.2
 numpy==2.3.5
 pyparsing==3.3.3
+pyproj==3.8.0
 rasterio==1.4.4
+shapely==2.2.0
