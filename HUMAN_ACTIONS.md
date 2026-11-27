@@ -10,6 +10,14 @@ Use this queue when a necessary part of the authorized plan requires the owner o
 - Check whether the Gmail send already reached the designated City custodian. If so, share the acknowledgment or filing ID and scope privately. If City filing is outstanding, use the [prepared request and City routes](tasks/T03-permits/README.md#draft-for-city-custodians) for the missing Office of Buildings and Parks scopes. Reuse any existing filing for an equivalent scope.
 - Allow about 10 minutes to check and file, depending on account setup. Request a quote before any paid work. Share the filing ID and covered scope privately. When the City responds, arrange private access to the export before sharing address-linked files. The validation task will verify schema, date and jurisdiction coverage, and exclusions before closing the action.
 
+### HA-0003 — Assign development calibration readers
+
+Ready 2026-11-27. The project owner assigns two independent interpreters (2.5 hours each) and a third adjudicator (2 hours). Their readings will test interpretation rules and workload on the 12 development exercises. No hours or spending are committed.
+
+Use the [distribution and private return instructions](tasks/T09-calibration-package/README.md#distribution-and-return) with the scorer at `46bafa5` and the [verified packet fingerprint](tasks/T09-calibration-package/dry-run.json). First check each person's canopy and RGB/NIR experience, prior exposure and conflicts. Agree on a private handoff with each person, then give both readers the same reader ZIP separately. Readers can save drafts and resume offline in Chrome.
+
+The coordinator verifies and archives each original by role, scores the pair, then issues flagged cases to the adjudicator. Retain both original hashes and the separate adjudication log with rationale, unresolved cases and minutes. The task instructions cover corrected returns and interrupted comparisons.
+
 ## How to use the queue
 
 Before adding an action:
