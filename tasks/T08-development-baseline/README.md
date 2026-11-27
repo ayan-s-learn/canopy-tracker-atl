@@ -17,7 +17,7 @@ Owner: Codex T08, 2026-11-26 17:49 EST. Branch `task/T08-development-baseline` i
 
 Before estimating shifts, fix the following support rule. Partition each site by indexed exposure pair. Reuse T05's gradient-match screen. Add visually selected pavement or fixed structures. Require the smoothing, search and chip footprint to lie entirely on one side. Allocate spatially separated fit and check controls before matching. Within each side require at least three non-collinear fit controls and two independent check controls. Fit an integer-grid median translation. Each accepted fit and check residual must be within 1.2 m Euclidean distance. Restrict supported pixels to the fit convex hull on that side. Else abstain. Check sensitivity at offsets of two common-grid pixels in both axes and their diagonals on unresolved area.
 
-Implementation and replay are complete. The next action is campaign integration and AR03.
+Implementation and replay are complete. The documented abstentions meet the AR03 review trigger.
 
 ## Result
 
@@ -72,7 +72,3 @@ done
 The [event layer](events.geojson.gz) contains all 6,962 uncorrected components in WGS84, including subthreshold components. Use `area_m2` for filtering. Flags identify possible truncation at unknown or footprint edges and exposure to unresolved registration. Event replay on this host matched exactly for IDs, geometries, counts and areas. The eight cached TIFFs occupied 13,121,956 bytes. The four generated evidence files occupied about 1.36 MB. A warm local CPU run took 1.8 s, excluding input recovery and environment setup.
 
 The [fixture ledger](fixtures.json) records expected and observed mask hashes, areas, IDs and counts. The same-epoch pair produced zero loss. A known 3-row south, 2-column west offset produced 194.04 m² of apparent loss. On the same 5,081.04 m² of supported pixels, apparent loss fell from 151.56 m² to zero after the estimated translation. Inserting a 36×36-cell loss patch returned one 466.56 m² event, retained at 0.10 acre and excluded at 0.25 acre.
-
-## For integration
-
-Record T08 as a replayable four-site development baseline with zero registration-supported area. The documented abstentions trigger AR03. Keep G1–G4 open and carry the stable-ground-control requirement into that review.

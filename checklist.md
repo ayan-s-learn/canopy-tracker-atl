@@ -12,9 +12,9 @@ Current direction remains **City of Atlanta first**, including its parts in both
 
 **Absent:** full study dataset, independent reference labels, measured detector accuracy, usable permit snapshot, operational pipeline, verified storage for raw imagery and model weights, and public release. **Jobs:** none running. Compact evidence is recorded in the repository; GT PDFs are recoverable by source URL/hash. No automated goal runtime, watcher or restart service has been established.
 
-**Human actions:** [HA-0002](HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests) is ready: confirm City receipt or file the missing scopes.
+**Human actions:** [HA-0002](HUMAN_ACTIONS.md#ha-0002--confirm-city-receipt-or-file-scoped-records-requests) remains ready for confirmation or filing. [HA-0003](HUMAN_ACTIONS.md#ha-0003--assign-development-calibration-readers) is ready for interpreter assignment.
 
-**Next Astra project review:** [AR03 — does the baseline warrant a method comparison?](docs/project-reviews.md#ar03--does-the-baseline-warrant-a-method-comparison) follows a replayable four-site development baseline or a documented failure that prevents it. [AR02](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) reserved the T06 context blocks and selected development calibration. The eligible evaluation frame, reference protocol and staffing remain open.
+**Next Astra project review:** [AR03 — does the baseline warrant a method comparison?](docs/project-reviews.md#ar03--does-the-baseline-warrant-a-method-comparison) is ready. The [four-site baseline](tasks/T08-development-baseline/README.md#result) produced 20 uncorrected candidates ≥0.10 acre. None of the six exposure sides had adequate registration controls. [AR02](docs/project-reviews.md#ar02--pilot-footprint-and-reference-feasibility) reserved the T06 context blocks and selected development calibration. The eligible evaluation frame, reference protocol and staffing remain open.
 
 ## Tasks
 
@@ -27,8 +27,8 @@ Current direction remains **City of Atlanta first**, including its parts in both
 | [T05](tasks/T05-paired-coverage/README.md) | Where do the 2023 and 2025 assets overlap, and where has a usable pair actually been read? | complete |
 | [T06](tasks/T06-reference-design/README.md) | Which geography can be protected, and how much independent reference work would the pilot require? | complete |
 | [T07](tasks/T07-historical-geography/README.md) | Which parts of the City footprint have verified membership at the local image dates? | complete |
-| [T08](tasks/T08-development-baseline/README.md) | Does a reproducible loss baseline survive registration checks on the four sites? | ready |
-| [T09](tasks/T09-calibration-package/README.md) | Can the development assignment be delivered, returned privately and scored in a dry run? | ready |
+| [T08](tasks/T08-development-baseline/README.md) | Does a reproducible loss baseline survive registration checks on the four sites? | complete |
+| [T09](tasks/T09-calibration-package/README.md) | Can the development assignment be delivered, returned privately and scored in a dry run? | complete |
 | [T10](tasks/T10-parcel-vintages/README.md) | Which historical parcel links are supportable at the pilot sites? | ready |
 
 ## Future workstreams — revisable, unclaimed
@@ -61,4 +61,4 @@ Unresolved: citywide pixel suitability and valid-observation area; parcel histor
 
 ## Next action
 
-Claim T08, T09 or T10. They can start independently on the pinned development inputs. Before any new or expanded development read, publish its full influence footprint and check disjointness against the reserved T06 context plus its 600 m guard. After T09 delivers a tested assignment and return path, register the seven-hour staffing request in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md). On City delivery under HA-0002, open a task to validate the export.
+Run AR03 with the T08 registration evidence and the requirement for spatially distributed, independent stable-ground controls. T10 can proceed on the pinned development inputs. Before any new or expanded development read, publish its full influence footprint and check disjointness against the reserved T06 context plus its 600 m guard. On City delivery under HA-0002, open a task to validate the export.

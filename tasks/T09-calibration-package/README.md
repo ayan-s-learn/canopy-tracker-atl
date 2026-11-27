@@ -15,7 +15,7 @@ After staffing and delivery, actual returns can inform labeling rules and worklo
 
 Owner: Codex, 2026-11-27 09:35 EST. Branch `task/T09-calibration-package` from AR02 `c41c8e7`.
 
-Built the offline assignment from eight pinned T01/T05 rasters and four synthetic cases. Clean retrieval, packet rebuild and private dry run passed. Next, integrate the staffing action and obtain independent reads after owner assignment.
+Built the offline assignment from eight pinned T01/T05 rasters and four synthetic cases. Clean retrieval, packet rebuild and private dry run passed. Independent reads require staffing under HA-0003.
 
 ## Result
 
@@ -72,7 +72,3 @@ python "$task/score_returns.py" finish "$run/scored" "$run/vault"
 ```
 
 If no cases need adjudication, run `finish` without an A01 return. Recover an interrupted comparison by choosing a new output directory and using the same immutable vault. Keep both original returns, their comparison and the adjudication log available for the development protocol decision.
-
-## For integration
-
-Register a seven-person-hour staffing action for the reader packet pinned by [dry-run.json](dry-run.json). Ask the owner to assign two independent image interpreters (2.5 hours each) and a third adjudicator (2 hours), using the canopy, RGB/NIR and conflict criteria above. The coordinator can reproduce the packet and dry run before any handoff, establish the private route, and verify the two originals plus adjudication log on delivery. This unlocks a decision on the interpretation instructions and actual task time. Staffing hours remain uncommitted.
