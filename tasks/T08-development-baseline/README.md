@@ -47,18 +47,18 @@ Consider aligned, nonoverlapping 32×32 tiles with ≥75% native known area. Sel
 | Kirkwood | Dark crown or shadow in 2023 borders a brighter, differently textured crown in 2025. The flag covers visually persistent vegetation, a likely false alarm in part. | Open grass and a small light patch, with no clear crown removal. |
 | Far west | Crown texture persists through the flagged patch while illumination and shadow change. This looks like a false alarm over part of the canopy. | The paved junction and verges persist. |
 
-In the additional low-loss crown tiles, textured crowns remain visible at Piedmont and far west. West End shows a partly shaded crown beside open ground, and Kirkwood shows a crown above a verge. The scattered flags along these crowns could reflect shadow, texture or displacement. These targeted reads identified no clear missed removal. They supply neither an independent reference nor a precision or recall estimate. Stop interpretation at 0.10 acre on these windows. To reopen it, target a development pair with spatially distributed stable ground features that allow fit and independent residual checks on each relevant seam side near candidate crowns. Reserve and check its full influence footprint before reading. A challenger would currently confound detector error with displacement.
+In the additional low-loss crown tiles, textured crowns remain visible at Piedmont and far west. West End shows a partly shaded crown beside open ground, and Kirkwood shows a crown above a verge. The scattered flags along these crowns could reflect shadow, texture or displacement. These targeted reads identified no clear missed removal. They supply neither an independent reference nor a precision or recall estimate. Registration uncertainty prevents confirming crown removal at 0.10 acre on these windows. The two candidates above 0.25 acre have the same limitation. To reopen it, target a development pair with spatially distributed stable ground features that allow fit and independent residual checks on each relevant seam side near candidate crowns. Reserve and check its full influence footprint before reading. A challenger would currently confound detector error with displacement.
 
 ## Outputs and replay
 
-Use implementation revision `b78c7b4`, CPython 3.14.7, the [raster requirements](../../requirements.txt), SciPy 1.18.1, Shapely 2.2.0 and pyproj 3.8.0. The [config](config.json) pins the thresholds, controls and their roles. Use the T05 recovery instructions linked in the brief for missing TIFFs. The runner checks the archived pixels, grid, masks and reservation tile/date metadata before scoring. Source and rights details are in the T01 and T05 manifests.
+Use implementation revision `b78c7b4`, CPython 3.14.7, the [raster requirements](../../requirements.txt), SciPy 1.18.1, Shapely 2.2.0 and pyproj 3.8.0. The [config](config.json) pins the thresholds, controls and their roles. From the repository root, the replay defaults to the existing cache at `data/imagery`. If any TIFFs are missing, run the linked T05 recovery commands first, then set `imagery="$run"` in the same shell. That directory contains the recovered `t01/` and `t05/` inputs. The runner checks the archived pixels, grid, masks and reservation tile/date metadata before scoring. Source and rights details are in the T01 and T05 manifests.
 
 ```sh
 (
 set -eu
 task=tasks/T08-development-baseline
 out=$(mktemp -d)
-python "$task/baseline.py" data/imagery "$out"
+python "$task/baseline.py" "${imagery:-data/imagery}" "$out"
 python -m unittest discover -s "$task" -v
 for file in sites.json controls.json; do cmp "$task/$file" "$out/$file"; done
 for file in events.geojson.gz comparisons.json.gz; do
